@@ -1,0 +1,45 @@
+\section{Introduction}
+\label{sec:introduction}
+
+%These constraints are mainly expressed in natural language in the service documentation. A widely-adopted strategy [7] by developers to build correct client applications is to first read through the service documentation, trying to memorize the constraints, and then develop client applications accordingly. However, conformance to constraints cannot be assured. In fact, a recent study [14] showed that developers may still make mistakes even when they have been rather familiar with the documentation. 
+%
+%
+%Therefore, it is desirable that client applications are formally verified against these constraints, and violations of each constraint are detected as bugs. However, these verification techniques [8, 9, 14] require formally specified constraints, which are often not readily available, due to the large amount of effort needed to manually specify them. For example, it took one of the authors more than 10 hours to only browse the documentation of the Ebay2 web service operation “AddFixedPriceItem”, let alone the time needed to extract and formalize the constraints
+%
+%To address these shortcomings we propose a different approach for inferring likely mapping between API's. In particular, we propose the use of Natural Language processing of API documents to infer such mapping.  
+%
+%  
+%API documentation provides developers with useful information about class/interface hierarchies within the software. Additionally, API documents also provides information about how to use a particular method within a class by means of method descriptions. Method descriptions typically describe specifications in terms of the expectations of the method arguments and functionality of method in general.
+%
+%
+%We plan to leverage these method descriptions to find the likely mapping. However, it is not trivial to use natural langauge processing on API documents to infer likely mappings. In particular, our technique addresses the following technical challenges to infer likely mappings:
+%
+%\begin{enumerate}
+%	\item \textit{Programming Keywords}. Method descriptions often contain programming keywords (e.g., \CodeIn{true, null, buffer}), which have a different meaning in the context of programs, in contrast to general linguistics. For instance,\textit{``This method also returns false if path is null''}. In this sentence, words `false' and `null' are nouns in the context of object-oriented languages such as Java and C\#, whereas in general linguistics these words are adjectives. Thus, these keywords need to be handled differently.
+%		
+%	\item \textit{Semantic Equivalence}. A legal usage in natural language can be described in different words and semantic structures. For instance, consider the following two fragments that describe the similar functionality specification: \textit{``Flushes this data output stream. This forces any buffered output bytes to be written out to the stream.'}' and \textit{``Writes buffered data to the target stream and calls the flush method of the target stream.''}. Thus, there is a need to identify the semantic equivalence of legal usage described in different ways.
+%		
+%		To address this challenge, we propose a new technique called \textit{equivalence analysis} based on identified grammatical relationships (main nouns and verbs) of a sentence.
+%	
+%	\item \textit {Partial Functionality}. There are significant number of cases when the functionality in a source API method is broken across multiple methods in target API. For instance \CodeIn{Graphics.drawChar()} method in J2ME API is mapped to methods \CodeIn{Paint.setColor();Canvas.drawText()}in Android API.
+%	
+%		To address this challenge, we propose a lightweight \CodeIn{Type} analysis.
+%		
+%\end{enumerate}
+%
+%
+%
+%
+%In summary, our approach leverages natural language description of API's to infer likely mapping thus facilitating cross API migration of applications. As our approach analyzes API documents in natural language, it can be reused independent of the programming language of the library. To the best of our knowledge, ours is the first approach that analyzes natural language API descriptions to infer likely mapping across API's.
+%
+%Our paper makes the following major contributions:
+%\begin{itemize}
+%	\item A technique that effectively infers mapping across source and target API.
+%	\item A prototype implementation of our approach based on extending the Stanford Parser~\cite{SNLP,SNLP1}, which is a natural language parser to derive the grammatical structure of sentences. An open source implementation of our prototype can be found at our website\footnote{\url{http://research.csc.ncsu.edu/ase/projects/pint/}}. 
+%	\item An evaluation of our approach on J2ME and Android API
+%\end{itemize}
+
+
+The rest of the paper is organized as follows. Section~\ref{sec:background} presents the  background on code contracts as well as NLP. Section~\ref{sec:example} presents an real world examples that motivate our approach. Section~\ref{sec:approach} presents our approach. Section~\ref{sec:evaluation} presents evaluation of our approach. Section~\ref{sec:discussion} presents a brief discussion and future work. Section~\ref{sec:related} discusses related work. Finally, Section~\ref{sec:conclusion} concludes.
+
+

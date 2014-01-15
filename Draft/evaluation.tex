@@ -1,0 +1,34 @@
+\section{Evaluation}
+\label{sec:evaluation}
+
+We conducted an evaluation to assess the effectiveness of our approach. In our evaluation, we address three main research questions:
+
+\begin{itemize}
+	
+\item\textbf{RQ1}: What are the precision and recall of \tool\ in inferring usage constraints?
+
+%\item\textbf{RQ2}: What is the accuracy of our approach in inferring specifications from contract sentences in the API documents? 
+
+\item\textbf{RQ2}: How does our approach fares in comparison to previous NLP approaches?
+
+\end{itemize}
+
+\subsection{Subjects}
+\label{sub:subject}
+
+We used the API documents of the following two libraries as subjects for our evaluation. 
+
+
+\amazon\ provides a simple REST based web services interface that can be used to store and retrieve data on the web. Furthermore, \CodeIn{Amazon S3} also empowers a developer with rich set of API methods to access a highly scalable, reliable, secure, fast, inexpensive infrastructure. \textbf{may be a little detail of usage statistics etc....}  
+
+\textbf{TBD}.
+
+\subsection{Summary}
+\label{sub:summary}
+
+\subsection{Threats to Validity}
+\label{sub:threats_to_validity}
+Threats to external validity primarily include the degree to which the subject documents used in our evaluations are representative of true practice. To minimize the threat, we used API documents of two representative commercial REST API: one dealing with online storage and the other \textbf{TBD}. The \amazon documents describe one of the most popularly used and online storage APIs. We also used the \textbf{TBD}. Furthermore, the difference in the functionalities provided by the two projects also address the issue of over fitting our approach to a particular type of API. The threat can be further reduced by evaluating our approach on more subjects. 
+
+Threats to internal validity include the correctness of our implementation in extracting usage constraints and labelling a statement as a constraint statement. To reduce the threat, we manually inspected all the constraints inferred against the API method descriptions in our evaluation. Furthermore, we ensured that the results were individually verified and agreed
+upon by two authors.

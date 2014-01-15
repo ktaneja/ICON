@@ -1,0 +1,138 @@
+l objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.	
+(ROOT
+  (S
+    (NP
+      (NP
+        (NP (DT All) (NNS objects))
+        (PRN (-LRB- -LRB-)
+          (PP (VBG including)
+            (NP
+              (NP (DT all) (NN object) (NNS versions))
+              (CC and)
+              (S
+                (VP (VB Delete)
+                  (NP (NNS Markers))))))
+          (-RRB- -RRB-)))
+      (PP (IN in)
+        (NP (DT the) (NN bucket))))
+    (VP (MD must)
+      (VP (VB be)
+        (VP (VBN deleted)
+          (PP (IN before)
+            (NP
+              (NP (DT the) (NN bucket))
+              (SBAR
+                (S
+                  (NP (PRP itself))
+                  (VP (MD can)
+                    (VP (VB be)
+                      (VP (VBN deleted)))))))))))
+    (. .)))
+ 
+	        		
+-> deleted-VBN (root)
+  -> objects-NNS (nsubjpass)
+    -> All-DT (det)
+    -> including-VBG (dep)
+      -> versions-NNS (pobj)
+        -> all-DT (det)
+        -> object-NN (nn)
+        -> Delete-VB (conj_and)
+          -> Markers-NNS (dobj)
+      -> Delete-VB (pobj)
+    -> bucket-NN (prep_in)
+      -> the-DT (det)
+  -> must-MD (aux)
+  -> be-VB (auxpass)
+  -> bucket-NN (prep_before)
+    -> the-DT (det)
+    -> deleted-VBN (rcmod)
+      -> itself-PRP (nsubjpass)
+      -> can-MD (aux)
+      -> be-VB (auxpass)
+ 
+	        		
+before
+	be must deleted
+		All
+			in
+				objects
+				bucket
+	be can deleted
+		bucket
+		itself
+	        		
+All objects in the bucket must be deleted before the bucket itself can be deleted.	
+(ROOT
+  (S
+    (NP
+      (NP (DT All) (NNS objects))
+      (PP (IN in)
+        (NP (DT the) (NN bucket))))
+    (VP (MD must)
+      (VP (VB be)
+        (VP (VBN deleted)
+          (PP (IN before)
+            (NP
+              (NP (DT the) (NN bucket))
+              (SBAR
+                (S
+                  (NP (PRP itself))
+                  (VP (MD can)
+                    (VP (VB be)
+                      (VP (VBN deleted)))))))))))
+    (. .)))
+ 
+	        		
+-> deleted-VBN (root)
+  -> objects-NNS (nsubjpass)
+    -> All-DT (det)
+    -> bucket-NN (prep_in)
+      -> the-DT (det)
+  -> must-MD (aux)
+  -> be-VB (auxpass)
+  -> bucket-NN (prep_before)
+    -> the-DT (det)
+    -> deleted-VBN (rcmod)
+      -> itself-PRP (nsubjpass)
+      -> can-MD (aux)
+      -> be-VB (auxpass)
+ 
+	        		
+before
+	must be deleted
+		All
+			in
+				objects
+				bucket
+	can be deleted
+		bucket
+		itself
+	        		
+All objects including all objectversions and DeleteMarkers.	
+(ROOT
+  (NP
+    (NP (DT All) (NNS objects))
+    (PP (VBG including)
+      (NP (DT all) (NNS object versions)
+        (CC and)
+        (NNS Delete Markers)))
+    (. .)))
+ 
+	        		
+-> objects-NNS (root)
+  -> All-DT (det)
+  -> objectversions-NNS (prep_including)
+    -> all-DT (det)
+    -> DeleteMarkers-NNS (conj_and)
+  -> DeleteMarkers-NNS (prep_including)
+ 
+	        		
+All
+	including
+		objects
+		all
+			and
+				object versions
+				Delete Markers
+	        		

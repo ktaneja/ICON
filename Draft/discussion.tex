@@ -1,0 +1,52 @@
+\section{Discussion and Future work}
+\label{sec:discussion}
+
+Our approach serves as a way to formalize the description of constraints in the natural language texts of REST API documents (targeted towards generating code contracts), thus facilitating existing tools to process these specifications. We next discuss the benefits of our approach in other areas of software engineering, followed by a description of the limitations of the current implementation and our approach.
+
+
+%
+%
+%\textbf{Code Searching}. Code searching~\cite{thummalapenta07parseweb,Reiss2009SCS} for reuse is a classic problem~\cite{FrakesIEEETran05} in software engineering. Among previous approaches, a recent approach by Riess~\cite{Reiss2009SCS} provides promising results by using semantics such as code contracts as input-output relationships for code searching. Our approach can be used for generating specifications from API documents in a code repository and thus assisting such approaches in producing better results.
+%
+%\textbf{Program Synthesis}. Automated program synthesis holds potential for easing the task of a developer by taking care of program generation and allowing the developer to concentrate on design tasks. Recent work by Srivastava et al.~\cite{Srivastava2010PVP} addresses the problem by leveraging specifications in the form of pre/post-conditions and invariants to achieve synthesis. Our approach can work in conjunction with such approaches to extract specifications from natural language text to achieve better synthesis.
+%
+%\vspace*{-1ex}
+\subsection{Limitations:}
+
+\textbf{Leveraging Error Descriptions}
+
+\CodeIn{BucketAlreadyExists}: \textit{``The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.''}
+
+\textbf{Semantic Flow}
+
+
+%\vspace*{-1ex}
+%
+%\textbf{Information flow analysis}. Our approach currently takes into account the specifications described in a single sentence. However, there are instances when a specification is distributed across several sentences. Consider the sentences below:
+%
+%\begin{center}
+% \small{\textit{``parameter values:Id-value pairs of preferences to set. Each id is an integer between 0 and 200 inclusively. Each value is a string with maximum length of 128 characters.''}}
+%\end{center}
+%
+%The first sentence describes the data structure used for the variable values. The sentences following the first sentence describe the specification on each item in the data structure. Since currently our approach works on individual sentences, it is not possible to establish the relationship between the specifications described in later sentences to the first sentence. In future work, we plan to investigate techniques to facilitate information flow analysis to handle such situations.
+%
+%\textbf{Contextual Information}. Some API documents are not comprehensive. Method descriptions omit certain specifications that have already been described in another closely related method. Currently, our approach does not deal with such scenarios as we do not consider contextual information. In future work, we plan to explore techniques to infer specifications in such scenarios.
+%
+%\textbf{Validation of Method Descriptions}. API documents can sometimes be misleading~\cite{TanICST12,Cindy10:PASTE}, thus causing developers to write faulty client code. In future work, we plan to extend our approach to find documentation-implementation inconsistencies.
+%%Consider the method description from the facebook API:
+%
+%%\textit{\textbf{``summary:}}
+%
+%%\textit{Rename a previously defined object type. }
+%
+%%\textit{\textbf{parameter:obj\_type}:Previous name of the object type to rename.}
+%
+%%\textit{\textbf{parameter:new\_name:} New name to use. This name needs to be unique among all object types and associations defined for this application. This name also needs to be a valid identifier, which is no longer than 32 characters, starting with a letter (a-z) and consisting of only small letters (a-z), numbers (0-9) and-or underscores.''}
+%
+%
+%%The method description describes the restrictions related to the variable \textit{new\_name}. However, there is no description of specifications related to \textit{obj\_type}. Since the method deals with renaming object types, the restrictions of one the parameters apply on the other. 
+%
+%%\textbf{Leveraging class descriptions and code-comments:} Currently our approach only takes into account the method descriptions of the API documents. As a result, the extracted specifications are in the form of pre/post conditions. We plan to extend the approach to the class descriptions to extract class invariants~\cite{csallner08dysy}. We further plan to extend our approach to take into account the code comments to generate formal specifications within a method. Leveraging code comments would further benefit the functional verification of a method as demonstrated earlier by Lin Tan et al.~\cite{TanSOSP07}.
+%
+%\textbf{Elimination of Predefined Lists}. The current implementation of our approach uses predefined lists for domain dictionaries. There are approaches~\cite{Zhou2008} that facilitate building domain dictionaries from source code. We plan to extend our implementation to use these approaches. Furthermore, we rely on pre-defined templates for code contract generation. While such a strategy serves our purpose of prototyping, advanced techniques such as keyword programming~\cite{Little2009} have shown promising results in building programming statements using keywords. We plan to explore such techniques and evaluate the overall effectiveness of our approach after augmenting it with such techniques.
+%

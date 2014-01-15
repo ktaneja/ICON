@@ -1,0 +1,32 @@
+\section{Related work}
+\label{sec:related}
+
+
+Design by contracts has been an influential concept in the area of software engineering in the past decade. A significant amount of work has been done in automated inference of code contracts. There are existing approaches that statically or dynamically extract code contracts~\cite{csallner08dysy, NimmerE02:ISSTA, Tillmann:2006:DLM:2105385.2105433}. However, a combination of developer written and automatically inferred contracts seems to be the most effective approach~\cite{FrakesIEEETran05,Polikarpova2009ISSTA}. Since developers describe the specifications in the method descriptions, we believe that our approach can work in conjunction with existing approaches towards extracting a comprehensive set of code contracts for a method. Furthermore, Wei et al.~\cite{WeiICSE11}demonstrated that dynamic contract inference performed better when provided with an initial set of seed contracts.
+
+
+
+
+There are existing approaches that infer code-contract-like specifications (such as behavioral model, algebraic specifications, and exception specifications) either dynamically~\cite{Ghezzi:2009:SIB:1555001.1555057,Henkel07documentation,Henkel:2008:DDA:1363102.1363105} or statically~\cite{Buse:2008:ADI:1390630.1390664,FrakesIEEETran05} from source code and binaries. In contrast, our approach infers specifications from the natural language text in API documents, thus complementing these existing approaches when the source code or binaries of the API library is not available.
+
+
+NLP techniques are increasingly applied in the software engineering domain. NLP techniques have been shown to be useful in requirements engineering~\cite{Gervasi2005,Sinha2009,Sinha2010}, usability of API documents~\cite{Dekel2009}, and other areas~\cite{Little2009,Zhou2008}. We next describe most relevant approaches. 
+
+Xiao et al.~\cite{XiaoFSE2012} use shallow parsing techniques to infer Access Control Policy (ACP) rules from natural language text in use cases. The use of shallow parsing techniques works well on natural language texts in use cases, owing to well formed nature of sentences in use case descriptions. In contrast, often the sentences in API documents are not well formed. Additionally, their approach does not deal with programming keywords or identifiers, which are often mixed within the method descriptions in API documents.
+
+\
+~\cite{pandita12:inferring}
+~\cite{pandita13:WHYPER}
+
+
+Zhong et al.~\cite{zhong09SE} employ NLP and ML techniques to infer resource specifications from API documents. Their approach uses machine learning to automatically classify such rules. In contrast, we attempt to parse sentences based on semantic templates and demonstrate that such an approach preforms reasonably well. Tan et al.~\cite{TanSOSP07} applied an NLP and Machine Learning (ML) based approach to test Javadoc comments against implementations. However, their approach specifically focuses on null values and related exceptions, thus limiting the application scope. In contrast, our approach infers generic specifications from API documents. In particular, our approach already produces FOL representation of the specifications that can be used to test implementations. Furthermore, the performance of the preceding ML-based approaches is dependent on the quality of the training sets used for ML. In contrast, our approach is independent of such training set and thus can be easily extended to target respective problems addressed by these approaches.
+
+
+
+Among other works described in ~\cite{RobillardIEEEtranSE13}, Mining API Mapping (MAM)~\cite{Zhong2010ICSE} is most directly related to our work. MAM mines API mapping relations across different languages for language migration, however they do little in terms of mining usage constraints of methods.
+
+
+
+%Web Query~\cite{Zheng2011FSE}
+
+%\textbf{Library migration}. With evolution of libraries, some APIs may become incompatible across library versions. To address this problem, Henkel and Diwan ~\cite{csallner08dysy} proposed an approach that captures and replays API refactoring actions to update the client code. Xing and Stroulia [17] proposed an approach that recognizes the changes of APIs by comparing the differences between two versions of libraries. Balaban et al. [2] proposed an approach to migrate client code when mapping relations of libraries are available. In contrast to these approaches, our approach focuses on mapping relations of APIs across different languages. In addition, since our approach uses ATGs to mine API mapping relations, our approach can also mine mapping relations between API methods with different parameters or between API methods whose functionalities are split among several API methods in the other language.
