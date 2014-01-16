@@ -1,17 +1,28 @@
 \begin{abstract}
+Formal specifications of an Application Programming Interface (API) usage are highly desirable,
+because they are the precursor to the formal analysis tools such as model checkers and runtime verifiers.
+However, most API's do not have formal specifications.
+In contrast documentation of methods contain detailed specifications of the usage in natural language text.
+However, formal analysis tools are not designed to work on specifications in natural languages.
+Manually writing formal specifications based on natural language text in API documents can be prohibitively time consuming and error prone.
+To address this issue, we propose a natural language processing based novel approach \tool\ to precisely infer constraints from natural language text of API documents.
+In particular, we focus on temporal constraints, that are defined as constraints on the
+\textit{allowed sequence of invocations of methods within an API}.
+To evaluate our proposed approach, we applied \tool\ to infer temporal constraints from 
+commonly used package \CodeIn{java.io} from JDK API and Amazon S3 REST API.
+Our evaluation results show that \tool\ achieves an average of PP\% precision and RR\% recall
+in inferring TT temporal constraints from more than ZZZZ sentences of API sentences. 
 
-Recently many popular websites such as Twitter and Flickr expose their data through web service APIs, enabling third-party 
-organizations to develop client applications that provide functionalities beyond what the original websites offer. These client applications should follow certain constraints in order to correctly interact with the web services.
-Violations of such constraints can cause fatal errors 
-or incorrect results in the client applications. However, these constraints are often not formally specified and thus not available for 
-automatic verification of client applications. To address this issue, 
-we propose a novel approach, called \tool,
-%to automatically 
-%infer dependency constraints on parameters for web services, via a 
-%hybrid analysis of heterogeneous web service artifacts, including 
-%the service documentation, the service SDKs, and the web services themselves. To evaluate our approach, we applied INDICATOR to infer dependency constraints for four popular web services. 
-%The results showed that INDICATOR effectively infers constraints 
-%with an average precision of 94.4\% and recall of 95.5\%. 
+
+%IS the approach automated
+%precursor too strong word
+% need to explain why moving from formal specifications to temporal constraints
+
+
+% Goal statement
+% The goal of this research is to facilitate the correct usage API methods by identifying temporal constraints etc..
+% Is the approach automated ? Make a line about how you gonna
+% conclusion of numbers 
+% make it consistent APi documents, descriptions and sentences 
  
-
 \end{abstract}

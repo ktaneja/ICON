@@ -360,8 +360,9 @@
 %\lstset{language=C}
 \input{macros}
 
-\newcommand{\tool}{{\sc I$\heartsuit$Con}}
+\newcommand{\tool}{{\sc ICON}}
 \newcommand{\amazon}{\CodeIn{Amazon S3 REST API} developer documentation}
+\newcommand{\amazonAPI}{\CodeIn{Amazon S3 REST API}}
 
 \clubpenalty = 10000
 \widowpenalty = 10000
@@ -370,7 +371,7 @@
 
 
 \title{
-\tool: \emph{I}nferring $^{\heartsuit}$\emph{L}ikely usage \emph{Con}straints from REST developer documents
+\tool: \emph{I}nferring Temporal \emph{Con}straints from Natural Language API Descriptions
 }
 %\subtitle{Subtitle Text, if any}
 
@@ -378,23 +379,28 @@
 % of the page, use this alternative format:
 % 
 
-%\author{
-%\IEEEauthorblockN
-%{
-%Rahul Pandita\IEEEauthorrefmark{1},
-%Sithu Sudarshan\IEEEauthorrefmark{2},
-%Tao Xie\IEEEauthorrefmark{1}, 
-%}
-%\IEEEauthorblockA{
-%\IEEEauthorrefmark{1}Department of Computer Science, North Carolina State University, Raleigh, NC, USA
-%}
-%\IEEEauthorblockA{
-%\IEEEauthorrefmark{2}CDRH, US Food and Drug Administration, SilverSpring, MD, USA
-%}
-%\IEEEauthorblockA{
-%rpandit@ncsu.edu, Sithu.Sudarshan@fda.hhs.gov, txie@ncsu.edu
-%}
-%}
+\author{
+\IEEEauthorblockN
+{
+Rahul Pandita\IEEEauthorrefmark{1},
+Kunal Taneja\IEEEauthorrefmark{2},
+Tao Xie\IEEEauthorrefmark{3},
+Laurie Williams\IEEEauthorrefmark{1},
+Teresa Tung\IEEEauthorrefmark{2} 
+}
+\IEEEauthorblockA{
+\IEEEauthorrefmark{1}Department of Computer Science, North Carolina State University, Raleigh, NC, USA
+}
+\IEEEauthorblockA{
+\IEEEauthorrefmark{2}Accenture Technology Labs, San Jose, CA, USA
+}
+\IEEEauthorblockA{
+\IEEEauthorrefmark{3}Department of Computer Science, University of Illinois, Urbana-Champaign, IL, USA
+}
+\IEEEauthorblockA{
+rpandit@ncsu.edu, k.a.taneja@accenture.com, taoxie@illinois.edu, williams@csc.ncsu.edu, teresa.tung@accenture.com
+}
+}
 
 
 % use for special paper notices
@@ -425,12 +431,12 @@
 
 
 \input{introduction}
-\input{background}
 \input{example}
+\input{related}
+\input{background}
 \input{approach}
 \input{evaluation}
 \input{discussion}
-\input{related}
 \input{conclusion}
 
 

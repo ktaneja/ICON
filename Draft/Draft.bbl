@@ -4,15 +4,15 @@
 Whyper.
 \newblock https://sites.google.com/site/whypermission/.
 
-\bibitem{Au:2012:CCS}
-K.~W.~Y. Au, Y.~F. Zhou, Z.~Huang, and D.~Lie.
-\newblock Pscout: analyzing the android permission specification.
-\newblock In {\em Proc. 19th CCS}, pages 217--228, 2012.
-
 \bibitem{Branimir2000}
 B.~K. Boguraev.
 \newblock Towards finite-state analysis of lexical cohesion.
 \newblock In {\em Proc. FSMNLP}, 2000.
+
+\bibitem{buse2012synthesizing}
+R.~P. Buse and W.~Weimer.
+\newblock Synthesizing {API} usage examples.
+\newblock In {\em Proc. 34th ICSE}, pages 782--792, 2012.
 
 \bibitem{Buse:2008:ADI:1390630.1390664}
 R.~P. Buse and W.~R. Weimer.
@@ -36,31 +36,20 @@ M.~C. de~Marneffe and C.~D. Manning.
 
 \bibitem{Dekel2009}
 U.~Dekel and J.~D. Herbsleb.
-\newblock Improving {API} documentation usability with knowledge pushing.
+\newblock Improving {API} {D}ocumentation {U}sability with {K}nowledge
+  {P}ushing.
 \newblock In {\em Proc. 31st ICSE}, pages 320--330, 2009.
-
-\bibitem{Do09:Robust}
-Q.~Do, D.~Roth, M.~Sammons, Y.~Tu, and V.~Vydiswaran.
-\newblock {Robust, Light-weight Approaches to compute Lexical Similarity}.
-\newblock Computer science research and technical reports, University of
-  Illinois, 2009.
-
-\bibitem{Ramly2006CSA}
-M.~El-Ramly, R.~Eltayeb, and H.~Alla.
-\newblock An experiment in automatic conversion of legacy {J}ava programs to
-  {C\#}.
-\newblock In {\em Proc. IEEE CSA}, pages 1037--1045, 2006.
-
-\bibitem{wordnet}
-F.~et~al.
-\newblock {\em WordNet: an electronic lexical database.}
-\newblock Cambridge, Mass: MIT Press, 1998.
 
 \bibitem{Finkel05ACL}
 J.~R. Finkel, T.~Grenager, and C.~Manning.
 \newblock Incorporating non-local information into information extraction
   systems by gibbs sampling.
 \newblock In {\em Proc, 43nd ACL}, 2005.
+
+\bibitem{Flanagan:2001:HAA:647540.730008}
+C.~Flanagan and K.~R.~M. Leino.
+\newblock Houdini, an annotation assistant for esc/java.
+\newblock In {\em Proc. 10th FME}, pages 500--517, 2001.
 
 \bibitem{FrakesIEEETran05}
 W.~Frakes and K.~Kang.
@@ -79,47 +68,32 @@ C.~Ghezzi, A.~Mocci, and M.~Monga.
 \newblock Synthesizing intensional behavior models by graph transformation.
 \newblock In {\em Proc. 31st ICSE}, pages 430--440, 2009.
 
-\bibitem{Gokhale2013ICSE}
-A.~Gokhale, V.~Ganapathy, and Y.~Padmanaban.
-\newblock Inferring likely mappings between {API}s.
-\newblock In {\em Proc. 35nd ICSE}, 2013.
-
-\bibitem{Gregory99}
-G.~Gregory.
-\newblock {\em Light Parsing as Finite State Filtering.}
-\newblock Cambridge University Press, 1999.
-
-\bibitem{Hassan2005LAM}
-A.~E. Hassan and R.~C. Holt.
-\newblock A lightweight approach for migrating web frameworks.
-\newblock {\em Inf. Softw. Technol.}, 47(8):521--532, Jun 2005.
-
-\bibitem{Henkel07documentation}
+\bibitem{Henkel07discoveringdocumentation}
 J.~Henkel, C.~Reichenbach, and A.~Diwan.
-\newblock Discovering documentation for java container classes.
-\newblock {\em IEEE Trans. on Software Engineering}, 33:526--543, 2007.
+\newblock Discovering documentation for {J}ava container classes.
+\newblock {\em IEEE Transactions on Software Engineering}, 33:526--543, 2007.
 
 \bibitem{Henkel:2008:DDA:1363102.1363105}
 J.~Henkel, C.~Reichenbach, and A.~Diwan.
 \newblock Developing and debugging algebraic specifications for java classes.
 \newblock {\em ACM Trans. Softw. Eng. Methodol.}, 17(3):14:1--14:37, 2008.
 
-\bibitem{SNLP}
+\bibitem{Klein03}
 D.~Klein and C.~D. Manning.
 \newblock Accurate unlexicalized parsing.
 \newblock In {\em Proc. 41st ACL}, pages 423--430, 2003.
-
-\bibitem{Klein03}
-D.~Klein and D.~Manning, Christopher.
-\newblock Accurate unlexicalized parsing.
-\newblock In {\em Proc. 41st Meeting of the Association for Computational
-  Linguistics}, pages 423 -- 430, 2003.
 
 \bibitem{KleinNIPS03}
 D.~Klein and D.~Manning, Christopher.
 \newblock Fast exact inference with a factored model for natural language
   parsing.
 \newblock In {\em Proc. 15th NIPS}, pages 3 -- 10, 2003.
+
+\bibitem{lee2012towards}
+C.~Lee, D.~Jin, P.~Meredith, and G.~Rosu.
+\newblock Towards categorizing and formalizing the {JDK API}.
+\newblock {\em Technical Report http://hdl.handle.net/2142/30006, Department of
+  Computer Science, University of Illinois at Urbana-Champaign}, 2012.
 
 \bibitem{LeeCoNLL11}
 H.~Lee, Y.~Peirsman, A.~Chang, N.~Chambers, M.~Surdeanu, and D.~Jurafsky.
@@ -135,20 +109,21 @@ G.~Little and R.~C. Miller.
 {Apache Lucene Core}.
 \newblock \url{http://lucene.apache.org/core/}.
 
-\bibitem{Mossienko2003ACJ}
-M.~Mossienko.
-\newblock Automated {C}obol to {J}ava recycling.
-\newblock In {\em Proc. 7th CSMR}, pages 40--, 2003.
-
 \bibitem{NimmerE02:ISSTA}
 J.~W. Nimmer and M.~D. Ernst.
 \newblock Automatic generation of program specifications.
 \newblock In {\em Proc. ISSTA}, pages 232--242, 2002.
 
+\bibitem{Novick2006WDP}
+D.~G. Novick and K.~Ward.
+\newblock Why don't people read the manual?
+\newblock In {\em Proc. 24th ACM}, pages 11--18, 2006.
+
 \bibitem{pandita13:WHYPER}
 R.~Pandita, X.~Xiao, W.~Yang, W.~Enck, and T.~Xie.
-\newblock {WHYPER:} towards automating risk assessment of mobile applications.
-\newblock In {\em Proc. 22nd USENIX Security Symposium}, 2012.
+\newblock Whyper: towards automating risk assessment of mobile applications.
+\newblock In {\em Proc. 22nd USENIX conference on Security}, pages 527--542,
+  2013.
 
 \bibitem{pandita12:inferring}
 R.~Pandita, X.~Xiao, H.~Zhong, T.~Xie, S.~Oney, and A.~Paradkar.
@@ -168,10 +143,16 @@ K.~Raghunathan, H.~Lee, S.~Rangarajan, N.~Chambers, M.~Surdeanu, D.~Jurafsky,
 \newblock A multi-pass sieve for coreference resolution.
 \newblock In {\em Proc. EMNLP}, 2010.
 
-\bibitem{RobillardIEEEtranSE13}
-M.~P. Robillard, E.~Bodden, D.~Kawrykow, M.~Mezini, and T.~Ratchford.
-\newblock Automated {API} property inference techniques.
-\newblock {\em IEEE Trans. on Software Engineering}, 39(5):613--637, 2013.
+\bibitem{robillard1986schematic}
+P.~Robillard.
+\newblock Schematic pseudocode for program constructs and its computer
+  automation by schemacode.
+\newblock {\em Communications of the ACM}, 29(11):1072--1089, 1986.
+
+\bibitem{RubingerWEB10}
+B.~Rubinger and T.~Bultan.
+\newblock Contracting the {F}acebook {API}.
+\newblock In {\em 4th AV-WEB}, pages 61--72, 2010.
 
 \bibitem{Sinha2009}
 A.~Sinha, A.~M. Paradkar, P.~Kumanan, and B.~Boguraev.
@@ -185,73 +166,96 @@ A.~Sinha, S.~M. Sutton{Jr.}, and A.~Paradkar.
 \newblock Text2test: Automated inspection of natural language use cases.
 \newblock In {\em Proc. ICST}, pages 155--164, 2010.
 
+\bibitem{johnSlankasPASSAT13}
+J.~Slankas and L.~Williams.
+\newblock Access control policy extraction from unconstrained natural language
+  text.
+\newblock In {\em Proc. PASSAT}, 2013.
+
 \bibitem{SNLP1}
 {The Stanford Natural Language Processing Group}, 1999.
 \newblock \url{http://nlp.stanford.edu/}.
 
-\bibitem{Stickel97}
-M.~Stickel and M.~Tyson.
-\newblock {\em FASTUS: A Cascaded Finite-state Transducer for Extracting
-  Information from Natural-language Text.}
-\newblock MIT Press, 1997.
+\bibitem{sridhara2011ICPC}
+G.~Sridhara, L.~Pollock, and K.~Vijay-Shanker.
+\newblock Generating parameter comments and integrating with method summaries.
+\newblock In {\em Proc. of 19th ICPC}, pages 71--80, 2011.
 
 \bibitem{TanSOSP07}
 L.~Tan, D.~Yuan, G.~Krishna, and Y.~Zhou.
 \newblock /*icomment: bugs or bad comments?*/.
 \newblock In {\em 21st SOSP}, pages 145--158, 2007.
 
+\bibitem{tan2011acomment}
+L.~Tan, Y.~Zhou, and Y.~Padioleau.
+\newblock a{C}omment: mining annotations from comments and code to detect
+  interrupt related concurrency bugs.
+\newblock In {\em Proc. 33rd ICSE}, pages 11--20, 2012.
+
+\bibitem{tcomment}
+S.~H. Tan, D.~Marinov, L.~Tan, and G.~T. Leavens.
+\newblock {@tComment}: {T}esting javadoc comments to detect comment-code
+  inconsistencies.
+\newblock In {\em Proc. 5th ICST}, April 2012.
+
+\bibitem{thummalapentaICSE12}
+S.~Thummalapenta, S.~Sinha, N.~Singhania, and S.~Chandra.
+\newblock Automating test automation.
+\newblock In {\em Proc. 34th ICSE}, pages 881--891, 2012.
+
+\bibitem{thummalapenta07parseweb}
+S.~Thummalapenta and T.~Xie.
+\newblock {PARSEWeb}: A programmer assistant for reusing open source code on
+  the web.
+\newblock In {\em Proc. 22nd ASE}, pages 204--213, 2007.
+
 \bibitem{Tillmann:2006:DLM:2105385.2105433}
 N.~Tillmann, F.~Chen, and W.~Schulte.
 \newblock Discovering likely method specifications.
 \newblock In {\em Proc. 8th ICFEM}, pages 717--736, 2006.
 
-\bibitem{vanDeursen1999ICSE}
-A.~van Deursen and T.~Kuipers.
-\newblock Identifying objects using cluster and concept analysis.
-\newblock In {\em Proc. 21st ICSE}, pages 246--255, 1999.
-
-\bibitem{WatersIEEEtranSE88}
-R.~C. Waters.
-\newblock Program translation via abstraction and reimplementation.
-\newblock {\em IEEE Trans. on Software Engineering}, 14(8):1207–--1228, 1988.
+\bibitem{Wang:2013:MSR}
+J.~Wang, Y.~Dang, H.~Zhang, K.~Chen, T.~Xie, and D.~Zhang.
+\newblock Mining succinct and high-coverage {API} usage patterns from source
+  code.
+\newblock In {\em Proc. 10th Working Conference on MSR}, pages 319--328, 2013.
 
 \bibitem{WeiICSE11}
 Y.~Wei, C.~A. Furia, N.~Kazmin, and B.~Meyer.
 \newblock Inferring better contracts.
 \newblock In {\em Proc. 33rd ICSE}, pages 474--484, 2011.
 
+\bibitem{wu2013inferring}
+Q.~Wu, L.~Wu, G.~Liang, Q.~Wang, T.~Xie, and H.~Mei.
+\newblock Inferring dependency constraints on parameters for web services.
+\newblock In {\em Proc. 22nd WWW}, pages 1421--1432, 2013.
+
 \bibitem{XiaoFSE2012}
 X.~Xiao, A.~Paradkar, S.~Thummalapenta, and T.~Xie.
 \newblock Automated extraction of security policies from natural-language
   software documents.
-\newblock In {\em Proc. 20th FSE}, 2012.
+\newblock In {\em Proc. 20th FSE}, pages 12:1--12:11, 2012.
 
-\bibitem{xiao11:improving}
-X.~Xiao, A.~Paradkar, S.~Thummalapenta, and T.~Xie.
-\newblock Automated extraction of security policies from natural-language
-  software documents.
-\newblock In {\em Proc. 20th ACM SIGSOFT FSE}, pages 12:1--12:11, 2012.
+\bibitem{zhang2011automated}
+S.~Zhang, C.~Zhang, and M.~D. Ernst.
+\newblock Automated documentation inference to explain failed tests.
+\newblock In {\em Proc. 26th ASE}, pages 63--72, 2011.
 
-\bibitem{Zheng2011FSE}
-W.~Zheng, Q.~Zhang, and M.~Lyu.
-\newblock Cross-library {API} recommendation using web search engines.
-\newblock In {\em Proc. 13th ESEC/FSE}, pages 480--483, 2011.
-
-\bibitem{Zhong2010ICSE}
-H.~Zhong, S.~Thummalapenta, T.~Xie, L.~Zhang, and Q.~Wang.
-\newblock Mining {API} mapping for language migration.
-\newblock In {\em Proc. 32nd ICSE}, pages 195--204, 2010.
+\bibitem{Zhong:2009:MMR}
+H.~Zhong, T.~Xie, L.~Zhang, J.~Pei, and H.~Mei.
+\newblock Mapo: Mining and recommending {API} usage patterns.
+\newblock In {\em Pro. 23rd ECOOP}, pages 318--343, 2009.
 
 \bibitem{zhong09SE}
 H.~Zhong, L.~Zhang, T.~Xie, and H.~Mei.
-\newblock Inferring resource specifications from natural language api
+\newblock Inferring resource specifications from natural language {API}
   documentation.
 \newblock In {\em Proc. 24th ASE}, pages 307--318, 2009.
 
 \bibitem{Zhou2008}
 H.~Zhou, F.~Chen, and H.~Yang.
-\newblock Developing application specific ontology for program comprehension by
-  combining domain ontology with code ontology.
+\newblock Developing {A}pplication {S}pecific {O}ntology for {P}rogram
+  {C}omprehension by {C}ombining {D}omain {O}ntology with {C}ode {O}ntology.
 \newblock In {\em Proc. 8th QSIC}, pages 225 --234, 2008.
 
 \end{thebibliography}

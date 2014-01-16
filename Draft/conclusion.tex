@@ -1,8 +1,12 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-
-%API documents provide specification information about how to use a particular method within a class by means of method descriptions. However, specifications described in natural Language in API documents are not amenable to formal verification by existing verification tools. 
-
-%Specifications described in natural language in API documents are not amenable to formal verification by existing verification tools. In this paper, we have presented a novel approach for inferring formal specifications from API documents targeted towards code contract generation. Our evaluation results show that our approach has an average of 92\% precision and 93\% recall in identifying sentences describing code contracts from over 2500 sentences. Furthermore, our results also show that our approach has an average of 83.4\% accuracy in inferring specifications from sentences describing code contracts out of over 1600 sentences. 
-
+Although highly desirable, most API's do not have formal specifications.
+In contrast documentation of methods contain detailed specifications of the usage in natural language text.
+However, formal analysis tools are not designed to work on specifications in natural languages.
+Manually writing formal specifications based on natural language text in API documents is prohibitively time consuming and error prone.
+To address this issue, we proposed a novel approach \tool\ to infer temporal constraints from natural language text of API documents.
+We applied \tool\ to infer temporal constraints from 
+commonly used package \CodeIn{java.io} from JDK API and Amazon S3 REST API.
+Our evaluation results show that \tool\ achieves an average of PP\% precision and RR\% recall
+in inferring TT temporal constraints from more than ZZZZ sentences of API documents.

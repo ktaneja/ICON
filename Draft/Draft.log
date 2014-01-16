@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=latex 2013.5.20)  31 JUL 2013 16:48
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2013.1.23)  15 JAN 2014 13:02
 entering extended mode
 **Draft.tex
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\Draft.tex"
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\Draft.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,7 +13,7 @@ german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\IEEEtran.cls"
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\IEEEtran.cls"
 Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -97,41 +97,41 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \@IEEEtmpitemindent=\dimen116
 \c@IEEEbiography=\count90
 \@IEEEtranrubishbin=\box26
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
-Package: amsmath 2013/01/14 v2.14 AMS math features
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
 \ex@=\dimen117
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen118
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count91
-LaTeX Info: Redefining \frac on input line 210.
+LaTeX Info: Redefining \frac on input line 211.
 \uproot@=\count92
 \leftroot@=\count93
-LaTeX Info: Redefining \overline on input line 306.
+LaTeX Info: Redefining \overline on input line 307.
 \classnum@=\count94
 \DOTSCASE@=\count95
-LaTeX Info: Redefining \ldots on input line 378.
-LaTeX Info: Redefining \dots on input line 381.
-LaTeX Info: Redefining \cdots on input line 466.
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
 \Mathstrutbox@=\box27
 \strutbox@=\box28
 \big@size=\dimen119
-LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \macc@depth=\count96
 \c@MaxMatrixCols=\count97
 \dotsspace@=\muskip10
@@ -152,8 +152,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \multlinegap=\skip45
 \multlinetaggap=\skip46
 \mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2665.
-LaTeX Info: Redefining \] on input line 2666.
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
 \Urlmuskip=\muskip11
@@ -186,7 +186,7 @@ File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\alltt.sty"
 Package: alltt 1997/06/16 v2.0g defines alltt environment
 )
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\algorithm.sty"
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\algorithm.sty"
 Package: algorithm 
 
 Document Style `algorithm' - floating environment
@@ -204,7 +204,7 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 \@float@every@algorithm=\toks23
 \c@algorithm=\count104
 )
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\algorithmic.sty"
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\algorithmic.sty"
 Package: algorithmic 2006/06/02
 
 Document Style `algorithmic' - environment
@@ -227,13 +227,12 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \ALC@tlm=\skip50
 \algorithmicindent=\skip51
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\cite\cite.sty"
+(C:\Users\rpandit\AppData\Roaming\MiKTeX\2.9\tex\latex\cite\cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\sttools\flushend.sty"
-Package: flushend 2012/05/29 v1.1 Balancing columns at last page
+(C:\Users\rpandit\AppData\Roaming\MiKTeX\2.9\tex\latex\sttools\flushend.sty
 Package: flushend 1997/10/01
 \@aaa=\box31
 \@ccc=\box32
@@ -243,12 +242,12 @@ Package: flushend 1997/10/01
 \@extra@skip=\dimen130
 \@nd@page@rule=\dimen131
 )
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\macros.tex"
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\macros.tex"
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\times.sty"
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\epsf\epsf.sty"
-This is `epsf.tex' v2.7.4 <14 February 2011>
+(C:\Users\rpandit\AppData\Roaming\MiKTeX\2.9\tex\latex\epsf\epsf.sty
+This is `epsf.tex' v2.7.3 <23 July 2005>
 \epsffilein=\read1
 \epsfframemargin=\dimen132
 \epsfframethickness=\dimen133
@@ -264,7 +263,7 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks26
 \verbatim@in@stream=\read2
 )
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\psfig.sty"
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\psfig.sty"
 \@unused=\write3
 \ps@stream=\read3
 \p@intvaluex=\dimen140
@@ -302,7 +301,7 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\slashbox.sty"
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\slashbox.sty"
 slashbox style by K.Yasuoka, May 1993.
 \@slashboxa=\box39
 \@slashboxb=\box40
@@ -314,8 +313,8 @@ slashbox style by K.Yasuoka, May 1993.
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen145
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
-Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+(C:\Users\rpandit\AppData\Roaming\MiKTeX\2.9\tex\latex\colortbl\colortbl.sty
+Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
@@ -332,106 +331,122 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup4
 ))
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\Draft.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 369.
-LaTeX Font Info:    ... okay on input line 369.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 369.
-LaTeX Font Info:    ... okay on input line 369.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 369.
-LaTeX Font Info:    ... okay on input line 369.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 369.
-LaTeX Font Info:    ... okay on input line 369.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 369.
-LaTeX Font Info:    ... okay on input line 369.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 369.
-LaTeX Font Info:    ... okay on input line 369.
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\Draft.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 370.
+LaTeX Font Info:    ... okay on input line 370.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 370.
+LaTeX Font Info:    ... okay on input line 370.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 370.
+LaTeX Font Info:    ... okay on input line 370.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 370.
+LaTeX Font Info:    ... okay on input line 370.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 370.
+LaTeX Font Info:    ... okay on input line 370.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 370.
+LaTeX Font Info:    ... okay on input line 370.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 407.
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 407.
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 407.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 413.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 413.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 413.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 407.
-
-
-LaTeX Warning: No \author given.
-
-
-LaTeX Warning: No \author given.
-
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\abstract.tex")
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\introduction.tex")
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\background.tex")
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\example.tex"
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 14.
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\abstract.tex"
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 12.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <9> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 12.
+)
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\introduction.tex" [1
+
+
+])
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\example.tex"
 File: Stackoverflow.eps Graphic file (type eps)
- <Stackoverflow.eps>
+
+<Stackoverflow.eps>
 File: AmzonS3DeleteBucketAPI.eps Graphic file (type eps)
-
-<AmzonS3DeleteBucketAPI.eps>)
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\approach.tex"
-File: approach.eps Graphic file (type eps)
-
-<approach.eps> [1
-
-
-]
-Underfull \vbox (badness 4819) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 38--38
-[][][]$\OT1/ptm/m/n/8 http : / / oxforddictionaries . com / us / denition / am
-erican[]english / post ? q =
+ <AmzonS3DeleteBucketAPI.eps> [2]
+File: Example2.eps Graphic file (type eps)
+ <Example2.eps>)
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\related.tex" [3])
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\background.tex"
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+[][][][]$\OT1/ptm/m/n/8 http : / / oxforddictionaries . com / us / denition / 
+american[]english / post ? q =
  []
 
-[2]
+[4]
+Underfull \hbox (badness 2671) in paragraph at lines 75--80
+[][]\OT1/ptm/b/n/10 Intermediate-Representation Gen-er-a-tion \OT1/ptm/m/n/10 [
+24]. This
+ []
 
-LaTeX Warning: Command \textregistered invalid in math mode on input line 58.
+) ("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\approach.tex"
+File: approach.eps Graphic file (type eps)
+ <approach.eps>
+Underfull \vbox (badness 7685) has occurred while \output is active []
+
+ [5]
+
+LaTeX Warning: Command \textregistered invalid in math mode on input line 67.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 58.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 67.
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 58.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 67.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 58.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 67.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 58.
-
-[3]
-Underfull \hbox (badness 7576) in paragraph at lines 94--95
-\OT1/ptm/m/n/10 representation is an ex-ten-sion of the intermediate-
- []
+LaTeX Warning: Command \textcircled invalid in math mode on input line 67.
 
 
-Underfull \hbox (badness 7558) in paragraph at lines 123--123
+LaTeX Warning: Citation `SNLP' on page 6 undefined on input line 77.
+
+
+LaTeX Warning: Citation `SNLP' on page 6 undefined on input line 113.
+
+[6]
+Underfull \hbox (badness 7558) in paragraph at lines 179--179
 []|[]\OT1/ptm/m/n/8 A noun phrase fol-lowed by an-other
  []
 
-) ("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\evaluation.tex"
+File: KnowledgeGraph.eps Graphic file (type eps)
+<KnowledgeGraph.eps>
+Underfull \hbox (badness 1688) in paragraph at lines 209--210
+\OT1/ptm/m/n/10 scrib-ing a pos-si-ble ac-tion on the ob-ject), we ex-tract
+ []
+
+
+Underfull \hbox (badness 1953) in paragraph at lines 209--210
+\OT1/ptm/m/n/10 verb phrases. The verb phrases are used as the as-
+ []
+
+
+Overfull \hbox (5.82335pt too wide) in paragraph at lines 229--230
+[] [][]$\OML/cmm/m/it/7 action  \OT1/cmr/m/n/7 =  \OML/cmm/m/it/7 actionList:ma
+tching\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 r[]:leftSibling:predicate\OT1/cmr/m/n/7 )
+$ 
+ []
+
+) ("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\evaluation.tex" [7]
 Underfull \hbox (badness 1490) in paragraph at lines 22--23
 [][]\OT1/pcr/m/n/9 Amazon S3 REST API \OT1/ptm/m/n/10 de-vel-oper doc-u-men-ta-
 tion pro-
  []
 
-) ("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\discussion.tex")
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\related.tex" [4])
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\conclusion.tex")
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\Draft.bbl" [5]
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
- [6])
+) ("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\discussion.tex")
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\conclusion.tex") [8]
+("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\Draft.bbl" [9])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -443,41 +458,27 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-
-Underfull \vbox (badness 1158) has occurred while \output is active []
-
-Extra height:12.0pt when 168.97421pt
-
-Underfull \vbox (badness 1371) has occurred while \output is active []
-
-Extra height:0.0pt when 169.97421pt
-
-Underfull \vbox (badness 1371) has occurred while \output is active []
-
-(2)Left:169.97421pt Right:177.94843pt Output:169.97421pt
-
-Underfull \vbox (badness 4132) has occurred while \output is active []
-
-(2)Left:177.94843pt Right:177.94843pt Output:177.94843pt
+Extra height:0.0pt when 348.97421pt
+(2)Left:348.97421pt Right:347.94843pt Output:348.97421pt
 - LAST -
 Extra skip:0.0pt
-Left:177.94843pt
-Right:177.94843pt
-Output:177.94843pt
+Left:348.97421pt
+Right:347.94843pt
+Output:348.97421pt
+[10
 
-Underfull \vbox (badness 4132) has occurred while \output is active []
+] ("C:\Users\rpandit\Dropbox\my docs\Draft\Draft\Draft.aux")
 
- [7
+LaTeX Warning: There were undefined references.
 
-]
-("C:\Users\rahul_pandita\Dropbox\my docs\Draft\Draft\Draft.aux") ) 
+ ) 
 Here is how much of TeX's memory you used:
- 3364 strings out of 493922
- 48400 string characters out of 3147281
- 110746 words of memory out of 3000000
- 6566 multiletter control sequences out of 15000+200000
- 35947 words of font info for 89 fonts, out of 3000000 for 9000
+ 3379 strings out of 493922
+ 48480 string characters out of 3147299
+ 119252 words of memory out of 3000000
+ 6580 multiletter control sequences out of 15000+200000
+ 34645 words of font info for 84 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
- 36i,11n,21p,1103b,379s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,15n,24p,1237b,720s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (7 pages, 56348 bytes).
+Output written on Draft.dvi (10 pages, 89028 bytes).
