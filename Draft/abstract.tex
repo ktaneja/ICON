@@ -1,28 +1,24 @@
 \begin{abstract}
-Formal specifications of an Application Programming Interface (API) usage are highly desirable,
-because they are the precursor to the formal analysis tools such as model checkers and runtime verifiers.
-However, most API's do not have formal specifications.
-In contrast documentation of methods contain detailed specifications of the usage in natural language text.
+Formal specifications of using a libraries Application Programming Interface (API)
+can be used in conjunction with formal analysis tools such as
+model checkers and runtime verifiers to assess the quality of a software.
+Despite being highly desirable, most API's do not have formal specifications.
+In contrast, API documents contain valuable information about the usage in natural language.
 However, formal analysis tools are not designed to work on specifications in natural languages.
-Manually writing formal specifications based on natural language text in API documents can be prohibitively time consuming and error prone.
-To address this issue, we propose a natural language processing based novel approach \tool\ to precisely infer constraints from natural language text of API documents.
+Manually writing formal specifications based on natural language text in API documents
+can be prohibitively time consuming and error prone.
+To address this issue, we propose a natural language processing based automated approach \tool ,
+to infer formal specifications from natural language text of API documents.
 In particular, we focus on temporal constraints, that are defined as constraints on the
 \textit{allowed sequence of invocations of methods within an API}.
 To evaluate our proposed approach, we applied \tool\ to infer temporal constraints from 
 commonly used package \CodeIn{java.io} from JDK API and Amazon S3 REST API.
 Our evaluation results show that \tool\ achieves an average of PP\% precision and RR\% recall
-in inferring TT temporal constraints from more than ZZZZ sentences of API sentences. 
+in inferring TT temporal constraints from more than ZZZZ sentences of API documents. 
 
 
-%IS the approach automated
-%precursor too strong word
 % need to explain why moving from formal specifications to temporal constraints
 
-
 % Goal statement
-% The goal of this research is to facilitate the correct usage API methods by identifying temporal constraints etc..
-% Is the approach automated ? Make a line about how you gonna
-% conclusion of numbers 
-% make it consistent APi documents, descriptions and sentences 
- 
+% The goal of this research is to facilitate the correct usage API methods by identifying temporal constraints etc.. 
 \end{abstract}
