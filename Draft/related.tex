@@ -1,46 +1,52 @@
 \section{Related work}
 \label{sec:related}
 
-// "In contrast" switch up the wording a little bit 
+% "In contrast" switch up the wording a little bit 
 
-Our proposed approach touches a few research areas such as software verification,  NLP on software engineering artifacts, and document augmentation. We next discuss relevant work pertinent to our proposed approach in these areas.
+Our proposed approach touches a few research areas such as software verification,
+NLP on software engineering artifacts, and document augmentation.
+We next discuss the relevant work pertinent to our proposed approach in these areas.
 
-\textbf{Code Contracts - Formal Specifications}
-// Define temporal constraints distinction
-Design by contracts has been an influential concept in the area of software engineering in the past decade. A significant amount of work has been done in automated inference of code contracts. There are existing approaches that statically or dynamically extract code contracts~\cite{csallner08dysy,NimmerE02:ISSTA,Tillmann:2006:DLM:2105385.2105433}. However, a combination of developer written and automatically inferred contracts seems to be the most effective approach~\cite{Polikarpova2009ISSTA,Flanagan:2001:HAA:647540.730008}. Furthermore, there are existing approaches that infer code-contract-like specifications (such as behavioral model, algebraic specifications, and exception specifications) either dynamically\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105} or statically~\cite{Flanagan:2001:HAA:647540.730008,Buse:2008:ADI:1390630.1390664} from source code and binaries. In contrast, the approach presented in this work infers specifications from the natural language text in API documents, thus complementing these existing approaches when the source code or binaries of the API library is not available.
+\subsection{Code Contracts - Formal Specifications}
+% Define temporal constraints distinction
+Design by contracts has been an influential concept in the area of software engineering in the past decade.
+A significant amount of work has been done in automated inference of code contracts.
+There are existing approaches that statically or dynamically extract code contracts~\cite{csallner08dysy,NimmerE02:ISSTA,Tillmann:2006:DLM:2105385.2105433}. However, a combination of developer written and automatically inferred contracts seems to be the most effective approach~\cite{Polikarpova2009ISSTA,Flanagan:2001:HAA:647540.730008}.
+Furthermore, there are existing approaches that infer code-contract-like specifications
+(such as behavioral model, algebraic specifications, and exception specifications) either dynamically\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105} or statically~\cite{Flanagan:2001:HAA:647540.730008,Buse:2008:ADI:1390630.1390664} from source code and binaries.
+In contrast, the approach presented in this work infers specifications from the natural language text in API documents,
+thus complementing these existing approaches when the source code or binaries of the API library is not available.
 
 
-\textbf{NLP in Software Engineering}
+\subsection{NLP in Software Engineering}
 
-NLP techniques are increasingly applied in the software engineering domain. NLP techniques have been shown to be useful in requirements engineering ~\cite{Sinha2009,Sinha2010,Gervasi2005}, usability of API documents~\cite{Dekel2009}, and other areas~\cite{Zhou2008,Little2009,pandita13:WHYPER}. We next describe the most relevant approaches.
+NLP techniques are increasingly applied in the software engineering domain. 
+NLP techniques have been shown to be useful in requirements engineering ~\cite{Sinha2009,Sinha2010,Gervasi2005},
+usability of API documents~\cite{Dekel2009}, and other areas~\cite{Zhou2008,Little2009,pandita13:WHYPER}.
+We next describe the most relevant approaches.
 
 
-\textit{1. Access Control Policies}: Xiao et al.~\cite{XiaoFSE2012} and Slankas et al.~\cite{johnSlankasPASSAT13} use shallow parsing techniques to infer Access Control Policy (ACP) rules from natural language text in use cases. The use of shallow parsing techniques works well on natural language texts in use cases, owing to well formed structure of sentences in use case descriptions. In contrast, often the sentences in API documents are not well formed. Additionally, these approaches do not deal with programming keywords or identifiers, which are often mixed within the method descriptions in API documents.
+\textit{1. Access Control Policies}: Xiao et al.~\cite{XiaoFSE2012} and Slankas et al.~\cite{johnSlankasPASSAT13} use shallow parsing techniques to infer Access Control Policy (ACP) rules from natural language text in use cases.
+The use of shallow parsing techniques works well on natural language texts in use cases, owing to well formed structure of sentences in use case descriptions.
+In contrast, often the sentences in API documents are not well formed.
+Additionally, these approaches do not deal with programming keywords or identifiers, which are often mixed within the method descriptions in API documents.
 
-\textit{2. Resource Specifications}: Zhong et al.~\cite{zhong09SE} employ NLP and  Machine Learning (ML) techniques to infer resource specifications from API documents. Their approach uses machine learning to automatically classify such rules. In contrast, we attempt to parse sentences based on semantic templates and demonstrate that such an approach preforms reasonably well. Furthermore, the performance of the approach is dependent on the quality of the training sets used for ML. In contrast, approach presented in this work is independent of such training set and thus can be easily extended to target respective problems addressed by these approaches.
+\textit{2. Resource Specifications}: Zhong et al.~\cite{zhong09SE} employ NLP and  Machine Learning (ML) techniques to infer resource specifications from API documents.
+Their approach uses machine learning to automatically classify such rules.
+In contrast, we attempt to parse sentences based on semantic templates and demonstrate that such an approach preforms reasonably well.
+Furthermore, the performance of the proposed approach is dependent on the quality of the training sets used for ML.
+In contrast, approach presented in this work is independent of such training set and thus can be easily extended to target respective problems addressed by them.
 	
 \textit{3. Code Comments}: Tan et al.~\cite{TanSOSP07} and Hwei-Tan et al.~\cite{tcomment} applied an NLP and ML  based approach on code comments/ Javadoc comments to detect mismatches between these comments and implementations. They rely on predefined rule templates targeted towards method invocation and lock related comments, thus limiting their scope both in terms of application area as well as language used in the comments. In contrast, approach presented in this report relies on generic natural language based templates thus relaxing the restriction on the style of the language used to describe specifications.
 	
 \textit{4. API Description}: Most closely related work to the approach presented here is Pandita et al.~\cite{pandita12:inferring} work on inferring parameter constraints from method descriptions in the API documents. In contrast this approach deals with the temporal constraints. The approach presented here is a significant extension to the infrastructure used in the previous work as documented in Section~\ref{sec:approach}.
 
 
-\textbf{Augmented Documentation}
+\subsection{Augmented Documentation}
 
-Another related field has been that of improving the documentation related to an software API~\cite{Dekel2009,tan2011acomment}. We next describe most relevant approaches. Dekel et al.~\cite{Dekel2009}, were the first to create a tool namely eMoose, an Eclipse~\footnote{\url{http://www.eclipse.org/}} based plug-in that allowed developers to create directives( way of marking the specification sentences) in the default documentation. These directives are highlighted whenever they are displayed in the eclipse environment. Lee et al.~\cite{lee2012towards} improved upon their work by providing a formalism to the directives proposed by Dekel et al.~\cite{Dekel2009}, thus allowing tool based verification. However, a developer has to manually annotate such directives. In contrast, our proposed approach both identifies the sentences pertaining to temporal constraints and infers the temporal constraints automatically. 
+Another related field has been that of improving the documentation related to an software API~\cite{Dekel2009,tan2011acomment}. We next describe most relevant approaches. Dekel et al.~\cite{Dekel2009}, were the first to create a tool namely eMoose, an Eclipse~\footnote{\url{http://www.eclipse.org/}} based plug-in that allowed developers to create directives (way of marking the specification sentences) in the default API documentation. These directives are highlighted whenever they are displayed in the eclipse environment. Lee et al.~\cite{lee2012towards} improved upon their work by providing a formalism to the directives proposed by Dekel et al.~\cite{Dekel2009}, thus allowing tool based verification. However, a developer has to manually annotate such directives. In contrast, our proposed approach both identifies the sentences pertaining to temporal constraints and infers the temporal constraints automatically. 
 
 In next section, we briefly introduce the NLP techniques used by our approach.
-
-%\textbf{Program Comprehension}
-%
-%With respect to program comprehension there are existing techniques that assist in building domain specific ontologies~\cite{Zhou2008}. Furthermore, there are existing approaches~\cite{sridhara2011ICPC,robillard1986schematic} that automatically infer natural language documentation from source code. These approaches would immensely help in comprehension of the functionality of an application. However inherent dependency on source code to generate such documents poses a problem in cases, where source code is not available. We next describe some of these approaches 
-%
-%\begin{itemize}
-% \item Sridhara et al.~\cite{sridhara2011ICPC} use data-flow analysis on the method variables to determine the set of statements that represent the computational intent of the method. The data flow analysis is then used to determine the relation of these statements to the method parameters. These realtions are then thn used to generate the natural language parameter documentation using predefined templates.
-%
-% \item Zhang et al.~\cite{zhang2011automated} present an approach to generate the explanatory document in the form of code comments explaining the failure of the test case. They first instrument the failing test case. They then use statistical algorithm on the different execution traces of the failing test case to determine a relatively small subset of the suspicious statements along with the objects that need correction for successful execution of test case. Finally, the identified objects that need correction for successful execution of the test case are used to generate the explanatory comments using predefined templates on the generalized properties of the object. For instance, \CodeIn{x == null} becomes \textit{x is set to:null}.
-%
-% \item Buse et al.~\cite{Buse:2008:ADI:1390630.1390664} use source mining source code repositories to generate usage patterns of an API. They argue that availability of actual usable code examples serves as a better documentation assisting developers in understating the usage of API. They propose the clustering of the uses of an API in the open source repositories based on path information. They then propose type abstraction on the clusters to come up with a usage document. 
-%\end{itemize}
 
 
 

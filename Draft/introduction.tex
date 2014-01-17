@@ -27,17 +27,14 @@ to automatically reason about the quality of the software.
 %Formal specifications of an Application Programming Interface (API) usage are highly desirable.
 %because they are the precursor to the formal analysis tools such as model checkers and runtime verifiers.
 
-However, most API's do not have formal specifications.
+Despite being desirable, most API's do not have formal specifications.
 In contrast, API developers commonly describe correct usage in natural language text in API documents.
 Typically, such documents are provided to client-code developers through online access, or are shipped with the API code.
 For example, J2EE's API documentation\footnote{\url{http:\\download.oracle.com/javaee/1.7/api/}} is one of the popular API documents.
 Typically, an API document will describe the both the constraints on that method parameters as well as the constraints in terms of the methods the must be invoked pre/post the current method.
 However, formal analysis tools are not designed to work on specifications written in natural languages.
 
-%May be strike out the first sentence 
-%May be strike out the term prohibitevely
-
-A na{\"i}ve solution to address the issue, is to manually convert the natural language API description into formal specifications. 
+One way of addressing the issue, is to manually convert the natural language API description into formal specifications. 
 However, manually writing formal specifications based on natural language text in API documents can be prohibitively time consuming and error prone~\cite{wu2013inferring,RubingerWEB10}. 
 For instance, Wu et al.~\cite{wu2013inferring} report that it took one of the authors more than 10 hours to browse the documentation of one method of a web Service API, even before they attempted to formalize the constraints on the method.
 
@@ -86,21 +83,6 @@ In this sentence, phrases ``multipart upload'' and ``upload any part'' refer to 
 Identifying these phrases as method invocation instances require domain dictionaries.
 Ad-hoc constructing these dictionaries is prohibitively time and resources intensive.
 To address this challenge we propose to build domain-dictionaries systematically from API documents themselves.  
-
-
-
-
-
-
-%Furthermore, I propose to evaluate the effectiveness of proposed work on real world API's: 1) Java 7 and 2) Amazon S3 REST API. The former is generic language API, while the later is a web based API directed towards cloud-based data storage. The temporal constraints inferred for Java 7 will be compared with the existing approaches to evaluate the effectiveness of proposed work. In contrast, Amazon S3 REST API (relatively recent) representative of the class of API's where neither source code of API nor enough usage examples are available. 
-
-
-%To evaluate our proposed approach, we applied \tool\ to infer temporal constraints from 
-%commonly used package \CodeIn{java.io} from JDK API and Amazon S3 REST API.
-%Our evaluation results show that \tool\ achieves an average of PP\% precision and RR\% recall
-%in inferring TT temporal constraints from more than ZZZZ sentences of API documents.
-
-%Software reuse is commonly practiced since the advent of software development~\cite{FrakesIEEETran05}. Software reuse facilitates development of larger, more complex, and timely-delivered software systems~\cite{GaffneySE92}. To determine what and how to reuse, specifications of reusable software libraries play an important role. In the absence of specifications, developers may write code that is inconsistent with the expectations of libraries. As a result, not only such code is of inferior quality and contains faults, the added cost of debugging and correcting such faulty code could also defeat the purpose of reusing software.
 
 % talk about mining approaches 
 In summary, the proposed work leverages natural language description of API's to infer temporal constraints of method invocations.
