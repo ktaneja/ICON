@@ -51,12 +51,6 @@ C.~Flanagan and K.~R.~M. Leino.
 \newblock Houdini, an annotation assistant for esc/java.
 \newblock In {\em Proc. 10th FME}, pages 500--517, 2001.
 
-\bibitem{FrakesIEEETran05}
-W.~Frakes and K.~Kang.
-\newblock Software reuse research: status and future.
-\newblock {\em IEEE Transactions on Software Engineering}, 31(7):529 -- 536,
-  2005.
-
 \bibitem{Gervasi2005}
 V.~Gervasi and D.~Zowghi.
 \newblock Reasoning about inconsistencies in natural language requirements.
@@ -143,12 +137,6 @@ K.~Raghunathan, H.~Lee, S.~Rangarajan, N.~Chambers, M.~Surdeanu, D.~Jurafsky,
 \newblock A multi-pass sieve for coreference resolution.
 \newblock In {\em Proc. EMNLP}, 2010.
 
-\bibitem{robillard1986schematic}
-P.~Robillard.
-\newblock Schematic pseudocode for program constructs and its computer
-  automation by schemacode.
-\newblock {\em Communications of the ACM}, 29(11):1072--1089, 1986.
-
 \bibitem{RubingerWEB10}
 B.~Rubinger and T.~Bultan.
 \newblock Contracting the {F}acebook {API}.
@@ -175,11 +163,6 @@ J.~Slankas and L.~Williams.
 \bibitem{SNLP1}
 {The Stanford Natural Language Processing Group}, 1999.
 \newblock \url{http://nlp.stanford.edu/}.
-
-\bibitem{sridhara2011ICPC}
-G.~Sridhara, L.~Pollock, and K.~Vijay-Shanker.
-\newblock Generating parameter comments and integrating with method summaries.
-\newblock In {\em Proc. of 19th ICPC}, pages 71--80, 2011.
 
 \bibitem{TanSOSP07}
 L.~Tan, D.~Yuan, G.~Krishna, and Y.~Zhou.
@@ -220,11 +203,6 @@ J.~Wang, Y.~Dang, H.~Zhang, K.~Chen, T.~Xie, and D.~Zhang.
   code.
 \newblock In {\em Proc. 10th Working Conference on MSR}, pages 319--328, 2013.
 
-\bibitem{WeiICSE11}
-Y.~Wei, C.~A. Furia, N.~Kazmin, and B.~Meyer.
-\newblock Inferring better contracts.
-\newblock In {\em Proc. 33rd ICSE}, pages 474--484, 2011.
-
 \bibitem{wu2013inferring}
 Q.~Wu, L.~Wu, G.~Liang, Q.~Wang, T.~Xie, and H.~Mei.
 \newblock Inferring dependency constraints on parameters for web services.
@@ -235,11 +213,6 @@ X.~Xiao, A.~Paradkar, S.~Thummalapenta, and T.~Xie.
 \newblock Automated extraction of security policies from natural-language
   software documents.
 \newblock In {\em Proc. 20th FSE}, pages 12:1--12:11, 2012.
-
-\bibitem{zhang2011automated}
-S.~Zhang, C.~Zhang, and M.~D. Ernst.
-\newblock Automated documentation inference to explain failed tests.
-\newblock In {\em Proc. 26th ASE}, pages 63--72, 2011.
 
 \bibitem{Zhong:2009:MMR}
 H.~Zhong, T.~Xie, L.~Zhang, J.~Pei, and H.~Mei.

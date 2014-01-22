@@ -13,35 +13,42 @@
 
 
 
+Temporal specifications~\cite{slam-2002} of an Application Programming Interface (API) 
+describe allowed sequences of invocations of methods within an API. 
+These specifications govern the secure and robust operation of client software 
+using these APIs.
+If these specifications are formal (machine-readable such as code-contracts),
+they can be used  as a basis of formal analysis tools such 
+as model checker and runtime verifiers
+in detecting the violations of these temporal constraints as defects.
 
 
 
-
-Specifications of using an Application Programming Interface (API) of a library play an important role in software reuse.
-In addition to guiding the development process by outlining what and how to reuse, 
-usage specifications also help in verification process by allowing quality assurance practitioners to test the expected outcome.
-Furthermore, if the specifications are formal (machine-readable such as code-contracts),
-they can be used in conjunction with the formal analysis tools such as model checkers and runtime verifiers
-to automatically reason about the quality of the software.
+%Specifications of using an Application Programming Interface (API) of a library play an important role in software reuse.
+%In addition to guiding the development process by outlining what and how to reuse, 
+%usage specifications also help in verification process by allowing quality assurance practitioners to test the expected outcome.
+%Furthermore, if the specifications are formal (machine-readable such as code-contracts),
+%they can be used in conjunction with the formal analysis tools such as model checkers and runtime verifiers
+%to automatically reason about the quality of software.
 
 %Formal specifications of an Application Programming Interface (API) usage are highly desirable.
 %because they are the precursor to the formal analysis tools such as model checkers and runtime verifiers.
 
 Despite being desirable, most API's do not have formal specifications.
-In contrast, API developers commonly describe correct usage in natural language text in API documents.
+In contrast, API developers commonly describe correct temporal usage in natural language text in API documents.
 Typically, such documents are provided to client-code developers through online access, or are shipped with the API code.
-For example, J2EE's API documentation\footnote{\url{http:\\download.oracle.com/javaee/1.7/api/}} is one of the popular API documents.
-Typically, an API document will describe the both the constraints on that method parameters as well as the constraints in terms of the methods the must be invoked pre/post the current method.
-However, formal analysis tools are not designed to work on specifications written in natural languages.
+%For example, J2EE's API documentation\footnote{\url{http:\\download.oracle.com/javaee/1.7/api/}} is one of the popular API documents.
+Typically, an API document describes both the constraints on that method parameters as well as the temporal constraints in terms of the methods must be invoked pre/post the current method.
+We observed that roughly 12\% of the sentences describing some sort of specification constraints in \amazonAPI\ documentations describe temporal constraints.
+Although API documents contain temporal constraints in natural language, formal analysis tools are not designed to work on specifications written in natural languages.
 
 One way of addressing the issue, is to manually convert the natural language API description into formal specifications. 
 However, manually writing formal specifications based on natural language text in API documents can be prohibitively time consuming and error prone~\cite{wu2013inferring,RubingerWEB10}. 
 For instance, Wu et al.~\cite{wu2013inferring} report that it took one of the authors more than 10 hours to browse the documentation of one method of a web Service API, even before they attempted to formalize the constraints on the method.
 
 %Strike out ``To address the aforementioned issue''
-To address the aforementioned issue, we propose a novel approach to infer usage constraints from natural language text of API documents.
-We propose new techniques that apply Natural Language Processing (NLP) on natural language text API documents to automatically infer usage constraints.
-In particular, we focus on specific type of constraints namely temporal constraints.
+We propose a novel approach to infer temporal usage constraints from natural language text of API documents. We propose new techniques that apply Natural Language Processing (NLP) on natural language text API documents to automatically infer temporal usage constraints. 
+%In particular, we focus on specific type of constraints namely temporal constraints.
 A generic temporal relation is defined as \textit{an interpropositional relation that communicates the simultaneity or ordering in time of events or states.}
 In terms of API method invocations, we interpret temporal relationships as \textit{`the allowed sequence of invocations of methods'}.
 For example, consider the following statement in \amazonAPI\ ``You must initiate a multipart upload before you can upload any part.''
@@ -50,31 +57,31 @@ This statement can be interpreted as multipart-upload method must be invoked bef
 %Move this paragraph to later sections or may be push later in intro
 % make example flow in next paragraph
 % Make consistent terminology approach or technique 
-Although, in typed languages some sequencing constraints are enforced by type system. 
-For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates that (at least one) method ($m'$) be invoked whose return value is of type ($t$).  
-However, most temporal constraints are not limited by the type definitions (i.e, requirements on the type of input parameters),
-and are currently expressed mostly in natural language in API documents, as described in the example previously.
-In a manual investigation, we observed that roughly 12\% of the sentences describing some sort of specification constraints in \amazonAPI\ documentations are temporal constraints related.
+
+
 %Background on out of how many sentences
 
 % Combine first two sentences
 % In contrast, temporal constraints are beyond these parameter constraints. may be use difficult to express using parameter constraints
 % Amazon S3 is popularly used web service for simple cloud based storage
-Most of the existing approaches focus in inferring method pre-post conditions~\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105,Flanagan:2001:HAA:647540.730008,Buse:2008:ADI:1390630.1390664} in terms of parameter constraints either using static or dynamic analysis techniques.
+Existing approaches focus in inferring method pre-post conditions~\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105,Flanagan:2001:HAA:647540.730008,Buse:2008:ADI:1390630.1390664} in terms of parameter constraints either using static or dynamic analysis techniques.
 Furthermore, there is a class of NLP based approaches~\cite{pandita12:inferring, wu2013inferring} that infer constraints from API documents.
 However, similar to static and dynamic analysis techniques these approaches focus on parameter constraints as well.  
 In contrast, temporal constraints are beyond these parameter constraints.
 Temporal constraints, in general focus on rules related to orchestration of methods within an API rather than focusing on the requirements on the input parameters of these methods.   
-In particular, our proposed techniques address the following challenges to infer temporal constraints automatically from natural language text.
 
+Although, in typed languages some sequencing constraints are enforced by type system. 
+For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates that (at least one) method ($m'$) be invoked whose return value is of type ($t$).  However, most temporal constraints are not limited by the type definitions (i.e, requirements on the type of input parameters), and are currently expressed mostly in natural language in API documents, as described in the example previously.
 
+Our proposed techniques address the following challenges to infer temporal constraints automatically from natural language text.
 First, relying just on type information will result in a incomplete list of temporal constraints. 
 Furthermore, such constraints although valuable but are already checked by any advanced Integrated Development Environment(IDE) such as eclipse
 for a strongly typed language.
 The problem is exacerbated in web based API's such as \amazonAPI\ where most of the types are either \CodeIn{integer} or \CodeIn{strings}.
+Our proposed approach extends the existing techniques to address the challenge.
 
 %identified in previous work~\cite{pandita12:inferring} delete and leave the reference
-% Add a sentnce stating that we extend previous technique to address the issues 
+% Add a sentence stating that we extend previous technique to address the issues 
 Second, inferring temporal constraints from the natural language text itself is challenging. 
 There are existing challenges in NLP for software engineering domain namely \textit{ambiguity}, \textit{programming keywords}, and \textit{semantic equivalence} identified in previous work~\cite{pandita12:inferring}.
 In addition to these challenges, we have an added challenge of identifying the method referenced in the natural language text to infer temporal constraint.
@@ -82,12 +89,12 @@ Recall, the description sentence ``You must initiate a multipart upload before y
 In this sentence, phrases ``multipart upload'' and ``upload any part'' refer to individual methods in the API.
 Identifying these phrases as method invocation instances require domain dictionaries.
 Ad-hoc constructing these dictionaries is prohibitively time and resources intensive.
-To address this challenge we propose to build domain-dictionaries systematically from API documents themselves.  
+To address this challenge, we propose to build domain-dictionaries systematically from API documents themselves.  
 
 % talk about mining approaches 
 In summary, the proposed work leverages natural language description of API's to infer temporal constraints of method invocations.
 As the proposed work analyzes API documents in natural language, it can be reused independent of the programming language of the library.
-Additionally, our approach complements existing mining based approaches~\cite{buse2012synthesizing, thummalapenta07parseweb, Wang:2013:MSR, Zhong:2009:MMR} that partially address the problem by mining for common usage patterns.
+Additionally, our approach complements existing mining based approaches~\cite{buse2012synthesizing, thummalapenta07parseweb, Wang:2013:MSR, Zhong:2009:MMR} that partially address the problem by mining for common usage patterns among client software that use the API.
 The proposed work in general, makes the following contributions:
 %However, all of these approaches rely on the availability of the source code that use API methods under investigation.
 %Furthermore, these approaches are limited by both the quantity as well as quality of data set (source code) available.
@@ -97,10 +104,11 @@ The proposed work in general, makes the following contributions:
 %Use consistent term technique or approach
 %Methodology for generating domain dictionaries 
 \begin{itemize}
-	\item A NLP based approach that infers temporal constraints of method invocations.
+	\item A NLP based approach that infers temporal constraints of method invocations. 
+	To the best of our knowledge, our approach is the first one to apply NLP for the goal of inferring temporal specifications from API documents.
 	\item A prototype implementation of our approach based on extending the Stanford Parser~\cite{Klein03,SNLP1}, which is a natural language parser to derive the grammatical structure of sentences.
-	An open source implementation of the prototype will be made available publicly. 
-	\item An evaluation of proposed approach on Java 7 and Amazon S3 REST API
+	An open source implementation of the prototype is publicly available on our project website\footnote{\url{https://sites.google.com/site/icon}}. 
+	\item An evaluation of proposed approach on Java 7 and Amazon S3 REST API.
 \end{itemize}
 
 

@@ -1,19 +1,23 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  17 JAN 2014 04:08
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=latex 2013.3.28)  21 JAN 2014 16:19
 entering extended mode
+ restricted \write18 enabled.
+ Source specials enabled.
+ %&-line parsing enabled.
 **Draft.tex
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
+(./Draft.tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
- lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
-ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
-an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
-ishmax, welsh, loaded.
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\IEEEtran.cls
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
+ piedmontese, polish, portuguese, romanian, romansh, russian, sanskrit, serbian
+, serbianc, slovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, u
+ppersorbian, welsh, loaded.
+(./IEEEtran.cls
 Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -24,7 +28,7 @@ Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 373.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+(c:/texlive/2012/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
@@ -97,24 +101,24 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \@IEEEtmpitemindent=\dimen116
 \c@IEEEbiography=\count90
 \@IEEEtranrubishbin=\box26
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+) (c:/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
 \ex@=\dimen117
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen118
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count91
@@ -155,42 +159,41 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks20
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(c:/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: dvips.def on input line 91.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvips.def"
+(c:/texlive/2012/texmf-dist/tex/latex/graphics/dvips.def
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen126
 \Gin@req@width=\dimen127
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\alltt.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/base/alltt.sty
 Package: alltt 1997/06/16 v2.0g defines alltt environment
-)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\algorithm.sty
+) (./algorithm.sty
 Package: algorithm 
 
 Document Style `algorithm' - floating environment
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count103
 \float@exts=\toks21
@@ -198,17 +201,16 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks22
 \@floatcapt=\box30
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks23
 \c@algorithm=\count104
-)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\algorithmic.sty
+) (./algorithmic.sty
 Package: algorithmic 2006/06/02
 
 Document Style `algorithmic' - environment
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count105
 \calc@Bcount=\count106
@@ -227,12 +229,12 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \ALC@tlm=\skip50
 \algorithmicindent=\skip51
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cite\cite.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\sttools\flushend.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/sttools/flushend.sty
 Package: flushend 2012/05/29 v1.1 Balancing columns at last page
 Package: flushend 1997/10/01
 \@aaa=\box31
@@ -242,12 +244,11 @@ Package: flushend 1997/10/01
 \atColsBreak=\toks24
 \@extra@skip=\dimen130
 \@nd@page@rule=\dimen131
-)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\macros.tex
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\times.sty"
+) (./macros.tex
+(c:/texlive/2012/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\epsf\epsf.sty"
+(c:/texlive/2012/texmf-dist/tex/generic/epsf/epsf.sty
 This is `epsf.tex' v2.7.4 <14 February 2011>
 \epsffilein=\read1
 \epsfframemargin=\dimen132
@@ -258,30 +259,29 @@ This is `epsf.tex' v2.7.4 <14 February 2011>
 \epsfxsize=\dimen137
 \epsfysize=\dimen138
 \pspoints=\dimen139
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+) (c:/texlive/2012/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks25
 \verbatim@line=\toks26
 \verbatim@in@stream=\read2
-)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\psfig.sty
+) (./psfig.sty
 \@unused=\write3
 \ps@stream=\read3
 \p@intvaluex=\dimen140
 \p@intvaluey=\dimen141
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+(c:/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: dvips.def on input line 130.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
+(c:/texlive/2012/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\longtable.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip52
 \LTright=\skip53
@@ -299,10 +299,9 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count115
 \LT@p@ftn=\toks27
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\slashbox.sty
+) (./slashbox.sty
 slashbox style by K.Yasuoka, May 1993.
 \@slashboxa=\box39
 \@slashboxb=\box40
@@ -311,13 +310,13 @@ slashbox style by K.Yasuoka, May 1993.
 \@slashboxht=\count117
 \@slashsepl=\dimen143
 \@slashsepr=\dimen144
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+) (c:/texlive/2012/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen145
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen146
 \extrarowheight=\dimen147
@@ -328,73 +327,69 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \everycr=\toks29
 \minrowclearance=\skip58
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\jknappen\mathrsfs.sty"
+(c:/texlive/2012/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup4
-))
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 413.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 413.
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 413.
+)) (./Draft.aux)
+\openout1 = `Draft.aux'.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 373.
+LaTeX Font Info:    ... okay on input line 373.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 373.
+LaTeX Font Info:    ... okay on input line 373.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 373.
+LaTeX Font Info:    ... okay on input line 373.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 373.
+LaTeX Font Info:    ... okay on input line 373.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 373.
+LaTeX Font Info:    ... okay on input line 373.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 373.
+LaTeX Font Info:    ... okay on input line 373.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 416.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 416.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 416.
+
+(c:/texlive/2012/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\abstract.tex
+) (./abstract.tex
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 15.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+(c:/texlive/2012/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <9> not available
 (Font)              Font shape `OT1/pcr/b/n' tried instead on input line 15.
-)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\introduction.tex [1
+) (./introduction.tex
+
+LaTeX Warning: Citation `slam-2002' on page 1 undefined on input line 22.
+
+[1
 
 
-]
-Underfull \vbox (badness 1024) has occurred while \output is active []
-
-)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\example.tex
+]) (./example.tex
 File: Stackoverflow.eps Graphic file (type eps)
-
-<Stackoverflow.eps>
+ <Stackoverflow.eps>
 File: AmzonS3DeleteBucketAPI.eps Graphic file (type eps)
  <AmzonS3DeleteBucketAPI.eps> [2]
 File: Example2.eps Graphic file (type eps)
- <Example2.eps>)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\related.tex [3])
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\background.tex
+
+<Example2.eps>) (./related.tex [3]) (./background.tex
 Underfull \hbox (badness 10000) in paragraph at lines 39--39
-[][][][]$\OT1/ptm/m/n/8 http : / / oxforddictionaries . com / us / denition / 
-american[]english / post ? q =
+[][][][]$\OT1/ptm/m/n/8 http : / / oxforddictionaries . com / us / de^^Lnition 
+/ american[]english / post ? q =
  []
 
 [4]
 Underfull \hbox (badness 2671) in paragraph at lines 75--80
 [][]\OT1/ptm/b/n/10 Intermediate-Representation Gen-er-a-tion \OT1/ptm/m/n/10 [
-24]. This
+23]. This
  []
 
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\approach.tex
+) (./approach.tex
 File: approach.eps Graphic file (type eps)
- <approach.eps>
-[5]
+ <approach.eps> [5]
 
 LaTeX Warning: Command \textregistered invalid in math mode on input line 67.
 
@@ -402,7 +397,7 @@ LaTeX Warning: Command \textregistered invalid in math mode on input line 67.
 LaTeX Warning: Command \textcircled invalid in math mode on input line 67.
 
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 67.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
+(c:/texlive/2012/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
@@ -440,7 +435,7 @@ tching\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 r[]:leftSibling:predicate\OT1/cmr/m/n/7 )
 $ 
  []
 
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\evaluation.tex [7]
+) (./evaluation.tex [7]
 Underfull \hbox (badness 1490) in paragraph at lines 22--23
 [][]\OT1/pcr/m/n/9 Amazon S3 REST API \OT1/ptm/m/n/10 de-vel-oper doc-u-men-ta-
 tion pro-
@@ -450,9 +445,7 @@ tion pro-
 Underfull \vbox (badness 2818) has occurred while \output is active []
 
 )
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\conclusion.tex) [8]
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.bbl [9])
+(./discussion.tex) (./conclusion.tex) [8] (./Draft.bbl [9])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -464,30 +457,27 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Extra height:0.0pt when 359.94843pt
-(2)Left:359.94843pt Right:369.89685pt Output:359.94843pt
-(2)Left:369.89685pt Right:329.89685pt Output:369.89685pt
+Extra height:0.0pt when 293.97421pt
+(2)Left:293.97421pt Right:277.94843pt Output:293.97421pt
 - LAST -
 Extra skip:0.0pt
-Left:369.89685pt
-Right:329.89685pt
-Output:369.89685pt
+Left:293.97421pt
+Right:277.94843pt
+Output:293.97421pt
+[10
 
-Underfull \vbox (badness 1558) has occurred while \output is active []
-
- [10]
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux)
+] (./Draft.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3384 strings out of 493922
- 48908 string characters out of 3144878
- 118623 words of memory out of 3000000
- 6585 multiletter control sequences out of 15000+200000
+ 3378 strings out of 493482
+ 46525 string characters out of 3144442
+ 116969 words of memory out of 3000000
+ 6594 multiletter control sequences out of 15000+200000
  34645 words of font info for 84 fonts, out of 3000000 for 9000
- 844 hyphenation exceptions out of 8191
+ 960 hyphenation exceptions out of 8191
  36i,15n,24p,1093b,720s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (10 pages, 89200 bytes).
+Output written on Draft.dvi (10 pages, 78228 bytes).
