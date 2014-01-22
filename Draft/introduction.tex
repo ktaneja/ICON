@@ -13,11 +13,11 @@
 
 
 
-Temporal specifications~\cite{slam-2002} of an Application Programming Interface (API) 
+Temporal specifications~\cite{ball2002s} of an Application Programming Interface (API) 
 describe allowed sequences of invocations of methods within an API. 
 These specifications govern the secure and robust operation of client software 
 using these APIs.
-If these specifications are formal (machine-readable such as code-contracts),
+If these specifications are formal (machine-readable such as linear temporal logic),
 they can be used  as a basis of formal analysis tools such 
 as model checker and runtime verifiers
 in detecting the violations of these temporal constraints as defects.
@@ -64,21 +64,20 @@ This statement can be interpreted as multipart-upload method must be invoked bef
 % Combine first two sentences
 % In contrast, temporal constraints are beyond these parameter constraints. may be use difficult to express using parameter constraints
 % Amazon S3 is popularly used web service for simple cloud based storage
-Existing approaches focus in inferring method pre-post conditions~\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105,Flanagan:2001:HAA:647540.730008,Buse:2008:ADI:1390630.1390664} in terms of parameter constraints either using static or dynamic analysis techniques.
-Furthermore, there is a class of NLP based approaches~\cite{pandita12:inferring, wu2013inferring} that infer constraints from API documents.
-However, similar to static and dynamic analysis techniques, these approaches focus on parameter constraints as well.  
+There are existing approaches focus on inferring just the method pre-post conditions in terms of parameter constraints either using program analysis techniques~\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105,Flanagan:2001:HAA:647540.730008,Buse:2008:ADI:1390630.1390664} or using NLP~\cite{pandita12:inferring, wu2013inferring}. 
 In contrast, temporal constraints are beyond these parameter constraints.
-Temporal constraints, in general focus on rules related to orchestration of methods within an API rather than focusing on the requirements on the input parameters of these methods.   
+Temporal constraints, in general focus on rules related to orchestration of methods within an API rather than focusing on the requirements on the input parameters of these methods. Our proposed approach addresses the following challenges to infer temporal constraints automatically from API documents.   
 
-Although, in typed languages some sequencing constraints are enforced by type system. 
-For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates that (at least one) method ($m'$) be invoked whose return value is of type ($t$).  However, most temporal constraints are not limited by the type definitions (i.e, requirements on the type of input parameters), and are currently expressed mostly in natural language in API documents, as described in the example previously.
-
-Our proposed approach address the following challenges to infer temporal constraints automatically from natural language text.
 First, relying just on type information will result in a incomplete list of temporal constraints. 
-Furthermore, such constraints although valuable but are already checked by any advanced Integrated Development Environment(IDE) such as eclipse
-for a strongly typed language.
-The problem is exacerbated in web based API's such as \amazonAPI\ where most of the types are either \CodeIn{integer} or \CodeIn{strings}.
-Our proposed approach extends the existing approaches to address the challenge.
+Although, in typed languages some temporal constraints are enforced by type system. 
+For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates that (at least one) method ($m'$) be invoked whose return value is of type ($t$).
+However, temporal constraints are not limited by the type definitions (i.e, requirements on the type of input parameters), and are currently expressed mostly in natural language in API documents, as described in the example previously.
+We propose to address the issue by augmenting the type definitions based temporal constraints with the the constraints inferred from
+the natural language text in API documents.
+%Furthermore, such constraints although valuable but are already checked by any advanced Integrated Development Environment(IDE) such as eclipse
+%for a strongly typed language.
+%The problem is exacerbated in web based API's such as \amazonAPI\ where most of the types are either \CodeIn{integer} or \CodeIn{strings}.
+%Our proposed approach extends the existing approaches to address the challenge.
 
 %identified in previous work~\cite{pandita12:inferring} delete and leave the reference
 % Add a sentence stating that we extend previous technique to address the issues 

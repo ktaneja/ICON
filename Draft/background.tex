@@ -24,14 +24,14 @@ We then introduce the software engineering specific NLP techniques proposed in p
 
 \textbf{Named Entity Recognition}~\cite{Finkel05ACL}. Also known as \textit{`entity identification'} and \textit{`entity extraction'}, these techniques are a subtask of IE that aims to classify words in a sentence into predefined categories such as names, quantities, expression of times, etc. These techniques help in associating predefined semantic meaning to a word or a group of words (phrase), thus facilitating semantic processing of named entities. 
 
-\textbf{Co-reference Resolution}~\cite{RaghunathanEMNLP10,LeeCoNLL11}. Also known as \textit{`anaphora resolution'}, these techniques aim to identify multiple expressions present across (or within) the sentences, that point out to the same thing or \textit{`referant'}. These techniques are useful for extracting information; especially if the information encompasses many sentences in a document.
+%\textbf{Co-reference Resolution}~\cite{RaghunathanEMNLP10,LeeCoNLL11}. Also known as \textit{`anaphora resolution'}, these techniques aim to identify multiple expressions present across (or within) the sentences, that point out to the same thing or \textit{`referant'}. These techniques are useful for extracting information; especially if the information encompasses many sentences in a document.
 
 
 \subsection{Software engineering specific NLP techniques}
 \label{sub:SENLPback}
 
 \textbf{Noun Boosting}~\cite{pandita12:inferring}. Accurate annotation of POS tags in a sentence is fundamental to effectiveness of any advanced NLP technique.
-However, as mentioned earlier, POS tagging work well on well written news articles which does not necessary entail that they work well with domain specific text as well.
+However, as mentioned earlier, POS tagging work well on well written news articles which does not necessary entail that the tagging works well on domain specific text as well.
 Thus, noun boosting is a necessary precursor to application of POS tagging on domain specific text.
 In particular, with respect to API documents certain words have a very different semantic meaning, in contrast to general linguistics that causes incorrect annotation of POS tags.
 

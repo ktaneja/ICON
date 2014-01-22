@@ -32,3 +32,11 @@ Threats to external validity primarily include the degree to which the subject d
 
 Threats to internal validity include the correctness of our implementation in extracting usage constraints and labelling a statement as a constraint statement. To reduce the threat, we manually inspected all the constraints inferred against the API method descriptions in our evaluation. Furthermore, we ensured that the results were individually verified and agreed
 upon by two authors.
+
+
+
+
+If any in-memory buffering is being done by the application (for example, by a BufferedOutputStream object), those buffers must be flushed into the FileDescriptor (for example, by invoking OutputStream.flush) before that data will be affected by sync.
+
+
+If markposMM is -1MM (no mark has been set or the mark has been invalidated), an IOExceptionMM is thrown.
