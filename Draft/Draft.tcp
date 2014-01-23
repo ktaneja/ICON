@@ -6,7 +6,7 @@ Version=4
 MainFile=Draft.tex
 UseBibTeX=0
 UseMakeIndex=0
-ActiveProfile=LaTeX => DVI
+ActiveProfile=Latex=>ps=>PDF
 ProjectLanguage=de
 ProjectDialect=DE
 

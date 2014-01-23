@@ -1,16 +1,15 @@
 \begin{abstract}
-Formal specifications of using a libraries Application Programming Interface (API)
-can be used in conjunction with formal analysis tools such as
-model checkers and runtime verifiers to assess the quality of a software.
-Despite being desirable, most API's do not have formal specifications.
+Temporal specifications of an Application Programming
+Interface (API) describe allowed sequences of invocations
+of methods within an API. Despite being desirable for 
+software testing and verification (through formal analysis tools),
+most API's do not have formal temporal specifications.
 In contrast, API documents contain valuable information about the usage in natural language.
 However, formal analysis tools are not designed to work on specifications in natural languages.
 Manually writing formal specifications based on natural language text in API documents
 can be prohibitively time consuming and error prone.
 To address this issue, we propose a natural language processing based automated approach \tool ,
-to infer formal specifications from natural language text of API documents.
-In particular, we focus on temporal constraints, that are defined as constraints on the
-\textit{allowed sequence of invocations of methods within an API}.
+to infer formal temporal specifications from natural language text of API documents.
 To evaluate our proposed approach, we applied \tool\ to infer temporal constraints from 
 commonly used package \CodeIn{java.io} from JDK API and Amazon S3 REST API.
 Our evaluation results show that \tool\ achieves an average of 60\% precision and 80\% recall
