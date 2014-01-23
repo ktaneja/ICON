@@ -121,7 +121,7 @@ Together the governing entity, predicate and the dependent entity node form a tu
 
 
 As described in Section~\ref{sub:SENLPback} the intermediate representation generation technique is based on the principle of shallow parsing~\cite{Branimir2000}. 
-In particular, the intermediate-representation technique is implemented as a function of Stanford-typed dependencies~\cite{Marneffe06LREC,Marneffe08COLING,SNLP,KleinNIPS03}, to leverage the semantic information encoded in Stanford-typed dependencies.
+In particular, the intermediate-representation technique is implemented as a function of Stanford-typed dependencies~\cite{Marneffe06LREC,Marneffe08COLING,KleinNIPS03}, to leverage the semantic information encoded in Stanford-typed dependencies.
 
 
 However, we observed that such implementation is overwhelmed by complex sentences.
@@ -156,21 +156,6 @@ All of these semantic templates are publicly available on our project website~\c
 With respect to the previous example the template no. 3 \textit{( A noun phrase followed by another noun/pronoun/verb phrase in brackets)} is applicable.
 Thus our shallow parser breaks the sentence into two individual sentences.
 	 
-\textbf{Stanford-typed Dependencies}: This phase is equivalent to the intermediate-representation technique described in Section~\ref{sub:SENLPback}.
-
-\subsection{Specification Extractor}
-\label{sub:SE}
-
-This component accepts the FOL representation of the sentence.
-
-\begin{itemize}
-\item Extracts Specifications from FOL representation. 
-\item Specifically looking for modal modifies ``can, could, may, must, should'' 
-\item Takes into consideration the negative quantifiers.
-\item Algorithm to infer the sequence of operations.
-\end{itemize}
-
-
 \begin{table*}
 \begin{center}
 
@@ -190,30 +175,40 @@ This component accepts the FOL representation of the sentence.
 \end{center}
 \end{table*}
 
+\textbf{Stanford-typed Dependencies}: This phase is equivalent to the intermediate-representation technique described in Section~\ref{sub:SENLPback}.
 
-\subsection{Semantic-Graph Generator}
-\label{sub:ACA}
+\subsection{Specification Extractor}
+\label{sub:SE}
 
-A key way of identifying reference to a method within the API in our proposed approach is the employment of a semantic graph of an API.
-In particular, we propose to initially infer such graphs from API documents.
-Manually creating a semantic graph is prohibitively time consuming and may be error prone.
-We thus employ a systematic methodology (proposed previously in ~\cite{pandita13:WHYPER}) to infer such semantic graphs from API documents that can potentially be automated.
-We first consider the name of the class.
-We then find the synonyms terms used refer to the class in question.
-The synonym terms are listed as by breaking down the camel-case notation in the class name.
-This list is further augmented by listing the name of the parent classes and implemented interfaces if any. 
+This component accepts the FOL representation of the sentence from the previous component,
+then extracts the temporal constraints if present in a sentence. 
+Specification Extractor then classifies the sentence as a specification 
+sentence (containing temporal constraint) candidate based on following ordered set of rules:
 
-\begin{figure}
-	\centering
-		\includegraphics[scale=0.4]{KnowledgeGraph.eps}
-	\caption{Semantic Graph for the \CodeIn{BufferedInputStream} class in Java}
-	\label{fig:knowledge}
-\end{figure} 
+\begin{enumerate}
+	\item The sentence is not from parameter summary or return variable summary.
+	Typically such sentences describe pre-post conditions as opposed to temporal constraints this approach addresses.
+	\item The sentences contains modal modifiers such as ``can, could, may, must, should'' expressing necessity.
+	Typically, presence of such modal modifier is a strong indicator of presence of constraints imposed by an API developer
+	\item If the sentence does not contain modal modifiers described previously, sentence must contain temporal modifier relationship, identified by Stanford-typed dependency parser.
+	Typically, presence of temporal modifier is an indicator of presence of temporal information.  
+	\item If rules 2 and 3 don't apply then the sentences should be a conditional sentence, identified by the presence of keywords such as ``if''.
+\end{enumerate} 
 
+Once a candidate sentence is identified, this component selects an semantic graph.
+In particular, the semantic graph of the API class to which the candidate sentence belongs to selected.
+A semantic graph constitutes the keyword representation of the classes and the corresponding applicable actions. 
+Figure~\ref{fig:knowledge} shows a sub-graph of  graph for \CodeIn{BufferedInputReader} class.
+The phrases in solid rectangles are synonyms of the class name \CodeIn{BufferedInputReader}.
+The phrases in rounded rectangle are the actions applicable on \CodeIn{BufferedInputReader} class.
+Section~\ref{sub:ACA} further describes how these graphs are generated.
 
-We then systematically inspect the member methods to identify actions applicable to the objects represented by the class. From the name of a public method (describing a possible action on the object), we extract verb phrases. The verb phrases are used as the associated actions applicable on the object. For instance, \CodeIn{BufferedInputReader} defines operations available, close, mark, and so on. We associate these operations with the objects of type \CodeIn{BufferedInputReader}. Figure~\ref{fig:knowledge} shows a sub-graph of  graph for \CodeIn{BufferedInputReader} class. The phrases in solid rectangles are synonyms of the class name \CodeIn{BufferedInputReader}. The phrases in rounded rectangle are the actions applicable on \CodeIn{BufferedInputReader} class.
-  
-
+ 
+Specification extractor then uses the semantic graph to determine
+if a candidate sentence is a specification sentence and if so extract
+the action that is should be performed prior to the method the sentence
+belongs to. Algorithm~\ref{alg:SenAnnotaator} describes this action extraction
+process.  
 
 \algsetup{indent=1em}
 \begin{algorithm}[t!]
@@ -243,6 +238,74 @@ We then systematically inspect the member methods to identify actions applicable
 \caption{Action\_Extractor}
 \label{alg:SenAnnotaator}
 \end{algorithm} 
+
+Our algorithm systematically explores the FOL representation
+of the candidate sentence to determine if a sentence
+describes a temporal specification. First, our algorithm
+attempts to locate the occurrence of class name or its synonym
+within the leaf nodes of the FOL
+representation of the sentence (Line 3). The method
+findLeafContaining(r\_name\_list) explores the FOL representation
+to find a leaf node that contains either the class name
+or one of its synonyms.
+In particular, we use WordNet~\cite{wordnet} and Lemmatisation
+to deal with synonyms of a word in question to find appropriate
+matches. Once a leaf node is found, we systematically
+traverse the tree from the leaf node to the root,
+matching all parent predicates as well as immediate child
+predicates [Lines 5-16].
+
+Our algorithm matches each of the traversed predicate
+with the actions associated with the class defined in
+semantic graph. Similar to matching entities, we also
+employ WordNet and Lemmatisation to deal with
+synonyms to find appropriate matches. If a match is
+found, then the matching action name is returned.
+
+\subsection{Semantic-Graph Generator}
+\label{sub:ACA}
+
+A key way of identifying reference to a method within the API in our proposed approach is the employment of a semantic graph of an API.
+In particular, we propose to initially infer such graphs from API documents.
+Manually creating a semantic graph is prohibitively time consuming and may be error prone.
+We thus employ a systematic methodology (proposed previously in ~\cite{pandita13:WHYPER}) to infer such semantic graphs from API documents that can potentially be automated.
+We first consider the name of the class for the API document in question.
+We then find the synonyms terms used refer to the class in question.
+The synonym terms are listed as by breaking down the camel-case notation in the class name.
+This list is further augmented by listing the name of the parent classes and implemented interfaces if any. 
+
+\begin{figure}
+	\centering
+		\includegraphics[scale=0.4]{KnowledgeGraph.eps}
+	\caption{Semantic Graph for the \CodeIn{BufferedInputStream} class in Java}
+	\label{fig:knowledge}
+\end{figure} 
+
+
+We then systematically inspect the member methods to identify actions applicable to the objects represented by the class. From the name of a public method (describing a possible action on the object), we extract verb phrases. The verb phrases are used as the associated actions applicable on the object. For instance, \CodeIn{BufferedInputReader} defines operations available, close, mark, and so on. We associate these operations with the objects of type \CodeIn{BufferedInputReader}. Figure~\ref{fig:knowledge} shows a sub-graph of  graph for \CodeIn{BufferedInputReader} class. The phrases in solid rectangles are synonyms of the class name \CodeIn{BufferedInputReader}. The phrases in rounded rectangle are the actions applicable on \CodeIn{BufferedInputReader} class.
+  
+
+\subsection{Type Analysis}
+
+As mentioned earlier that some temporal constraints are enforced by the type system in typed Languages.
+For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates that (at least one) method ($m'$) be invoked whose return value is of type ($t$). To extend the temporal constraints inferred by the analyzing the natural language text, this component infers additional constraints that are encoded
+in the type system. Algorithm~\ref{alg:TypeAnalysis} lists the steps followed to infer type based temporal constraints.
+
+The algorithm accepts the list of methods as an input produces a graph with
+the nodes representing methods in an API and the directed edges representing temporal constraints.
+First, a index is created based on the return types of the method (Line 2).
+Second, all methods in an API are added to an unconnected graph (Line 3-4).
+Then, for every public method in the input list, the algorithm checks the types
+of the input parameters and constructs and directed edge from all the methods that whose return value
+have the same type to the method in question (Line 14- 20).
+The algorithm does not take into consideration the basic parameter types such as integer, string (Line 15)
+Additionally, an edge is created from the constructors of a class to the non static members methods of a class (Line 8 -13).
+The resultant graph is then returned by the algorithm.
+
+
+The temporal constraints based on the type information can be extracted by querying the graph. 
+The incoming edges to a node denoting a method represents the set of pre-requisite methods.
+The temporal constraint being, at least one of the pre-requisite methods must be invoked before invoking the method in question.
 
 
 \begin{algorithm}[t!]
@@ -279,35 +342,6 @@ We then systematically inspect the member methods to identify actions applicable
 \end{scriptsize}
 \end{algorithmic}
 \caption{Type\_Sequence\_Builder}
-\label{alg:SeqAnnotaator}
+\label{alg:TypeAnalysis}
 \end{algorithm} 
-
-
-
-%The FOL representation helps us effectively deal with the problem of \emph{confounding effects} of keywords as described in Section~\ref{sec:overview}. In particular, the FOL assists in distinguishing between a resource that would be a leaf node and an action that would be a predicate node in the intermediate representation of a sentence. The generated FOL representation of the sentence is then provided as an input to the semantic engine for further processing.
-%
-%
-%
-%\subsection{Semantic Engine (SE)}
-%\label{sub:SE}
-%The Semantic Engine (SE) accepts the FOL representation of a sentence and based on the semantic graphs of Android permissions annotates a sentence if it matches the criteria. A semantic graph is basically a semantic representation of the resources which are governed by a permission. For instance, the READ\_CONTACTS permission governs the resource ``CONTACTS'' in Android system.
-%
-%
-%Figure~\ref{fig:knowledge} shows the semantic graph for the permission READ\_CONTACTS. A semantic graph primarily constitutes of subordinate resources of a permission (represented in rectangular boxes) and a set of available actions on the resource itself (represented in curved boxes). Section~\ref{sub:ACA} elaborates on how we build such graphs systematically.
-%
-%Our SE accepts the semantic graph pertaining to a permission and annotates a sentence based on the algorithm shown in Algorithm~\ref{alg:SenAnnotaator}. The Algorithm accepts the FOL representation of a sentence $rep$, the semantic graph associated with the resource of a permission $g$ and a boolean value $recursion$ that governs the recursion. The algorithm outputs a boolean value $isPStmt$, which is \CodeIn{true} if the statement describes the permission associated with a semantic graph ($g$), otherwise \CodeIn{false}. 
-%
-%Our algorithm systematically explores the FOL representation of the sentence to determine if a sentence describes the need for a permission. First, our algorithm attempts to locate the occurrence of associated resource name within the leaf node of the FOL representation of the sentence (Line 3). The method \CodeIn{findLeafContaining(name)} explores the FOL representation to find a leaf node that contains term \CodeIn{name}. Furthermore, we use WordNet and Lemmatisation~\cite{Do09:Robust} to deal with synonyms of a word in question to find appropriate matches. Once a leaf node is found, we systematically traverse the tree from the leaf node to the root, matching all parent predicates as well as immediate child predicates [Lines 5-16].
-%
-%Our algorithm matches each of the traversed predicate with the actions associated with the resource defined in semantic graph. Similar to matching entities, we also employ WordNet and Lemmatisation~\cite{Do09:Robust} to deal with synonyms to find appropriate matches. If a match is found, then the value \CodeIn{isPStmt} is set to  \CodeIn{true}, indicating that the statement describes a permission.
-%
-%In case no match is found, our algorithms recursively search all the associated subordinate resources in the semantic graph of current resource. A subordinate resource may further have its own subordinate resources. Currently, our algorithm considers only immediate subordinate resources of a resource to limit the false positives.
-%
-%%We limit the exploration to depth 1 to limit the false positives. That means only immediate subordinate resources of a resource will be explored.
-%
-%In the context of the FOL representation shown in Figure~\ref{fig:FOLRep}, we invoke Algorithm~\ref{alg:SenAnnotaator} with the semantic graph shown in Figure~\ref{fig:knowledge}. Our algorithm attempts to find a leaf node containing term ``CONTACT'' or some of its synonym. Since the FOL representation does not contain such a leaf node, algorithm calls itself with semantic graphs of subordinate resources (Line 17-25), namely `NUMBER', `EMAIL', `LOCATION', `BIRTHDAY', `ANNIVERSARY'. 
-%
-%The subsequent invocation will find the leaf-node ``email'' (annotated 9 in Figure~\ref{fig:FOLRep}). Our algorithm then explores the preceding predicates and finds predicate ``share'' (annotated 2 in Figure~\ref{fig:FOLRep}). The Algorithm matches the word ``share'' with action ``send'' (using Lemmatisation and WordNet similarity), one of the actions available in the semantic graph of resource `EMAIL' and returns \CodeIn{true}. Thus, the sentence is appropriately identified as describing the need for permission READ\_CONTACT. 
-%
-%
 

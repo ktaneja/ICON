@@ -4,6 +4,11 @@
 Whyper.
 \newblock https://sites.google.com/site/whypermission/.
 
+\bibitem{amazons3stats}
+{Amazon S3 - Two Trillion Objects, 1.1 Million Requests / Second}.
+\newblock
+  \url{http://aws.typepad.com/aws/2013/04/amazon-s3-two-trillion-objects-11-million-requests-second.html}.
+
 \bibitem{ball2002s}
 T.~Ball and S.~K. Rajamani.
 \newblock The {SLAM} project: debugging system software via static analysis.
@@ -23,6 +28,11 @@ R.~P. Buse and W.~Weimer.
 R.~P. Buse and W.~R. Weimer.
 \newblock Automatic documentation inference for exceptions.
 \newblock In {\em Proc. 17th ISSTA}, pages 273--282, 2008.
+
+\bibitem{carletta1996assessing}
+J.~Carletta.
+\newblock Assessing agreement on classification tasks: the kappa statistic.
+\newblock {\em Computational linguistics}, 22(2):249--254, 1996.
 
 \bibitem{csallner08dysy}
 C.~Csallner, N.~Tillmann, and Y.~Smaragdakis.
@@ -44,6 +54,11 @@ U.~Dekel and J.~D. Herbsleb.
 \newblock Improving {API} {D}ocumentation {U}sability with {K}nowledge
   {P}ushing.
 \newblock In {\em Proc. 31st ICSE}, pages 320--330, 2009.
+
+\bibitem{wordnet}
+F.~et~al.
+\newblock {\em WordNet: an electronic lexical database.}
+\newblock Cambridge, Mass: MIT Press, 1998.
 
 \bibitem{Finkel05ACL}
 J.~R. Finkel, T.~Grenager, and C.~Manning.
@@ -117,6 +132,11 @@ J.~W. Nimmer and M.~D. Ernst.
 D.~G. Novick and K.~Ward.
 \newblock Why don't people read the manual?
 \newblock In {\em Proc. 24th ACM}, pages 11--18, 2006.
+
+\bibitem{Olson08}
+D.~Olson.
+\newblock {\em Advanced data mining techniques}.
+\newblock Springer Verlag, 2008.
 
 \bibitem{pandita13:WHYPER}
 R.~Pandita, X.~Xiao, W.~Yang, W.~Enck, and T.~Xie.

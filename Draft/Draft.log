@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  22 JAN 2014 19:49
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  23 JAN 2014 07:16
 entering extended mode
 **Draft.tex
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
@@ -385,7 +385,7 @@ american[]english / post ? q =
 [4]
 Underfull \hbox (badness 2671) in paragraph at lines 75--80
 [][]\OT1/ptm/b/n/10 Intermediate-Representation Gen-er-a-tion \OT1/ptm/m/n/10 [
-24]. This
+28]. This
  []
 
 ) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\approach.tex
@@ -408,41 +408,50 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 78.
 
-
-LaTeX Warning: Citation `SNLP' on page 6 undefined on input line 124.
-
 [6]
-Underfull \hbox (badness 7558) in paragraph at lines 184--184
+Underfull \hbox (badness 7558) in paragraph at lines 169--169
 []|[]\OT1/ptm/m/n/8 A noun phrase fol-lowed by an-other
  []
 
-File: KnowledgeGraph.eps Graphic file (type eps)
-<KnowledgeGraph.eps>
-Underfull \hbox (badness 1688) in paragraph at lines 214--215
-\OT1/ptm/m/n/10 scrib-ing a pos-si-ble ac-tion on the ob-ject), we ex-tract
+
+Underfull \hbox (badness 1430) in paragraph at lines 198--205
+\OT1/ptm/m/n/10 nent se-lects an se-man-tic graph. In par-tic-u-lar, the se-
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 214--215
-\OT1/ptm/m/n/10 verb phrases. The verb phrases are used as the as-
- []
-
-
-Overfull \hbox (5.82335pt too wide) in paragraph at lines 234--235
+Overfull \hbox (5.82335pt too wide) in paragraph at lines 229--230
 [] [][]$\OML/cmm/m/it/7 action  \OT1/cmr/m/n/7 =  \OML/cmm/m/it/7 actionList:ma
 tching\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 r[]:leftSibling:predicate\OT1/cmr/m/n/7 )
 $ 
  []
 
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\evaluation.tex [7]
-Underfull \hbox (badness 1490) in paragraph at lines 22--23
-[][]\OT1/pcr/m/n/9 Amazon S3 REST API \OT1/ptm/m/n/10 de-vel-oper doc-u-men-ta-
-tion pro-
+[7]
+File: KnowledgeGraph.eps Graphic file (type eps)
+ <KnowledgeGraph.eps>
+Underfull \hbox (badness 1688) in paragraph at lines 285--286
+\OT1/ptm/m/n/10 scrib-ing a pos-si-ble ac-tion on the ob-ject), we ex-tract
  []
 
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex)
+
+Underfull \hbox (badness 1953) in paragraph at lines 285--286
+\OT1/ptm/m/n/10 verb phrases. The verb phrases are used as the as-
+ []
+
+) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\evaluation.tex [8] [9])
+(C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex)
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\conclusion.tex)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.bbl [8] [9])
+(C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 8--11
+[][]\OT1/ptm/m/n/9 Amazon S3 - Two Tril-lion Ob-jects, 1.1 Mil-lion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--11
+\OT1/ptm/m/n/9 amazon-[]s3-[]two-[]trillion-[]objects-[]11-[]million-[]requests
+-[]second .
+ []
+
+[10])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -454,39 +463,21 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-
-Underfull \vbox (badness 1158) has occurred while \output is active []
-
-Extra height:12.0pt when 178.97421pt
-
-Underfull \vbox (badness 1371) has occurred while \output is active []
-
-Extra height:0.0pt when 179.97421pt
-
-Underfull \vbox (badness 1371) has occurred while \output is active []
-
-(2)Left:179.97421pt Right:187.94843pt Output:179.97421pt
-(2)Left:187.94843pt Right:167.94843pt Output:187.94843pt
+Extra height:0.0pt when 574.94843pt
+(2)Left:574.94843pt Right:569.89685pt Output:574.94843pt
 - LAST -
 Extra skip:0.0pt
-Left:187.94843pt
-Right:167.94843pt
-Output:187.94843pt
- [10
-
-]
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+Left:574.94843pt
+Right:569.89685pt
+Output:574.94843pt
+[11] (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux) ) 
 Here is how much of TeX's memory you used:
- 3377 strings out of 493922
- 48775 string characters out of 3144878
- 116455 words of memory out of 3000000
- 6578 multiletter control sequences out of 15000+200000
+ 3380 strings out of 493922
+ 48824 string characters out of 3144878
+ 123240 words of memory out of 3000000
+ 6581 multiletter control sequences out of 15000+200000
  34645 words of font info for 84 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
  36i,15n,24p,1093b,720s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (10 pages, 86968 bytes).
+Output written on Draft.dvi (11 pages, 100940 bytes).

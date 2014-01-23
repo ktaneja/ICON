@@ -1,30 +1,96 @@
 \section{Evaluation}
 \label{sec:evaluation}
 
-We conducted an evaluation to assess the effectiveness of our approach. In our evaluation, we address three main research questions:
+We conducted an evaluation to assess the effectiveness of \tool. In our evaluation, we address two main research questions:
 
 \begin{itemize}
-	
-\item\textbf{RQ1}: What are the precision and recall of \tool\ in inferring usage constraints?
-
-%\item\textbf{RQ2}: What is the accuracy of our approach in inferring specifications from contract sentences in the API documents? 
-
-\item\textbf{RQ2}: How does our approach fares in comparison to previous NLP approaches?
-
+	\item\textbf{RQ1}: What are the precision and recall of \tool\  in
+	identifying temporal constraints from sentences written in natural language?
+	\item\textbf{RQ2}: What is the accuracy of \tool\ in inferring temporal constraints from specification sentences in the API documents? 
 \end{itemize}
 
 \subsection{Subjects}
 \label{sub:subject}
 
 We used the API documents of the following two libraries as subjects for our evaluation. 
+\begin{itemize}
+	\item{Amazon S3}. \amazon\ provides a REST based web services interface that can be used to store and retrieve data on the web. Furthermore, \CodeIn{Amazon S3} also empowers a developer with rich set of API methods to access a highly scalable, reliable, secure, fast, inexpensive infrastructure. \CodeIn{Amazon S3} is reported to store more than 2 trillion objects as of April 2013 and gets over 1.1 million requests per second at peak time~\cite{amazons3stats}.
+
+	\item{java.io}. \CodeIn{java.io} is a popular packacge in \CodeIn{Java} programming language that provides APIs for system input and output through data streams, serialization and the file system.
+\end{itemize}
+We chose \CodeIn{Amazon S3} and \CodeIn{java.io} APIs as our subjects because they are popular and contain decent documentation.
+
+\subsection{Experimental Setup.} 
+We first manually annotated the sentences in the API documents of the two APIs.
+Two authors manually labeled each sentence in the API documentation as sentence containing 
+temporal constraints or not.
+We used \CodeIn{cohen kappa}~\cite{carletta1996assessing} score to statistically measure
+the inter-rater agreement.
+The \CodeIn{cohen kappa} score of the two authors was .66 (on a scale of 0 to 1), 
+which denotes a statically significant agreement. 
+After the authors classified all the sentences, they 
+discussed with each other to reach a consensus on the sentences they classified differently. 
+We use this classified sentences as the golden set for calculating precision and recall.
+
+ 
 
 
-\amazon\ provides a simple REST based web services interface that can be used to store and retrieve data on the web. Furthermore, \CodeIn{Amazon S3} also empowers a developer with rich set of API methods to access a highly scalable, reliable, secure, fast, inexpensive infrastructure. \textbf{may be a little detail of usage statistics etc....}  
+To answer RQ1, we measure the number of true positives ($TP$), false positives ($FP$), true negative ($TN$), and false negatives ($FN$)
+in identifying the specification sentences by \tool.
+We define specification sentence as a sentence describing a temporal constraints.
+We define the $TP$, $FP$, $TN$, and $FN$ of \tool\ as follows:
 
-\textbf{TBD}.
+\begin{enumerate}
+	\item $TP$: A sentence correctly identified by \tool\ as specification sentence.
+	\item $FP$: A sentence incorrectly identified by \tool as specification sentence.
+	\item $TN$: A sentence correctly identified by \tool\ as not a specification sentence.
+	\item $FN$: A sentence incorrectly identified by \tool\ as not a specification sentence.
+\end{enumerate}
+
+
+In statistical classification~\cite{Olson08}, $Precision$ is defined as a ratio of
+number of true positives to the total number of items reported to be true,
+$Recall$ is defined as a ratio of number of true positives to the total number
+of items that are true. $F-score$ is defined as the weighted harmonic mean of 
+$Precision$ and $Recall$. Higher value of $Precision$, $Recall$, and $F-Score$
+are indicative of higher quality of the specification statements inferred using 
+\tool. based on the calculation of $TP$, $FP$, $TN$, and $FN$ of \tool\ defined
+previously we computed the $Precision$, $Recall$, and $F-Score$ of \tool\ as follows:
+
+
+\begin{center}
+
+$Precision$ = $\frac{TP}{TP + FP}$
+
+$Recall$ = $\frac{FN}{TP + FP}$
+
+$F-Score$ = $\frac{2 X Precison X Recall}{Precision + Recall}$
+
+\end{center}
+
+To answer RQ2, we checked the temporal constraints inferred from specification sentences by \tool.
+We measure $accuracy$ of \tool as the ratio of the total number of temporal constraints that
+are correctly inferred by \tool to the total number of specification sentences. 
+
+\subsection{Results}
+
+We next describe our evaluation results to demonstrate the effectiveness of \tool\ in identifying temporal constraints.
+
+\subsubsection{RQ1: Effectiveness in Identifying Specification Sentences}
+
+
+In this section, we evaluate the effectiveness of \tool\ in identifying specification sentences from API documents.
+
+We next describe how 
+
+\subsubsection{RQ2: Accuracy in Inferring Temporal Constraints}
+
+In this section, we evaluate the effectiveness of \tool\ in inferring specification sentences from API documents.
 
 \subsection{Summary}
 \label{sub:summary}
+
+
 
 \subsection{Threats to Validity}
 \label{sub:threats_to_validity}
