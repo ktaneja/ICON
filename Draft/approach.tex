@@ -24,7 +24,7 @@ We next describe each component in detail.
 
 
 \subsection{Preprocessor}
-\label{sub:parser}
+\label{sub:prep}
 
 The preprocessor accepts the API documents and first extracts method descriptions from it.
 In particular, the preprocessor extracts the following fields within method descriptions: 
@@ -38,14 +38,9 @@ In particular, different API documents may have different styles of presenting i
 This difference in style may include the difference in the level of detail presented to the developer.
 Our approach thus relies on only basic fields that are trivially available for API methods across different presentation styles. 
 
-After extracting desired information, the natural language text is further preprocessed to be analyzed by the text-analysis engine.
+After extracting desired information, the natural language text is further preprocessed to be analyzed by subsequent components.
 The preprocessing steps are required to increase the accuracy core NLP techniques (described in Section~\ref{sub:CoreNLPback}) that are used in the subsequent phases of \tool\ approach.
 In particular, the preprocessor first employs the noun boosting followed by heuristics listed under lexical token reduction, as introduced in Section~\ref{sub:SENLPback}.
-
-
-
-From an implementation perspective, we manually built the domain dictionaries for the preprocessing using the glossary of terms collected from the websites pertaining to REST API.
-We further leveraged the HTML style information in \amazon\ to look for words that were highlighted in code like format. We further leveraged WordNet to maintain a static lookup table of shorthand words to aid named entity handling and abbreviation handling. 
 
 Although the previous techniques and heuristics significantly lower the number of lexical tokens in a sentence, some sentences may still contain a considerable number of lexical tokens to overwhelm the POS tagger.
 To address this issue, we propose a novel technique (\textit{`Frequent Phrases Reduction'}) to further reduce the number of lexical tokens in a sentence by annotating frequent phrases as a single lexical unit.
@@ -57,8 +52,30 @@ In particular, we are interested in the n-grams of length 4 or greater to achiev
 We then prune the list of n-grams based on a subsumption. 
 We consider a n-gram of length k ($n_k$) to subsume n-gram of length k-1 ($n_{k-1}$) iff $n_{k-1}$ is a substring of ($n_k$) and the frequency of occurrence of $n_{k-1}$ equals frequency of occurrence of $n_{k}$.
 Finally, we rank the list of n-grams based on the frequency of their occurrence in the text, and select top-k n-grams for reduction.
+For instance, \textit{Amazon Simple Storage Service}, \textit{an I/O Error Occurs}, and \textit{end of stream} are the examples of such n-grams detected by our approach.
  
-From an implementation perspective we used Apache Lucene$^{\textregistered}$~\cite{lucene} to achieve n-gram reduction.
+
+%\begin{figure}[t]
+%\begin{CodeOut}
+%\begin{alltt}
+%01: 
+%04:
+%\end{alltt}
+%\end{CodeOut}\vspace*{-2ex}
+%\caption{\label{fig:methodAPI} The method description of the \CodeIn{DefineObjectProperty} method in Facebook API}\vspace*{-4ex}
+%\end{figure}
+
+\textbf{Prototype Implementation}
+
+Currently our prototype implementation works with online \amazon\ and JDK API. 
+However, almost all of the developer documents are provided online as structured webpages.
+Thus, current implementation of preprocessor can be easily extended to extract the desired information from any API developer documents.    
+
+Additionally, in current implementation we have manually built the domain dictionaries for the preprocessing using the glossary of terms collected from the websites pertaining to REST and Java API.
+We further leveraged the HTML style information in \amazon\ to look for words that were highlighted in code like format. We further leveraged WordNet to maintain a static lookup table of shorthand words to aid named entity handling and abbreviation handling. 
+
+ 
+Finally, to achieve  n-gram reduction we used Apache Lucene$^{\textregistered}$~\cite{lucene} to achieve.
 Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java.
 It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.
 
@@ -68,7 +85,7 @@ It is a technology suitable for nearly any application that requires full-text s
 
 
 The NLP parser accepts the pre-processed documents and annotates every sentence within each document using core NLP techniques described in Section~\ref{sub:CoreNLPback}.
-From an implementation perspective, we chose the Stanford parser~\cite{SNLP}.
+From an implementation perspective, we chose the Stanford parser~\cite{Manning:01}.
 However, this component can be implemented using any other existing NLP libraries or approachs.
 In particular, we annotate each sentence with POS tags, named-entity Annotations and Stanford-typed dependencies.
 For more details on these techniques and their application, please refer to ~\cite{Marneffe06LREC, Marneffe08COLING, pandita12:inferring, pandita13:WHYPER, thummalapentaICSE12}.
