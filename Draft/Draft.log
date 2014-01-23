@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  22 JAN 2014 11:08
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  22 JAN 2014 19:49
 entering extended mode
 **Draft.tex
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
@@ -393,45 +393,42 @@ File: approach.eps Graphic file (type eps)
  <approach.eps>
 [5]
 
-LaTeX Warning: Command \textregistered invalid in math mode on input line 67.
+LaTeX Warning: Command \textregistered invalid in math mode on input line 78.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 67.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 78.
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 67.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 78.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 67.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 67.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 78.
 
 
-LaTeX Warning: Citation `SNLP' on page 6 undefined on input line 77.
-
-
-LaTeX Warning: Citation `SNLP' on page 6 undefined on input line 113.
+LaTeX Warning: Citation `SNLP' on page 6 undefined on input line 124.
 
 [6]
-Underfull \hbox (badness 7558) in paragraph at lines 179--179
+Underfull \hbox (badness 7558) in paragraph at lines 184--184
 []|[]\OT1/ptm/m/n/8 A noun phrase fol-lowed by an-other
  []
 
 File: KnowledgeGraph.eps Graphic file (type eps)
 <KnowledgeGraph.eps>
-Underfull \hbox (badness 1688) in paragraph at lines 209--210
+Underfull \hbox (badness 1688) in paragraph at lines 214--215
 \OT1/ptm/m/n/10 scrib-ing a pos-si-ble ac-tion on the ob-ject), we ex-tract
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 209--210
+Underfull \hbox (badness 1953) in paragraph at lines 214--215
 \OT1/ptm/m/n/10 verb phrases. The verb phrases are used as the as-
  []
 
 
-Overfull \hbox (5.82335pt too wide) in paragraph at lines 229--230
+Overfull \hbox (5.82335pt too wide) in paragraph at lines 234--235
 [] [][]$\OML/cmm/m/it/7 action  \OT1/cmr/m/n/7 =  \OML/cmm/m/it/7 actionList:ma
 tching\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 r[]:leftSibling:predicate\OT1/cmr/m/n/7 )
 $ 
@@ -457,20 +454,24 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Extra height:0.0pt when 218.97421pt
-(2)Left:218.97421pt Right:227.94843pt Output:218.97421pt
 
-Underfull \vbox (badness 1742) has occurred while \output is active []
+Underfull \vbox (badness 1158) has occurred while \output is active []
 
-(2)Left:227.94843pt Right:227.94843pt Output:227.94843pt
+Extra height:12.0pt when 178.97421pt
+
+Underfull \vbox (badness 1371) has occurred while \output is active []
+
+Extra height:0.0pt when 179.97421pt
+
+Underfull \vbox (badness 1371) has occurred while \output is active []
+
+(2)Left:179.97421pt Right:187.94843pt Output:179.97421pt
+(2)Left:187.94843pt Right:167.94843pt Output:187.94843pt
 - LAST -
 Extra skip:0.0pt
-Left:227.94843pt
-Right:227.94843pt
-Output:227.94843pt
-
-Underfull \vbox (badness 1742) has occurred while \output is active []
-
+Left:187.94843pt
+Right:167.94843pt
+Output:187.94843pt
  [10
 
 ]
@@ -480,12 +481,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3380 strings out of 493922
- 48828 string characters out of 3144878
- 115292 words of memory out of 3000000
- 6581 multiletter control sequences out of 15000+200000
+ 3377 strings out of 493922
+ 48775 string characters out of 3144878
+ 116455 words of memory out of 3000000
+ 6578 multiletter control sequences out of 15000+200000
  34645 words of font info for 84 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
  36i,15n,24p,1093b,720s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (10 pages, 87356 bytes).
+Output written on Draft.dvi (10 pages, 86968 bytes).

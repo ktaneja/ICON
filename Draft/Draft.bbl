@@ -94,11 +94,6 @@ C.~Lee, D.~Jin, P.~Meredith, and G.~Rosu.
 \newblock {\em Technical Report http://hdl.handle.net/2142/30006, Department of
   Computer Science, University of Illinois at Urbana-Champaign}, 2012.
 
-\bibitem{LeeCoNLL11}
-H.~Lee, Y.~Peirsman, A.~Chang, N.~Chambers, M.~Surdeanu, and D.~Jurafsky.
-\newblock Stanford's multi-pass sieve coreference resolution system.
-\newblock In {\em Proc. CoNLL-2011 Shared Task}, 2011.
-
 \bibitem{Little2009}
 G.~Little and R.~C. Miller.
 \newblock Keyword programming in {J}ava.
@@ -107,6 +102,11 @@ G.~Little and R.~C. Miller.
 \bibitem{lucene}
 {Apache Lucene Core}.
 \newblock \url{http://lucene.apache.org/core/}.
+
+\bibitem{Manning:01}
+C.~Manning and H.~Schutze.
+\newblock Foundations of statistical natural language processing.
+\newblock {\em The MIT Press}, 2001.
 
 \bibitem{NimmerE02:ISSTA}
 J.~W. Nimmer and M.~D. Ernst.
@@ -135,12 +135,6 @@ N.~Polikarpova, I.~Ciupa, and B.~Meyer.
 \newblock A comparative study of programmer-written and automatically inferred
   contracts.
 \newblock In {\em Proc. 18th ISSTA}, pages 93--104, 2009.
-
-\bibitem{RaghunathanEMNLP10}
-K.~Raghunathan, H.~Lee, S.~Rangarajan, N.~Chambers, M.~Surdeanu, D.~Jurafsky,
-  and C.~D. Manning.
-\newblock A multi-pass sieve for coreference resolution.
-\newblock In {\em Proc. EMNLP}, 2010.
 
 \bibitem{RubingerWEB10}
 B.~Rubinger and T.~Bultan.
