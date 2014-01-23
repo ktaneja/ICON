@@ -1,36 +1,27 @@
 \section{Evaluation}
 \label{sec:evaluation}
 
-We conducted an evaluation to assess the effectiveness of our approach. In our evaluation, we address two main research questions:
+We conducted an evaluation to assess the effectiveness of our approach. In our evaluation, we address three main research questions:
 
 \begin{itemize}
-	\item\textbf{RQ1}: What are the precision and recall of \tool\  in
-	identifying temporal contraints from sentences written in natural language?
-	%\item\textbf{RQ2}: What is the accuracy of our approach in inferring specifications from contract sentences in the API documents? 
-	\item\textbf{RQ2}: How does our approach fares in comparison to previous NLP approaches?
+	
+\item\textbf{RQ1}: What are the precision and recall of \tool\ in inferring usage constraints?
+
+%\item\textbf{RQ2}: What is the accuracy of our approach in inferring specifications from contract sentences in the API documents? 
+
+\item\textbf{RQ2}: How does our approach fares in comparison to previous NLP approaches?
+
 \end{itemize}
 
 \subsection{Subjects}
 \label{sub:subject}
 
 We used the API documents of the following two libraries as subjects for our evaluation. 
-\begin{itemize}
-	\item{Amazon S3}. \amazon\ provides a REST based web services interface that can be used to store and retrieve data on the web. Furthermore, \CodeIn{Amazon S3} also empowers a developer with rich set of API methods to access a highly scalable, reliable, secure, fast, inexpensive infrastructure. \CodeIn{Amazon S3} is reported to store more than 2 trillion objects as of April 2013 and gets over 1.1 million requests per second at peak time~\cite{amazons3stats}.
 
-	\item{java.io}. \CodeIn{java.io} is a popular packacge in \CodeIn{Java} programming language that provides APIs for system input and output through data streams, serialization and the file system.
-\end{itemize}
-We chose \CodeIn{Amazon S3} and \CodeIn{java.io} APIs as our subjects because they are popular and contain decent documentation.
 
-\subsection{Experimental Setup.} 
-We apply our approach on the API documents of the two APIs.
-To determine the precision and recall, 
-two authors manually label each sentence in the API documentation as sentence containing 
-temporal constraints or not. After the authors have classified all the sentences, they 
-talk to each ther to reach a consensus on the sentences they classified differently. 
-We use this classified scentes as the golden set for calculating precision and recall.
+\amazon\ provides a simple REST based web services interface that can be used to store and retrieve data on the web. Furthermore, \CodeIn{Amazon S3} also empowers a developer with rich set of API methods to access a highly scalable, reliable, secure, fast, inexpensive infrastructure. \textbf{may be a little detail of usage statistics etc....}  
 
-\CodeIn{cohen kappa} score of the two authors was 6.6 
-
+\textbf{TBD}.
 
 \subsection{Summary}
 \label{sub:summary}
