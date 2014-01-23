@@ -1,7 +1,9 @@
 \section{Motivating Example}
 \label{sec:example}
 
-We now present some real world examples to motivate our approach. In particular, through these examples we demonstrate that developers often overlook the documentation. Thus, the resultant system is inconsistent with the intentions that a developer had in mind initially. This inconsistency oftentimes result in undesirable consequences ranging from developer frustration, customer dissatisfaction, to actual financial losses.
+We now present some real world examples to motivate our approach. In particular, through these examples we demonstrate that developers often overlook the documentation. Thus, the resultant system is inconsistent with the intentions that a developer had in mind initially. We suspect the reason for this phenomena is that API documentation is often verbose and information is distributed across various
+pages. For example, the PDF version of the documentation for Amazon S3 API\footnote{\url{http://awsdocs.s3.amazonaws.com/S3/latest/s3-api.pdf}} spans 278 pages. Developers do not have time and patience to go through all the documentation and miss various temporal specifications of the API, which often result in defective applications that do not follow temporal specifications. 
+If we have the formal temporal specifications such kinds of defects can be detected by formal verification tools.
 
 \begin{figure}[t]
 \begin{center}
@@ -10,7 +12,7 @@ We now present some real world examples to motivate our approach. In particular,
 \caption{\label{fig:Stackoverflow} The Query posted on Stackoverflow form regrading Amazon S3 REST API}
 \end{figure}
 
-For example consider the question asked in \textit{Stack Overflow}~\footnote{\url{http://stackoverflow.com/}} as shown in Figure~\ref{fig:Stackoverflow}. Stack Overflow is a question and answer site for professional and enthusiast programmers. The query is about the delete functionality of a third-party software \CodeIn{S3Fox} to interact with \amazonAPI. In particular, the query complains about an issue in delete bucket functionality of the \CodeIn{S3Fox}. In particular, the issue was because the \CodeIn{S3Fox} developers overlooked the specifications in \amazon. Figure~\ref{fig:AmzonS3DeleteBucketAPI} shows the documentation of delete bucket method. The documents clearly states (outlined in red for clarity) that before deleting the bucket the objects in the buckets must be deleted. Although the issue was fixed but notice that the response on the \textit{Stack Overflow} encouraged the person asking query to switch to another product, thus potentially resulting in a loss of revenue attributed to customer dissatisfaction.  
+Consider the question asked in \textit{Stack Overflow}~\footnote{\url{http://stackoverflow.com/}} as shown in Figure~\ref{fig:Stackoverflow}. Stack Overflow is a question and answer site for professional and enthusiast programmers. The query is about the delete functionality of a third-party software \CodeIn{S3Fox} to interact with \amazonAPI. In particular, the query complains about an issue in delete bucket functionality of the \CodeIn{S3Fox}. In particular, the issue was because the \CodeIn{S3Fox} developers overlooked the specifications in \amazon. Figure~\ref{fig:AmzonS3DeleteBucketAPI} shows the documentation of delete bucket method. The documents clearly states (outlined in red for clarity) that before deleting the bucket the objects in the buckets must be deleted. Although the issue was fixed but notice that the response on the \textit{Stack Overflow} encouraged the person asking query to switch to another product, thus potentially resulting in a loss of revenue attributed to customer dissatisfaction.  
 
 
 \begin{figure}[t]
