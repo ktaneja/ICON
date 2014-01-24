@@ -15,11 +15,10 @@ Our approach consists of five major components: a preprocessor, a text-analysis 
 
 The preprocessor accepts API documents and preprocesses the sentences in the method description, such as annotating sentence boundaries and reducing lexical tokens.
 The text-analysis engine accepts the pre-processed sentences and annotates them using an NLP parser.
-The text-analysis engine further transforms the annotated sentences into the first-order-logic (FOL) representation.
+The text-analysis engine further transforms the annotated sentences into the first-order-logic (FOL) representation. The semantic graph generator accepts the API documents and generates the semantic graphs that are leveraged by specification extractor component.
+The type analyzer component infers temporal constraints encoded in the type system of a language by analyzing the API methods parameter and return types.
 Finally, the specification extractor then leverages the semantic graphs to infer temporal constraints from the FOL representation of a sentence.
-Besides the previously described components the approach also consists of a semantic graph generator and type analyzer.
-The semantic graph generator accepts the API documents and generates the semantic graphs that are leveraged by specification extractor component.
-The type analyzer components infers temporal constraints encoded in the type system of a language by analyzing the API methods parameter and return types.
+
 We next describe each component in detail.
 
 
@@ -39,7 +38,7 @@ This difference in style may include the difference in the level of detail prese
 Our approach thus relies on only basic fields that are trivially available for API methods across different presentation styles. 
 
 After extracting desired information, the natural language text is further preprocessed to be analyzed by subsequent components.
-The preprocessing steps are required to increase the accuracy core NLP techniques (described in Section~\ref{sub:CoreNLPback}) that are used in the subsequent phases of \tool\ approach.
+The preprocessing steps are required to increase the accuracy of core NLP techniques (described in Section~\ref{sub:CoreNLPback}) that are used in the subsequent phases of \tool\ approach.
 In particular, the preprocessor first employs the noun boosting followed by heuristics listed under lexical token reduction, as introduced in Section~\ref{sub:SENLPback}.
 
 Although the previous techniques and heuristics significantly lower the number of lexical tokens in a sentence, some sentences may still contain a considerable number of lexical tokens to overwhelm the POS tagger.
@@ -53,8 +52,6 @@ We then prune the list of n-grams based on a subsumption.
 We consider a n-gram of length k ($n_k$) to subsume n-gram of length k-1 ($n_{k-1}$) iff $n_{k-1}$ is a substring of ($n_k$) and the frequency of occurrence of $n_{k-1}$ equals frequency of occurrence of $n_{k}$.
 Finally, we rank the list of n-grams based on the frequency of their occurrence in the text, and select top-k n-grams for reduction.
 For instance, \textit{Amazon Simple Storage Service}, \textit{an I/O Error Occurs}, and \textit{end of stream} are the examples of such n-grams detected by our approach.
- 
-
 %\begin{figure}[t]
 %\begin{CodeOut}
 %\begin{alltt}
@@ -64,18 +61,17 @@ For instance, \textit{Amazon Simple Storage Service}, \textit{an I/O Error Occur
 %\end{CodeOut}\vspace*{-2ex}
 %\caption{\label{fig:methodAPI} The method description of the \CodeIn{DefineObjectProperty} method in Facebook API}\vspace*{-4ex}
 %\end{figure}
-
-\textbf{Prototype Implementation}
-
+\\
+\textbf{Prototype Implementation.}
 Currently our prototype implementation works with online \amazon\ and JDK API. 
 However, almost all of the developer documents are provided online as structured webpages.
 Thus, current implementation of preprocessor can be easily extended to extract the desired information from any API developer documents.    
 
-Additionally, in current implementation we have manually built the domain dictionaries for the preprocessing using the glossary of terms collected from the websites pertaining to REST and Java API.
+Additionally, in current implementation we have manually built the domain dictionaries for preprocessing using the glossary of terms collected from the websites pertaining to REST and Java API.
 We further leveraged the HTML style information in \amazon\ to look for words that were highlighted in code like format. We further leveraged WordNet to maintain a static lookup table of shorthand words to aid named entity handling and abbreviation handling. 
 
  
-Finally, to achieve  n-gram reduction we used Apache Lucene$^{\textregistered}$~\cite{lucene} to achieve.
+Finally, to achieve  n-gram reduction we used Apache Lucene$^{\textregistered}$~\cite{lucene}.
 Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java.
 It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.
 
@@ -126,10 +122,10 @@ In particular, the intermediate-representation technique is implemented as a fun
 
 However, we observed that such implementation is overwhelmed by complex sentences.
 This limitation mandates the use of additional novel technique of \textit{`Frequent Phrases Reduction'} in preprocessing phase.
-We further improve the accuracy of intermediate-representation generation by proposing an hybrid approach, i.e. taking into consideration both the POS tags as well as Stanford-typed dependencies.
+We further improve the accuracy of intermediate-representation generation by proposing a hybrid approach, i.e. taking into consideration both the POS tags as well as Stanford-typed dependencies.
 The POS tags which annotate the syntactical structure of a sentence are used to further simplify the constituent elements in a sentence. 
 We then use the Stanford-typed dependencies that annotate the grammatical relationships between words to construct our FOL representation.
-Thus, the intermediate representation generator used in this work is two phase process as opposed to previous work~\cite{pandita12:inferring, pandita13:WHYPER}. 
+Thus, the intermediate representation generator used in this work is a two phase process as opposed to previous work~\cite{pandita12:inferring, pandita13:WHYPER}. 
 We next describe these two phases:
 
 \textbf{POS Tags}: We first parse a sentence based on the function of POS tags. 
@@ -206,7 +202,7 @@ Section~\ref{sub:ACA} further describes how these graphs are generated.
  
 Specification extractor then uses the semantic graph to determine
 if a candidate sentence is a specification sentence and if so extract
-the action that is should be performed prior to the method the sentence
+the action that should be performed prior to the method the sentence
 belongs to. Algorithm~\ref{alg:SenAnnotaator} describes this action extraction
 process.  
 
@@ -296,9 +292,9 @@ the nodes representing methods in an API and the directed edges representing tem
 First, a index is created based on the return types of the method (Line 2).
 Second, all methods in an API are added to an unconnected graph (Line 3-4).
 Then, for every public method in the input list, the algorithm checks the types
-of the input parameters and constructs and directed edge from all the methods that whose return value
+of the input parameters and constructs and directed edge from all the methods whose return value
 have the same type to the method in question (Line 14- 20).
-The algorithm does not take into consideration the basic parameter types such as integer, string (Line 15)
+The algorithm does not take into consideration the basic parameter types such as integer, string (Line 15).
 Additionally, an edge is created from the constructors of a class to the non static members methods of a class (Line 8 -13).
 The resultant graph is then returned by the algorithm.
 
