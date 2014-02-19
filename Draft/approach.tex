@@ -18,7 +18,6 @@ The text-analysis engine accepts the pre-processed sentences and annotates them 
 The text-analysis engine further transforms the annotated sentences into the first-order-logic (FOL) representation. The semantic graph generator accepts the API documents and generates the semantic graphs that are leveraged by specification extractor component.
 The type analyzer component infers temporal constraints encoded in the type system of a language by analyzing the API methods parameter and return types.
 Finally, the specification extractor then leverages the semantic graphs to infer temporal constraints from the FOL representation of a sentence.
-
 We next describe each component in detail.
 
 
@@ -83,7 +82,7 @@ It is a technology suitable for nearly any application that requires full-text s
 The NLP parser accepts the pre-processed documents and annotates every sentence within each document using core NLP techniques described in Section~\ref{sub:CoreNLPback}.
 From an implementation perspective, we chose the Stanford parser~\cite{Manning:01}.
 However, this component can be implemented using any other existing NLP libraries or approachs.
-In particular, we annotate each sentence with POS tags, named-entity Annotations and Stanford-typed dependencies.
+In particular, we annotate each sentence with POS tags, named-entity annotations and Stanford-typed dependencies.
 For more details on these techniques and their application, please refer to ~\cite{Marneffe06LREC, Marneffe08COLING, pandita12:inferring, pandita13:WHYPER, thummalapentaICSE12}.
 
 %\begin{figure}
@@ -106,7 +105,7 @@ For more details on these techniques and their application, please refer to ~\ci
 %\end{figure}
 
 The text analysis engine component accepts the annotated documents and creates an intermediate representation of each sentence.
-We define our representation as a tree structure that is essentially a First-Order-Logic (FOL) expression.
+We define our representation as a tree structure that is essentially a FOL expression.
 Research literature provides evidence of the adequacy of using FOL for NLP related analysis tasks~\cite{Sinha2009,Sinha2010,pandita12:inferring, pandita13:WHYPER}.
 
 In our representation, every node in the tree except for the leaf nodes is a predicate node. 
@@ -149,7 +148,7 @@ We thus break down the sentence into two smaller tractable sentences:
 Table~\ref{tab:semanticTemplates} shows a list the semantic templates used in this phase.
 Column ``Template'' describes conditions where the template is applicable and Column ``Summary'' describes the action taken by our shallow parser when the template is applicable.
 All of these semantic templates are publicly available on our project website~\cite{projectweb}.
-With respect to the previous example the template no. 3 \textit{( A noun phrase followed by another noun/pronoun/verb phrase in brackets)} is applicable.
+With respect to the previous example the template 3 \textit{( A noun phrase followed by another noun/pronoun/verb phrase in brackets)} is applicable.
 Thus our shallow parser breaks the sentence into two individual sentences.
 	 
 \begin{table*}
@@ -184,11 +183,11 @@ sentence (containing temporal constraint) candidate based on following ordered s
 \begin{enumerate}
 	\item The sentence is not from parameter summary or return variable summary.
 	Typically such sentences describe pre-post conditions as opposed to temporal constraints this approach addresses.
-	\item The sentences contains modal modifiers such as ``can, could, may, must, should'' expressing necessity.
+	\item The sentences contains modal modifiers such as ``\textit{can, could, may, must, should}'' expressing necessity.
 	Typically, presence of such modal modifier is a strong indicator of presence of constraints imposed by an API developer
 	\item If the sentence does not contain modal modifiers described previously, sentence must contain temporal modifier relationship, identified by Stanford-typed dependency parser.
 	Typically, presence of temporal modifier is an indicator of presence of temporal information.  
-	\item If rules 2 and 3 don't apply then the sentences should be a conditional sentence, identified by the presence of keywords such as ``if''.
+	\item If rules 2 and 3 don't apply then the sentences should be a conditional sentence, identified by the presence of keywords such as ``\textit{if}''.
 \end{enumerate} 
 
 Once a candidate sentence is identified, this component selects an semantic graph.
