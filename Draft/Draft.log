@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  19 FEB 2014 08:38
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  2 MAR 2014 18:52
 entering extended mode
 **Draft.tex
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
@@ -448,7 +448,7 @@ Underfull \hbox (badness 1953) in paragraph at lines 280--281
 
 [7]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\evaluation.tex [8]
 [9]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\conclusion.tex)
+(C:\Users\rahulpandita\Documents\Git\ICON\Draft\conclusion.tex) [10]
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 8--11
 [][]\OT1/ptm/m/n/9 Amazon S3 - Two Tril-lion Ob-jects, 1.1 Mil-lion
@@ -460,7 +460,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--11
 -[]second .
  []
 
-[10])
+[11])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -472,21 +472,23 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Extra height:0.0pt when 519.94843pt
-(2)Left:519.94843pt Right:499.89685pt Output:519.94843pt
+Extra height:0.0pt when 293.97421pt
+(2)Left:293.97421pt Right:277.94843pt Output:293.97421pt
 - LAST -
 Extra skip:0.0pt
-Left:519.94843pt
-Right:499.89685pt
-Output:519.94843pt
-[11] (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux) ) 
+Left:293.97421pt
+Right:277.94843pt
+Output:293.97421pt
+[12
+
+] (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux) ) 
 Here is how much of TeX's memory you used:
  3377 strings out of 493922
  48744 string characters out of 3144878
- 119781 words of memory out of 3000000
+ 113746 words of memory out of 3000000
  6579 multiletter control sequences out of 15000+200000
  34645 words of font info for 84 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
- 36i,15n,24p,971b,720s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,15n,24p,1008b,720s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (11 pages, 100792 bytes).
+Output written on Draft.dvi (12 pages, 106680 bytes).

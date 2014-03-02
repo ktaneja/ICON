@@ -79,9 +79,23 @@ We next describe our evaluation results to demonstrate the effectiveness of \too
 \subsubsection{RQ1: Effectiveness in Identifying Specification Sentences}
 
 
-In this section, we evaluate the effectiveness of \tool\ in identifying specification sentences from API documents.
+In this section, we quantify the effectiveness of \tool\ in identifying specification sentences by answering RQ1. Our results show that, out of 2,414 sentences, \tool\ effectively identifies specification sentences with the average precision, recall, F-score, and accuracy of 65.0\%, 71.8\%, 68.7\%, and 97.9\%, respectively.
 
-We next describe how 
+We next present an example to illustrate how \tool\ incorrectly identifies a sentence as a specification sentence.
+
+We next present an example to illustrate how \tool\ incorrectly identifies a sentence as a specification sentence (producing false positives). For instance, consider the sentence ``\textit{This is done by flushing the stream and then closing the underlying output stream.}'' from  \CodeIn{close} method description from \CodeIn{PrintStream} class. \tool\ fails to make the distinction 
+
+
+Another major source of FPs is the incorrect parsing of sentences by the underlying NLP infrastructure and/or inadequacy of generic dictionaries for synonym analysis. For instance, consider the sentence ``\textit{If this stream has an associated channel then the channel is closed as well.}'' from the \CodeIn{close} method description from \CodeIn{FileOutputStream}. The sentence describes an effect that happens as a result of calling the \CodeIn{close} method and does not describe any temporal constraint. However, \tool\ annotates the sentence as a specification sentence because underlying Wordnet dictionaries matches the word ``has'' as a synonym of ``get''. This incorrect matching in turn causes \tool to incorrectly annotate the sentence as specification sentence because ``has'' is matched against \CodeIn(get) method in \CodeIn{FileOutputStream}. We observed 8 instances of previously described example in our results.
+
+If we manually fixed the Wordnet dictionaries to match ``has'' and ``get'' as synonyms, our precision is further increased to 70.8\% effectively increasing the F-Score of \tool to 71.2\%. We refrained from including such modifications for reporting the results to stay true to our proposed framework. In the future, we plan to investigate techniques to construct better domain dictionaries for software API.
+
+We next present an example to illustrate how \tool\ fails identify a specification sentence (producing false negative). False negatives are particularly undesirable in the context of our problem domain, because they can mislead the users of \tool\ into believing that no other temporal constraint exists in the API document. Furthermore, an overwhelming number of false negatives works against the usefulness of \tool. For instance, consider the sentence ``\textit{This is done by flushing the stream and then closing the underlying output stream.}'' from  \CodeIn{close} method description from \CodeIn{PrintStream} class. The sentence describes the constraint in terms of invoking the same method again. Although \tool\ correctly identifies the method \CodeIn{close} in the sentence, \tool\ currently does not support temporal constraint on the same method. Aforementioned, limitation causes \tool\ to not identify the statement as a specification constraint.   
+
+
+Another major source of false negatives (similar to reasons for false positives) is the incorrect parsing of sentences by the underlying NLP infrastructure. For instance, consider the sentence ``\textit{If any in-memory buffering is being done by the application (for example, by a BufferedOutputStream object), those buffers must be flushed into the FileDescriptor (for example, by invoking OutputStream.flush) before that data will be affected by sync.}'' The sentence describes that the \CodeIn{OutputStream.flush()} must be invoked before invoking the current method if in-memory buffering is performed. However, the length and complexity in terms of number of clauses causes the underlying Stanford parser to inaccurately annotate the dependencies, which eventually results into incorrect classification. 
+
+Overall, a significant number of false positives and false negatives will be reduced as the current NLP research advances the underlying NLP infrastructure. Furthermore, use of domain specific dictionaries as opposed to generic dictionaries used in current prototype implementation will further improve the precision and recall of \tool. 
 
 \subsubsection{RQ2: Accuracy in Inferring Temporal Constraints}
 
