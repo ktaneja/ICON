@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  2 MAR 2014 18:52
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  4 MAR 2014 13:03
 entering extended mode
 **Draft.tex
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
@@ -13,158 +13,16 @@ german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\IEEEtran.cls
-Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
--- See the "IEEEtran_HOWTO" manual for usage information.
--- http://www.michaelshell.org/tex/ieeetran/
-\@IEEEtrantmpdimenA=\dimen102
-\@IEEEtrantmpdimenB=\dimen103
-\@IEEEtrantmpcountA=\count79
-\@IEEEtrantmpcountB=\count80
-\@IEEEtrantmptoksA=\toks14
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 373.
+(C:\Users\rahulpandita\Documents\Git\ICON\Draft\acm_proc_article-sp.cls
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
--- Using 8.5in x 11in (letter) paper.
--- Using DVI output.
-\@IEEEnormalsizeunitybaselineskip=\dimen104
--- This is a 10 point document.
-\CLASSINFOnormalsizebaselineskip=\dimen105
-\CLASSINFOnormalsizeunitybaselineskip=\dimen106
-\IEEEnormaljot=\dimen107
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
-\IEEEilabelindentA=\dimen108
-\IEEEilabelindentB=\dimen109
-\IEEEilabelindent=\dimen110
-\IEEEelabelindent=\dimen111
-\IEEEdlabelindent=\dimen112
-\IEEElabelindent=\dimen113
-\IEEEiednormlabelsep=\dimen114
-\IEEEiedmathlabelsep=\dimen115
-\IEEEiedtopsep=\skip41
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@IEEEsubequation=\count85
-\abovecaptionskip=\skip42
-\belowcaptionskip=\skip43
-\c@figure=\count86
-\c@table=\count87
-\@IEEEeqnnumcols=\count88
-\@IEEEeqncolcnt=\count89
-\@IEEEtmpitemindent=\dimen116
-\c@IEEEbiography=\count90
-\@IEEEtranrubishbin=\box26
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
-Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip44
-
-For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
-Package: amstext 2000/06/29 v2.01
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
-File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks15
-\ex@=\dimen117
-))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
-Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen118
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
-Package: amsopn 1999/12/14 v2.01 operator names
-)
-\inf@bad=\count91
-LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count92
-\leftroot@=\count93
-LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count94
-\DOTSCASE@=\count95
-LaTeX Info: Redefining \ldots on input line 378.
-LaTeX Info: Redefining \dots on input line 381.
-LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box27
-\strutbox@=\box28
-\big@size=\dimen119
-LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count96
-\c@MaxMatrixCols=\count97
-\dotsspace@=\muskip10
-\c@parentequation=\count98
-\dspbrk@lvl=\count99
-\tag@help=\toks16
-\row@=\count100
-\column@=\count101
-\maxfields@=\count102
-\andhelp@=\toks17
-\eqnshift@=\dimen120
-\alignsep@=\dimen121
-\tagshift@=\dimen122
-\tagwidth@=\dimen123
-\totwidth@=\dimen124
-\lineht@=\dimen125
-\@envbody=\toks18
-\multlinegap=\skip45
-\multlinetaggap=\skip46
-\mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2665.
-LaTeX Info: Redefining \] on input line 2666.
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
-\Urlmuskip=\muskip11
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
-)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks20
+\KV@toks@=\toks14
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -180,8 +38,155 @@ Package graphics Info: Driver file: dvips.def on input line 91.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvips.def"
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
-\Gin@req@height=\dimen126
-\Gin@req@width=\dimen127
+\Gin@req@height=\dimen102
+\Gin@req@width=\dimen103
+)
+\epsfxsize=\dimen104
+\epsfysize=\dimen105
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip41
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen106
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen107
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count79
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count80
+\leftroot@=\count81
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count82
+\DOTSCASE@=\count83
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen108
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count84
+\c@MaxMatrixCols=\count85
+\dotsspace@=\muskip10
+\c@parentequation=\count86
+\dspbrk@lvl=\count87
+\tag@help=\toks17
+\row@=\count88
+\column@=\count89
+\maxfields@=\count90
+\andhelp@=\toks18
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
+\@envbody=\toks19
+\multlinegap=\skip42
+\multlinetaggap=\skip43
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+Document Class 'acm_proc_article-sp' <22nd. April '09>. Modified by G.K.M. Tobi
+n
+Based in part upon document Style `acmconf' <22 May 89>. Hacked 4/91 by
+shivers@cs.cmu.edu, 4/93 by theobald@cs.mcgill.ca
+Excerpts were taken from (Journal Style) 'esub2acm.cls'.
+****** Bugs/comments/suggestions to Gerry Murray -- murray@hq.acm.org ******
+\footheight=\dimen115
+\@maxsep=\dimen116
+\@dblmaxsep=\dimen117
+\aucount=\count91
+\originalaucount=\count92
+\auwidth=\dimen118
+\auskip=\dimen119
+\auskipcount=\count93
+\auskip=\dimen120
+\allauboxes=\dimen121
+\addauthors=\toks21
+\addauflag=\count94
+\subtitletext=\toks22
+\savesection=\count95
+\sectioncntr=\count96
+\c@figure=\count97
+\c@table=\count98
+\titleboxnotes=\toks23
+\titleboxnoteflag=\count99
+Document Class: acm_proc_article-sp 2009/04/22 - V3.2SP - based on esub2acm.sty
+ <23 April 96>
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+\@acmtitlebox=\box28
+\titlenotecount=\count100
+\tntoks=\toks24
+\tntokstwo=\toks25
+\tntoksthree=\toks26
+\tntoksfour=\toks27
+\tntoksfive=\toks28
+\catcount=\count101
+\copyrightnotice=\toks29
+\conf=\toks30
+\confinfo=\toks31
+\c@part=\count102
+\c@section=\count103
+\c@subsection=\count104
+\c@subsubsection=\count105
+\c@paragraph=\count106
+
+Using 'Abbrev' bibliography style
+LaTeX Info: Redefining \cite on input line 1236.
+\bibindent=\dimen122
+\colcntr=\count107
+\saveb@x=\box29
+\copyrtyr=\toks32
+\acmcopyr=\toks33
+\boilerplate=\toks34
+\copyrightetc=\toks35
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)
+LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+)))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\alltt.sty"
 Package: alltt 1997/06/16 v2.0g defines alltt environment
@@ -192,17 +197,17 @@ Package: algorithm
 Document Style `algorithm' - floating environment
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count103
-\float@exts=\toks21
-\float@box=\box29
-\@float@everytoks=\toks22
-\@floatcapt=\box30
+\c@float@type=\count108
+\float@exts=\toks36
+\float@box=\box30
+\@float@everytoks=\toks37
+\@floatcapt=\box31
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks23
-\c@algorithm=\count104
+\@float@every@algorithm=\toks38
+\c@algorithm=\count109
 )
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\algorithmic.sty
 Package: algorithmic 2006/06/02
@@ -210,22 +215,22 @@ Package: algorithmic 2006/06/02
 Document Style `algorithmic' - environment
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count105
-\calc@Bcount=\count106
-\calc@Adimen=\dimen128
-\calc@Bdimen=\dimen129
-\calc@Askip=\skip47
-\calc@Bskip=\skip48
+\calc@Acount=\count110
+\calc@Bcount=\count111
+\calc@Adimen=\dimen123
+\calc@Bdimen=\dimen124
+\calc@Askip=\skip44
+\calc@Bskip=\skip45
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count107
-\calc@Cskip=\skip49
+\calc@Ccount=\count112
+\calc@Cskip=\skip46
 )
-\c@ALC@line=\count108
-\c@ALC@rem=\count109
-\c@ALC@depth=\count110
-\ALC@tlm=\skip50
-\algorithmicindent=\skip51
+\c@ALC@line=\count113
+\c@ALC@rem=\count114
+\c@ALC@depth=\count115
+\ALC@tlm=\skip47
+\algorithmicindent=\skip48
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cite\cite.sty"
 LaTeX Info: Redefining \cite on input line 302.
@@ -235,13 +240,13 @@ Package: cite 2010/09/10  v 5.3
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\sttools\flushend.sty"
 Package: flushend 2012/05/29 v1.1 Balancing columns at last page
 Package: flushend 1997/10/01
-\@aaa=\box31
-\@ccc=\box32
-\@viper=\box33
-\hold@viper=\box34
-\atColsBreak=\toks24
-\@extra@skip=\dimen130
-\@nd@page@rule=\dimen131
+\@aaa=\box32
+\@ccc=\box33
+\@viper=\box34
+\hold@viper=\box35
+\atColsBreak=\toks39
+\@extra@skip=\dimen125
+\@nd@page@rule=\dimen126
 )
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\macros.tex
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\times.sty"
@@ -250,26 +255,21 @@ Package: times 2005/04/12 PSNFSS-v9.2a (SPQR)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\epsf\epsf.sty"
 This is `epsf.tex' v2.7.4 <14 February 2011>
 \epsffilein=\read1
-\epsfframemargin=\dimen132
-\epsfframethickness=\dimen133
-\epsfrsize=\dimen134
-\epsftmp=\dimen135
-\epsftsize=\dimen136
-\epsfxsize=\dimen137
-\epsfysize=\dimen138
-\pspoints=\dimen139
+\epsfframemargin=\dimen127
+\epsfframethickness=\dimen128
+\epsfrsize=\dimen129
+\epsftmp=\dimen130
+\epsftsize=\dimen131
+\epsfxsize=\dimen132
+\epsfysize=\dimen133
+\pspoints=\dimen134
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks25
-\verbatim@line=\toks26
+\every@verbatim=\toks40
+\verbatim@line=\toks41
 \verbatim@in@stream=\read2
 )
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\psfig.sty
-\@unused=\write3
-\ps@stream=\read3
-\p@intvaluex=\dimen140
-\p@intvaluey=\dimen141
-)
+(C:\Users\rahulpandita\Documents\Git\ICON\Draft\psfig.sty)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
@@ -283,122 +283,206 @@ File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\longtable.sty"
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip52
-\LTright=\skip53
-\LTpre=\skip54
-\LTpost=\skip55
-\LTchunksize=\count111
-\LTcapwidth=\dimen142
-\LT@head=\box35
-\LT@firsthead=\box36
-\LT@foot=\box37
-\LT@lastfoot=\box38
-\LT@cols=\count112
-\LT@rows=\count113
-\c@LT@tables=\count114
-\c@LT@chunks=\count115
-\LT@p@ftn=\toks27
+\LTleft=\skip49
+\LTright=\skip50
+\LTpre=\skip51
+\LTpost=\skip52
+\LTchunksize=\count116
+\LTcapwidth=\dimen135
+\LT@head=\box36
+\LT@firsthead=\box37
+\LT@foot=\box38
+\LT@lastfoot=\box39
+\LT@cols=\count117
+\LT@rows=\count118
+\c@LT@tables=\count119
+\c@LT@chunks=\count120
+\LT@p@ftn=\toks42
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\slashbox.sty
 slashbox style by K.Yasuoka, May 1993.
-\@slashboxa=\box39
-\@slashboxb=\box40
-\@slashboxc=\box41
-\@slashboxwd=\count116
-\@slashboxht=\count117
-\@slashsepl=\dimen143
-\@slashsepr=\dimen144
+\@slashboxa=\box40
+\@slashboxb=\box41
+\@slashboxc=\box42
+\@slashboxwd=\count121
+\@slashboxht=\count122
+\@slashsepl=\dimen136
+\@slashsepr=\dimen137
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
-\bigstrutjot=\dimen145
+\bigstrutjot=\dimen138
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen146
-\extrarowheight=\dimen147
-\NC@list=\toks28
-\extratabsurround=\skip56
-\backup@length=\skip57
+\col@sep=\dimen139
+\extrarowheight=\dimen140
+\NC@list=\toks43
+\extratabsurround=\skip53
+\backup@length=\skip54
 )
-\everycr=\toks29
-\minrowclearance=\skip58
+\everycr=\toks44
+\minrowclearance=\skip55
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\jknappen\mathrsfs.sty"
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
-\symrsfs=\mathgroup4
+\symrsfs=\mathgroup7
 ))
+
+LaTeX Warning: Unused global option(s):
+    [a4paper].
+
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 373.
-LaTeX Font Info:    ... okay on input line 373.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 373.
-LaTeX Font Info:    ... okay on input line 373.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 373.
-LaTeX Font Info:    ... okay on input line 373.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 373.
-LaTeX Font Info:    ... okay on input line 373.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 373.
-LaTeX Font Info:    ... okay on input line 373.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 373.
-LaTeX Font Info:    ... okay on input line 373.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 416.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 416.
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 416.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 49.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 144.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 144.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 144.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 144.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
+Overfull \hbox (6.72636pt too wide) in paragraph at lines 144--144
+ []\eaddfnt k.a.taneja@accenture.com| 
+ []
+
+
+Overfull \hbox (14.73029pt too wide) in paragraph at lines 144--144
+ []\eaddfnt teresa.tung@accenture.com| 
+ []
+
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\abstract.tex
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 14.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 14.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <9> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 14.
-)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\introduction.tex [1
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+))
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 150.
+
+(C:\Users\rahulpandita\Documents\Git\ICON\Draft\introduction.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
 
 
-])
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\example.tex
+]
+Overfull \hbox (1.68459pt too wide) in paragraph at lines 111--117
+[][]\T1/ptm/m/n/9 An eval-u-a-tion of pro-posed ap-proach on com-monly used pac
+k-
+ []
+
+) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\example.tex
+Underfull \hbox (badness 10000) in paragraph at lines 5--5
+[][]$\T1/pcr/m/n/9 http : / / awsdocs . s3 . amazonaws . com / S3 / latest /
+ []
+
 File: Stackoverflow.eps Graphic file (type eps)
-
 <Stackoverflow.eps>
-Overfull \hbox (17.16234pt too wide) in paragraph at lines 10--11
+Overfull \hbox (21.0736pt too wide) in paragraph at lines 10--11
  [][] 
+ []
+
+
+Overfull \hbox (3.22035pt too wide) in paragraph at lines 15--23
+\T1/ptm/m/n/9 cause the \T1/pcr/m/n/8 S3Fox \T1/ptm/m/n/9 de-vel-op-ers over-lo
+oked the spec-i-fi-ca-tions in \T1/pcr/m/n/8 Amazon
  []
 
 [2]
 File: Example2.eps Graphic file (type eps)
  <Example2.eps>
-Overfull \hbox (3.01375pt too wide) in paragraph at lines 39--40
+Overfull \hbox (6.925pt too wide) in paragraph at lines 39--40
  [][] 
  []
 
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\related.tex [3])
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\background.tex
+) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\related.tex
+Overfull \hbox (5.79645pt too wide) in paragraph at lines 23--27
+\T1/ptm/m/n/9 quire-ments en-gi-neer-ing  [15, 32, 33], us-abil-ity of API doc-
+u-ments [11],
+ []
+
+
+Overfull \hbox (3.14151pt too wide) in paragraph at lines 29--33
+\T1/ptm/m/n/9 use shal-low pars-ing tech-niques to in-fer Ac-cess Con-trol Pol-
+icy (ACP)
+ []
+
+) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\background.tex
+Overfull \hbox (33.95656pt too wide) in paragraph at lines 4--7
+\T1/ptm/m/n/9 sen-tence. These ad-vances in NLP have in-spired re-searchers/pra
+ctitioners [28,
+ []
+
+[3]
+Overfull \hbox (2.81789pt too wide) in paragraph at lines 21--22
+\T1/ptm/m/n/9 achieve around 90% [35] ac-cu-racy in clas-si-fy-ing phrases and 
+clauses
+ []
+
+
+Overfull \hbox (2.30396pt too wide) in paragraph at lines 23--24
+\T1/ptm/m/n/9 mat-i-cal re-la-tion-ships di-rected to-wards non-linguistics ex-
+perts to per-
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 39--39
-[][][][]$\OT1/ptm/m/n/8 http : / / oxforddictionaries . com / us / denition / 
-american[]english / post ? q =
+[][]$\T1/pcr/m/n/9 http : / / oxforddictionaries . com / us /
  []
 
-[4]
-Underfull \hbox (badness 2671) in paragraph at lines 74--79
-[][]\OT1/ptm/b/n/10 Intermediate-Representation Gen-er-a-tion \OT1/ptm/m/n/10 [
-28]. This
- []
-
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\approach.tex
+[4]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\approach.tex
 File: approach.eps Graphic file (type eps)
- <approach.eps>
-[5]
+
+<approach.eps>
+Overfull \hbox (3.90959pt too wide) in paragraph at lines 7--8
+ [][][] 
+ []
+
+
+Overfull \hbox (3.70863pt too wide) in paragraph at lines 16--22
+\T1/ptm/m/n/9 tences in the method de-scrip-tion, such as an-no-tat-ing sen-ten
+ce bound-
+ []
+
+
+Overfull \hbox (8.19897pt too wide) in paragraph at lines 27--33
+[]\T1/ptm/m/n/9 The pre-pro-ces-sor ac-cepts the API doc-u-ments and first ex-t
+racts method
+ []
+
 
 LaTeX Warning: Command \textregistered invalid in math mode on input line 73.
 
@@ -409,86 +493,132 @@ LaTeX Font Info:    Try loading font information for OMS+ptm on input line 73.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
 
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 73.
 
 
-Underfull \vbox (badness 2245) has occurred while \output is active []
-
- [6]
-Underfull \hbox (badness 7558) in paragraph at lines 164--164
-[]|[]\OT1/ptm/m/n/8 A noun phrase fol-lowed by an-other
+Overfull \hbox (4.73819pt too wide) in paragraph at lines 73--76
+[][]\T1/ptm/m/n/9 Finally, to achieve n-gram re-duc-tion we used Apache Lucene$
+[]$ [23].
  []
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 193--200
-\OT1/ptm/m/n/10 nent se-lects an se-man-tic graph. In par-tic-u-lar, the se-
+Underfull \vbox (badness 2698) has occurred while \output is active []
+
+ [5]
+Underfull \hbox (badness 1152) in paragraph at lines 164--164
+[]|[]\T1/ptm/m/n/9 A noun phrase fol-lowed by an-other
  []
 
 
-Overfull \hbox (5.82335pt too wide) in paragraph at lines 224--225
+Overfull \hbox (2.41197pt too wide) in paragraph at lines 178--182
+\T1/ptm/m/n/9 sen-tence as a spec-i-fi-ca-tion sen-tence (con-tain-ing tem-po-r
+al con-straint)
+ []
+
+
+Overfull \hbox (5.3834pt too wide) in paragraph at lines 188--190
+\T1/ptm/m/n/9 tion-ship, iden-ti-fied by Stanford-typed de-pen-dency parser. Ty
+p-
+ []
+
+
+Overfull \hbox (56.53304pt too wide) in paragraph at lines 193--200
+\T1/ptm/m/n/9 phrases in rounded rect-an-gle are the ac-tions ap-pli-ca-ble on 
+\T1/pcr/m/n/8 BufferedInputReader
+ []
+
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 212.
+
+Overfull \hbox (5.17664pt too wide) in paragraph at lines 224--225
 [] [][]$\OML/cmm/m/it/7 action  \OT1/cmr/m/n/7 =  \OML/cmm/m/it/7 actionList:ma
 tching\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 r[]:leftSibling:predicate\OT1/cmr/m/n/7 )
 $ 
  []
 
+[6]
 File: KnowledgeGraph.eps Graphic file (type eps)
-<KnowledgeGraph.eps>
-Underfull \hbox (badness 1688) in paragraph at lines 280--281
-\OT1/ptm/m/n/10 scrib-ing a pos-si-ble ac-tion on the ob-ject), we ex-tract
+ <KnowledgeGraph.eps>
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 275.
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <8> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 275.
+
+Overfull \hbox (46.21889pt too wide) in paragraph at lines 280--281
+\T1/ptm/m/n/9 so-ci-ated ac-tions ap-pli-ca-ble on the ob-ject. For in-stance, 
+\T1/pcr/m/n/8 BufferedInputReader
+ []
+
+[7]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\evaluation.tex
+Overfull \hbox (5.70285pt too wide) in paragraph at lines 71--74
+\T1/ptm/m/n/9 spec-i-fi-ca-tion sen-tences by \T1/ptm/m/sc/9 ICON\T1/ptm/m/n/9 
+. We mea-sure $\OML/cmm/m/it/9 accuracy$ \T1/ptm/m/n/9 of \T1/ptm/m/sc/9 ICON\T
+1/ptm/m/n/9 as
+ []
+
+[8]
+Overfull \hbox (44.56918pt too wide) in paragraph at lines 89--90
+\T1/ptm/m/it/9 closed as well.\T1/ptm/m/n/9 '' from the \T1/pcr/m/n/8 close \T1
+/ptm/m/n/9 method de-scrip-tion from \T1/pcr/m/n/8 FileOutputStream\T1/ptm/m/n/
+9 .
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 280--281
-\OT1/ptm/m/n/10 verb phrases. The verb phrases are used as the as-
+Overfull \hbox (1.7648pt too wide) in paragraph at lines 96--97
+\T1/ptm/m/n/9 ever, the length and com-plex-ity in terms of num-ber of clauses 
+causes
  []
 
-[7]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\evaluation.tex [8]
-[9]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\conclusion.tex) [10]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (13.44907pt too wide) in paragraph at lines 100--100
+[]\subsecfnt RQ2: Ac-cu-racy in In-fer-ring Tem-po-ral Con-straints 
+ []
+
+) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex [9])
+(C:\Users\rahulpandita\Documents\Git\ICON\Draft\conclusion.tex)
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 8--11
-[][]\OT1/ptm/m/n/9 Amazon S3 - Two Tril-lion Ob-jects, 1.1 Mil-lion
+Overfull \hbox (96.69357pt too wide) in paragraph at lines 8--11
+\T1/pcr/m/n/9 amazon-[]s3-[]two-[]trillion-[]objects-[]11-[]million-[]requests-
+[]second . 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--11
-\OT1/ptm/m/n/9 amazon-[]s3-[]two-[]trillion-[]objects-[]11-[]million-[]requests
--[]second .
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[11])
+ [10])
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-** Conference Paper **
-Before submitting the final camera ready copy, remember to:
+Extra height:0.0pt when 215.97421pt
 
- 1. Manually equalize the lengths of two columns on the last page
- of your paper;
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- 2. Ensure that any PostScript and/or PDF output post-processing
- uses only Type 1 fonts and that every step in the generation
- process uses the appropriate paper size.
-
-Extra height:0.0pt when 293.97421pt
-(2)Left:293.97421pt Right:277.94843pt Output:293.97421pt
+(2)Left:215.97421pt Right:215.94843pt Output:215.97421pt
 - LAST -
 Extra skip:0.0pt
-Left:293.97421pt
-Right:277.94843pt
-Output:293.97421pt
-[12
+Left:215.97421pt
+Right:215.94843pt
+Output:215.97421pt
 
-] (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux) ) 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11
+
+]
+(C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux) ) 
 Here is how much of TeX's memory you used:
- 3377 strings out of 493922
- 48744 string characters out of 3144878
- 113746 words of memory out of 3000000
- 6579 multiletter control sequences out of 15000+200000
- 34645 words of font info for 84 fonts, out of 3000000 for 9000
- 844 hyphenation exceptions out of 8191
- 36i,15n,24p,1008b,720s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 3190 strings out of 493922
+ 40667 string characters out of 3144878
+ 99245 words of memory out of 3000000
+ 6354 multiletter control sequences out of 15000+200000
+ 56478 words of font info for 69 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 39i,12n,28p,1006b,772s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (12 pages, 106680 bytes).
+Output written on Draft.dvi (11 pages, 105140 bytes).
