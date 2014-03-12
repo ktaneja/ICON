@@ -26,7 +26,9 @@
 %
 % For tracking purposes - this is V3.1SP - APRIL 2009
 
-\documentclass[a4paper]{acm_proc_article-sp}
+%Old document Class 
+%\documentclass[a4paper]{acm_proc_article-sp}
+\documentclass{sig-alternate}
 %\usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{url}
@@ -47,6 +49,12 @@
 
 
 \begin{document}
+%
+% --- Author Metadata here ---
+\conferenceinfo{FSE}{'14 Hong Kong}
+%\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
+%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
+% --- End of Author Metadata ---
 
 \title{{\ttlit ICON}: {\ttlit I}nferring Temporal {\ttlit Con}straints from Natural Language API Descriptions}
 %\subtitle{[Extended Abstract]
@@ -79,7 +87,7 @@
 % without further effort on your part as the last section in
 % the body of your article BEFORE References or any Appendices.
 
-\numberofauthors{5} %  in this sample file, there are a *total*
+\numberofauthors{1} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
@@ -96,38 +104,38 @@
 %
 % 1st. author
 \alignauthor
-Rahul Pandita\\%\titlenote{Dr.~Trovato insisted his name be first.}\\
-       %\affaddr{Department of Computer Science}\\
-       \affaddr{North Carolina State University}\\
-       \affaddr{Raleigh, NC, USA}\\
-       \email{rpandit@ncsu.edu}
+Rahul Pandita$^1$, Kunal Taneja$^2$, Tao Xie$^3$, Laurie Williams$^1$, Teresa Tung$^2$\\%\titlenote{Dr.~Trovato insisted his name be first.}\\
+       \affaddr{$^1$Department of Computer Science, North Carolina State University, Raleigh, NC, USA}\\
+       \affaddr{$^2$Accenture Technology Labs, San Jose, CA, USA}\\
+       \affaddr{$^3$Department of Computer Science, University of Illinois, Urbana-Champaign, IL, USA}\\
+       \email{{\normalsize rpandit@ncsu.edu, k.a.taneja@accenture.com, taoxie@illinois.edu, williams@csc.ncsu.edu, teresa.tung@accenture.com}}
 % 2nd. author
-\alignauthor
-Kunal Taneja\\
-	   %\titlenote{The secretary disavows any knowledge of this author's actions.}\\
-       \affaddr{Accenture Technology Labs}\\
-       \affaddr{San Jose, CA, USA}\\
-       \email{k.a.taneja@accenture.com}
-% 3rd. author
-\alignauthor 
-Tao Xie\\
-	   %\titlenote{This author is the one who did all the really hard work.}\\
-       %\affaddr{Department of Computer Science}\\
-       \affaddr{University of Illinois}\\
-       \affaddr{Urbana-Champaign, IL, USA}\\
-       \email{taoxie@illinois.edu}
-\and  % use '\and' if you need 'another row' of author names
-% 4th. author
-\alignauthor Laurie Williams\\
-       %\affaddr{Department of Computer Science}\\
-       \affaddr{North Carolina State University}\\
-       \affaddr{Raleigh, NC, USA}\\
-       \email{williams@csc.ncsu.edu}
-% 5th. author
-\alignauthor Teresa Tung\\
-       \affaddr{Accenture Technology Labs}\\
-       \affaddr{San Jose, CA, USA}\\
-       \email{teresa.tung@accenture.com}
+%\alignauthor
+%Kunal Taneja\\
+%	   %\titlenote{The secretary disavows any knowledge of this author's actions.}\\
+%       \affaddr{Accenture Technology Labs}\\
+%       \affaddr{San Jose, CA, USA}\\
+%       \email{k.a.taneja@accenture.com}
+%% 3rd. author
+%\alignauthor 
+%Tao Xie\\
+%	   %\titlenote{This author is the one who did all the really hard work.}\\
+%       %\affaddr{Department of Computer Science}\\
+%       \affaddr{University of Illinois}\\
+%       \affaddr{Urbana-Champaign, IL, USA}\\
+%       \email{taoxie@illinois.edu}
+%\and  % use '\and' if you need 'another row' of author names
+%% 4th. author
+%\alignauthor Laurie Williams\\
+%       %\affaddr{Department of Computer Science}\\
+%       \affaddr{North Carolina State University}\\
+%       \affaddr{Raleigh, NC, USA}\\
+%       \email{williams@csc.ncsu.edu}
+%% 5th. author
+%\alignauthor Teresa Tung\\
+%       \affaddr{Accenture Technology Labs}\\
+%       \affaddr{San Jose, CA, USA}\\
+%       \email{teresa.tung@accenture.com}
 }
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
@@ -145,13 +153,15 @@ Tao Xie\\
 \input{abstract}
 
 % A category with the (minimum) three required fields
-\category{H.4}{Information Systems Applications}{Miscellaneous}
+%\category{D.4}{Information Systems Applications}{Miscellaneous}
 %A category including the fourth, optional field follows...
-\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+%\category{D.2.1}{Software Engineering}{Requirements/Specification}[complexity measures, performance measures]
 
-\terms{Theory}
+\category{D.2.1}{Software Engineering}{Requirements/Specifications}
+\category{F.3.1}{LOGICS AND MEANINGS OF PROGRAMS}{Specifying and Verifying and Reasoning about Programs} [Specification techniques]
+\terms{Specifications}
 
-\keywords{ACM proceedings, \LaTeX, text tagging} % NOT required for Proceedings
+\keywords{Temporal Specifications, Natural Language Processing, API Documents} % NOT required for Proceedings
 
 \input{introduction}
 \input{example}

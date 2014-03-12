@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  4 MAR 2014 13:03
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  12 MAR 2014 07:22
 entering extended mode
 **Draft.tex
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
@@ -13,7 +13,7 @@ german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\acm_proc_article-sp.cls
+(C:\Users\rahulpandita\Documents\Git\ICON\Draft\sig-alternate.cls
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
@@ -113,12 +113,15 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-Document Class 'acm_proc_article-sp' <22nd. April '09>. Modified by G.K.M. Tobi
-n
+Document Class 'sig-alternate' <23rd. May '12>. Modified by G.K.M. Tobin/Gerry 
+Murray
 Based in part upon document Style `acmconf' <22 May 89>. Hacked 4/91 by
 shivers@cs.cmu.edu, 4/93 by theobald@cs.mcgill.ca
 Excerpts were taken from (Journal Style) 'esub2acm.cls'.
-****** Bugs/comments/suggestions to Gerry Murray -- murray@hq.acm.org ******
+****** Bugs/comments/suggestions/technicalities to Gerry Murray -- murray@hq.ac
+m.org ******
+Questions on the style, SIGS policies, etc. to Adrienne Griscti griscti@acm.org
+
 \footheight=\dimen115
 \@maxsep=\dimen116
 \@dblmaxsep=\dimen117
@@ -138,8 +141,8 @@ Excerpts were taken from (Journal Style) 'esub2acm.cls'.
 \c@table=\count98
 \titleboxnotes=\toks23
 \titleboxnoteflag=\count99
-Document Class: acm_proc_article-sp 2009/04/22 - V3.2SP - based on esub2acm.sty
- <23 April 96>
+Document Class: sig-alternate 2012/05/23 - V2.5 - based on acmproc.cls V1.3 <No
+v. 30 '99>
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latexsym.sty"
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
@@ -164,7 +167,7 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 \c@paragraph=\count106
 
 Using 'Abbrev' bibliography style
-LaTeX Info: Redefining \cite on input line 1236.
+LaTeX Info: Redefining \cite on input line 1211.
 \bibindent=\dimen122
 \colcntr=\count107
 \saveb@x=\box29
@@ -332,65 +335,57 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup7
 ))
-
-LaTeX Warning: Unused global option(s):
-    [a4paper].
-
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 51.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 144.
+LaTeX Font Info:    Try loading font information for U+msa on input line 152.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 144.
+LaTeX Font Info:    Try loading font information for U+msb on input line 152.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 144.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 152.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 144.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 152.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Overfull \hbox (6.72636pt too wide) in paragraph at lines 144--144
- []\eaddfnt k.a.taneja@accenture.com| 
- []
-
-
-Overfull \hbox (14.73029pt too wide) in paragraph at lines 144--144
- []\eaddfnt teresa.tung@accenture.com| 
- []
-
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\abstract.tex
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 14.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 15.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ))
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 150.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 161.
+
+Overfull \hbox (1.88196pt too wide) in paragraph at lines 161--162
+\T1/ptm/m/n/9 Ver-i-fy-ing and Rea-son-ing about Pro-grams--- \T1/ptm/m/it/9 Sp
+ec-i-fi-ca-tion tech-niques 
+ []
 
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\introduction.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -421,20 +416,13 @@ Overfull \hbox (3.22035pt too wide) in paragraph at lines 15--23
 oked the spec-i-fi-ca-tions in \T1/pcr/m/n/8 Amazon
  []
 
-[2]
 File: Example2.eps Graphic file (type eps)
- <Example2.eps>
+<Example2.eps>
 Overfull \hbox (6.925pt too wide) in paragraph at lines 39--40
  [][] 
  []
 
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\related.tex
-Overfull \hbox (5.79645pt too wide) in paragraph at lines 23--27
-\T1/ptm/m/n/9 quire-ments en-gi-neer-ing  [15, 32, 33], us-abil-ity of API doc-
-u-ments [11],
- []
-
-
+[2]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\related.tex
 Overfull \hbox (3.14151pt too wide) in paragraph at lines 29--33
 \T1/ptm/m/n/9 use shal-low pars-ing tech-niques to in-fer Ac-cess Con-trol Pol-
 icy (ACP)
@@ -447,41 +435,26 @@ ctitioners [28,
  []
 
 [3]
-Overfull \hbox (2.81789pt too wide) in paragraph at lines 21--22
-\T1/ptm/m/n/9 achieve around 90% [35] ac-cu-racy in clas-si-fy-ing phrases and 
-clauses
- []
-
-
-Overfull \hbox (2.30396pt too wide) in paragraph at lines 23--24
-\T1/ptm/m/n/9 mat-i-cal re-la-tion-ships di-rected to-wards non-linguistics ex-
-perts to per-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 39--39
 [][]$\T1/pcr/m/n/9 http : / / oxforddictionaries . com / us /
  []
 
-[4]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\approach.tex
+) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\approach.tex
 File: approach.eps Graphic file (type eps)
-
-<approach.eps>
+ <approach.eps>
 Overfull \hbox (3.90959pt too wide) in paragraph at lines 7--8
  [][][] 
  []
 
-
-Overfull \hbox (3.70863pt too wide) in paragraph at lines 16--22
-\T1/ptm/m/n/9 tences in the method de-scrip-tion, such as an-no-tat-ing sen-ten
-ce bound-
+[4]
+Overfull \hbox (7.49747pt too wide) in paragraph at lines 43--45
+[][]\T1/ptm/m/n/9 Although the pre-vi-ous tech-niques and heuris-tics sig-nif-i
+-cantly lower
  []
 
 
-Overfull \hbox (8.19897pt too wide) in paragraph at lines 27--33
-[]\T1/ptm/m/n/9 The pre-pro-ces-sor ac-cepts the API doc-u-ments and first ex-t
-racts method
- []
+Underfull \vbox (badness 1558) has occurred while \output is active []
+
 
 
 LaTeX Warning: Command \textregistered invalid in math mode on input line 73.
@@ -500,15 +473,18 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
 LaTeX Warning: Command \textcircled invalid in math mode on input line 73.
 
 
-Overfull \hbox (4.73819pt too wide) in paragraph at lines 73--76
+Overfull \hbox (13.73819pt too wide) in paragraph at lines 73--76
 [][]\T1/ptm/m/n/9 Finally, to achieve n-gram re-duc-tion we used Apache Lucene$
 []$ [23].
  []
 
+[5]
+Overfull \hbox (5.06743pt too wide) in paragraph at lines 138--140
+\T1/ptm/m/n/9 de-pen-den-cies of the sen-tence be-cause of pres-ence of dif-fer
+-ent clauses
+ []
 
-Underfull \vbox (badness 2698) has occurred while \output is active []
 
- [5]
 Underfull \hbox (badness 1152) in paragraph at lines 164--164
 []|[]\T1/ptm/m/n/9 A noun phrase fol-lowed by an-other
  []
@@ -526,9 +502,15 @@ p-
  []
 
 
-Overfull \hbox (56.53304pt too wide) in paragraph at lines 193--200
-\T1/ptm/m/n/9 phrases in rounded rect-an-gle are the ac-tions ap-pli-ca-ble on 
-\T1/pcr/m/n/8 BufferedInputReader
+Overfull \hbox (4.74748pt too wide) in paragraph at lines 193--200
+\T1/ptm/m/n/9 rect-an-gles are syn-onyms of the class name \T1/pcr/m/n/8 Buffer
+edInputReader\T1/ptm/m/n/9 .
+ []
+
+
+Overfull \hbox (72.23798pt too wide) in paragraph at lines 193--200
+\T1/ptm/m/n/9 The phrases in rounded rect-an-gle are the ac-tions ap-pli-ca-ble
+ on \T1/pcr/m/n/8 BufferedInputReader
  []
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
@@ -540,9 +522,8 @@ tching\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 r[]:leftSibling:predicate\OT1/cmr/m/n/7 )
 $ 
  []
 
-[6]
 File: KnowledgeGraph.eps Graphic file (type eps)
- <KnowledgeGraph.eps>
+<KnowledgeGraph.eps>
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 275.
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <8> not available
@@ -553,35 +534,15 @@ Overfull \hbox (46.21889pt too wide) in paragraph at lines 280--281
 \T1/pcr/m/n/8 BufferedInputReader
  []
 
-[7]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\evaluation.tex
-Overfull \hbox (5.70285pt too wide) in paragraph at lines 71--74
-\T1/ptm/m/n/9 spec-i-fi-ca-tion sen-tences by \T1/ptm/m/sc/9 ICON\T1/ptm/m/n/9 
-. We mea-sure $\OML/cmm/m/it/9 accuracy$ \T1/ptm/m/n/9 of \T1/ptm/m/sc/9 ICON\T
-1/ptm/m/n/9 as
- []
-
-[8]
-Overfull \hbox (44.56918pt too wide) in paragraph at lines 89--90
-\T1/ptm/m/it/9 closed as well.\T1/ptm/m/n/9 '' from the \T1/pcr/m/n/8 close \T1
-/ptm/m/n/9 method de-scrip-tion from \T1/pcr/m/n/8 FileOutputStream\T1/ptm/m/n/
-9 .
- []
-
-
-Overfull \hbox (1.7648pt too wide) in paragraph at lines 96--97
-\T1/ptm/m/n/9 ever, the length and com-plex-ity in terms of num-ber of clauses 
-causes
- []
-
-
+[6]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\evaluation.tex [7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \hbox (13.44907pt too wide) in paragraph at lines 100--100
+ [8]
+Overfull \hbox (13.44907pt too wide) in paragraph at lines 119--119
 []\subsecfnt RQ2: Ac-cu-racy in In-fer-ring Tem-po-ral Con-straints 
  []
 
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex [9])
+) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex)
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\conclusion.tex)
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.bbl
 Overfull \hbox (96.69357pt too wide) in paragraph at lines 8--11
@@ -589,36 +550,72 @@ Overfull \hbox (96.69357pt too wide) in paragraph at lines 8--11
 []second . 
  []
 
+[9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10])
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:0.0pt when 215.97421pt
+Extra height:11.94843pt when 591.19843pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(2)Left:215.97421pt Right:215.94843pt Output:215.97421pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:11.94843pt when 592.19843pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:11.94843pt when 593.19843pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:11.94843pt when 594.19843pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:0.0pt when 595.19843pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:595.19843pt Right:596.39685pt Output:595.19843pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:596.39685pt Right:584.89685pt Output:596.39685pt
 - LAST -
 Extra skip:0.0pt
-Left:215.97421pt
-Right:215.94843pt
-Output:215.97421pt
+Left:596.39685pt
+Right:584.89685pt
+Output:596.39685pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11
 
-]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux) ) 
 Here is how much of TeX's memory you used:
- 3190 strings out of 493922
- 40667 string characters out of 3144878
- 99245 words of memory out of 3000000
- 6354 multiletter control sequences out of 15000+200000
+ 3189 strings out of 493922
+ 40621 string characters out of 3144878
+ 115864 words of memory out of 3000000
+ 6353 multiletter control sequences out of 15000+200000
  56478 words of font info for 69 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 39i,12n,28p,1006b,772s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,13n,28p,1006b,772s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (11 pages, 105140 bytes).
+Output written on Draft.dvi (10 pages, 109740 bytes).

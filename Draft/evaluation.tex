@@ -65,8 +65,8 @@ $Precision$ = $\frac{TP}{TP + FP}$
 $Recall$ = $\frac{TP}{TP + FN}$
 
 $F-Score$ = $\frac{2 X Precison X Recall}{Precision + Recall}$
-
 \end{center}
+
 
 To answer RQ2, we checked the temporal constraints inferred from specification sentences by \tool.
 We measure $accuracy$ of \tool as the ratio of the total number of temporal constraints that
@@ -75,6 +75,25 @@ are correctly inferred by \tool to the total number of specification sentences.
 \subsection{Results}
 
 We next describe our evaluation results to demonstrate the effectiveness of \tool\ in identifying temporal constraints.
+
+\begin{table*}
+\begin{center}
+
+\caption{Evaluation Results}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline API & Methods & No. of Sentences & Spec Sentences & ICON Ann & TP & FP & FN & P & R & F-Score \\ 
+\hline java.io &  & 2417 & 78 & 87 & 56 & 31 & 22 & 64.4 & 71.8 & 67.9 \\ 
+\hline AMAZON S3 REST & 51 & 1492 & 12 & 12 & 8 & 4 & 4 & 66.7 & 66.7 & 66.7 \\ 
+\hline Total &  & 3909 & 90 & 99 & 64 & 35 & 26 & 64.6$^*$ & 71.1$^*$ & 67.7$^*$ \\ 
+\hline
+%----------------- END TABLE DATA ------------------------ 
+\multicolumn{11}{p{6.5in}}{\footnotesize $^*$ Column average; TP: Total number of True Positives; 
+FP: Total number of False Positives; FN: Total number of False Negatives; P: Precision; R: Recall} \\ 
+\end{tabular}
+\end{center}
+\end{table*}
+
 
 \subsubsection{RQ1: Effectiveness in Identifying Specification Sentences}
 
@@ -112,9 +131,6 @@ Threats to external validity primarily include the degree to which the subject d
 
 Threats to internal validity include the correctness of our implementation in extracting usage constraints and labelling a statement as a constraint statement. To reduce the threat, we manually inspected all the constraints inferred against the API method descriptions in our evaluation. Furthermore, we ensured that the results were individually verified and agreed
 upon by two authors.
-
-
-
 
 If any in-memory buffering is being done by the application (for example, by a BufferedOutputStream object), those buffers must be flushed into the FileDescriptor (for example, by invoking OutputStream.flush) before that data will be affected by sync.
 
