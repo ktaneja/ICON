@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  12 MAR 2014 19:46
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  12 MAR 2014 22:28
 entering extended mode
 **Draft.tex
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
@@ -535,28 +535,32 @@ Overfull \hbox (46.21889pt too wide) in paragraph at lines 280--281
  []
 
 [6]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\evaluation.tex [7]
+Overfull \hbox (14.90985pt too wide) in paragraph at lines 72--75
+\T1/ptm/m/n/9 from con-straint sen-tences by \T1/ptm/m/sc/9 ICON\T1/ptm/m/n/9 .
+ We mea-sure $\OML/cmm/m/it/9 accuracy$ \T1/ptm/m/n/9 of \T1/ptm/m/sc/9 ICON\T1
+/ptm/m/n/9 as
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-Overfull \hbox (13.44907pt too wide) in paragraph at lines 131--131
+Overfull \hbox (13.44907pt too wide) in paragraph at lines 130--130
 []\subsecfnt RQ2: Ac-cu-racy in In-fer-ring Tem-po-ral Con-straints 
  []
 
 
-Overfull \hbox (12.71205pt too wide) in paragraph at lines 136--136
+Overfull \hbox (12.71205pt too wide) in paragraph at lines 139--139
 []\subsecfnt RQ3: Com-par-i-son to Typed-Enforced Con-straints 
  []
 
 ) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\conclusion.tex)
+(C:\Users\rahulpandita\Documents\Git\ICON\Draft\conclusion.tex) [9]
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.bbl
 Overfull \hbox (96.69357pt too wide) in paragraph at lines 8--11
 \T1/pcr/m/n/9 amazon-[]s3-[]two-[]trillion-[]objects-[]11-[]million-[]requests-
 []second . 
  []
-
-[9]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -564,20 +568,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [10])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 21.47421pt
+Extra height:0.0pt when 118.47421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:0.0pt when 22.47421pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-(2)Left:22.47421pt Right:21.94843pt Output:22.47421pt
+(2)Left:118.47421pt Right:118.44843pt Output:118.47421pt
 - LAST -
 Extra skip:0.0pt
-Left:22.47421pt
-Right:21.94843pt
-Output:22.47421pt
+Left:118.47421pt
+Right:118.44843pt
+Output:118.47421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -592,6 +592,6 @@ Here is how much of TeX's memory you used:
  6354 multiletter control sequences out of 15000+200000
  56478 words of font info for 69 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 39i,13n,28p,1006b,772s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,13n,28p,988b,772s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (11 pages, 111488 bytes).
+Output written on Draft.dvi (11 pages, 113476 bytes).
