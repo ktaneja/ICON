@@ -3,6 +3,18 @@
 
 Our approach serves as a way to formalize the description of constraints in the natural language texts of REST API documents (targeted towards generating code contracts), thus facilitating existing tools to process these specifications. We next discuss the benefits of our approach in other areas of software engineering, followed by a description of the limitations of the current implementation and our approach.
 
+\textbf{Bug Finding Capabilities}
+
+
+
+~\cite{lee2012towards} manually wrote specifications for JDK API. One of the evaluations they conducted was to see if the formal representation of the constraints in the natural language in API documents could detect violations. They also used \CodeIn{java.io} as subject API to manually write specifications. 
+
+they used java benchmarks from [S. M. Blackburn, R. Garner, C. Hoffman, et al. The DaCapo benchmarks: Java benchmarking development and analysis. In OOPSLA, 2006.] to detect voilations.
+
+\textit{The error specification, Reader ManipulateAfterClose is violated on all benchmarks but avrora. However, after analyzing the source code, we found that SimpleCharStream intentionally performs a read operation after closing the stream for checking if the stream is closed or not. Also, it handles thrown exceptions properly. There is no bug in this class related to this specification, but this is not a usual pattern of using the Reader class according to the JDK API; the code should probably be changed.}--reproduction of the text from ~\cite{lee2012towards}. Our approach infers this constraint.
+
+Other bug that can be detected is regarding REST API discussed in example section
+
 
 %
 %
@@ -11,7 +23,7 @@ Our approach serves as a way to formalize the description of constraints in the 
 %\textbf{Program Synthesis}. Automated program synthesis holds potential for easing the task of a developer by taking care of program generation and allowing the developer to concentrate on design tasks. Recent work by Srivastava et al.~\cite{Srivastava2010PVP} addresses the problem by leveraging specifications in the form of pre/post-conditions and invariants to achieve synthesis. Our approach can work in conjunction with such approaches to extract specifications from natural language text to achieve better synthesis.
 %
 %\vspace*{-1ex}
-\subsection{Limitations:}
+
 
 \textbf{Leveraging Error Descriptions}
 

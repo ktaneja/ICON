@@ -29,7 +29,7 @@ in detecting the violations of these temporal constraints as defects.
 %usage specifications also help in verification process by allowing quality assurance practitioners to test the expected outcome.
 %Furthermore, if the specifications are formal (machine-readable such as code-contracts),
 %they can be used in conjunction with the formal analysis tools such as model checkers and runtime verifiers
-%to automatically reason about the quality of software.
+%to automatically  reason about the quality of software.
 
 %Formal specifications of an Application Programming Interface (API) usage are highly desirable.
 %because they are the precursor to the formal analysis tools such as model checkers and runtime verifiers.
@@ -65,16 +65,18 @@ This statement can be interpreted as multipart-upload method must be invoked bef
 % Combine first two sentences
 % In contrast, temporal constraints are beyond these parameter constraints. may be use difficult to express using parameter constraints
 % Amazon S3 is popularly used web service for simple cloud based storage
-\textbf{There are} existing approaches focus on inferring just the method pre-post conditions in terms of parameter constraints either using program analysis techniques~\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105,Flanagan:2001:HAA:647540.730008,Buse:2008:ADI:1390630.1390664} or using NLP~\cite{pandita12:inferring, wu2013inferring}. 
-In contrast, temporal constraints are beyond these parameter constraints.
-Temporal constraints, in general focus on rules related to orchestration of methods within an API rather than focusing on the requirements on the input parameters of these methods. Our proposed approach addresses the following challenges to infer temporal constraints automatically from API documents.   
+Although, existing approaches focus on inferring just the method pre-post conditions in terms of parameter constraints either using program analysis techniques~\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105,Flanagan:2001:HAA:647540.730008,Buse:2008:ADI:1390630.1390664} or using NLP~\cite{pandita12:inferring, wu2013inferring}, temporal constraints are beyond these parameter constraints.
+Temporal constraints, in general focus on rules related to orchestration of methods within an API rather than focusing on the requirements on the input parameters of these methods.
 
-First, relying just on type information will result in an incomplete list of temporal constraints. 
-In typed languages some temporal constraints are enforced by type system. 
-For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates that (at least one) method ($m'$) be invoked whose return value is of type ($t$).
-However, temporal constraints are not limited by the type definitions (i.e, requirements on the type of input parameters), and are currently expressed mostly in natural language in API documents, as described in the example previously.
-We propose to address the issue by augmenting the type definitions based temporal constraints with the constraints inferred from
-the natural language text in API documents.
+Apart from method specifications, Zhong et al.~\cite{zhong09SE} leverage machine learning and type information to infer constraints on resources based on phases of resource usage: creating, manipulating, and releasing. However, temporal specification are not limited to resource usage. Furthermore, their technique fails to make the finer grained distinction on the ordering of the methods within a phase. For the description mentioned in previously, assuming that the method calls are associated with resource ``part'', both the methods referenced are logically associated with the creation phase of resource. Zhong et al.~\cite{zhong09SE} approach fails to make a distinction in ordering of such methods. In contrast our proposed approach leverages natural language processing to infer generic temporal specifications (not limited to resource related constraints) and also improves upon existing work for making finer grained distinction between ordering of methods within a phase of a resource. 
+
+
+%First, relying just on type information will result in an incomplete list of temporal constraints. 
+%In typed languages some temporal constraints are enforced by type system. 
+%For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates that (at least one) method ($m'$) be invoked whose return value is of type ($t$).
+%However, temporal constraints are not limited by the type definitions (i.e, requirements on the type of input parameters), and are currently expressed mostly in natural language in API documents, as described in the example previously.
+%We propose to address the issue by augmenting the type definitions based temporal constraints with the constraints inferred from
+%the natural language text in API documents.
 %Furthermore, such constraints although valuable but are already checked by any advanced Integrated Development Environment(IDE) such as eclipse
 %for a strongly typed language.
 %The problem is exacerbated in web based API's such as \amazonAPI\ where most of the types are either \CodeIn{integer} or \CodeIn{strings}.
@@ -82,9 +84,10 @@ the natural language text in API documents.
 
 %identified in previous work~\cite{pandita12:inferring} delete and leave the reference
 % Add a sentence stating that we extend previous technique to address the issues 
-Second, inferring temporal constraints from the natural language text itself is challenging. 
+However, inferring temporal constraints from the natural language text is challenging. 
 There are existing challenges in NLP for software engineering domain namely \textit{ambiguity}, \textit{programming keywords}, and \textit{semantic equivalence} identified in previous work~\cite{pandita12:inferring}.
-In addition to these challenges, we have an added challenge of identifying the method referenced in the natural language text to infer temporal constraint.
+In addition to these challenges, we have an added challenge of 
+implicit method referencing: identifying the method referenced in the natural language text to infer temporal constraint.
 Recall the description sentence ``You must initiate a multipart upload before you can upload any part.''
 In this sentence, phrases ``multipart upload'' and ``upload any part'' refer to individual methods in the API.
 Identifying these phrases as method invocation instances requires domain dictionaries.

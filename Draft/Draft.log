@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  12 MAR 2014 22:28
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  13 MAR 2014 11:15
 entering extended mode
 **Draft.tex
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
@@ -374,7 +374,7 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 152.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\abstract.tex
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 15.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 18.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -394,7 +394,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-Overfull \hbox (1.68459pt too wide) in paragraph at lines 111--117
+Overfull \hbox (1.68459pt too wide) in paragraph at lines 114--120
 [][]\T1/ptm/m/n/9 An eval-u-a-tion of pro-posed ap-proach on com-monly used pac
 k-
  []
@@ -414,12 +414,6 @@ Overfull \hbox (21.0736pt too wide) in paragraph at lines 10--11
 Overfull \hbox (3.22035pt too wide) in paragraph at lines 15--23
 \T1/ptm/m/n/9 cause the \T1/pcr/m/n/8 S3Fox \T1/ptm/m/n/9 de-vel-op-ers over-lo
 oked the spec-i-fi-ca-tions in \T1/pcr/m/n/8 Amazon
- []
-
-File: Example2.eps Graphic file (type eps)
-<Example2.eps>
-Overfull \hbox (6.925pt too wide) in paragraph at lines 39--40
- [][] 
  []
 
 [2]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\related.tex
@@ -453,10 +447,6 @@ Overfull \hbox (7.49747pt too wide) in paragraph at lines 43--45
  []
 
 
-Underfull \vbox (badness 1558) has occurred while \output is active []
-
-
-
 LaTeX Warning: Command \textregistered invalid in math mode on input line 73.
 
 
@@ -478,13 +468,16 @@ Overfull \hbox (13.73819pt too wide) in paragraph at lines 73--76
 []$ [23].
  []
 
-[5]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \hbox (5.06743pt too wide) in paragraph at lines 138--140
 \T1/ptm/m/n/9 de-pen-den-cies of the sen-tence be-cause of pres-ence of dif-fer
 -ent clauses
  []
 
-
+[5]
 Underfull \hbox (badness 1152) in paragraph at lines 164--164
 []|[]\T1/ptm/m/n/9 A noun phrase fol-lowed by an-other
  []
@@ -545,17 +538,33 @@ Overfull \hbox (14.90985pt too wide) in paragraph at lines 72--75
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-Overfull \hbox (13.44907pt too wide) in paragraph at lines 130--130
+Overfull \hbox (13.44907pt too wide) in paragraph at lines 137--137
 []\subsecfnt RQ2: Ac-cu-racy in In-fer-ring Tem-po-ral Con-straints 
  []
 
 
-Overfull \hbox (12.71205pt too wide) in paragraph at lines 139--139
+Overfull \hbox (6.86763pt too wide) in paragraph at lines 141--148
+\T1/ptm/m/n/9 rectly in-fers tem-po-ral con-straints with the av-er-age ac-cu-r
+acy of 70.0%. 
+ []
+
+
+Overfull \hbox (4.26643pt too wide) in paragraph at lines 149--150
+\T1/ptm/m/n/9 be-fore cur-rent method, \T1/ptm/m/sc/9 ICON \T1/ptm/m/n/9 in-cor
+-rectly as-so-ciates the phrase ``sup-
+ []
+
+
+Overfull \hbox (12.71205pt too wide) in paragraph at lines 155--155
 []\subsecfnt RQ3: Com-par-i-son to Typed-Enforced Con-straints 
  []
 
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex)
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\conclusion.tex) [9]
+
+Underfull \vbox (badness 2181) has occurred while \output is active []
+
+)
+(C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex [9])
+(C:\Users\rahulpandita\Documents\Git\ICON\Draft\conclusion.tex)
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.bbl
 Overfull \hbox (96.69357pt too wide) in paragraph at lines 8--11
 \T1/pcr/m/n/9 amazon-[]s3-[]two-[]trillion-[]objects-[]11-[]million-[]requests-
@@ -568,16 +577,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [10])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:0.0pt when 118.47421pt
+Extra height:10.0pt when 259.47421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(2)Left:118.47421pt Right:118.44843pt Output:118.47421pt
+Extra height:0.0pt when 260.47421pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:260.47421pt Right:258.94843pt Output:260.47421pt
 - LAST -
 Extra skip:0.0pt
-Left:118.47421pt
-Right:118.44843pt
-Output:118.47421pt
+Left:260.47421pt
+Right:258.94843pt
+Output:260.47421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -586,12 +599,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux) ) 
 Here is how much of TeX's memory you used:
- 3190 strings out of 493922
- 40634 string characters out of 3144878
- 99677 words of memory out of 3000000
- 6354 multiletter control sequences out of 15000+200000
- 56478 words of font info for 69 fonts, out of 3000000 for 9000
+ 3201 strings out of 493922
+ 40734 string characters out of 3144878
+ 100705 words of memory out of 3000000
+ 6361 multiletter control sequences out of 15000+200000
+ 62430 words of font info for 78 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 39i,13n,28p,988b,772s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,14n,28p,1042b,772s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (11 pages, 113476 bytes).
+Output written on Draft.dvi (11 pages, 117300 bytes).
