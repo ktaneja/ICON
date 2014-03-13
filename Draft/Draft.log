@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  12 MAR 2014 07:22
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  12 MAR 2014 19:46
 entering extended mode
 **Draft.tex
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
@@ -538,8 +538,13 @@ Overfull \hbox (46.21889pt too wide) in paragraph at lines 280--281
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-Overfull \hbox (13.44907pt too wide) in paragraph at lines 119--119
+Overfull \hbox (13.44907pt too wide) in paragraph at lines 131--131
 []\subsecfnt RQ2: Ac-cu-racy in In-fer-ring Tem-po-ral Con-straints 
+ []
+
+
+Overfull \hbox (12.71205pt too wide) in paragraph at lines 136--136
+[]\subsecfnt RQ3: Com-par-i-son to Typed-Enforced Con-straints 
  []
 
 ) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex)
@@ -553,69 +558,40 @@ Overfull \hbox (96.69357pt too wide) in paragraph at lines 8--11
 [9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:11.94843pt when 591.19843pt
+ [10])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 21.47421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+Extra height:0.0pt when 22.47421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:11.94843pt when 592.19843pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:11.94843pt when 593.19843pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:11.94843pt when 594.19843pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:0.0pt when 595.19843pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-(2)Left:595.19843pt Right:596.39685pt Output:595.19843pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-(2)Left:596.39685pt Right:584.89685pt Output:596.39685pt
+(2)Left:22.47421pt Right:21.94843pt Output:22.47421pt
 - LAST -
 Extra skip:0.0pt
-Left:596.39685pt
-Right:584.89685pt
-Output:596.39685pt
+Left:22.47421pt
+Right:21.94843pt
+Output:22.47421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [11
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
+]
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux) ) 
 Here is how much of TeX's memory you used:
- 3189 strings out of 493922
- 40621 string characters out of 3144878
- 115864 words of memory out of 3000000
- 6353 multiletter control sequences out of 15000+200000
+ 3190 strings out of 493922
+ 40634 string characters out of 3144878
+ 99677 words of memory out of 3000000
+ 6354 multiletter control sequences out of 15000+200000
  56478 words of font info for 69 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  39i,13n,28p,1006b,772s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (10 pages, 109740 bytes).
+Output written on Draft.dvi (11 pages, 111488 bytes).
