@@ -152,11 +152,16 @@ Another, major cause of failure for \tool\ in inferring temporal constraints fro
 
 
 
+
 \subsubsection{RQ3: Comparison to Typed-Enforced Constraints}
 
-In this section, we compared the temporal constraints inferred from the natural language API descriptions to those enforced by the type-system. For answering this question we used the constraints inferred by the Algorithm~\ref{alg:TypeAnalysis} presented in Section~\ref{sec:approach} on classes in \CodeIn{java.io} package.
+In this section, we compared the temporal constraints inferred from the natural language API descriptions to those enforced by the type-system (referred to as type-enforced constraint). The constraints that are enforced by the type-system can be enforced by IDEs. Hence, for such types of constraints, we do not require sophisticated techniques like ICON. 
+For \CodeIn{java.io}, we define a type-enforced constraint as a constraint that mandates a method M accepting input parameter I of type T to be invoked after (at least one) a method M0 whose return value is of type T. 
+Since there are no types in REST APIs, for \CodeIn{Amazon S3}, we consider a constraint as a type-enforced constraint if it is implicit in the \CodeIn{CRUD} naming convention followed by REST operations. In particular, we consider a constraint as a type-enforced constraint, if the constraint mandates a DELETE, GET, or PUT operation on a resource to be invoked after a GET operation on the same resource. 
 
-We observed that the constraints inferred by our \tool\ from natural language text were distinct from the constraints enforced by the type system. 
+To address this question, we manually inspect each of the constraints reported by ICON and classify it as a type-enforced constraint or a non type-enforced constraint. 
+We observed that none of the constraints inferred by our \tool\ from natural language text were classified as a type-enforced constraint. Hence, the constraints detected by \tool\ are not trivial enough to be enforced by a type system.
+
 
 
 
