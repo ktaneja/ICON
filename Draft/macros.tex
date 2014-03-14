@@ -6,6 +6,8 @@
 \usepackage{cite}
 \usepackage{url}
 \usepackage{color}
+\usepackage[table]{xcolor}
+\usepackage{booktabs, dcolumn}
 \usepackage{alltt}
 
 \usepackage{longtable,lscape}
@@ -121,3 +123,39 @@
 \newcommand{\Small}[1]{{\small{#1}}}
 
 \newcommand{\CenterCell}[1]{\multicolumn{1}{c|}{#1}}
+
+% Yoonki's code
+\colorlet{tableheadcolor}{gray!25} % Table header colour = 25% gray
+\newcommand{\headcol}{\rowcolor{tableheadcolor}} %
+\colorlet{tablerowcolor}{gray!10} % Table row separator colour = 10% gray
+\newcommand{\rowcol}{\rowcolor{tablerowcolor}} %
+    % Command \topline consists of a (slightly modified) \toprule followed by a \heavyrule rule of colour tableheadcolor (hence, 2 separate rules)
+\newcommand{\topline}{\arrayrulecolor{black}\specialrule{0.1em}{\abovetopsep}{0pt}%
+            \arrayrulecolor{tableheadcolor}\specialrule{\belowrulesep}{0pt}{0pt}%
+            \arrayrulecolor{black}}
+    % Command \midline consists of 3 rules (top colour tableheadcolor, middle colour black, bottom colour white)
+\newcommand{\midline}{\arrayrulecolor{tableheadcolor}\specialrule{\aboverulesep}{0pt}{0pt}%
+            \arrayrulecolor{black}\specialrule{\lightrulewidth}{0pt}{0pt}%
+            \arrayrulecolor{white}\specialrule{\belowrulesep}{0pt}{0pt}%
+            \arrayrulecolor{black}}
+    % Command \rowmidlinecw consists of 3 rules (top colour tablerowcolor, middle colour black, bottom colour white)
+\newcommand{\rowmidlinecw}{\arrayrulecolor{tablerowcolor}\specialrule{\aboverulesep}{0pt}{0pt}%
+            \arrayrulecolor{black}\specialrule{\lightrulewidth}{0pt}{0pt}%
+            \arrayrulecolor{white}\specialrule{\belowrulesep}{0pt}{0pt}%
+            \arrayrulecolor{black}}
+    % Command \rowmidlinewc consists of 3 rules (top colour white, middle colour black, bottom colour tablerowcolor)
+\newcommand{\rowmidlinewc}{\arrayrulecolor{white}\specialrule{\aboverulesep}{0pt}{0pt}%
+            \arrayrulecolor{black}\specialrule{\lightrulewidth}{0pt}{0pt}%
+            \arrayrulecolor{tablerowcolor}\specialrule{\belowrulesep}{0pt}{0pt}%
+            \arrayrulecolor{black}}
+    % Command \rowmidlinew consists of 1 white rule
+\newcommand{\rowmidlinew}{\arrayrulecolor{white}\specialrule{\aboverulesep}{0pt}{0pt}%
+            \arrayrulecolor{black}}
+    % Command \rowmidlinec consists of 1 tablerowcolor rule
+\newcommand{\rowmidlinec}{\arrayrulecolor{tablerowcolor}\specialrule{\aboverulesep}{0pt}{0pt}%
+            \arrayrulecolor{black}}
+    % Command \bottomline consists of 2 rules (top colour
+\newcommand{\bottomline}{\arrayrulecolor{white}\specialrule{\aboverulesep}{0pt}{0pt}%
+            \arrayrulecolor{black}\specialrule{\heavyrulewidth}{0pt}{\belowbottomsep}}%
+\newcommand{\bottomlinec}{\arrayrulecolor{tablerowcolor}\specialrule{\aboverulesep}{0pt}{0pt}%
+            \arrayrulecolor{black}\specialrule{\heavyrulewidth}{0pt}{\belowbottomsep}}%

@@ -81,7 +81,7 @@ It is a technology suitable for nearly any application that requires full-text s
 
 The NLP parser accepts the pre-processed documents and annotates every sentence within each document using core NLP techniques described in Section~\ref{sub:CoreNLPback}.
 From an implementation perspective, we chose the Stanford parser~\cite{Manning:01}.
-However, this component can be implemented using any other existing NLP libraries or approachs.
+However, this component can be implemented using any other existing NLP libraries or approaches.
 In particular, we annotate each sentence with POS tags, named-entity annotations and Stanford-typed dependencies.
 For more details on these techniques and their application, please refer to ~\cite{Marneffe06LREC, Marneffe08COLING, pandita12:inferring, pandita13:WHYPER, thummalapentaICSE12}.
 
@@ -147,7 +147,7 @@ We thus break down the sentence into two smaller tractable sentences:
 
 Table~\ref{tab:semanticTemplates} shows a list the semantic templates used in this phase.
 Column ``Template'' describes conditions where the template is applicable and Column ``Summary'' describes the action taken by our shallow parser when the template is applicable.
-All of these semantic templates are publicly available on our project website~\cite{projectweb}.
+All of these semantic templates are publicly available on our project website\footnote{\url{https://sites.google.com/site/temporalspec}}.
 With respect to the previous example the template 3 \textit{( A noun phrase followed by another noun/pronoun/verb phrase in brackets)} is applicable.
 Thus our shallow parser breaks the sentence into two individual sentences.
 	 
@@ -155,16 +155,18 @@ Thus our shallow parser breaks the sentence into two individual sentences.
 \begin{center}
 
 \caption{Semantic Templates}
-    \begin{tabular}{ | l | p{5cm} |p{10cm} |}
-    \hline
-    \textbf{S No.} 	& \textbf{Template} & \textbf{Summary} \\ \hline
+    \begin{tabular}{  l  p{5cm} p{10cm} }
+    \topline
+    \headcol  \textbf{S No.} 	& \textbf{Template} & \textbf{Summary} \\
+    \midline
     
-    1. 		& Two sentences joined by a conjunction & Sentence is broken down into two individual sentences with the conjunction term serving as the connector between two. \\ \hline
-    2. 		& Two sentences joined by a ``,''& Sentence is broken down to individual independent sentences \\ \hline
-    3.		& A noun phrase followed by another noun/pronoun/verb phrase in brackets & Two individual sentences are formed. The first sentence is  the same as the parent sentence sans the noun/pronoun.verb phrase in bracket. The second sentence constitutes of the noun phrase followed by  noun/pronoun/verb phrase without the brackets.\\ \hline
-    4.		& A noun phrase by a conditional phrase in brackets & Two individual sentences are formed. The first sentence is the same as the parent sentence sans the conditional phrase in bracket. The second sentence constitutes of noun phrases followed by conditional in the bracket.\\ \hline
-    5.		& A conditional phrase followed by a sentence & Two dependent sentences are formed. The first sentence constitutes the conditional phrase. The second sentence constitutes rest of the sentence.\\ \hline
-    6.		& A sentence in which the parent verb phrase is over two child verb phrases joined by a conjunction & Two dependent sentences are formed where the dependency is the conjunction. The first sentence is formulated by removing conjunction and second child verb phrase. The second sentence is formulated by removing conjunction and first child verb phrase. \\ \hline
+    1. 		& Two sentences joined by a conjunction & Sentence is broken down into two individual sentences with the conjunction term serving as the connector between two. \\
+\rowcol    2. 		& Two sentences joined by a ``,''& Sentence is broken down to individual independent sentences \\
+    3.		& A noun phrase followed by another noun/pronoun/verb phrase in brackets & Two individual sentences are formed. The first sentence is  the same as the parent sentence sans the noun/pronoun.verb phrase in bracket. The second sentence constitutes of the noun phrase followed by  noun/pronoun/verb phrase without the brackets.\\
+\rowcol    4.		& A noun phrase by a conditional phrase in brackets & Two individual sentences are formed. The first sentence is the same as the parent sentence sans the conditional phrase in bracket. The second sentence constitutes of noun phrases followed by conditional in the bracket.\\ 
+    5.		& A conditional phrase followed by a sentence & Two dependent sentences are formed. The first sentence constitutes the conditional phrase. The second sentence constitutes rest of the sentence.\\
+\rowcol    6.		& A sentence in which the parent verb phrase is over two child verb phrases joined by a conjunction & Two dependent sentences are formed where the dependency is the conjunction. The first sentence is formulated by removing conjunction and second child verb phrase. The second sentence is formulated by removing conjunction and first child verb phrase. \\ 
+\bottomlinec
     \end{tabular}
 	\label{tab:semanticTemplates}
 \end{center}

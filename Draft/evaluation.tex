@@ -82,13 +82,14 @@ We next describe our evaluation results to demonstrate the effectiveness of \too
 
 \caption{Evaluation Results}
 
-\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline API & Mtds & Sen & Sen$_C$ & Sen$_{ICON}$ & TP & FP & FN & P(\%) & R(\%) & F$_S$(\%) & Spec$_{ICON}$ & Acc(\%)\\
-\hline 
-\hline java.io &  & 2417 & 78 & 88 & 57 & 31 & 21 & 64.8 & 73.1 & 68.8 & 56 & 71.8\\ 
-\hline AMAZON S3 REST & 51 & 1492 & 12 & 12 & 8 & 4 & 4 & 66.7 & 66.7 & 66.7 & 7 & 58.3\\ 
-\hline Total &  & 3909 & 90 & 100 & 65 & 35 & 25 & 65.0$^*$ & 72.2$^*$ & 68.4$^*$ & 63 & 70.0$^*$\\ 
-\hline
+\begin{tabular}{lcccccccccccc}
+\topline
+\headcol API & Mtds & Sen & Sen$_C$ & Sen$_{ICON}$ & TP & FP & FN & P(\%) & R(\%) & F$_S$(\%) & Spec$_{ICON}$ & Acc(\%)\\
+\midline 
+java.io & 662 & 2417 & 78 & 88 & 57 & 31 & 21 & 64.8 & 73.1 & 68.8 & 56 & 71.8\\ 
+\rowcol AMAZON S3 REST & 51 & 1492 & 12 & 12 & 8 & 4 & 4 & 66.7 & 66.7 & 66.7 & 7 & 58.3\\ 
+Total & 713 & 3909 & 90 & 100 & 65 & 35 & 25 & 65.0$^*$ & 72.2$^*$ & 68.4$^*$ & 63 & 70.0$^*$\\ 
+\bottomlinec
 %----------------- END TABLE DATA ------------------------ 
 \multicolumn{13}{p{6.5in}}{\small
 $^*$ Column average;
