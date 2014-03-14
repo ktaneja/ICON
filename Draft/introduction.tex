@@ -65,7 +65,7 @@ This statement can be interpreted as multipart-upload method must be invoked bef
 % Combine first two sentences
 % In contrast, temporal constraints are beyond these parameter constraints. may be use difficult to express using parameter constraints
 % Amazon S3 is popularly used web service for simple cloud based storage
-Although, existing approaches focus on inferring just the method pre-post conditions in terms of parameter constraints either using program analysis techniques~\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105,Flanagan:2001:HAA:647540.730008,Buse:2008:ADI:1390630.1390664} or using NLP~\cite{pandita12:inferring, wu2013inferring}, temporal constraints are beyond these parameter constraints.
+Although, existing approaches focus on inferring just the method pre-post conditions in terms of parameter constraints either using program analysis techniques~\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105,Flanagan2001:HAA,Buse:2008:ADI:1390630.1390664} or using NLP~\cite{pandita12:inferring, wu2013inferring}, temporal constraints are beyond these parameter constraints.
 Temporal constraints, in general focus on rules related to orchestration of methods within an API rather than focusing on the requirements on the input parameters of these methods.
 
 Apart from method specifications, Zhong et al.~\cite{zhong09SE} leverage machine learning and type information to infer constraints on resources based on phases of resource usage: creating, manipulating, and releasing. However, temporal specification are not limited to resource usage. Furthermore, their technique fails to make the finer grained distinction on the ordering of the methods within a phase. For the description mentioned in previously, assuming that the method calls are associated with resource ``part'', both the methods referenced are logically associated with the creation phase of resource. Zhong et al.~\cite{zhong09SE} approach fails to make a distinction in ordering of such methods. In contrast our proposed approach leverages natural language processing to infer generic temporal specifications (not limited to resource related constraints) and also improves upon existing work for making finer grained distinction between ordering of methods within a phase of a resource. 
@@ -109,7 +109,7 @@ The proposed work in general, makes the following contributions:
 \begin{itemize}
 	\item An NLP based approach that infers temporal constraints of method invocations. 
 	To the best of our knowledge, our approach is the first one to apply NLP for the goal of inferring temporal specifications from API documents.
-	\item A prototype implementation of our approach based on extending the Stanford Parser~\cite{Klein03,SNLP1}, which is a natural language parser to derive the grammatical structure of sentences.
+	\item A prototype implementation of our approach based on extending the Stanford Parser~\cite{Klein03}, which is a natural language parser to derive the grammatical structure of sentences.
 	An open source implementation of the prototype is publicly available on our project website\footnote{\url{https://sites.google.com/site/temporalspec}}. 
 	\item An evaluation of proposed approach on commonly used package \CodeIn{java.io} from JDK API and \amazonAPI. 
 \end{itemize}

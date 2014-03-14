@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  13 MAR 2014 17:00
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  14 MAR 2014 15:52
 entering extended mode
 **Draft.tex
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
@@ -394,6 +394,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
+Overfull \hbox (2.25073pt too wide) in paragraph at lines 112--114
+\T1/ptm/m/n/9 open source im-ple-men-ta-tion of the pro-to-type is pub-licly av
+ail-
+ []
+
+
 Overfull \hbox (1.68459pt too wide) in paragraph at lines 114--115
 [][]\T1/ptm/m/n/9 An eval-u-a-tion of pro-posed ap-proach on com-monly used pac
 k-
@@ -428,7 +434,13 @@ icy (ACP)
 ) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\background.tex
 Overfull \hbox (33.95656pt too wide) in paragraph at lines 4--7
 \T1/ptm/m/n/9 sen-tence. These ad-vances in NLP have in-spired re-searchers/pra
-ctitioners [28,
+ctitioners [26,
+ []
+
+
+Overfull \hbox (2.30396pt too wide) in paragraph at lines 23--24
+\T1/ptm/m/n/9 mat-i-cal re-la-tion-ships di-rected to-wards non-linguistics ex-
+perts to per-
  []
 
 [3]
@@ -468,7 +480,7 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 73.
 
 Overfull \hbox (13.73819pt too wide) in paragraph at lines 73--76
 [][]\T1/ptm/m/n/9 Finally, to achieve n-gram re-duc-tion we used Apache Lucene$
-[]$ [23].
+[]$ [22].
  []
 
 
@@ -539,14 +551,14 @@ Overfull \hbox (14.90985pt too wide) in paragraph at lines 72--75
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
 Overfull \hbox (13.44907pt too wide) in paragraph at lines 137--137
 []\subsecfnt RQ2: Ac-cu-racy in In-fer-ring Tem-po-ral Con-straints 
  []
 
 
-Underfull \vbox (badness 1558) has occurred while \output is active []
-
- [8]
 Overfull \hbox (6.86763pt too wide) in paragraph at lines 141--148
 \T1/ptm/m/n/9 rectly in-fers tem-po-ral con-straints with the av-er-age ac-cu-r
 acy of 70.0%. 
@@ -559,14 +571,14 @@ Overfull \hbox (4.26643pt too wide) in paragraph at lines 149--150
  []
 
 
-Overfull \hbox (12.71205pt too wide) in paragraph at lines 155--155
+Overfull \hbox (12.71205pt too wide) in paragraph at lines 156--156
 []\subsecfnt RQ3: Com-par-i-son to Typed-Enforced Con-straints 
  []
 
 ) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex [9])
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\conclusion.tex)
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.bbl
-Overfull \hbox (96.69357pt too wide) in paragraph at lines 8--11
+Overfull \hbox (96.69357pt too wide) in paragraph at lines 4--7
 \T1/pcr/m/n/9 amazon-[]s3-[]two-[]trillion-[]objects-[]11-[]million-[]requests-
 []second . 
  []
@@ -577,36 +589,36 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [10])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 221.22421pt
+Extra height:10.0pt when 286.22421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 222.22421pt
+Extra height:10.0pt when 287.22421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 223.22421pt
+Extra height:10.0pt when 288.22421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 224.22421pt
+Extra height:10.0pt when 289.22421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 225.22421pt
+Extra height:10.0pt when 290.22421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:0.0pt when 226.22421pt
+Extra height:0.0pt when 291.22421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(2)Left:226.22421pt Right:215.94843pt Output:226.22421pt
+(2)Left:291.22421pt Right:280.94843pt Output:291.22421pt
 - LAST -
 Extra skip:0.0pt
-Left:226.22421pt
-Right:215.94843pt
-Output:226.22421pt
+Left:291.22421pt
+Right:280.94843pt
+Output:291.22421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -615,12 +627,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux) ) 
 Here is how much of TeX's memory you used:
- 3201 strings out of 493922
- 40734 string characters out of 3144878
- 100677 words of memory out of 3000000
- 6361 multiletter control sequences out of 15000+200000
+ 3198 strings out of 493922
+ 40685 string characters out of 3144878
+ 99677 words of memory out of 3000000
+ 6358 multiletter control sequences out of 15000+200000
  62430 words of font info for 78 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  39i,14n,28p,1042b,772s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (11 pages, 117080 bytes).
+Output written on Draft.dvi (11 pages, 117820 bytes).

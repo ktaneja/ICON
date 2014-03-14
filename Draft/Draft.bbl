@@ -1,9 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{projectweb}
-Whyper.
-\newblock https://sites.google.com/site/whypermission/.
-
 \bibitem{amazons3stats}
 {Amazon S3 - Two Trillion Objects, 1.1 Million Requests / Second}.
 \newblock
@@ -61,14 +57,14 @@ F.~et~al.
 \newblock Cambridge, Mass: MIT Press, 1998.
 
 \bibitem{Finkel05ACL}
-J.~R. Finkel, T.~Grenager, and C.~Manning.
+J.~R. Finkel, T.~Grenager, and C.~D. Manning.
 \newblock Incorporating non-local information into information extraction
   systems by gibbs sampling.
 \newblock In {\em Proc, 43nd ACL}, 2005.
 
-\bibitem{Flanagan:2001:HAA:647540.730008}
+\bibitem{Flanagan2001:HAA}
 C.~Flanagan and K.~R.~M. Leino.
-\newblock Houdini, an annotation assistant for esc/java.
+\newblock Houdini, an annotation assistant for {ESC/Java}.
 \newblock In {\em Proc. 10th FME}, pages 500--517, 2001.
 
 \bibitem{Gervasi2005}
@@ -89,7 +85,7 @@ J.~Henkel, C.~Reichenbach, and A.~Diwan.
 
 \bibitem{Henkel:2008:DDA:1363102.1363105}
 J.~Henkel, C.~Reichenbach, and A.~Diwan.
-\newblock Developing and debugging algebraic specifications for java classes.
+\newblock Developing and debugging algebraic specifications for {J}ava classes.
 \newblock {\em ACM Trans. Softw. Eng. Methodol.}, 17(3):14:1--14:37, 2008.
 
 \bibitem{Klein03}
@@ -98,7 +94,7 @@ D.~Klein and C.~D. Manning.
 \newblock In {\em Proc. 41st ACL}, pages 423--430, 2003.
 
 \bibitem{KleinNIPS03}
-D.~Klein and D.~Manning, Christopher.
+D.~Klein and C.~D. Manning.
 \newblock Fast exact inference with a factored model for natural language
   parsing.
 \newblock In {\em Proc. 15th NIPS}, pages 3 -- 10, 2003.
@@ -127,11 +123,6 @@ C.~Manning and H.~Schutze.
 J.~W. Nimmer and M.~D. Ernst.
 \newblock Automatic generation of program specifications.
 \newblock In {\em Proc. ISSTA}, pages 232--242, 2002.
-
-\bibitem{Novick2006WDP}
-D.~G. Novick and K.~Ward.
-\newblock Why don't people read the manual?
-\newblock In {\em Proc. 24th ACM}, pages 11--18, 2006.
 
 \bibitem{Olson08}
 D.~Olson.
@@ -178,10 +169,6 @@ J.~Slankas and L.~Williams.
 \newblock Access control policy extraction from unconstrained natural language
   text.
 \newblock In {\em Proc. PASSAT}, 2013.
-
-\bibitem{SNLP1}
-{The Stanford Natural Language Processing Group}, 1999.
-\newblock \url{http://nlp.stanford.edu/}.
 
 \bibitem{TanSOSP07}
 L.~Tan, D.~Yuan, G.~Krishna, and Y.~Zhou.
