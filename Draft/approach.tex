@@ -155,16 +155,18 @@ Thus our shallow parser breaks the sentence into two individual sentences.
 \begin{center}
 
 \caption{Semantic Templates}
-    \begin{tabular}{ | l | p{5cm} |p{10cm} |}
-    \hline
-    \textbf{S No.} 	& \textbf{Template} & \textbf{Summary} \\ \hline
+    \begin{tabular}{  l  p{5cm} p{10cm} }
+    \topline
+    \headcol  \textbf{S No.} 	& \textbf{Template} & \textbf{Summary} \\
+    \midline
     
-    1. 		& Two sentences joined by a conjunction & Sentence is broken down into two individual sentences with the conjunction term serving as the connector between two. \\ \hline
-    2. 		& Two sentences joined by a ``,''& Sentence is broken down to individual independent sentences \\ \hline
-    3.		& A noun phrase followed by another noun/pronoun/verb phrase in brackets & Two individual sentences are formed. The first sentence is  the same as the parent sentence sans the noun/pronoun.verb phrase in bracket. The second sentence constitutes of the noun phrase followed by  noun/pronoun/verb phrase without the brackets.\\ \hline
-    4.		& A noun phrase by a conditional phrase in brackets & Two individual sentences are formed. The first sentence is the same as the parent sentence sans the conditional phrase in bracket. The second sentence constitutes of noun phrases followed by conditional in the bracket.\\ \hline
-    5.		& A conditional phrase followed by a sentence & Two dependent sentences are formed. The first sentence constitutes the conditional phrase. The second sentence constitutes rest of the sentence.\\ \hline
-    6.		& A sentence in which the parent verb phrase is over two child verb phrases joined by a conjunction & Two dependent sentences are formed where the dependency is the conjunction. The first sentence is formulated by removing conjunction and second child verb phrase. The second sentence is formulated by removing conjunction and first child verb phrase. \\ \hline
+    1. 		& Two sentences joined by a conjunction & Sentence is broken down into two individual sentences with the conjunction term serving as the connector between two. \\
+\rowcol    2. 		& Two sentences joined by a ``,''& Sentence is broken down to individual independent sentences \\
+    3.		& A noun phrase followed by another noun/pronoun/verb phrase in brackets & Two individual sentences are formed. The first sentence is  the same as the parent sentence sans the noun/pronoun.verb phrase in bracket. The second sentence constitutes of the noun phrase followed by  noun/pronoun/verb phrase without the brackets.\\
+\rowcol    4.		& A noun phrase by a conditional phrase in brackets & Two individual sentences are formed. The first sentence is the same as the parent sentence sans the conditional phrase in bracket. The second sentence constitutes of noun phrases followed by conditional in the bracket.\\ 
+    5.		& A conditional phrase followed by a sentence & Two dependent sentences are formed. The first sentence constitutes the conditional phrase. The second sentence constitutes rest of the sentence.\\
+\rowcol    6.		& A sentence in which the parent verb phrase is over two child verb phrases joined by a conjunction & Two dependent sentences are formed where the dependency is the conjunction. The first sentence is formulated by removing conjunction and second child verb phrase. The second sentence is formulated by removing conjunction and first child verb phrase. \\ 
+\bottomlinec
     \end{tabular}
 	\label{tab:semanticTemplates}
 \end{center}
