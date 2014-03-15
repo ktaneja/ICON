@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  15 MAR 2014 08:53
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  15 MAR 2014 15:26
 entering extended mode
 **Draft.tex
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
@@ -480,7 +480,7 @@ k-
 
 ) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\example.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--7
-[][]$\T1/pcr/m/n/9 http : / / awsdocs . s3 . amazonaws . com / S3 / latest /
+[][]$\T1/pcr/m/n/8 http : / / awsdocs . s3 . amazonaws . com / S3 / latest /
  []
 
 File: Stackoverflow.eps Graphic file (type eps)
@@ -721,4 +721,4 @@ Here is how much of TeX's memory you used:
  841 hyphenation exceptions out of 8191
  43i,14n,35p,1036b,774s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (11 pages, 120156 bytes).
+Output written on Draft.dvi (11 pages, 120236 bytes).

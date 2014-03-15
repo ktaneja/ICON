@@ -20,7 +20,7 @@ We then introduce the SE specific NLP techniques proposed in previous work~\cite
 
 \textbf{Phrase and Clause Parsing}. Also known as chunking, this technique divides a sentence into a constituent set of words (or phrases) that logically belong together (such as a Noun Phrase and Verb Phrase). Chunking thus further enhances the syntax of a sentence on top of POS tagging. Current state-of-the-art approaches can effectively classify phrases and clauses over well written news articles.
 
-\textbf{Typed Dependencies}~\cite{Marneffe06LREC,Marneffe08COLING}. The Stanford typed dependencies representation  is designed to provide a simple description of grammatical relationships directed towards non-linguistics experts to perform NLP related tasks. It provides a hierarchical structure for the dependencies with precise definitions of what each dependency means, thus facilitating machine based manipulation of natural language text.
+\textbf{Typed Dependencies}~\cite{Marneffe06LREC,Marneffe08COLING}. The Stanford typed dependencies representation  is designed to provide a simple description of grammatical relationships directed towards non-linguistics experts to perform NLP related tasks. It provides a hierarchical structure for the dependencies with precise definitions of what each dependency represents, thus facilitating machine based manipulation of natural language text.
 
 %\textbf{Named Entity Recognition}~\cite{Finkel05ACL}. Also known as \textit{`entity identification'} and \textit{`entity extraction'}, these techniques are a subtask of information extraction that aims to classify words in a sentence into predefined categories such as names, quantities, expression of times, etc. These techniques help in associating predefined semantic meaning to a word or a group of words (phrase), thus facilitating semantic processing of named entities. 
 
@@ -31,12 +31,12 @@ We then introduce the SE specific NLP techniques proposed in previous work~\cite
 \label{sub:SENLPback}
 
 \textbf{Noun Boosting}~\cite{pandita12:inferring}. Accurate annotation of POS tags in a sentence is fundamental to effectiveness of any advanced NLP technique.
-However, as mentioned previously, POS tagging works well on well written news articles which does not necessary entail that the tagging works well on domain specific text as well.
+However, as mentioned previously, POS tagging works satisfactorily on well written news articles which does not necessary entail that the tagging works satisfactorily on domain specific text as well.
 Thus, noun boosting is a necessary precursor to application of POS tagging on domain specific text.
-In particular, with respect to API documents certain words have a very different semantic meaning, in contrast to general linguistics that causes incorrect annotation of POS tags.
+In particular, with respect to API documents certain words have a different semantic meaning, in contrast to general linguistics that causes incorrect annotation of POS tags.
 
 Consider the word \CodeIn{POST} for instance. 
-The online Oxford dictionary\footnote{\url{http://oxforddictionaries.com/us/definition/american_english/post?q=POST}} has eight different definition of word \CodeIn{POST}, and none of them describes \CodeIn{POST} as a HTTP method\footnote{In HTTP vocabulary \CodeIn{POST} means: \textit{``Creates a new entry in the collection.
+The online Oxford dictionary\footnote{\url{http://oxforddictionaries.com/us/definition/american_english/post?q=POST}} has eight different definition of word \CodeIn{POST}, and none of them describes \CodeIn{POST} as an HTTP method\footnote{In HTTP vocabulary \CodeIn{POST} means: \textit{``Creates a new entry in the collection.
 The new entry's URI is assigned automatically and is usually returned by the operation''}}
 supported by REST API.
 Thus existing POS tagging techniques fail to accurately annotate the POS tags of the sentences involving word \CodeIn{POST}.  
@@ -75,7 +75,7 @@ Typically, regular expressions provide a reasonable approximation for handling a
 This technique accepts the syntax-annotated sentences and builds a First-Order-Logic(FOL) representation of the sentence.
 Earlier researches have shown the adequacy using FOL for NLP related analysis tasks~\cite{Sinha2009,Sinha2010,pandita12:inferring}.
 In particular, WHYPER~\cite{pandita13:WHYPER} demonstrates the effectiveness of this technique, by constructing an intermediate representation generator based on shallow parsing~\cite{Branimir2000} techniques. 
-The shallow parser itself is implemented as a sequence of cascading finite state machines based on the functions of stanford-typed dependencies~\cite{Marneffe06LREC,Marneffe08COLING,Klein03,KleinNIPS03}.
+The shallow parser itself is implemented as a sequence of cascading finite state machines based on the function of Stanford-typed dependencies~\cite{Marneffe06LREC,Marneffe08COLING,Klein03,KleinNIPS03}.
 
 
 In next section we describe our proposed generic approach to infer constraints from API documents. 

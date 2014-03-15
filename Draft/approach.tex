@@ -43,12 +43,12 @@ In particular, the preprocessor first employs the noun boosting followed by heur
 Although the previous techniques and heuristics significantly lower the number of lexical tokens in a sentence, some sentences may still contain a considerable number of lexical tokens to overwhelm the POS tagger.
 To address this issue, we propose a novel technique (\textit{`Frequent Phrases Reduction'}) to further reduce the number of lexical tokens in a sentence by annotating frequent phrases as a single lexical unit.
 
-In particular, we use n-gram based approach as means to achieve this reduction. 
+In particular, we use n-gram based approach to achieve this reduction. 
 In the fields of computational linguistics and probability, an n-gram is a contiguous sequence of n words from a given sequence of text or speech. 
 We first calculate the most frequently occurring n-grams in the text body. 
 In particular, we are interested in the n-grams of length 4 or greater to achieve a reasonable reduction. 
 We then prune the list of n-grams based on a subsumption. 
-We consider a n-gram of length k ($n_k$) to subsume n-gram of length k-1 ($n_{k-1}$) iff $n_{k-1}$ is a substring of ($n_k$) and the frequency of occurrence of $n_{k-1}$ equals frequency of occurrence of $n_{k}$.
+We consider an n-gram of length k ($n_k$) to subsume n-gram of length k-1 ($n_{k-1}$) iff $n_{k-1}$ is a substring of ($n_k$) and the frequency of occurrence of $n_{k-1}$ equals frequency of occurrence of $n_{k}$.
 Finally, we rank the list of n-grams based on the frequency of their occurrence in the text, and select top-k n-grams for reduction.
 For instance, \textit{Amazon Simple Storage Service}, \textit{an I/O Error Occurs}, and \textit{end of stream} are the examples of such n-grams detected by our approach.
 %\begin{figure}[t]
@@ -72,7 +72,7 @@ We further leveraged the HTML style information in \amazon\ to look for words th
  
 Finally, to achieve  n-gram reduction we used Apache Lucene$^{\textregistered}$~\cite{lucene}.
 Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java.
-It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.
+Lucene is a technology suitable for nearly any application that requires full-text search, especially cross-platform.
 
 %Although a POS tagger can be retrained to achieve these pre-processing steps, we prefer annotations to make our approach independent of any specific NLP infrastructure, thus ensuring interoperability with various POS taggers.
 	
@@ -189,7 +189,7 @@ sentence (containing temporal constraint) candidate based on following ordered s
 	Typically, presence of such modal modifier is a strong indicator of presence of constraints imposed by an API developer
 	\item If the sentence does not contain modal modifiers described previously, sentence must contain temporal modifier relationship, identified by Stanford-typed dependency parser.
 	Typically, presence of temporal modifier is an indicator of presence of temporal information.  
-	\item If rules 2 and 3 don't apply then the sentences should be a conditional sentence, identified by the presence of keywords such as ``\textit{if}''.
+	\item If rules 2 and 3 don't apply then the sentences should be a conditional sentence, identified by the presence of keywords such as ``\textit{if}'' and ``\textit{whether}''.
 \end{enumerate} 
 
 Once a candidate sentence is identified, this component selects an semantic graph.
@@ -202,7 +202,7 @@ Section~\ref{sub:ACA} further describes how these graphs are generated.
 
  
 Specification extractor then uses the semantic graph to determine
-if a candidate sentence is a specification sentence and if so extract
+whether a candidate sentence is a specification sentence and if so extract
 the action that should be performed prior to the method the sentence
 belongs to. Algorithm~\ref{alg:SenAnnotaator} describes this action extraction
 process.  
@@ -290,7 +290,7 @@ in the type system. Algorithm~\ref{alg:TypeAnalysis} lists the steps followed to
 
 The algorithm accepts the list of methods as an input produces a graph with
 the nodes representing methods in an API and the directed edges representing temporal constraints.
-First, a index is created based on the return types of the method (Line 2).
+First, an index is created based on the return types of the method (Line 2).
 Second, all methods in an API are added to an unconnected graph (Line 3-4).
 Then, for every public method in the input list, the algorithm checks the types
 of the input parameters and constructs and directed edge from all the methods whose return value
