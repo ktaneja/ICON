@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  14 MAR 2014 17:33
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  15 MAR 2014 02:47
 entering extended mode
 **Draft.tex
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
@@ -388,61 +388,88 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup7
 ))
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 54.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 154.
+LaTeX Font Info:    Try loading font information for U+msa on input line 155.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 154.
+LaTeX Font Info:    Try loading font information for U+msb on input line 155.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 154.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 155.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 154.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 155.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\abstract.tex
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 18.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 31.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-))
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 163.
+)
+Overfull \hbox (13.23996pt too wide) in paragraph at lines 24--34
+[][]\T1/ptm/m/n/9 To ad-dress the pre-ced-ing chal-lenge, we pro-pose an natura
+l-language-
+ []
 
-Overfull \hbox (1.88196pt too wide) in paragraph at lines 163--164
+
+Overfull \hbox (1.68726pt too wide) in paragraph at lines 24--34
+\T1/ptm/m/n/9 used pack-age \T1/pcr/m/n/8 java.io \T1/ptm/m/n/9 from JDK API an
+d \T1/pcr/m/n/8 Amazon S3 REST API\T1/ptm/m/n/9 .
+ []
+
+
+Overfull \hbox (5.14847pt too wide) in paragraph at lines 24--34
+\T1/ptm/m/n/9 Our eval-u-a-tion re-sults are promis-ing. In par-tic-u-lar, \T1
+/ptm/m/sc/9 ICON \T1/ptm/m/n/9 achieves
+ []
+
+)
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 164.
+
+Overfull \hbox (1.88196pt too wide) in paragraph at lines 164--165
 \T1/ptm/m/n/9 Ver-i-fy-ing and Rea-son-ing about Pro-grams--- \T1/ptm/m/it/9 Sp
 ec-i-fi-ca-tion tech-niques 
  []
 
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\introduction.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (4.90604pt too wide) in paragraph at lines 37--44
+\T1/ptm/m/n/9 cally, such doc-u-ments are pro-vided to client-code de-vel-op-er
+s through
+ []
 
- [1
+
+Overfull \hbox (4.41951pt too wide) in paragraph at lines 37--44
+\T1/ptm/m/n/9 straints in terms of the meth-ods must be in-voked pre/post the m
+ethod.
+ []
+
+[1
 
 
 ]
@@ -458,27 +485,18 @@ k-
  []
 
 ) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\example.tex
-Underfull \hbox (badness 10000) in paragraph at lines 5--5
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
 [][]$\T1/pcr/m/n/9 http : / / awsdocs . s3 . amazonaws . com / S3 / latest /
  []
 
 File: Stackoverflow.eps Graphic file (type eps)
 <Stackoverflow.eps>
-Overfull \hbox (21.0736pt too wide) in paragraph at lines 10--11
+Overfull \hbox (21.0736pt too wide) in paragraph at lines 14--15
  [][] 
  []
 
-
-Overfull \hbox (3.22035pt too wide) in paragraph at lines 15--23
-\T1/ptm/m/n/9 cause the \T1/pcr/m/n/8 S3Fox \T1/ptm/m/n/9 de-vel-op-ers over-lo
-oked the spec-i-fi-ca-tions in \T1/pcr/m/n/8 Amazon
- []
-
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\related.tex
-Underfull \vbox (badness 2050) has occurred while \output is active []
-
- [2]
-Overfull \hbox (3.14151pt too wide) in paragraph at lines 29--33
+[2]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\related.tex
+Overfull \hbox (3.14151pt too wide) in paragraph at lines 31--35
 \T1/ptm/m/n/9 use shal-low pars-ing tech-niques to in-fer Ac-cess Con-trol Pol-
 icy (ACP)
  []
@@ -486,7 +504,7 @@ icy (ACP)
 ) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\background.tex
 Overfull \hbox (33.95656pt too wide) in paragraph at lines 4--7
 \T1/ptm/m/n/9 sen-tence. These ad-vances in NLP have in-spired re-searchers/pra
-ctitioners [26,
+ctitioners [27,
  []
 
 
@@ -536,7 +554,7 @@ Overfull \hbox (13.73819pt too wide) in paragraph at lines 73--76
  []
 
 
-Underfull \vbox (badness 1558) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (5.06743pt too wide) in paragraph at lines 138--140
@@ -544,12 +562,12 @@ Overfull \hbox (5.06743pt too wide) in paragraph at lines 138--140
 -ent clauses
  []
 
-
+[5]
 Underfull \hbox (badness 1152) in paragraph at lines 165--165
 []|[]\T1/ptm/m/n/9 A noun phrase fol-lowed by an-other
  []
 
-[5]
+
 Overfull \hbox (2.41197pt too wide) in paragraph at lines 180--184
 \T1/ptm/m/n/9 sen-tence as a spec-i-fi-ca-tion sen-tence (con-tain-ing tem-po-r
 al con-straint)
@@ -582,9 +600,8 @@ tching\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 r[]:leftSibling:predicate\OT1/cmr/m/n/7 )
 $ 
  []
 
-[6]
 File: KnowledgeGraph.eps Graphic file (type eps)
- <KnowledgeGraph.eps>
+<KnowledgeGraph.eps>
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 277.
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <8> not available
@@ -595,7 +612,7 @@ Overfull \hbox (46.21889pt too wide) in paragraph at lines 282--283
 \T1/pcr/m/n/8 BufferedInputReader
  []
 
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\evaluation.tex [7]
+[6]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\evaluation.tex [7]
 Overfull \hbox (14.90985pt too wide) in paragraph at lines 72--75
 \T1/ptm/m/n/9 from con-straint sen-tences by \T1/ptm/m/sc/9 ICON\T1/ptm/m/n/9 .
  We mea-sure $\OML/cmm/m/it/9 accuracy$ \T1/ptm/m/n/9 of \T1/ptm/m/sc/9 ICON\T1
@@ -641,20 +658,36 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [10])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 291.97421pt
+Extra height:10.0pt when 329.72421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:0.0pt when 292.97421pt
+Extra height:10.0pt when 330.72421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(2)Left:292.97421pt Right:291.44843pt Output:292.97421pt
+Extra height:10.0pt when 331.72421pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 332.72421pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 333.72421pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:0.0pt when 334.72421pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:334.72421pt Right:334.44843pt Output:334.72421pt
 - LAST -
 Extra skip:0.0pt
-Left:292.97421pt
-Right:291.44843pt
-Output:292.97421pt
+Left:334.72421pt
+Right:334.44843pt
+Output:334.72421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -663,12 +696,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux) ) 
 Here is how much of TeX's memory you used:
- 3743 strings out of 493922
- 47125 string characters out of 3144878
- 112487 words of memory out of 3000000
- 6888 multiletter control sequences out of 15000+200000
+ 3744 strings out of 493922
+ 47140 string characters out of 3144878
+ 112491 words of memory out of 3000000
+ 6889 multiletter control sequences out of 15000+200000
  62430 words of font info for 78 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 43i,14n,35p,1042b,774s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,14n,35p,1036b,774s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (11 pages, 119040 bytes).
+Output written on Draft.dvi (11 pages, 119828 bytes).

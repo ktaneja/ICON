@@ -124,6 +124,11 @@ J.~W. Nimmer and M.~D. Ernst.
 \newblock Automatic generation of program specifications.
 \newblock In {\em Proc. ISSTA}, pages 232--242, 2002.
 
+\bibitem{Novick2006WDP}
+D.~G. Novick and K.~Ward.
+\newblock Why don't people read the manual?
+\newblock In {\em Proc. 24th ACM}, pages 11--18, 2006.
+
 \bibitem{Olson08}
 D.~Olson.
 \newblock {\em Advanced data mining techniques}.
