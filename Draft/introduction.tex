@@ -13,11 +13,11 @@
 
 
 
-Temporal specifications~\cite{ball2002s} of an Application Programming Interface (API) 
+Temporal specifications or constraints~\cite{ball2002s} of an Application Programming Interface (API) 
 describe allowed sequences of invocations of methods within an API. 
-These specifications govern the secure and robust operation of client software 
+These constraints govern the secure and robust operation of client software 
 using these APIs.
-If these specifications are formal (machine-readable such as linear temporal logic),
+If these constraints are formal (machine-readable such as linear temporal logic),
 they can be used  as a basis of formal analysis tools such 
 as model checker and runtime verifiers
 in detecting the violations of these temporal constraints as defects.
@@ -34,26 +34,26 @@ in detecting the violations of these temporal constraints as defects.
 %Formal specifications of an Application Programming Interface (API) usage are highly desirable.
 %because they are the precursor to the formal analysis tools such as model checkers and runtime verifiers.
 
-Despite being desirable, most API's do not have formal specifications.
+Despite being desirable, most API's do not have formal constraints.
 In contrast, API developers commonly describe correct temporal usage in natural language text in API documents.
 Typically, such documents are provided to client-code developers through online access, or are shipped with the API code.
 %For example, J2EE's API documentation\footnote{\url{http:\\download.oracle.com/javaee/1.7/api/}} is one of the popular API documents.
 For a method under consideration, an API document may describe both the constraints on that method parameters as well as the temporal constraints in terms of the methods must be invoked pre/post the method.
-We observed that roughly 12\% of the sentences (that describe some sort of specification constraints) in \amazonAPI\ documentations describe temporal constraints.
-Although API documents contain temporal constraints, existing formal analysis tools are not designed to work on specifications written in natural language.
+We observed that a eminent portion (roughly 12\%) of the sentences (that describe some sort of constraints) in \amazonAPI\ documentations describe temporal constraints.
+Although API documents contain temporal constraints, existing formal analysis tools accept only formal constraints but not informal constraints written in natural language.
 
-One way of addressing the issue, is to manually convert the natural language API description into formal specifications. 
-However, manually writing formal specifications based on natural language text in API documents can be prohibitively time consuming and error prone~\cite{wu2013inferring,RubingerWEB10}. 
+One way of addressing the issue, is to manually convert the natural language API description into formal constraints. 
+However, manually writing formal constraints based on natural language text in API documents can be prohibitively time consuming and error prone~\cite{wu2013inferring,RubingerWEB10}. 
 For instance, Wu et al.~\cite{wu2013inferring} report that it took one of the authors more than 10 hours to browse the documentation of one method of a web service API, even before they attempted to formalize the constraints on the method.
 
 %Strike out ``To address the aforementioned issue''
 %We propose a novel approach to infer temporal usage constraints from natural language text of API documents. 
-In contrast to manual approach, we propose an automated approach that applies Natural Language Processing (NLP) techniques on natural language text in API documents to infer temporal usage constraints. 
+To reduce the manual effort, we propose an automated approach that applies Natural Language Processing (NLP) techniques on natural language text in API documents to infer formal temporal constraints. 
 %In particular, we focus on specific type of constraints namely temporal constraints.
-A generic temporal relation is defined as \textit{an interpropositional relation that communicates the simultaneity or ordering in time of events or states.}
-In terms of API method invocations, we interpret temporal relationships as \textit{`the allowed sequence of invocations of methods'}.
+A generic temporal constraint is defined as \textit{an interpropositional constraint that communicates the ordering in time of events or states.}
+In terms of API method constraints, we interpret temporal constraints as \textit{`the allowed sequence of invocations of methods'}.
 For example, consider the following statement in \amazonAPI\ ``You must initiate a multipart upload before you can upload any part.''
-This statement can be interpreted as multipart-upload method must be invoked before invoking any part-upload method in the API.
+We can interpret this sentence stating that a multipart-upload method must be invoked before invoking any part-upload method in the API.
 
 %Move this paragraph to later sections or may be push later in intro
 % make example flow in next paragraph
@@ -65,10 +65,10 @@ This statement can be interpreted as multipart-upload method must be invoked bef
 % Combine first two sentences
 % In contrast, temporal constraints are beyond these parameter constraints. may be use difficult to express using parameter constraints
 % Amazon S3 is popularly used web service for simple cloud based storage
-Although, existing approaches focus on inferring just the method pre-post conditions in terms of parameter constraints either using program analysis techniques~\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105,Flanagan2001:HAA,Buse:2008:ADI:1390630.1390664} or using NLP~\cite{pandita12:inferring, wu2013inferring}, temporal constraints are beyond these parameter constraints.
+Although, existing approaches focus on inferring method pre-post conditions (in terms of parameter constraints) using either program analysis techniques~\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105,Flanagan2001:HAA,Buse:2008:ADI:1390630.1390664} or NLP~\cite{pandita12:inferring, wu2013inferring}, temporal constraints are beyond these parameter constraints.
 Temporal constraints, in general focus on rules related to orchestration of methods within an API rather than focusing on the requirements on the input parameters of these methods.
 
-Apart from method specifications, Zhong et al.~\cite{zhong09SE} leverage machine learning and type information to infer constraints on resources based on phases of resource usage: creating, manipulating, and releasing. However, temporal specification are not limited to resource usage. Furthermore, their technique fails to make the finer grained distinction on the ordering of the methods within a phase. For the description mentioned in previously, assuming that the method calls are associated with resource ``part'', both the methods referenced are logically associated with the creation phase of resource. Zhong et al.~\cite{zhong09SE} approach fails to make a distinction in ordering of such methods. In contrast our proposed approach leverages natural language processing to infer generic temporal specifications (not limited to resource related constraints) and also improves upon existing work for making finer grained distinction between ordering of methods within a phase of a resource. 
+Apart from method specifications, Zhong et al.~\cite{zhong09SE} leverage machine learning and type information to infer constraints on resources based on phases of resource usage: creating, manipulating, and releasing. However, temporal constraints are not limited to resource usage. Furthermore, their approach fails to make the finer grained distinction on the ordering of the methods within a phase. For the description mentioned in previously, assuming that the method calls are associated with resource ``part'', both the methods referenced are logically associated with the creation phase of resource. Zhong et al.~\cite{zhong09SE} approach fails to make a distinction in ordering of such methods. In contrast our proposed approach leverages natural language processing to infer generic temporal constraints (not limited to resource related constraints) and also improves upon existing work for making finer grained distinction between ordering of methods within a phase of a resource. 
 
 
 %First, relying just on type information will result in an incomplete list of temporal constraints. 
@@ -108,7 +108,7 @@ The proposed work in general, makes the following contributions:
 %Methodology for generating domain dictionaries 
 \begin{itemize}
 	\item An NLP based approach that infers temporal constraints of method invocations. 
-	To the best of our knowledge, our approach is the first one to apply NLP for the goal of inferring temporal specifications from API documents.
+	To the best of our knowledge, our approach is the first one to apply NLP for the goal of inferring temporal constraints from API documents.
 	\item A prototype implementation of our approach based on extending the Stanford Parser~\cite{Klein03}, which is a natural language parser to derive the grammatical structure of sentences.
 	An open source implementation of the prototype is publicly available on our project website\footnote{\url{https://sites.google.com/site/temporalspec}}. 
 	\item An evaluation of proposed approach on commonly used package \CodeIn{java.io} from JDK API and \amazonAPI. 
