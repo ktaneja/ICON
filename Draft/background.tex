@@ -3,12 +3,12 @@
 
 Natural language is well suited for human communication, but converting natural language into unambiguous specifications that can be processed and understood by computers is difficult.
 However, research advances~\cite{Marneffe06LREC,Marneffe08COLING,Klein03,KleinNIPS03} have increased the accuracy of existing NLP techniques to annotate the grammatical structure of a sentence.
-These advances in NLP have inspired researchers/practitioners~\cite{pandita12:inferring, pandita13:WHYPER, johnSlankasPASSAT13, XiaoFSE2012, thummalapentaICSE12} to adapt/apply NLP techniques to solve problems in software engineering domain.
+These advances in NLP have inspired researchers/ practitioners~\cite{pandita12:inferring, pandita13:WHYPER, johnSlankasPASSAT13, XiaoFSE2012, thummalapentaICSE12} to adapt/apply NLP techniques to solve problems in SE domain.
 
 In particular, this work proposes novel techniques on top of previously proposed techniques~\cite{pandita12:inferring, pandita13:WHYPER} to demonstrate the effectiveness of applying NLP on API documents.
 We next briefly introduce the techniques used in this work that have been grouped into broad categories.
 We first introduce the core NLP techniques used in this work.
-We then introduce the software engineering specific NLP techniques proposed in previous work~\cite{pandita12:inferring,pandita13:WHYPER} that are used in this work.
+We then introduce the SE specific NLP techniques proposed in previous work~\cite{pandita12:inferring,pandita13:WHYPER} that are used in this work.
 
 \subsection{Core NLP techniques}
 \label{sub:CoreNLPback}
@@ -16,27 +16,27 @@ We then introduce the software engineering specific NLP techniques proposed in p
 %Recently, a lot of exciting work has been carried out in the area of Natural Language Processing (NLP), with existing NLP techniques proving to be fairly accurate in highlighting grammatical structure of a natural language sentence. However, existing NLP techniques are still in the processing phase and not in understanding phase.  We briefly introduce the NLP techniques used in this work.
 
 
-\textbf{Parts Of Speech (POS) tagging}~\cite{Klein03,KleinNIPS03}. Also known as \textit{`word tagging'}, \textit{`grammatical tagging'} and \textit{`word-sense disambiguation'}, these techniques aim to identify the part of speech (such as noun, verbs, etc.), a particular word in a sentence belongs to. The most commonly used technique is to train a classification parser over a previously known data set. Current state of the art approaches have demonstrated to achieve 97\%~\cite{KleinNIPS03} accuracy in classifying POS tags for well written news articles.
+\textbf{Parts Of Speech (POS) tagging}~\cite{Klein03,KleinNIPS03}. Also known as \textit{`word tagging'}, \textit{`grammatical tagging'} and \textit{`word-sense disambiguation'}, these techniques aim to identify the part of speech (such as noun, verbs, etc.), a particular word in a sentence belongs to. The most commonly used technique is to train a classification parser over a previously known data set. Current state of the art approaches have demonstrated to be effective in classifying POS tags for well written news articles.
 
-\textbf{Phrase and Clause Parsing}. Also known as chunking, this technique divides a sentence into a constituent set of words (or phrases) that logically belong together (such as a Noun Phrase and Verb Phrase). Chunking thus further enhances the syntax of a sentence on top of POS tagging. Current state-of-the-art approaches can achieve around 90\%~\cite{KleinNIPS03} accuracy in classifying phrases and clauses over well written news articles.
+\textbf{Phrase and Clause Parsing}. Also known as chunking, this technique divides a sentence into a constituent set of words (or phrases) that logically belong together (such as a Noun Phrase and Verb Phrase). Chunking thus further enhances the syntax of a sentence on top of POS tagging. Current state-of-the-art approaches can effectively classify phrases and clauses over well written news articles.
 
 \textbf{Typed Dependencies}~\cite{Marneffe06LREC,Marneffe08COLING}. The Stanford typed dependencies representation  is designed to provide a simple description of grammatical relationships directed towards non-linguistics experts to perform NLP related tasks. It provides a hierarchical structure for the dependencies with precise definitions of what each dependency means, thus facilitating machine based manipulation of natural language text.
 
-\textbf{Named Entity Recognition}~\cite{Finkel05ACL}. Also known as \textit{`entity identification'} and \textit{`entity extraction'}, these techniques are a subtask of information extraction that aims to classify words in a sentence into predefined categories such as names, quantities, expression of times, etc. These techniques help in associating predefined semantic meaning to a word or a group of words (phrase), thus facilitating semantic processing of named entities. 
+%\textbf{Named Entity Recognition}~\cite{Finkel05ACL}. Also known as \textit{`entity identification'} and \textit{`entity extraction'}, these techniques are a subtask of information extraction that aims to classify words in a sentence into predefined categories such as names, quantities, expression of times, etc. These techniques help in associating predefined semantic meaning to a word or a group of words (phrase), thus facilitating semantic processing of named entities. 
 
 %\textbf{Co-reference Resolution}~\cite{RaghunathanEMNLP10,LeeCoNLL11}. Also known as \textit{`anaphora resolution'}, these techniques aim to identify multiple expressions present across (or within) the sentences, that point out to the same thing or \textit{`referant'}. These techniques are useful for extracting information; especially if the information encompasses many sentences in a document.
 
 
-\subsection{Software engineering specific NLP techniques}
+\subsection{SE specific NLP techniques}
 \label{sub:SENLPback}
 
 \textbf{Noun Boosting}~\cite{pandita12:inferring}. Accurate annotation of POS tags in a sentence is fundamental to effectiveness of any advanced NLP technique.
-However, as mentioned earlier, POS tagging works well on well written news articles which does not necessary entail that the tagging works well on domain specific text as well.
+However, as mentioned previously, POS tagging works well on well written news articles which does not necessary entail that the tagging works well on domain specific text as well.
 Thus, noun boosting is a necessary precursor to application of POS tagging on domain specific text.
 In particular, with respect to API documents certain words have a very different semantic meaning, in contrast to general linguistics that causes incorrect annotation of POS tags.
 
 Consider the word \CodeIn{POST} for instance. 
-The online Oxford dictionary\footnote{\url{http://oxforddictionaries.com/us/definition/american_english/post?q=POST}} has 8 different definition of word \CodeIn{POST}, and none of them describes \CodeIn{POST} as a HTTP method\footnote{In HTTP vocabulary \CodeIn{POST} means: \textit{``Creates a new entry in the collection.
+The online Oxford dictionary\footnote{\url{http://oxforddictionaries.com/us/definition/american_english/post?q=POST}} has eight different definition of word \CodeIn{POST}, and none of them describes \CodeIn{POST} as a HTTP method\footnote{In HTTP vocabulary \CodeIn{POST} means: \textit{``Creates a new entry in the collection.
 The new entry's URI is assigned automatically and is usually returned by the operation''}}
 supported by REST API.
 Thus existing POS tagging techniques fail to accurately annotate the POS tags of the sentences involving word \CodeIn{POST}.  

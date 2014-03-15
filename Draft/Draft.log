@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  15 MAR 2014 02:47
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  15 MAR 2014 08:53
 entering extended mode
 **Draft.tex
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
@@ -431,21 +431,15 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 31.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Overfull \hbox (13.23996pt too wide) in paragraph at lines 24--34
+Overfull \hbox (13.23996pt too wide) in paragraph at lines 24--35
 [][]\T1/ptm/m/n/9 To ad-dress the pre-ced-ing chal-lenge, we pro-pose an natura
 l-language-
  []
 
 
-Overfull \hbox (1.68726pt too wide) in paragraph at lines 24--34
+Overfull \hbox (1.68726pt too wide) in paragraph at lines 24--35
 \T1/ptm/m/n/9 used pack-age \T1/pcr/m/n/8 java.io \T1/ptm/m/n/9 from JDK API an
 d \T1/pcr/m/n/8 Amazon S3 REST API\T1/ptm/m/n/9 .
- []
-
-
-Overfull \hbox (5.14847pt too wide) in paragraph at lines 24--34
-\T1/ptm/m/n/9 Our eval-u-a-tion re-sults are promis-ing. In par-tic-u-lar, \T1
-/ptm/m/sc/9 ICON \T1/ptm/m/n/9 achieves
  []
 
 )
@@ -491,29 +485,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--7
 
 File: Stackoverflow.eps Graphic file (type eps)
 <Stackoverflow.eps>
-Overfull \hbox (21.0736pt too wide) in paragraph at lines 14--15
+Overfull \hbox (21.0736pt too wide) in paragraph at lines 13--14
  [][] 
  []
 
 [2]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\related.tex
-Overfull \hbox (3.14151pt too wide) in paragraph at lines 31--35
-\T1/ptm/m/n/9 use shal-low pars-ing tech-niques to in-fer Ac-cess Con-trol Pol-
-icy (ACP)
- []
-
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\background.tex
-Overfull \hbox (33.95656pt too wide) in paragraph at lines 4--7
-\T1/ptm/m/n/9 sen-tence. These ad-vances in NLP have in-spired re-searchers/pra
-ctitioners [27,
+Overfull \hbox (2.94328pt too wide) in paragraph at lines 20--22
+\T1/ptm/m/n/9 spec-i-fi-ca-tions, and ex-cep-tion spec-i-fi-ca-tions) ei-ther d
+y-nam-i-cally [15[]
  []
 
 
+Overfull \hbox (1.7467pt too wide) in paragraph at lines 44--51
+\T1/ptm/m/n/9 ap-proach lever-ages the con-cept of se-man-tic graphs con-struct
+ed from
+ []
+
+) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\background.tex [3]
 Overfull \hbox (2.30396pt too wide) in paragraph at lines 23--24
 \T1/ptm/m/n/9 mat-i-cal re-la-tion-ships di-rected to-wards non-linguistics ex-
 perts to per-
  []
 
-[3]
+
 Underfull \hbox (badness 10000) in paragraph at lines 39--39
 [][]$\T1/pcr/m/n/9 http : / / oxforddictionaries . com / us /
  []
@@ -554,7 +548,7 @@ Overfull \hbox (13.73819pt too wide) in paragraph at lines 73--76
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1558) has occurred while \output is active []
 
 
 Overfull \hbox (5.06743pt too wide) in paragraph at lines 138--140
@@ -644,7 +638,11 @@ Overfull \hbox (12.71205pt too wide) in paragraph at lines 157--157
 []\subsecfnt RQ3: Com-par-i-son to Typed-Enforced Con-straints 
  []
 
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex [9])
+
+Underfull \vbox (badness 2384) has occurred while \output is active []
+
+ [9])
+(C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex)
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\conclusion.tex)
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.bbl
 Overfull \hbox (96.69357pt too wide) in paragraph at lines 4--7
@@ -655,45 +653,64 @@ Overfull \hbox (96.69357pt too wide) in paragraph at lines 4--7
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10])
+ [10]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 329.72421pt
-
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 330.72421pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:10.0pt when 331.72421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 332.72421pt
+Extra height:11.94843pt when 363.69843pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 333.72421pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:0.0pt when 334.72421pt
+Extra height:11.94843pt when 364.69843pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(2)Left:334.72421pt Right:334.44843pt Output:334.72421pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:11.94843pt when 365.69843pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:11.94843pt when 366.69843pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:0.0pt when 367.69843pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:367.69843pt Right:368.89685pt Output:367.69843pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:368.89685pt Right:358.39685pt Output:368.89685pt
 - LAST -
 Extra skip:0.0pt
-Left:334.72421pt
-Right:334.44843pt
-Output:334.72421pt
+Left:368.89685pt
+Right:358.39685pt
+Output:368.89685pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11
 
-]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux) ) 
 Here is how much of TeX's memory you used:
  3744 strings out of 493922
@@ -704,4 +721,4 @@ Here is how much of TeX's memory you used:
  841 hyphenation exceptions out of 8191
  43i,14n,35p,1036b,774s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (11 pages, 119828 bytes).
+Output written on Draft.dvi (11 pages, 120156 bytes).
