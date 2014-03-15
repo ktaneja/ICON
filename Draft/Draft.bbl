@@ -15,6 +15,11 @@ B.~K. Boguraev.
 \newblock Towards finite-state analysis of lexical cohesion.
 \newblock In {\em Proc. FSMNLP}, 2000.
 
+\bibitem{brown1992class}
+P.~F. Brown, P.~V. Desouza, R.~L. Mercer, V.~J.~D. Pietra, and J.~C. Lai.
+\newblock Class-based n-gram models of natural language.
+\newblock {\em Computational linguistics}, 18(4):467--479, 1992.
+
 \bibitem{buse2012synthesizing}
 R.~P. Buse and W.~Weimer.
 \newblock Synthesizing {API} usage examples.
@@ -56,22 +61,10 @@ F.~et~al.
 \newblock {\em WordNet: an electronic lexical database.}
 \newblock Cambridge, Mass: MIT Press, 1998.
 
-\bibitem{Finkel05ACL}
-J.~R. Finkel, T.~Grenager, and C.~D. Manning.
-\newblock Incorporating non-local information into information extraction
-  systems by gibbs sampling.
-\newblock In {\em Proc, 43nd ACL}, 2005.
-
 \bibitem{Flanagan2001:HAA}
 C.~Flanagan and K.~R.~M. Leino.
 \newblock Houdini, an annotation assistant for {ESC/Java}.
 \newblock In {\em Proc. 10th FME}, pages 500--517, 2001.
-
-\bibitem{Gervasi2005}
-V.~Gervasi and D.~Zowghi.
-\newblock Reasoning about inconsistencies in natural language requirements.
-\newblock {\em ACM Transactions Software Engineering Methodologies},
-  14:277--330, 2005.
 
 \bibitem{Ghezzi:2009:SIB:1555001.1555057}
 C.~Ghezzi, A.~Mocci, and M.~Monga.
@@ -105,11 +98,6 @@ C.~Lee, D.~Jin, P.~Meredith, and G.~Rosu.
 \newblock {\em Technical Report http://hdl.handle.net/2142/30006, Department of
   Computer Science, University of Illinois at Urbana-Champaign}, 2012.
 
-\bibitem{Little2009}
-G.~Little and R.~C. Miller.
-\newblock Keyword programming in {J}ava.
-\newblock In {\em Proc. 22nd ASE}, pages 84--93, 2007.
-
 \bibitem{lucene}
 {Apache Lucene Core}.
 \newblock \url{http://lucene.apache.org/core/}.
@@ -123,11 +111,6 @@ C.~Manning and H.~Schutze.
 J.~W. Nimmer and M.~D. Ernst.
 \newblock Automatic generation of program specifications.
 \newblock In {\em Proc. ISSTA}, pages 232--242, 2002.
-
-\bibitem{Novick2006WDP}
-D.~G. Novick and K.~Ward.
-\newblock Why don't people read the manual?
-\newblock In {\em Proc. 24th ACM}, pages 11--18, 2006.
 
 \bibitem{Olson08}
 D.~Olson.
@@ -186,12 +169,6 @@ L.~Tan, Y.~Zhou, and Y.~Padioleau.
   interrupt related concurrency bugs.
 \newblock In {\em Proc. 33rd ICSE}, pages 11--20, 2012.
 
-\bibitem{tcomment}
-S.~H. Tan, D.~Marinov, L.~Tan, and G.~T. Leavens.
-\newblock {@tComment}: {T}esting javadoc comments to detect comment-code
-  inconsistencies.
-\newblock In {\em Proc. 5th ICST}, April 2012.
-
 \bibitem{thummalapentaICSE12}
 S.~Thummalapenta, S.~Sinha, N.~Singhania, and S.~Chandra.
 \newblock Automating test automation.
@@ -235,11 +212,5 @@ H.~Zhong, L.~Zhang, T.~Xie, and H.~Mei.
 \newblock Inferring resource specifications from natural language {API}
   documentation.
 \newblock In {\em Proc. 24th ASE}, pages 307--318, 2009.
-
-\bibitem{Zhou2008}
-H.~Zhou, F.~Chen, and H.~Yang.
-\newblock Developing {A}pplication {S}pecific {O}ntology for {P}rogram
-  {C}omprehension by {C}ombining {D}omain {O}ntology with {C}ode {O}ntology.
-\newblock In {\em Proc. 8th QSIC}, pages 225 --234, 2008.
 
 \end{thebibliography}

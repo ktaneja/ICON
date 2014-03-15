@@ -1,6 +1,6 @@
 \section{Approach Overview}
 \label{sec:approach}
-%\vspace{-2mm}
+
 
 \begin{figure}
 	\centering
@@ -9,73 +9,72 @@
 	\label{fig:approachOverview}
 \end{figure}
 
-We next present our approach for inferring specifications from the method descriptions in API Documents.
+We next present our approach for inferring temporal constraints from the method descriptions in API Documents.
 Figure~\ref{fig:approachOverview} gives an overview of our approach.
-Our approach consists of five major components: a preprocessor, a text-analysis engine, a semantic graph generator, specification extractor, and a type analyzer.
+Our approach consists of five major components: a preprocessor, a text-analysis engine, a semantic graph generator, constraint extractor, and a type analyzer.
 
-The preprocessor accepts API documents and preprocesses the sentences in the method description, such as annotating sentence boundaries and reducing lexical tokens.
+The preprocessor accepts API documents and preprocesses the sentences in the method description,
+such as annotating sentence boundaries and reducing lexical tokens.
 The text-analysis engine accepts the pre-processed sentences and annotates them using an NLP parser.
-The text-analysis engine further transforms the annotated sentences into the first-order-logic (FOL) representation. The semantic graph generator accepts the API documents and generates the semantic graphs that are leveraged by specification extractor component.
+The text-analysis engine further transforms the annotated sentences into the first-order-logic (FOL) representation.
+The semantic graph generator accepts the API documents and generates the semantic graphs that are leveraged by constraint extractor component.
 The type analyzer component infers temporal constraints encoded in the type system of a language by analyzing the API methods parameter and return types.
-Finally, the specification extractor then leverages the semantic graphs to infer temporal constraints from the FOL representation of a sentence.
+Finally, the constraint extractor leverages the semantic graphs to infer temporal constraints from the FOL representation of a sentence.
 We next describe each component in detail.
 
 
 \subsection{Preprocessor}
 \label{sub:prep}
 
-The preprocessor accepts the API documents and first extracts method descriptions from it.
+The preprocessor accepts the API documents and extracts method descriptions from it.
 In particular, the preprocessor extracts the following fields within method descriptions: 
 1) \textit{Summary of the API method},
 2) \textit{Summary and type information of parameters of the API method}, 
 3) \textit{Summary and type information of return values of the method}, and
 4) \textit{Summary and type information of exceptions thrown by the methods}.
 
-This step is required to extract the desired descriptive text from the various presentation styles of the API documents.
+This step is required to extract the desired descriptive text from the API documents.
 In particular, different API documents may have different styles of presenting information to developers.
-This difference in style may include the difference in the level of detail presented to the developer.
+This difference in style may also include the difference in the level of detail presented to developers.
 Our approach thus relies on only basic fields that are trivially available for API methods across different presentation styles. 
 
 After extracting desired information, the natural language text is further preprocessed to be analyzed by subsequent components.
 The preprocessing steps are required to increase the accuracy of core NLP techniques (described in Section~\ref{sub:CoreNLPback}) that are used in the subsequent phases of \tool\ approach.
 In particular, the preprocessor first employs the noun boosting followed by heuristics listed under lexical token reduction, as introduced in Section~\ref{sub:SENLPback}.
 
-Although the previous techniques and heuristics significantly lower the number of lexical tokens in a sentence, some sentences may still contain a considerable number of lexical tokens to overwhelm the POS tagger.
-To address this issue, we propose a novel technique (\textit{`Frequent Phrases Reduction'}) to further reduce the number of lexical tokens in a sentence by annotating frequent phrases as a single lexical unit.
+Although the previous techniques and heuristics significantly lower the number of lexical tokens in a sentence,
+some sentences may still contain a considerable number of lexical tokens to overwhelm the POS tagger.
+To address this issue, we propose a new heuristic (\textit{`Frequent Phrases Reduction'})
+to further reduce the number of lexical tokens in a sentence by annotating frequent phrases as a single lexical unit.
 
-In particular, we use n-gram based approach to achieve this reduction. 
-In the fields of computational linguistics and probability, an n-gram is a contiguous sequence of n words from a given sequence of text or speech. 
-We first calculate the most frequently occurring n-grams in the text body. 
-In particular, we are interested in the n-grams of length 4 or greater to achieve a reasonable reduction. 
+In particular, we use n-gram~\cite{brown1992class} based approach to achieve this reduction. 
+In the fields of computational linguistics, an n-gram is a contiguous sequence of n words from a given text.
+In statistical NLP  and information theory, n-gram has been shown to be effective in computing the probability of occurrence of next word given a sequence of words.
+However, for our approach we use n-grams that always occur together in a given body of text.
+
+
+To achieve \textit{frequent phrases reduction}, we first calculate the most frequently occurring n-grams in the text body. 
+In particular, we are interested in the n-grams of length four or greater to achieve a reasonable reduction.
+We chose four as a threshold for n-grams because we observed that bigrams (size two) and trigrams (size three) frequently resulted in change of semantics
+of the sentence in comparison to n-grams of size four or grater.
 We then prune the list of n-grams based on a subsumption. 
 We consider an n-gram of length k ($n_k$) to subsume n-gram of length k-1 ($n_{k-1}$) iff $n_{k-1}$ is a substring of ($n_k$) and the frequency of occurrence of $n_{k-1}$ equals frequency of occurrence of $n_{k}$.
 Finally, we rank the list of n-grams based on the frequency of their occurrence in the text, and select top-k n-grams for reduction.
-For instance, \textit{Amazon Simple Storage Service}, \textit{an I/O Error Occurs}, and \textit{end of stream} are the examples of such n-grams detected by our approach.
-%\begin{figure}[t]
-%\begin{CodeOut}
-%\begin{alltt}
-%01: 
-%04:
-%\end{alltt}
-%\end{CodeOut}\vspace*{-2ex}
-%\caption{\label{fig:methodAPI} The method description of the \CodeIn{DefineObjectProperty} method in Facebook API}\vspace*{-4ex}
-%\end{figure}
-\\
-\textbf{Prototype Implementation.}
+For instance, \textit{Amazon Simple Storage Service}, \textit{an I/O Error Occurs}, and \textit{end of the stream} are the examples of such n-grams detected by our approach.
+
+
+%\textbf{Prototype Implementation.}
 Currently our prototype implementation works with online \amazon\ and JDK API. 
 However, almost all of the developer documents are provided online as structured webpages.
-Thus, current implementation of preprocessor can be easily extended to extract the desired information from any API developer documents.    
+Thus, current prototype implementation of preprocessor can be easily extended to extract the desired information from any API developer documents.    
 
-Additionally, in current implementation we have manually built the domain dictionaries for preprocessing using the glossary of terms collected from the websites pertaining to REST and Java API.
+Additionally, in current implementation we have manually built the dictionaries for preprocessing using the glossary of terms collected from the websites pertaining to REST and Java API.
 We further leveraged the HTML style information in \amazon\ to look for words that were highlighted in code like format. We further leveraged WordNet to maintain a static lookup table of shorthand words to aid named entity handling and abbreviation handling. 
-
  
-Finally, to achieve  n-gram reduction we used Apache Lucene$^{\textregistered}$~\cite{lucene}.
-Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java.
-Lucene is a technology suitable for nearly any application that requires full-text search, especially cross-platform.
+Finally, to achieve  n-gram reduction we used Apache Lucene~\cite{lucene}.
+Apache Lucene is a high-performance, full-featured text-search-engine library written entirely in Java,
+facilitating scalable cross-platform full-text search. 
 
-%Although a POS tagger can be retrained to achieve these pre-processing steps, we prefer annotations to make our approach independent of any specific NLP infrastructure, thus ensuring interoperability with various POS taggers.
-	
 \subsection{NLP Parser}
 
 
@@ -85,14 +84,14 @@ However, this component can be implemented using any other existing NLP librarie
 In particular, we annotate each sentence with POS tags, named-entity annotations and Stanford-typed dependencies.
 For more details on these techniques and their application, please refer to ~\cite{Marneffe06LREC, Marneffe08COLING, pandita12:inferring, pandita13:WHYPER, thummalapentaICSE12}.
 
-%\begin{figure}
-%	\centering
-%%		\includegraphics[scale=0.6]{StanfordAnnotated.eps}
-%	\caption{Sentence annotated with Stanford dependencies}
-%	\label{fig:standep}
-%\end{figure}
-%
-%Next we use an example to illustrate the annotations added by the NLP Parser. Consider the example sentence \textbf{\textit{``Also you can share the yoga exercise to your friends via Email and SMS.''}}, that indirectly refers to the READ\_CONTACTS permission. Figure~\ref{fig:standep} shows the sentence annotated with Stanford-typed dependencies. The words in red are the names of dependencies connecting the actual words of the sentence (in black). Each word is followed by the Part-Of-Speech (POS) tag of the word (in green). For more details on Stanford-typed dependencies and POS tags, please refer to ~\cite{Marneffe06LREC,Marneffe08COLING}.
+\begin{figure}
+	\centering
+		\includegraphics[scale=0.3]{StanfordAnnotated.eps}
+	\caption{Sentence annotated with Stanford dependencies}
+	\label{fig:standep}
+\end{figure}
+
+Next we use an example to illustrate the annotations added by the NLP Parser. Consider the sentence from the example section \textbf{\textit{`All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.''}}. Figure~\ref{fig:standep} shows the sentence annotated with Stanford-typed dependencies. The words in red are the names of dependencies connecting the actual words of the sentence (in black). Each word is followed by the Part-Of-Speech (POS) tag of the word (in green). For more details on Stanford-typed dependencies and POS tags, please refer to ~\cite{Marneffe06LREC,Marneffe08COLING}.
 
 \subsection{Text Analysis Engine}
 \label{sub:TAE}
@@ -129,14 +128,14 @@ We next describe these two phases:
 
 \textbf{POS Tags}: We first parse a sentence based on the function of POS tags. 
 In particular, we use semantic templates to logically break a sentences into smaller constituent sentences. 
-For instance, consider the sentence:
+For instance, consider the sentence which are then accurately annotated by the underlying NLP Parser:
 
 \begin{center}
 \scriptsize``All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.''. \normalsize
 \end{center}
 
-The Stanford parser inaccurately annotates the Stanford-typed dependencies of the sentence because of presence of different clauses acting on different subject-object pairs.
-We thus break down the sentence into two smaller tractable sentences:
+The Stanford parser finds it difficult to annotate accurately the Stanford-typed dependencies of the sentence because of presence of different clauses acting on different subject-object pairs.
+As shown in figure~\ref{fig:standep} the word including is annotated with Stanford-typed dependencies ``dep'' that is a catch all dependency. We thus break down the sentence into two smaller tractable sentences:
 
 \begin{center}
 \scriptsize \textit{``All objects in the bucket must be deleted before the bucket itself can be deleted.}''
@@ -160,12 +159,12 @@ Thus our shallow parser breaks the sentence into two individual sentences.
     \headcol  \textbf{S No.} 	& \textbf{Template} & \textbf{Summary} \\
     \midline
     
-    1. 		& Two sentences joined by a conjunction & Sentence is broken down into two individual sentences with the conjunction term serving as the connector between two. \\
-\rowcol    2. 		& Two sentences joined by a ``,''& Sentence is broken down to individual independent sentences \\
-    3.		& A noun phrase followed by another noun/pronoun/verb phrase in brackets & Two individual sentences are formed. The first sentence is  the same as the parent sentence sans the noun/pronoun.verb phrase in bracket. The second sentence constitutes of the noun phrase followed by  noun/pronoun/verb phrase without the brackets.\\
-\rowcol    4.		& A noun phrase by a conditional phrase in brackets & Two individual sentences are formed. The first sentence is the same as the parent sentence sans the conditional phrase in bracket. The second sentence constitutes of noun phrases followed by conditional in the bracket.\\ 
-    5.		& A conditional phrase followed by a sentence & Two dependent sentences are formed. The first sentence constitutes the conditional phrase. The second sentence constitutes rest of the sentence.\\
-\rowcol    6.		& A sentence in which the parent verb phrase is over two child verb phrases joined by a conjunction & Two dependent sentences are formed where the dependency is the conjunction. The first sentence is formulated by removing conjunction and second child verb phrase. The second sentence is formulated by removing conjunction and first child verb phrase. \\ 
+    		1. 		& Two sentences joined by a conjunction & Sentence is broken down into two individual sentences with the conjunction term serving as the connector between two. \\
+\rowcol    	2. 		& Two sentences joined by a ``,''& Sentence is broken down to individual independent sentences \\
+    		3.		& A noun phrase followed by another noun/pronoun/verb phrase in brackets & Two individual sentences are formed. The first sentence is  the same as the parent sentence sans the noun/pronoun.verb phrase in bracket. The second sentence constitutes of the noun phrase followed by  noun/pronoun/verb phrase without the brackets.\\
+\rowcol    	4.		& A noun phrase by a conditional phrase in brackets & Two individual sentences are formed. The first sentence is the same as the parent sentence sans the conditional phrase in bracket. The second sentence constitutes of noun phrases followed by conditional in the bracket.\\ 
+    		5.		& A conditional phrase followed by a sentence & Two dependent sentences are formed. The first sentence constitutes the conditional phrase. The second sentence constitutes rest of the sentence.\\
+\rowcol    	6.		& A sentence in which the parent verb phrase is over two child verb phrases joined by a conjunction & Two dependent sentences are formed where the dependency is the conjunction. The first sentence is formulated by removing conjunction and second child verb phrase. The second sentence is formulated by removing conjunction and first child verb phrase. \\ 
 \bottomlinec
     \end{tabular}
 	\label{tab:semanticTemplates}
@@ -174,12 +173,12 @@ Thus our shallow parser breaks the sentence into two individual sentences.
 
 \textbf{Stanford-typed Dependencies}: This phase is equivalent to the intermediate-representation technique described in Section~\ref{sub:SENLPback}.
 
-\subsection{Specification Extractor}
+\subsection{Constraint Extractor}
 \label{sub:SE}
 
 This component accepts the FOL representation of the sentence from the previous component,
-then extracts the temporal constraints if present in a sentence. 
-Specification Extractor then classifies the sentence as a specification 
+then extracts the temporal constraints if present in a sentence.
+Constraint Extractor then classifies the sentence as a constraint 
 sentence (containing temporal constraint) candidate based on following ordered set of rules:
 
 \begin{enumerate}
@@ -194,15 +193,15 @@ sentence (containing temporal constraint) candidate based on following ordered s
 
 Once a candidate sentence is identified, this component selects an semantic graph.
 In particular, the semantic graph of the API class to which the candidate sentence belongs to selected.
+Since there is no concept of classes in REST API, semantic graphs of all resources described in the API are selected.
 A semantic graph constitutes the keyword representation of the classes and the corresponding applicable actions. 
-Figure~\ref{fig:knowledge} shows a sub-graph of  graph for \CodeIn{BufferedInputReader} class.
-The phrases in solid rectangles are synonyms of the class name \CodeIn{BufferedInputReader}.
-The phrases in rounded rectangle are the actions applicable on \CodeIn{BufferedInputReader} class.
+Figure~\ref{fig:knowledge} shows a graph for \CodeIn{Object} resource in \amazonAPI.
+The phrases in rounded rectangle are the actions applicable on \CodeIn{Object} resource.
 Section~\ref{sub:ACA} further describes how these graphs are generated.
 
  
-Specification extractor then uses the semantic graph to determine
-whether a candidate sentence is a specification sentence and if so extract
+Constraint extractor then uses the semantic graph to determine
+whether a candidate sentence is a constraint sentence and if so extract
 the action that should be performed prior to the method the sentence
 belongs to. Algorithm~\ref{alg:SenAnnotaator} describes this action extraction
 process.  
@@ -238,7 +237,7 @@ process.
 
 Our algorithm systematically explores the FOL representation
 of the candidate sentence to determine if a sentence
-describes a temporal specification. First, our algorithm
+describes a temporal constraint. First, our algorithm
 attempts to locate the occurrence of class name or its synonym
 within the leaf nodes of the FOL
 representation of the sentence (Line 3). The method
@@ -274,18 +273,19 @@ This list is further augmented by listing the name of the parent classes and imp
 \begin{figure}
 	\centering
 		\includegraphics[scale=0.4]{KnowledgeGraph.eps}
-	\caption{Semantic Graph for the \CodeIn{BufferedInputStream} class in Java}
+	\caption{Semantic Graph for the \CodeIn{Object} related operations in Amazon S3 REST API}
 	\label{fig:knowledge}
 \end{figure} 
 
 
-We then systematically inspect the member methods to identify actions applicable to the objects represented by the class. From the name of a public method (describing a possible action on the object), we extract verb phrases. The verb phrases are used as the associated actions applicable on the object. For instance, \CodeIn{BufferedInputReader} defines operations available, close, mark, and so on. We associate these operations with the objects of type \CodeIn{BufferedInputReader}. Figure~\ref{fig:knowledge} shows a sub-graph of  graph for \CodeIn{BufferedInputReader} class. The phrases in solid rectangles are synonyms of the class name \CodeIn{BufferedInputReader}. The phrases in rounded rectangle are the actions applicable on \CodeIn{BufferedInputReader} class.
+We then systematically inspect the member methods to identify actions applicable to the objects represented by the class. From the name of a public method (describing a possible action on the object), we extract verb phrases. The verb phrases are used as the associated actions applicable on the object. In case of REST API we first identified the resources and then listed REST actions on those resources as applicable actions. Figure~\ref{fig:knowledge} shows the graph for \CodeIn{Object} resource in REST API. The phrases in rounded rectangle are the REST actions applicable on \CodeIn{Object} resource in \amazonAPI.
   
 
 \subsection{Type Analysis}
 
 As mentioned earlier that some temporal constraints are enforced by the type system in typed Languages.
-For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates that (at least one) method ($m'$) be invoked whose return value is of type ($t$). To extend the temporal constraints inferred by the analyzing the natural language text, this component infers additional constraints that are encoded
+For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates that (at least one) method ($m'$) be invoked whose return value is of type ($t$).
+To extend the temporal constraints inferred by the analyzing the natural language text, this component infers additional constraints that are encoded
 in the type system. Algorithm~\ref{alg:TypeAnalysis} lists the steps followed to infer type based temporal constraints.
 
 The algorithm accepts the list of methods as an input produces a graph with
