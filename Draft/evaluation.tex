@@ -1,12 +1,15 @@
 \section{Evaluation}
 \label{sec:evaluation}
 
-We conducted an evaluation to assess the effectiveness of \tool. In our evaluation, we address two main research questions:
+We next present the evaluation we conducted to assess the effectiveness of \tool. In our evaluation, we address three main research questions:
 
 \begin{itemize}
 	\item\textbf{RQ1}: What are the precision and recall of \tool\ in identifying temporal constraints from sentences written in natural language?
+	Answer to this question quantifies the effectiveness of \tool\ in identifying constraint sentences.
 	\item\textbf{RQ2}: What is the accuracy of \tool\ in inferring temporal constraints from constraint sentences in the API documents?
-	\item\textbf{RQ3}: How do the constraints inferred by our approach compare with the typed-enforced temporal constraints?
+	Answer to this question quantifies the effectiveness of \tool\ in inferring temporal constraints from constraint sentences. 
+	\item\textbf{RQ3}: What is the degree of the overlap between the temporal constraints inferred from natural language text in comparison to the typed-enforced temporal constraints?
+	
  
 \end{itemize}
 
@@ -15,9 +18,9 @@ We conducted an evaluation to assess the effectiveness of \tool. In our evaluati
 
 We used the API documents of the following two libraries as subjects for our evaluation. 
 \begin{itemize}
-	\item{Amazon S3}. \amazon\ provides a REST based web services interface that can be used to store and retrieve data on the web. Furthermore, \CodeIn{Amazon S3} also empowers a developer with rich set of API methods to access a highly scalable, reliable, secure, fast, inexpensive infrastructure. \CodeIn{Amazon S3} is reported to store more than 2 trillion objects as of April 2013 and gets over 1.1 million requests per second at peak time~\cite{amazons3stats}.
+	\item \amazonAPI\: provides a REST based web services interface that can be used to store and retrieve data on the web. Furthermore, \CodeIn{Amazon S3} also empowers a developer with rich set of API methods to access a highly scalable, reliable, secure, fast, inexpensive infrastructure. \CodeIn{Amazon S3} is reported to store more than 2 trillion objects as of April 2013 and gets over 1.1 million requests per second at peak time~\cite{amazons3stats}.
 
-	\item{java.io}. \CodeIn{java.io} is a popular packacge in \CodeIn{Java} programming language that provides APIs for system input and output through data streams, serialization and the file system.
+	\item\CodeIn{java.io} : is one of a popular packages in \CodeIn{Java} programming language. The package provides APIs for system input and output through data streams, serialization and the file system, which are one of the fundamental functionalities provided by a programming language.
 \end{itemize}
 We chose \CodeIn{Amazon S3} and \CodeIn{java.io} APIs as our subjects because they are popular and contain decent documentation.
 
@@ -28,13 +31,10 @@ temporal constraints or not.
 We used \CodeIn{cohen kappa}~\cite{carletta1996assessing} score to statistically measure
 the inter-rater agreement.
 The \CodeIn{cohen kappa} score of the two authors was .66 (on a scale of 0 to 1), 
-which denotes a statically significant agreement. 
+which denotes a statically significant agreement~\cite{carletta1996assessing}. 
 After the authors classified all the sentences, they 
 discussed with each other to reach a consensus on the sentences they classified differently. 
-We use this classified sentences as the golden set for calculating precision and recall.
-
- 
-
+We use these classified sentences as the golden set for calculating precision and recall.
 
 To answer RQ1, we measure the number of true positives ($TP$), false positives ($FP$), true negative ($TN$), and false negatives ($FN$)
 in identifying the constraint sentences by \tool.
@@ -49,14 +49,14 @@ We define the $TP$, $FP$, $TN$, and $FN$ of \tool\ as follows:
 \end{enumerate}
 
 
-In statistical classification~\cite{Olson08}, $Precision$ is defined as a ratio of
+In statistical classification~\cite{Olson08}, \CodeIn{precision} is defined as a ratio of
 number of true positives to the total number of items reported to be true,
-$Recall$ is defined as a ratio of number of true positives to the total number
-of items that are true. $F-score$ is defined as the weighted harmonic mean of 
-$Precision$ and $Recall$. Higher value of $Precision$, $Recall$, and $F-Score$
+\CodeIn{recall} is defined as a ratio of number of true positives to the total number
+of items that are true. \CodeIn{F-Score} is defined as the weighted harmonic mean of 
+\CodeIn{precision} and \CodeIn{recall}. Higher value of \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-Score}
 are indicative of higher quality of the constraint statements inferred using 
 \tool. based on the calculation of $TP$, $FP$, $TN$, and $FN$ of \tool\ defined
-previously we computed the $Precision$, $Recall$, and $F-Score$ of \tool\ as follows:
+previously we computed the \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-Score} of \tool\ as follows:
 
 
 \begin{center}
@@ -69,13 +69,24 @@ $F-Score$ = $\frac{2 X Precison X Recall}{Precision + Recall}$
 \end{center}
 
 
-To answer RQ2, we checked the temporal constraints inferred from constraint sentences by \tool.
-We measure $accuracy$ of \tool as the ratio of the total number of temporal constraints that
-are correctly inferred by \tool to the total number of constraint sentences. 
+To answer RQ2, we manually verified the temporal constraints inferred from constraint sentences by \tool.
+However, we excluded the type-enforced temporal constraints inferred using Algorithm~\ref{alg:TypeAnalysis}, described in Section~\ref{sec:approach}.
+We excluded the type-enforced constraints because they are correct by construction and are by default enforced by modern IDE's such as eclipse. 
+We then measure $accuracy$ of \tool\ as the ratio of the total number of temporal constraints that
+are correctly inferred by \tool\ to the total number of constraint sentences. Two authors
+independently verified the correctness of the temporal constraints inferred by \tool.
+We define the \CodeIn{accuracy} of \tool\ as the ratio of constraint sentences with correctly inferred temporal constraints
+to the total number of constraint sentences. 
+Higher value of \CodeIn{accuracy} is indicative of effectiveness of \tool\ in inferring temporal constraints from constraint sentences.
+
+
+To answer RQ3, we counted the overlap in the temporal constraints inferred by \tool\ 
+from the natural language text in API documents to the type-enforced temporal constraints
+inferred using Algorithm~\ref{alg:TypeAnalysis}, described in Section~\ref{sec:approach}.
 
 \subsection{Results}
 
-We next describe our evaluation results to demonstrate the effectiveness of \tool\ in identifying temporal constraints.
+%We next describe our evaluation results.
 
 \begin{table*}
 \begin{center}
@@ -116,30 +127,58 @@ Column ``Sen$_C$'' list the number of manually identified constraint sentences.
 Column ``Sen$_{ICON}$'' lists the number of sentences identified by \tool\ as constraint sentences. 
 Columns ``TP'', ``FP'', ``TN'', and ``FN'' represent the number of \CodeIn{true positives}, \CodeIn{false positives}, \CodeIn{true negatives}, and \CodeIn{false negatives}, respectively. 
 Columns ``P(\%)'', ``R(\%)'', and ``F$_S$(\%)'' list percentage values of \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-score} respectively. 
-Our results show that, out of 3,909 sentences, \tool\ effectively identifies constraint sentences with the average precision, recall, and F-score of 65.0\%, 72.2\%, and 68.4\%, respectively.
+Our results show that, out of 3,909 sentences, \tool\ effectively identifies constraint sentences with the average \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-score} of 65.0\%, 72.2\%, and 68.4\%, respectively.
 
  
 
 %We next present an example to illustrate how \tool\ incorrectly identifies a sentence as a constraint sentence. \textbf{A example goes here}
-We next present an example to illustrate how \tool\ incorrectly identifies a sentence as a constraint sentence (producing false positives). For instance, consider the sentence ``\textit{This is done by flushing the stream and then closing the underlying output stream.}'' from  \CodeIn{close} method description from \CodeIn{PrintStream} class. \tool\ incorrectly identifies the action ``flush'' being performed before the action ``close''. However \tool\ fails to make the distinction that it happens internally (enforced within the body) in the method. \tool, thus incorrectly identifies the sentence as a constraint sentence.   
+We next present an example to illustrate how \tool\ incorrectly identifies a sentence as a constraint sentence (producing false positives).
+For instance, consider the sentence ``\textit{This is done by flushing the stream and then closing the underlying output stream.}'' from  \CodeIn{close} method description from \CodeIn{PrintStream} class.
+\tool\ incorrectly identifies the action ``flush'' being performed before the action ``close''.
+However \tool\ fails to make the distinction that it happens internally (enforced within the body) in the method.
+\tool, thus incorrectly identifies the sentence as a constraint sentence.   
 
 
-Another major source of FPs is the incorrect parsing of sentences by the underlying NLP infrastructure and/or inadequacy of generic dictionaries for synonym analysis. For instance, consider the sentence ``\textit{If this stream has an associated channel then the channel is closed as well.}'' from the \CodeIn{close} method description from \CodeIn{FileOutputStream}. The sentence describes an effect that happens as a result of calling the \CodeIn{close} method and does not describe any temporal constraint. However, \tool\ annotates the sentence as a constraint sentence because underlying Wordnet dictionaries matches the word ``has'' as a synonym of ``get''. This incorrect matching in turn causes \tool\ to incorrectly annotate the sentence as constraint sentence because ``has'' is matched against \CodeIn(get) method in \CodeIn{FileOutputStream}. We observed 8 instances of previously described example in our results.
+Another major source of FPs is the incorrect parsing of sentences by the underlying NLP infrastructure
+and/or inadequacy of generic dictionaries for synonym analysis.
+For instance, consider the sentence ``\textit{If this stream has an associated channel then the channel is closed as well.}''
+from the \CodeIn{close} method description from \CodeIn{FileOutputStream}.
+The sentence describes an effect that happens as a result of calling the \CodeIn{close} method and does not describe any temporal constraint.
+However, \tool\ annotates the sentence as a constraint sentence because underlying Wordnet dictionaries matches the word ``has'' as a synonym of ``get''.
+This incorrect matching in turn causes \tool\ to incorrectly annotate the sentence as constraint sentence
+because ``has'' is matched against \CodeIn(get) method in \CodeIn{FileOutputStream}.
+We observed 8 instances of previously described example in our results.
 
-If we manually fixed the Wordnet dictionaries to match ``has'' and ``get'' as synonyms, our precision is further increased to 70.8\% effectively increasing the F-Score of \tool\ to 71.2\%. We refrained from including such modifications for reporting the results to stay true to our proposed framework. In the future, we plan to investigate techniques to construct better domain dictionaries for software API.
+If we manually fixed the Wordnet dictionaries to not match ``has'' and ``get'' as synonyms,
+our precision is further increased to 70.8\% effectively increasing the F-Score of \tool\ to 71.2\%.
+Although an easy fix, we refrained from including such modifications for reporting the results to stay true to our proposed framework.
+In the future, we plan to investigate techniques to construct better domain dictionaries for software API. 
 
-We next present an example to illustrate how \tool\ fails identify a constraint sentence (producing false negative). False negatives are undesirable in the context of our problem domain, because they can mislead the users of \tool\ into believing that no other temporal constraint exists in the API documents. Furthermore, an overwhelming number of false negatives works against the usefulness of \tool. For instance, consider the sentence ``\textit{This implementation of the PUT operation creates a copy of an object that is already stored in Amazon S3.}'' from  \CodeIn{PUT Object-Copy} method description in \amazonAPI. The sentence describes the constraint that the object must already be stored (invocation of \CodeIn{PUT Object}) before calling the current method. However, \tool cannot make the connection owing to the limitation of the semantic graphs that do not list ``already stored'' as a ``valid operation'' on object.  
+We next present an example to illustrate how \tool\ fails identify a constraint sentence (producing false negative).
+False negatives are undesirable in the context of our problem domain
+because they can mislead the users of \tool\ into believing that no other temporal constraint exists in the API documents.
+Furthermore, an overwhelming number of false negatives works against the practicality of \tool.
+For instance, consider the sentence ``\textit{This implementation of the PUT operation creates a copy of an object that is already stored in Amazon S3.}''
+from  \CodeIn{PUT Object-Copy} method description in \amazonAPI.
+The sentence describes the constraint that the object must already be stored (invocation of \CodeIn{PUT Object})
+before calling the current method.
+However, \tool cannot make the connection owing to the limitation of the semantic graphs that do not list ``already stored'' as a ``valid operation'' on object.  
+In the future, we plan to investigate techniques to further improve knowledge graphs to infer such implicit constraints. 
 
+Another major source of false negatives (similar to reasons for false positives) is the incorrect parsing of sentences by the underlying NLP infrastructure.
+For instance, consider the sentence ``\textit{If any in-memory buffering is being done by the application (for example, by a BufferedOutputStream object),
+those buffers must be flushed into the FileDescriptor (for example, by invoking OutputStream.flush) before that data will be affected by sync.}''
+The sentence describes that the \CodeIn{OutputStream.flush()} must be invoked before invoking the current method if in-memory buffering is performed.
+However, the length and complexity in terms of number of clauses causes the underlying Stanford parser to inaccurately annotate the dependencies,
+which eventually results into incorrect classification. 
 
-Another major source of false negatives (similar to reasons for false positives) is the incorrect parsing of sentences by the underlying NLP infrastructure. For instance, consider the sentence ``\textit{If any in-memory buffering is being done by the application (for example, by a BufferedOutputStream object), those buffers must be flushed into the FileDescriptor (for example, by invoking OutputStream.flush) before that data will be affected by sync.}'' The sentence describes that the \CodeIn{OutputStream.flush()} must be invoked before invoking the current method if in-memory buffering is performed. However, the length and complexity in terms of number of clauses causes the underlying Stanford parser to inaccurately annotate the dependencies, which eventually results into incorrect classification. 
-
-Overall, a significant number of false positives and false negatives will be reduced as the current NLP research advances the underlying NLP infrastructure. Furthermore, use of domain specific dictionaries as opposed to generic dictionaries used in current prototype implementation will further improve the precision and recall of \tool. 
+Overall, a significant number of false positives and false negatives will be reduced as the current NLP research advances the underlying NLP infrastructure.
+Furthermore, use of domain specific dictionaries as opposed to generic dictionaries
+sed in current prototype implementation will further improve the precision and recall of \tool. 
 
 \subsubsection{RQ2: Accuracy in Inferring Temporal Constraints}
 
-In this section, we evaluate the effectiveness of \tool\ in inferring temporal constraints from the identified constraint sentences from API documents. To answer RQ2, we ran the sentences manually identified as constraint sentences against \tool. We then manually verified the correctness of temporal constraints inferred by our \tool. We define the \CodeIn{accuracy} of \tool\ as the ratio of constraint sentences with correctly inferred temporal constraints to the total number of constraint sentences. 
-
-Table~\ref{tab:results} shows the effectiveness of \tool\ in inferring temporal constraints from the identified constraint sentences.
+In this section, we evaluate the effectiveness of \tool\ in inferring temporal constraints from the identified constraint sentences from API documents.Table~\ref{tab:results} shows the effectiveness of \tool\ in inferring temporal constraints from the identified constraint sentences.
 Column ``API'' lists the names of the subject API. 
 Columns ``Mtds'' and ``Sen'' list the number of methods and sentences in each subject API's.
 Column ``Sen$_C$'' lists the number of manually identified constraint sentences.
@@ -147,21 +186,24 @@ Column ``Spec$_{ICON}$'' lists the number of sentences with correctly inferred t
 Column ``Acc(\%)'' list percentage values of accuracy. 
 Our results show that, out of 90 manually identified constraint sentences, \tool\ correctly infers temporal constraints with the average accuracy of 70.0\%.
 
-We next present an example to illustrate how \tool\ incorrectly infers temporal constraints from a constraint sentence. Consider the sentence ``if the stream does not support seek, or if this input stream has been closed by invoking its close method, or an I/O error occurs.'' from \CodeIn{skip} method of \CodeIn{java.io.FilterInputStream} class. Although \tool\ correctly infers that close cannot be called before current method, \tool\ incorrectly associates the phrase ``support seek'' with method \CodeIn{markSupported} in the class. The faulty association happens due to incorrect parsing of the sentence by the underlying NLP infrastructure. Such issues will be alleviated as the underlying NLP infrastructure improves.   
+We next present an example to illustrate how \tool\ incorrectly infers temporal constraints from a constraint sentence. Consider the sentence ``\textit{if the stream does not support seek, or if this input stream has been closed by invoking its close method, or an I/O error occurs.}'' from \CodeIn{skip} method of \CodeIn{java.io.FilterInputStream} class. Although \tool\ correctly infers that method \CodeIn{close} cannot be called before current method, \tool\ incorrectly associates the phrase ``support seek'' with method \CodeIn{markSupported} in the class. The faulty association happens due to incorrect parsing of the sentence by the underlying NLP infrastructure. Such issues will be alleviated as the underlying NLP infrastructure improves.   
 
 Another, major cause of failure for \tool\ in inferring temporal constraints from sentences is the failure to identify the sentence as a constraint sentences at the first place (false negatives). Overall, accuracy of \tool\ can be significantly improved by lowering the false negative rate in identifying the constraint sentences. 
 
-
-
-
 \subsubsection{RQ3: Comparison to Typed-Enforced Constraints}
 
-In this section, we compared the temporal constraints inferred from the natural language API descriptions to those enforced by the type-system (referred to as type-enforced constraint). The constraints that are enforced by the type-system can be enforced by IDEs. Hence, for such types of constraints, we do not require sophisticated techniques like ICON. 
-For \CodeIn{java.io}, we define a type-enforced constraint as a constraint that mandates a method M accepting input parameter I of type T to be invoked after (at least one) a method M0 whose return value is of type T. 
-Since there are no types in REST APIs, for \CodeIn{Amazon S3}, we consider a constraint as a type-enforced constraint if the constraint is implicit in the \CodeIn{CRUD} naming convention followed by REST operations. In particular, we consider a constraint as a type-enforced constraint, if the constraint mandates a DELETE, GET, or PUT operation on a resource to be invoked after a GET operation on the same resource. 
+In this section, we compared the temporal constraints inferred from the natural language API descriptions to those enforced by the type-system (referred to as type-enforced constraint).
+The constraints that are enforced by the type-system can be enforced by IDEs.
+Hence, for such types of constraints, we do not require sophisticated techniques like ICON. 
+For \CodeIn{java.io}, we define a type-enforced constraint as a constraint that mandates a method $M$ accepting input parameter $I$ of type $T$ to be invoked after (at least one) a method $M'$ whose return value is of type $T$. 
+Since there are no types in REST APIs, for \CodeIn{Amazon S3}, we consider a constraint as a type-enforced constraint
+if the constraint is implicit in the \CodeIn{CRUD} semantic followed by REST operations. 
+\CodeIn{CRUD} stands for resource manipulation semantic sequence create, retrieve, update, and delete.
+In particular, we consider a constraint as a type-enforced constraint, if the constraint mandates a DELETE, GET, or PUT operation on a resource to be invoked after a GET operation on the same resource. 
 
 To address this question, we manually inspect each of the constraints reported by ICON and classify it as a type-enforced constraint or a non type-enforced constraint. 
-We observed that none of the constraints inferred by our \tool\ from natural language text were classified as a type-enforced constraint. Hence, the constraints detected by \tool\ are not trivial enough to be enforced by a type system.
+We observed that none of the constraints inferred by our \tool\ from natural language text were classified as a type-enforced constraint.
+Hence, the constraints detected by \tool\ are not trivial enough to be enforced by a type system.
 
 
 
@@ -174,9 +216,9 @@ In summary, we demonstrate that \tool\ effectively identifies constraint sentenc
 
 \subsection{Threats to Validity}
 \label{sub:threats_to_validity}
-Threats to external validity primarily include the degree to which the subject documents used in our evaluations are representative of true practice. To minimize the threat, we used API documents of two different API's: JDK \CodeIn{java.io} and \amazon. On one hand Java is a widely used programming language and \CodeIn{java.io} and is one of the main packages. In contrast, \amazon\ provides HTTP based access to online storage allowing developers the freedom to write clients applications in any programming language. Furthermore, the difference in the functionalities provided by the two API's also address the issue of over fitting our approach to a particular type of API. The threat can be further reduced by evaluating our approach on more subjects. 
+Threats to external validity primarily include the degree to which the subject documents used in our evaluations are representative of true practice. To minimize the threat, we used API documents of two different API's: JDK \CodeIn{java.io} and \amazon. On one hand, Java is a widely used programming language and \CodeIn{java.io} and is one of the main packages. In contrast, \amazon\ provides HTTP based access to online storage allowing developers the freedom to write clients applications in any programming language. Furthermore, the difference in the functionalities provided by the two API's also address the issue of over fitting our approach to a particular type of API. The threat can be further reduced by evaluating our approach on more subjects API's. 
 
-Threats to internal validity include the correctness of our implementation in extracting usage constraints and labeling a statement as a constraint statement. To reduce the threat, we manually inspected all the constraints inferred against the API method descriptions in our evaluation. Furthermore, we ensured that the results were individually verified and agreed upon by two authors.
+Threats to internal validity include the correctness of our prototype implementation in extracting temporal constraints and labeling a statement as a constraint statement. To reduce the threat, we manually inspected all the constraints inferred against the API method descriptions in our evaluation. Furthermore, we ensured that the results were individually verified and agreed upon by two authors, using the \CodeIn{cohen kappa}~\cite{carletta1996assessing} score to statistically measure the inter-rater agreement.
 
 
 
