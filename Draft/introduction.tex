@@ -2,58 +2,36 @@
 \label{sec:introduction}
 
 
-% Introduction needs to tightned up a bit
-% Paragraph about typed languages must be moved to background or methodology
-% Example might appropriately go in background as well
-% Try to fit the goal statement in the introduction
-% too long an abstract
-% Names of exact tools and citations to them for verification
-% Over use of however,
-% J2EE document seems to be out of place
-
-
-
-Temporal specifications or constraints~\cite{ball2002s} of an Application Programming Interface (API) 
-describe allowed sequences of invocations of methods within an API. 
-These constraints govern the secure and robust operation of client software 
-using these APIs.
+Temporal constraints~\cite{ball2002s} of an Application Programming Interface (API) 
+are the allowed sequences of invocations of methods within the API. 
+These constraints govern the secure and robust operation of client software using the API.
 If these constraints are formal (machine-readable such as linear temporal logic),
-they can be used  as a basis of formal analysis tools such 
+they can be used as inputs to the formal analysis tools such 
 as model checker and runtime verifiers
-in detecting the violations of these temporal constraints as defects.
+in detecting the violations of these temporal constraints as defects~\cite{lee2012towards}.
 
-
-
-%Specifications of using an Application Programming Interface (API) of a library play an important role in software reuse.
-%In addition to guiding the development process by outlining what and how to reuse, 
-%usage specifications also help in verification process by allowing quality assurance practitioners to test the expected outcome.
-%Furthermore, if the specifications are formal (machine-readable such as code-contracts),
-%they can be used in conjunction with the formal analysis tools such as model checkers and runtime verifiers
-%to automatically  reason about the quality of software.
-
-%Formal specifications of an Application Programming Interface (API) usage are highly desirable.
-%because they are the precursor to the formal analysis tools such as model checkers and runtime verifiers.
-
-Despite being desirable, most API's do not have formal constraints.
-In contrast, API developers commonly describe correct temporal usage in natural language text in API documents.
-Typically, such documents are provided to client-code developers through online access, or are shipped with the API code.
-%For example, J2EE's API documentation\footnote{\url{http:\\download.oracle.com/javaee/1.7/api/}} is one of the popular API documents.
-For a method under consideration, an API document may describe both the constraints on that method parameters as well as the temporal constraints in terms of the methods must be invoked pre/post the method.
-We observed that an eminent portion (roughly 12\%) of the sentences (that describe some sort of constraints) in \amazonAPI\ documentations describe temporal constraints.
-Although API documents contain temporal constraints, existing formal analysis tools accept only formal constraints but not informal constraints written in natural language.
+Typically, these constraints are described in natural language text of API documents.
+Such documents are provided to client-code developers through an online access, or are shipped with the API code.
+For a method under consideration, an API document may describe both the constraints on that method parameters
+as well as the temporal constraints in terms of methods that must be invoked pre/post that method.
+We observed that an considerable portion (roughly 12\%) of the sentences (that describe some sort of constraints)
+in \amazonAPI\ documentations describe temporal constraints.
+However, existing verification tools which typically accept only formal constraints
+cannot use the natural language constraints from API documents.
 
 One way of addressing the issue, is to manually convert the natural language API description into formal constraints. 
 However, manually writing formal constraints based on natural language text in API documents can be prohibitively time consuming and error prone~\cite{wu2013inferring,RubingerWEB10}. 
-For instance, Wu et al.~\cite{wu2013inferring} report that it took one of the authors more than 10 hours to browse the documentation of one method of a web service API, even before they attempted to formalize the constraints on the method.
-
+For instance, Wu et al.~\cite{wu2013inferring} report that it took one of the authors hours to browse the documentation of one method of a web service API, even before they attempted to formalize the constraints on the method.
+To reduce the manual effort, we propose \tool: a Natural Language Processing (NLP) based approach
+to automatically infer formal temporal constraints. 
 %Strike out ``To address the aforementioned issue''
 %We propose a novel approach to infer temporal usage constraints from natural language text of API documents. 
-To reduce the manual effort, we propose an automated approach that applies Natural Language Processing (NLP) techniques on natural language text in API documents to infer formal temporal constraints. 
+
 %In particular, we focus on specific type of constraints namely temporal constraints.
-A generic temporal constraint is defined as \textit{an interpropositional constraint that communicates the ordering in time of events or states.}
-In terms of API method constraints, we interpret temporal constraints as \textit{`the allowed sequence of invocations of methods'}.
-For example, consider the following statement in \amazonAPI\ ``You must initiate a multipart upload before you can upload any part.''
-We can interpret this sentence stating that a multipart-upload method must be invoked before invoking any part-upload method in the API.
+%A generic temporal constraint is defined as \textit{an interpropositional constraint that communicates the ordering in time of events or states.}
+%In terms of API method constraints, we interpret temporal constraints as \textit{`the allowed sequence of invocations of methods'}.
+%For example, consider the following statement in \amazonAPI\ ``You must initiate a multipart upload before you can upload any part.''
+%We can interpret this sentence stating that a multipart-upload method must be invoked before invoking any part-upload method in the API.
 
 %Move this paragraph to later sections or may be push later in intro
 % make example flow in next paragraph

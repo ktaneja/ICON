@@ -199,7 +199,7 @@ For \CodeIn{java.io}, we define a type-enforced constraint as a constraint that 
 Since there are no types in REST APIs, for \CodeIn{Amazon S3}, we consider a constraint as a type-enforced constraint
 if the constraint is implicit in the \CodeIn{CRUD} semantic followed by REST operations. 
 \CodeIn{CRUD} stands for resource manipulation semantic sequence create, retrieve, update, and delete.
-In particular, we consider a constraint as a type-enforced constraint, if the constraint mandates a DELETE, GET, or PUT operation on a resource to be invoked after a GET operation on the same resource. 
+In particular, we consider a constraint as a type-enforced constraint, if the constraint mandates a DELETE, GET, or PUT operation on a resource to be invoked after a POST operation on the same resource. 
 
 To address this question, we manually inspect each of the constraints reported by ICON and classify it as a type-enforced constraint or a non type-enforced constraint. 
 We observed that none of the constraints inferred by our \tool\ from natural language text were classified as a type-enforced constraint.

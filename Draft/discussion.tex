@@ -1,19 +1,19 @@
 \section{Discussion and Future work}
 \label{sec:discussion}
 
-Our approach serves as a way to formalize the description of constraints in the natural language texts of REST API documents (targeted towards generating code contracts), thus facilitating existing tools to process these specifications. We next discuss the benefits of our approach in other areas of software engineering, followed by a description of the limitations of the current implementation and our approach.
+Our approach serves as a way to formalize the description of constraints in the natural language texts of REST API documents (targeted towards generating code contracts), thus facilitating existing tools to process these specifications. We next discuss some of the limitations of the current implementation and our approach.
 
-\textbf{Bug Finding Capabilities}
-
-
-
-~\cite{lee2012towards} manually wrote specifications for JDK API. One of the evaluations they conducted was to see if the formal representation of the constraints in the natural language in API documents could detect violations. They also used \CodeIn{java.io} as subject API to manually write specifications. 
-
-they used java benchmarks from [S. M. Blackburn, R. Garner, C. Hoffman, et al. The DaCapo benchmarks: Java benchmarking development and analysis. In OOPSLA, 2006.] to detect voilations.
-
-\textit{The error specification, Reader ManipulateAfterClose is violated on all benchmarks but avrora. However, after analyzing the source code, we found that SimpleCharStream intentionally performs a read operation after closing the stream for checking if the stream is closed or not. Also, it handles thrown exceptions properly. There is no bug in this class related to this specification, but this is not a usual pattern of using the Reader class according to the JDK API; the code should probably be changed.}--reproduction of the text from ~\cite{lee2012towards}. Our approach infers this constraint.
-
-Other bug that can be detected is regarding REST API discussed in example section
+%\textbf{Bug Finding Capabilities}
+%
+%
+%
+%~\cite{lee2012towards} manually wrote specifications for JDK API. One of the evaluations they conducted was to see if the formal representation of the constraints in the natural language in API documents could detect violations. They also used \CodeIn{java.io} as subject API to manually write specifications. 
+%
+%they used java benchmarks from [S. M. Blackburn, R. Garner, C. Hoffman, et al. The DaCapo benchmarks: Java benchmarking development and analysis. In OOPSLA, 2006.] to detect voilations.
+%
+%\textit{The error specification, Reader ManipulateAfterClose is violated on all benchmarks but avrora. However, after analyzing the source code, we found that SimpleCharStream intentionally performs a read operation after closing the stream for checking if the stream is closed or not. Also, it handles thrown exceptions properly. There is no bug in this class related to this specification, but this is not a usual pattern of using the Reader class according to the JDK API; the code should probably be changed.}--reproduction of the text from ~\cite{lee2012towards}. Our approach infers this constraint.
+%
+%Other bug that can be detected is regarding REST API discussed in example section
 
 
 %
@@ -24,12 +24,21 @@ Other bug that can be detected is regarding REST API discussed in example sectio
 %
 %\vspace*{-1ex}
 
+\textbf{Validation of Method Descriptions}. API documents can sometimes be misleading~\cite{tcomment,Cindy10:PASTE}, thus causes developers to write faulty client code. In future work, we plan to extend our approach to find documentation-implementation inconsistencies.
 
-\textbf{Leveraging Error Descriptions}
+\textbf{Inferring implicit constraints}. The approach presented in this work only infers temporal constraints explicitly described in the method descriptions.
+However, there are instances where the constraints are implicit. For instance, consider the method description for \CodeIn{markSupported} method in \CodeIn{BufferInputSttream} class in Java, which states ``\textit{Test if this input stream supports \CodeIn{mark}}''. For a developer it is easy to understand that method \CodeIn{markSupported} must be called before method \CodeIn{mark}. The approach presented in this work is unable to infer such constraints. In future work, we plan to investigate techniques to infer these implicit constraints.
 
-\CodeIn{BucketAlreadyExists}: \textit{``The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.''}
+\textbf{Extending generic dictionaries}. The use of generic dictionaries for software engineering related text is sometimes inadequate. For instance, Wordnet matched ``has'' as a synonym for the word ``get''. Although, valid for generic English, such instances cause our approach to incorrectly distinguish a constraint sentence from a regular sentence, or vice versa. In future work, we plan to investigate techniques to extend generic dictionaries for software engineering related text. 
+    
 
-\textbf{Semantic Flow}
+
+
+%\textbf{Leveraging Error Descriptions}
+%
+%\CodeIn{BucketAlreadyExists}: \textit{``The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.''}
+%
+%\textbf{Semantic Flow}
 
 
 %\vspace*{-1ex}
@@ -44,7 +53,7 @@ Other bug that can be detected is regarding REST API discussed in example sectio
 %
 %\textbf{Contextual Information}. Some API documents are not comprehensive. Method descriptions omit certain specifications that have already been described in another closely related method. Currently, our approach does not deal with such scenarios as we do not consider contextual information. In future work, we plan to explore techniques to infer specifications in such scenarios.
 %
-%\textbf{Validation of Method Descriptions}. API documents can sometimes be misleading~\cite{TanICST12,Cindy10:PASTE}, thus causing developers to write faulty client code. In future work, we plan to extend our approach to find documentation-implementation inconsistencies.
+%
 %%Consider the method description from the facebook API:
 %
 %%\textit{\textbf{``summary:}}

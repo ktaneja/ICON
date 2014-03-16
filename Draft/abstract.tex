@@ -1,19 +1,26 @@
 \begin{abstract}
-Temporal specifications  or constraints of an Application Programming
-Interface (API) describe allowed sequence of invocations
-of methods within an API. These constraints govern the secure and robust
-operation of client software using these APIs.
-Despite being desirable for 
-software testing and verification (through formal analysis tools),
-most API's do not have formal temporal constraints.
-In contrast, API documents contain valuable information (including temporal constraints) about the usage in natural language.
-However, manually writing formal constraints based on natural language text in API documents
-can be prohibitively time consuming and error prone.
-
-
-On the other hand, automatically inferring temporal constraints from API documents is challenging.
-In particular, it is challenging to automatically 
-identify the methods referenced in the natural language text to infer temporal constraints.
+Temporal constraints of an Application Programming
+Interface (API) are the allowed sequences of invocations
+of methods from the API.
+These constraints govern the secure and robust
+operation of client software using the API.
+Typically, these constraints are described in natural language text
+of API documents and thus cannot be used by existing verification tools
+which typically accept only formal constraints.
+Because manually writing temporal constraints based on
+API documents can be prohibitively time consuming and error prone,
+we propose \tool: a Natural Language Processing (NLP) based approach
+to automatically infer temporal constraints.
+In particular, our approach includes novel techniques to reduce the number of lexical tokens
+as a way to make API documents amenable to existing NLP techniques
+(that are currently designed to work on well written news articles).
+Our approach also includes a novel technique of identifying method references in
+the natural language text by building domain-dictionaries systematically
+from API documents and generic English dictionaries.
+To evaluate our approach, we apply \tool\ to infer temporal constraints from 
+commonly used package \CodeIn{java.io} in the JDK API and from the \amazonAPI.
+Our results show that \tool\ effectively identifies constraint sentences (from over 3900 API sentences) with the average precision, recall, and F-score of 65.0\%, 72.2\%, and 68.4\%, respectively.
+Furthermore, \tool\ also achieves an accuracy of 70\% in inferring 63 temporal constraints from these sentences.
 
 % There are existing techniques that infer from API documents resource specifications 
 % (such as constraints based on phases: creating, manipulating, and releasing resources).
@@ -21,17 +28,6 @@ identify the methods referenced in the natural language text to infer temporal c
 % Furthermore, such techniques do not make a distinction between explicit ordering of methods
 % within each phases. 
 
-To address the preceding challenge, we propose a natural-language-processing-based approach \tool,
-to infer formal temporal constraints from natural language text of API documents. These constraints can be used (as input)
-by various software testing and verification tools to detect defects in client code the APIs.
-Our approach 
-addresses the preceding challenge by building (and leveraging) domain-dictionaries systematically from API
-documents and generic English dictionaries.
-To evaluate our proposed approach, we applied \tool\ to infer temporal constraints from 
-commonly used package \CodeIn{java.io} from JDK API and \amazonAPI.
-Our evaluation results are promising.
-In particular, \tool\ achieves an average of 65\% precision and 72\% recall
-in inferring 63 temporal constraints from more than 3900 sentences of API documents. 
 
 % Goal Statement
 % Negating everything as we go along

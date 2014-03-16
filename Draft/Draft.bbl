@@ -140,6 +140,12 @@ B.~Rubinger and T.~Bultan.
 \newblock Contracting the {F}acebook {API}.
 \newblock In {\em 4th AV-WEB}, pages 61--72, 2010.
 
+\bibitem{Cindy10:PASTE}
+C.~Rubino-Gonz\'alez and B.~Liblit.
+\newblock Expect the unexpected: Error code mismatches between documentation
+  and the real world.
+\newblock In {\em Proc. 9th PASTE}, pages 73--80, 2010.
+
 \bibitem{Sinha2009}
 A.~Sinha, A.~M. Paradkar, P.~Kumanan, and B.~Boguraev.
 \newblock A linguistic analysis engine for natural language use case
@@ -168,6 +174,12 @@ L.~Tan, Y.~Zhou, and Y.~Padioleau.
 \newblock a{C}omment: mining annotations from comments and code to detect
   interrupt related concurrency bugs.
 \newblock In {\em Proc. 33rd ICSE}, pages 11--20, 2012.
+
+\bibitem{tcomment}
+S.~H. Tan, D.~Marinov, L.~Tan, and G.~T. Leavens.
+\newblock {@tComment}: {T}esting javadoc comments to detect comment-code
+  inconsistencies.
+\newblock In {\em Proc. 5th ICST}, April 2012.
 
 \bibitem{thummalapentaICSE12}
 S.~Thummalapenta, S.~Sinha, N.~Singhania, and S.~Chandra.

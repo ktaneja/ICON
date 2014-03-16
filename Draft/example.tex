@@ -19,17 +19,18 @@ Consider the question asked in \textit{Stack Overflow}~\footnote{{\small \url{ht
 Stack Overflow is an online question and answer forum for professional and enthusiast programmers.
 The query is about the delete functionality of a third-party software \CodeIn{S3Fox} to interact with \amazonAPI.
 The inquisitor complains about an issue in the delete bucket functionality of the \CodeIn{S3Fox}.
-In particular, the issue was because the \CodeIn{S3Fox} developers overlooked the constraints in \amazon.
+The \CodeIn{S3Fox} developers overlooked the constraints in \amazon, causing the issue.
 The API document pertaining to the  delete bucket functionality states that before deleting the bucket, the objects in the buckets must be deleted.
 \textit{``All objects (including all objects versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted''}.
-Although the issue was fixed but one of the responses on the forum encouraged the person asking query to switch to another product,
-thus potentially resulting in a loss of revenue attributed to customer dissatisfaction.
+The issue was fixed.
+However, one of the forum responses contained a recommendation for the inquisitor to switch to another product.
+Customer dissatisfaction, such as was caused by this issue with the delete bucket functionality, can lead to a lose in revenue.
  
 The preceding issue can be easily detected using formal analysis tools.
 For instance, a specification rule (temporal constraint) can be added to a static checker to verify
 the presence of a call to delete object functionality before the call to delete bucket functionality.
-However, existing formal analysis accept only formal specifications but not informal constraints described in natural language.
-Thus, there is need for an approach to automatically translate the constraints described in natural language into a more formal notation.
+%However, existing formal analysis accept only formal specifications but not informal constraints described in natural language.
+%Thus, there is need for an approach to automatically translate the constraints described in natural language into a more formal notation.
 In next section, we briefly discuss the related work pertinent to our proposed approach.
 
 

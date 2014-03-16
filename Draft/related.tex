@@ -39,13 +39,13 @@ In contrast, approach presented in this report is independent of such training s
 Xiao et al.~\cite{XiaoFSE2012} and Slankas et al.~\cite{johnSlankasPASSAT13} use shallow parsing techniques to infer Access Control Policy (ACP) rules from natural language text in use cases.
 The use of shallow parsing techniques works satisfactorily on natural language texts in use cases, owing to well-formed structure of sentences in use case descriptions.
 In contrast, often the sentences in API documents are not well-formed.
-Additionally, these approaches do not deal with programming keywords or identifiers, which are often mixed within the method descriptions in API documents.
+Additionally, their approaches do not deal with programming keywords or identifiers, which are often mixed within the method descriptions in API documents.
 
-Most closely related work to the approach presented here is Pandita et al.~\cite{pandita12:inferring} work on inferring parameter constraints from method descriptions in the API documents.
+Most closely related work to the approach presented here is our previous work on inferring parameter constraints from method descriptions in the API documents~\cite{pandita12:inferring}.
 Our proposed approach differs from the previous approach as follows.
 Our proposed approach addresses the problem of inferring temporal constraint, whereas the previous approach infers parameter constraints.
 Our proposed approach is a significant extension to the infrastructure used in the previous work in following areas.
-First, the proposed approach introduces hybrid shallow parsing that relies both on POS tags as well as Stanford-typed dependencies to construct intermediate representation.
+First, the proposed approach introduces hybrid shallow parsing that relies both on parts-of-speech tags as well as Stanford-typed dependencies to construct intermediate representation.
 Second, the proposed approach introduces a new heuristics namely frequent phrase reduction to deal with the domain specific and ill-formed sentences in API documents.
 Finally, the proposed approach leverages the concept of semantic graphs constructed from class and method names in API to automatically infer the implicit method references in a sentence.   
 
@@ -55,7 +55,7 @@ Improving the documentation related to a software API~\cite{Dekel2009,tan2011aco
 Dekel and Herbsleb~\cite{Dekel2009}, were the first to create a tool namely eMoose,
 an Eclipse~\footnote{\url{http://www.eclipse.org/}} based plug-in that allowed developers to create directives
 (way of marking the specification sentences) in the default API documentation.
-These directives are highlighted whenever they are displayed in the eclipse environment.
+These directives are highlighted whenever they are displayed in the Eclipse environment.
 Lee et al.~\cite{lee2012towards} improved upon their work by providing a formalism to the directives proposed by Dekel et al.~\cite{Dekel2009},
 thus allowing tool-based verification.
 However, a developer has to manually annotate such directives.
