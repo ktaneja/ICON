@@ -24,8 +24,8 @@ thus complementing these existing approaches when the source code or binaries of
 \textbf{NLP in SE}:
 NLP techniques are being increasingly applied in the SE domain. 
 Tan et al.~\cite{TanSOSP07} were the first to apply Machine Learning (ML) and NLP on code comments to detect mismatches between the comments and the implementation.
-They rely on predefined rule templates targeted towards threading and lock related comments, thus limiting their scope both in terms of application area as well as language used in the comments.
-Furthermore, the constraints inferred by their approach are the restrictions imposed by the developer on the client code.
+They rely on predefined rule templates targeted towards threading and lock related comments, and then apply machine learning to find comments following such rules.
+The constraints inferred by their approach are the restrictions imposed by the developer on the client code.
 In comparison, the temporal constraints inferred by our approach are the restriction imposed by the API library being used by the client code.
 Furthermore, approach presented in this report relies on generic natural language based templates thus relaxing the restriction on the style of the language used to describe specifications.
 

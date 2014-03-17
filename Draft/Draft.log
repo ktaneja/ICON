@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  17 MAR 2014 03:13
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  17 MAR 2014 07:46
 entering extended mode
 **Draft.tex
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
@@ -492,6 +492,12 @@ Overfull \hbox (2.94328pt too wide) in paragraph at lines 20--22
 y-nam-i-cally [14[]
  []
 
+
+Overfull \hbox (6.8316pt too wide) in paragraph at lines 24--31
+\T1/ptm/m/n/9 code. Fur-ther-more, ap-proach pre-sented in this re-port re-lies
+ on generic
+ []
+
 [2]
 Underfull \vbox (badness 1565) has occurred while \output is active []
 
@@ -634,4 +640,4 @@ Here is how much of TeX's memory you used:
  841 hyphenation exceptions out of 8191
  43i,14n,35p,1176b,774s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (11 pages, 120408 bytes).
+Output written on Draft.dvi (11 pages, 120424 bytes).
