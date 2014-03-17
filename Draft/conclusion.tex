@@ -1,14 +1,14 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-Although highly desirable, most API's do not have formal temporal constraints.
-In contrast, documentation of methods contain detailed specifications of the usage in natural language text.
+Despite being highly desirable, most APIs are not equipped with formal temporal constraints.
+In contrast, documentation of API methods contains detailed specifications of temporal constraints in natural language text.
 Manually writing formal specifications based on natural language text in API documents is prohibitively time consuming and error prone.
-To address this issue, we proposed a novel approach \tool\ to infer temporal constraints from natural language text of API documents.
+To address this issue, we have proposed a novel approach called \tool\ to infer temporal constraints from natural language text of API documents.
 We applied \tool\ to infer temporal constraints from 
-commonly used package \CodeIn{java.io} in the JDK API and from the Amazon S3 REST API.
+commonly used package \CodeIn{java.io} in the JDK API and from the \amazonAPI.
 Our evaluation results show that \tool\ effectively identifies sentences describing
 temporal constraints with an average 65\% precision and 72\% recall,
 from more than 3900 sentences in subject API documents.
-Furthermore,\tool\ also achieved an  accuracy of
+Furthermore, \tool\ also achieved an accuracy of
 70\% in inferring 63 formal temporal constraints from these sentences.

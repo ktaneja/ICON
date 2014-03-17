@@ -5,17 +5,17 @@ of methods from the API.
 These constraints govern the secure and robust
 operation of client software using the API.
 Typically, these constraints are described in natural language text
-of API documents and thus cannot be used by existing verification tools
+of API documents and thus cannot be used by existing verification tools,
 which typically accept only formal constraints.
 Because manually writing temporal constraints based on
 API documents can be prohibitively time consuming and error prone,
 we propose \tool: a Natural Language Processing (NLP) based approach
 to automatically infer temporal constraints.
-In particular, our approach includes novel techniques to reduce the number of lexical tokens
+In particular, our approach includes a novel technique to reduce the number of lexical tokens
 as a way to make API documents amenable to existing NLP techniques
-(that are currently designed to work on well written news articles).
+(which are typically designed to work on well-written news articles).
 Our approach also includes a novel technique of identifying method references in
-the natural language text by building domain-dictionaries systematically
+the natural language text by building domain dictionaries systematically
 from API documents and generic English dictionaries.
 To evaluate our approach, we apply \tool\ to infer temporal constraints from 
 commonly used package \CodeIn{java.io} in the JDK API and from the \amazonAPI.

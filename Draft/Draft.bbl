@@ -214,6 +214,12 @@ X.~Xiao, A.~Paradkar, S.~Thummalapenta, and T.~Xie.
   software documents.
 \newblock In {\em Proc. 20th FSE}, pages 12:1--12:11, 2012.
 
+\bibitem{swordnet}
+J.~Yang and L.~Tan.
+\newblock {SWordNet}: {I}nferring semantically related words from software
+  context.
+\newblock {\em Empirical Software Engineering}, 2013.
+
 \bibitem{Zhong:2009:MMR}
 H.~Zhong, T.~Xie, L.~Zhang, J.~Pei, and H.~Mei.
 \newblock Mapo: Mining and recommending {API} usage patterns.

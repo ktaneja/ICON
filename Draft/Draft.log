@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  16 MAR 2014 18:03
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.1.11)  17 MAR 2014 03:13
 entering extended mode
 **Draft.tex
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.tex
@@ -446,21 +446,33 @@ ec-i-fi-ca-tion tech-niques
  []
 
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\introduction.tex
+Overfull \hbox (5.06741pt too wide) in paragraph at lines 22--25
+\T1/ptm/m/n/9 based on nat-u-ral lan-guage text in API doc-u-ments can be pro-h
+ibitively
+ []
+
+
+Overfull \hbox (3.06862pt too wide) in paragraph at lines 33--39
+[][]\T1/ptm/m/n/9 First, ex-ist-ing NLP tech-niques are ini-tially de-signed to
+-wards well-
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
 
 
 ]
-Overfull \hbox (2.25073pt too wide) in paragraph at lines 90--92
+Overfull \hbox (2.25073pt too wide) in paragraph at lines 56--58
 \T1/ptm/m/n/9 open source im-ple-men-ta-tion of the pro-to-type is pub-licly av
 ail-
  []
 
 
-Overfull \hbox (1.68459pt too wide) in paragraph at lines 92--93
-[][]\T1/ptm/m/n/9 An eval-u-a-tion of pro-posed ap-proach on com-monly used pac
-k-
+Overfull \hbox (2.75465pt too wide) in paragraph at lines 62--70
+\T1/ptm/m/n/9 Sec-tion 6[] presents the eval-u-a-tion of our ap-proach. Sec-tio
+n 7[] presents
  []
 
 ) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\example.tex
@@ -474,24 +486,25 @@ Overfull \hbox (21.0736pt too wide) in paragraph at lines 13--14
  [][] 
  []
 
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\related.tex [2]
+) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\related.tex
 Overfull \hbox (2.94328pt too wide) in paragraph at lines 20--22
 \T1/ptm/m/n/9 spec-i-fi-ca-tions, and ex-cep-tion spec-i-fi-ca-tions) ei-ther d
 y-nam-i-cally [14[]
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[2]
+Underfull \vbox (badness 1565) has occurred while \output is active []
 
 )
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\background.tex [3]
+(C:\Users\rahulpandita\Documents\Git\ICON\Draft\background.tex
 Underfull \hbox (badness 10000) in paragraph at lines 39--39
 [][]$\T1/pcr/m/n/9 http : / / oxforddictionaries . com / us /
  []
 
-) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\approach.tex
+[3]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\approach.tex
 File: approach.eps Graphic file (type eps)
- <approach.eps>
+
+<approach.eps>
 Overfull \hbox (3.00623pt too wide) in paragraph at lines 7--8
  [][][] 
  []
@@ -502,13 +515,13 @@ Overfull \hbox (1.48524pt too wide) in paragraph at lines 29--35
 s method
  []
 
-[4]
+
 Overfull \hbox (7.49747pt too wide) in paragraph at lines 45--49
 [][]\T1/ptm/m/n/9 Although the pre-vi-ous tech-niques and heuris-tics sig-nif-i
 -cantly lower
  []
 
-
+[4]
 Overfull \hbox (7.66902pt too wide) in paragraph at lines 67--70
 [][]\T1/ptm/m/n/9 Currently our pro-to-type im-ple-men-ta-tion works with on-li
 ne \T1/pcr/m/n/8 Amazon
@@ -573,13 +586,9 @@ Overfull \hbox (12.71205pt too wide) in paragraph at lines 193--193
 []\subsecfnt RQ3: Com-par-i-son to Typed-Enforced Con-straints 
  []
 
-
-Underfull \vbox (badness 2384) has occurred while \output is active []
-
- [9])
-(C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex
+[9]) (C:\Users\rahulpandita\Documents\Git\ICON\Draft\discussion.tex
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 30.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 9.
 )
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\conclusion.tex)
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.bbl
@@ -597,56 +606,32 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:11.94843pt when 461.19843pt
+Extra height:0.0pt when 477.44843pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+(2)Left:477.44843pt Right:477.89685pt Output:477.44843pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:11.94843pt when 462.19843pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:11.94843pt when 463.19843pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:11.94843pt when 464.19843pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:0.0pt when 465.19843pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-(2)Left:465.19843pt Right:455.89685pt Output:465.19843pt
+(2)Left:477.89685pt Right:477.89685pt Output:477.89685pt
 - LAST -
 Extra skip:0.0pt
-Left:465.19843pt
-Right:455.89685pt
-Output:465.19843pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+Left:477.89685pt
+Right:477.89685pt
+Output:477.89685pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
 (C:\Users\rahulpandita\Documents\Git\ICON\Draft\Draft.aux) ) 
 Here is how much of TeX's memory you used:
- 3732 strings out of 493922
- 46920 string characters out of 3144878
- 118342 words of memory out of 3000000
- 6878 multiletter control sequences out of 15000+200000
+ 3733 strings out of 493922
+ 46930 string characters out of 3144878
+ 119078 words of memory out of 3000000
+ 6879 multiletter control sequences out of 15000+200000
  64477 words of font info for 80 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 43i,14n,35p,1036b,774s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,14n,35p,1176b,774s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Draft.dvi (11 pages, 120568 bytes).
+Output written on Draft.dvi (11 pages, 120408 bytes).

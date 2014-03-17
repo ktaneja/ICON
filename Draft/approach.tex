@@ -27,7 +27,7 @@ We next describe each component in detail.
 \label{sub:prep}
 
 The preprocessor accepts the API documents and extracts method descriptions from it.
-In particular, the preprocessor extracts the following fields within method descriptions: 
+In particular, the preprocessor extracts the following fields from the method descriptions: 
 1) \textit{Summary of the API method},
 2) \textit{Summary and type information of parameters of the API method}, 
 3) \textit{Summary and type information of return values of the method}, and
@@ -78,7 +78,7 @@ facilitating scalable cross-platform full-text search.
 \subsection{NLP Parser}
 
 
-The NLP parser accepts the pre-processed documents and annotates every sentence within each document using core NLP techniques described in Section~\ref{sub:CoreNLPback}.
+The NLP parser accepts the pre-processed documents and annotates every sentence in each document using core NLP techniques described in Section~\ref{sub:CoreNLPback}.
 From an implementation perspective, we chose the Stanford parser~\cite{Manning:01}.
 However, this component can be implemented using any other existing NLP libraries or approaches.
 In particular, we annotate each sentence with POS tags, named-entity annotations and Stanford-typed dependencies.
@@ -239,7 +239,7 @@ Our algorithm systematically explores the FOL representation
 of the candidate sentence to determine if a sentence
 describes a temporal constraint. First, our algorithm
 attempts to locate the occurrence of class name or its synonym
-within the leaf nodes of the FOL
+in the leaf nodes of the FOL
 representation of the sentence (Line 3). The method
 findLeafContaining(r\_name\_list) explores the FOL representation
 to find a leaf node that contains either the class name
@@ -261,7 +261,7 @@ found, then the matching action name is returned.
 \subsection{Semantic-Graph Generator}
 \label{sub:ACA}
 
-A key way of identifying reference to a method within the API in our proposed approach is the employment of a semantic graph of an API.
+A key way of identifying reference to a method in the API by our approach is the employment of a semantic graph of an API.
 In particular, we propose to initially infer such graphs from API documents.
 Manually creating a semantic graph is prohibitively time consuming and may be error prone.
 We thus employ a systematic methodology (proposed previously in ~\cite{pandita13:WHYPER}) to infer such semantic graphs from API documents that can potentially be automated.

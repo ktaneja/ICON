@@ -1,8 +1,8 @@
 \section{Related work}
 \label{sec:related}
 
-Our proposed approach touches a few research areas such as software verification, NLP in Software Engineering (SE), and document augmentation.
-We next discuss the relevant work pertinent to our proposed approach in these areas.
+%Our proposed approach touches a few research areas such as software verification, NLP in Software Engineering (SE), and document augmentation.
+%We next discuss the relevant work pertinent to our proposed approach in these areas.
 
 %\subsection{Code Contracts - Formal Specifications}
 % Define temporal constraints distinction
@@ -29,25 +29,25 @@ Furthermore, the constraints inferred by their approach are the restrictions imp
 In comparison, the temporal constraints inferred by our approach are the restriction imposed by the API library being used by the client code.
 Furthermore, approach presented in this report relies on generic natural language based templates thus relaxing the restriction on the style of the language used to describe specifications.
 
-Zhong et al.~\cite{zhong09SE} leverage machine learning and type information to infer constraints on resources based on phases of resource usage: creating, manipulating, and releasing.
-However, temporal constraints are not limited to resource usage thus 
-Furthermore, the specifications inferred by their approach infers implicit specifications across multiple method descriptions,
-whereas the temporal constraints inferred by our approach infers explicit ordering information described in individual method descriptions.
+Zhong et al.~\cite{zhong09SE} leverage machine learning and type information to infer constraints on resources.
+Specifically, their approach infers resource constraints following template: resource creation methods followed by resource manipulation methods followed by resource release methods.
+However, temporal constraints may not be limited to such as template. 
 Furthermore, the performance of their approach is dependent on the quality of the training sets used for ML.
-In contrast, approach presented in this report is independent of such training set and thus can be easily extended to target respective problems addressed by them.
+In contrast, approach presented in this report is independent of such training set and thus can be easily extended to target respective problems addressed by them. Furthermore, the specifications inferred by their approach may ignore the explicit ordering information described in individual method descriptions as inferred by our approach.
+
 
 Xiao et al.~\cite{XiaoFSE2012} and Slankas et al.~\cite{johnSlankasPASSAT13} use shallow parsing techniques to infer Access Control Policy (ACP) rules from natural language text in use cases.
 The use of shallow parsing techniques works satisfactorily on natural language texts in use cases, owing to well-formed structure of sentences in use case descriptions.
 In contrast, often the sentences in API documents are not well-formed.
-Additionally, their approaches do not deal with programming keywords or identifiers, which are often mixed within the method descriptions in API documents.
+Additionally, their approaches do not deal with programming keywords or identifiers, which are often mixed with the method descriptions in API documents.
 
 Most closely related work to the approach presented here is our previous work on inferring parameter constraints from method descriptions in the API documents~\cite{pandita12:inferring}.
-Our proposed approach differs from the previous approach as follows.
-Our proposed approach addresses the problem of inferring temporal constraint, whereas the previous approach infers parameter constraints.
-Our proposed approach is a significant extension to the infrastructure used in the previous work in following areas.
-First, the proposed approach introduces hybrid shallow parsing that relies both on parts-of-speech tags as well as Stanford-typed dependencies to construct intermediate representation.
-Second, the proposed approach introduces a new heuristics namely frequent phrase reduction to deal with the domain specific and ill-formed sentences in API documents.
-Finally, the proposed approach leverages the concept of semantic graphs constructed from class and method names in API to automatically infer the implicit method references in a sentence.   
+\tool\ approach differs from the previous approach as follows.
+\tool\ approach addresses the problem of inferring temporal constraint, whereas the previous approach infers parameter constraints.
+\tool\ approach is a significant extension to the infrastructure used in the previous work in following areas.
+First, \tool\ approach introduces hybrid shallow parsing that relies both on parts-of-speech tags as well as Stanford-typed dependencies to construct intermediate representation, while the previous approach relies only on parts-of-speech tags.
+Second, the \tool\ approach introduces a new heuristics namely frequent phrase reduction to deal with the domain specific and ill-formed sentences in API documents.
+Finally, the \tool\ approach leverages the concept of semantic graphs constructed from class and method names in API to automatically infer the implicit method references in a sentence. In contrast, previous approach relies on predefined lists.  
 
 
 \textbf{Augmented Documentation}:
@@ -59,6 +59,6 @@ These directives are highlighted whenever they are displayed in the Eclipse envi
 Lee et al.~\cite{lee2012towards} improved upon their work by providing a formalism to the directives proposed by Dekel et al.~\cite{Dekel2009},
 thus allowing tool-based verification.
 However, a developer has to manually annotate such directives.
-In contrast, our proposed approach both identifies the sentences pertaining to temporal constraints and infers the temporal constraints automatically. 
+In contrast, our approach both identifies the sentences pertaining to temporal constraints and infers the temporal constraints automatically. 
 
 In next section, we briefly introduce the NLP techniques used by our approach.

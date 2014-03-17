@@ -24,7 +24,7 @@ We used the API documents of the following two libraries as subjects for our eva
 \end{itemize}
 We chose \CodeIn{Amazon S3} and \CodeIn{java.io} APIs as our subjects because they are popular and contain decent documentation.
 
-\subsection{Experimental Setup.} 
+\subsection{Evaluation Setup} 
 We first manually annotated the sentences in the API documents of the two APIs.
 Two authors manually labeled each sentence in the API documentation as sentence containing 
 temporal constraints or not.
@@ -86,7 +86,7 @@ inferred using Algorithm~\ref{alg:TypeAnalysis}, described in Section~\ref{sec:a
 
 \subsection{Results}
 
-%We next describe our evaluation results.
+We next present our evaluation results.
 
 \begin{table*}
 \begin{center}
@@ -135,7 +135,7 @@ Our results show that, out of 3,909 sentences, \tool\ effectively identifies con
 We next present an example to illustrate how \tool\ incorrectly identifies a sentence as a constraint sentence (producing false positives).
 For instance, consider the sentence ``\textit{This is done by flushing the stream and then closing the underlying output stream.}'' from  \CodeIn{close} method description from \CodeIn{PrintStream} class.
 \tool\ incorrectly identifies the action ``flush'' being performed before the action ``close''.
-However \tool\ fails to make the distinction that it happens internally (enforced within the body) in the method.
+However \tool\ fails to make the distinction that it happens internally (enforced in the body) in the method.
 \tool, thus incorrectly identifies the sentence as a constraint sentence.   
 
 
@@ -151,7 +151,7 @@ We observed 8 instances of previously described example in our results.
 
 If we manually fixed the Wordnet dictionaries to not match ``has'' and ``get'' as synonyms,
 our precision is further increased to 70.8\% effectively increasing the F-Score of \tool\ to 71.2\%.
-Although an easy fix, we refrained from including such modifications for reporting the results to stay true to our proposed framework.
+Although an easy fix, we refrained from including such modifications for reporting the results to stay true to our approach.
 In the future, we plan to investigate techniques to construct better domain dictionaries for software API. 
 
 We next present an example to illustrate how \tool\ fails identify a constraint sentence (producing false negative).
@@ -216,7 +216,7 @@ In summary, we demonstrate that \tool\ effectively identifies constraint sentenc
 
 \subsection{Threats to Validity}
 \label{sub:threats_to_validity}
-Threats to external validity primarily include the degree to which the subject documents used in our evaluations are representative of true practice. To minimize the threat, we used API documents of two different API's: JDK \CodeIn{java.io} and \amazon. On one hand, Java is a widely used programming language and \CodeIn{java.io} and is one of the main packages. In contrast, \amazon\ provides HTTP based access to online storage allowing developers the freedom to write clients applications in any programming language. Furthermore, the difference in the functionalities provided by the two API's also address the issue of over fitting our approach to a particular type of API. The threat can be further reduced by evaluating our approach on more subjects API's. 
+Threats to external validity primarily include the degree to which the subject documents used in our evaluation are representative of true practice. To minimize the threat, we used API documents of two different API's: JDK \CodeIn{java.io} and \amazon. On one hand, Java is a widely used programming language and \CodeIn{java.io} and is one of the main packages. In contrast, \amazon\ provides HTTP based access to online storage allowing developers the freedom to write clients applications in any programming language. Furthermore, the difference in the functionalities provided by the two API's also address the issue of over fitting our approach to a particular type of API. The threat can be further reduced by evaluating our approach on more subjects API's. 
 
 Threats to internal validity include the correctness of our prototype implementation in extracting temporal constraints and labeling a statement as a constraint statement. To reduce the threat, we manually inspected all the constraints inferred against the API method descriptions in our evaluation. Furthermore, we ensured that the results were individually verified and agreed upon by two authors, using the \CodeIn{cohen kappa}~\cite{carletta1996assessing} score to statistically measure the inter-rater agreement.
 
