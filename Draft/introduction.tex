@@ -87,5 +87,25 @@ Finally, Section~\ref{sec:conclusion} concludes.
 
 %Apart from method specifications, Zhong et al.~\cite{zhong09SE} leverage machine learning and type information to infer constraints on resources based on phases of resource usage: creating, manipulating, and releasing. However, temporal constraints are not limited to resource usage. Furthermore, their approach fails to make the finer grained distinction on the ordering of the methods within a phase. For the description mentioned in previously, assuming that the method calls are associated with resource ``part'', both the methods referenced are logically associated with the creation phase of resource. Zhong et al.~\cite{zhong09SE} approach fails to make a distinction in ordering of such methods. In contrast our proposed approach leverages natural language processing to infer generic temporal constraints (not limited to resource related constraints) and also improves upon existing work for making finer grained distinction between ordering of methods within a phase of a resource. 
 
-%First, relying just on type information will result in an incomplete list of temporal constraints. In typed languages some temporal constraints are enforced by type system. For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates that (at least one) method ($m'$) be invoked whose return value is of type ($t$). However, temporal constraints are not limited by the type definitions (i.e, requirements on the type of input parameters), and are currently expressed mostly in natural language in API documents, as described in the example previously. We propose to address the issue by augmenting the type definitions based temporal constraints with the constraints inferred from the natural language text in API documents. Furthermore, such constraints although valuable but are already checked by any advanced Integrated Development Environment(IDE) such as eclipse for a strongly typed language. The problem is exacerbated in web based API's such as \amazonAPI\ where most of the types are either \CodeIn{integer} or \CodeIn{strings}. Our proposed approach extends the existing approaches to address the challenge.
+%First, relying just on type information will result in an incomplete list of temporal constraints. 
+In traditional API, which are usually implemented in typed languages some temporal constraints are enforced by type system itself.
+Voilations are easily detected by the IDE's
+For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates
+that (at least one) method ($m'$) be invoked whose return value is of type ($t$).
+However, using type system to detect temporal constraints in context of web APIs will result
+in a lot of false positives as web APIs work only on basic types such as
+\CodeIn{strings} and \CodeIn{numbers}.
+Use of basic datatype by web-apis result in search space explosion.
+Furthermore, we observed that temporal constraints re not limited to the type definitions
+ 
+Our proposed approach extends the existing approaches to address the challenge.
+
+However, temporal constraints are not limited by the type definitions
+(i.e, requirements on the type of input parameters),
+and are currently expressed mostly in natural language in API documents,
+as described in the example previously.
+We propose to address the issue by augmenting the type definitions based temporal constraints
+with the constraints inferred from the natural language text in API documents.
+Furthermore, such constraints although valuable but are already checked by any advanced 
+Integrated Development Environment(IDE) such as eclipse for a strongly typed language. 
 
