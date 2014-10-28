@@ -1,0 +1,60 @@
+\section{Temporal Specifications}
+\label{sec:temporal}
+
+In this section we describe various classes of temporal constraints using formal temporal logic.
+In computer science, temporal Logic is a system of rules and symbols that are used to express and reason about prepositions pertaining to time.
+We next present an extension to the temporal logic for API method invocation related rules proposed by Lo et al~\cite{lo2009mining}
+
+\textbf{Method Invocation}: 
+We adapt the definition of events proposed by Lo et al.~\cite{lo2009mining} as Method Invocation,
+who define event as \textit{``any concrete or abstract representation of a program state''}. 
+In particular, we propose the notion of method invocation analogous to the events as methods invocation,
+where each method invocation is represented as a tuple which is an ordered set of strings. 
+A method invocation is captured as the Tuple <$T$><\CodeIn{str1, str2, str3}...>, where \CodeIn{str1, str2, str3}... are string values,
+that belong to set of all strings.
+In particular, the method invocation tuple <$T$> captures information about the return value, enclosing type, name, and the parameter types of the method.
+Thus Tuple[String, Bar, foo, Integer, Integer] represents a method \CodeIn{foo} enclosed by the type \CodeIn{Bar},
+that accepts two parameters of type \CodeIn{Integer} and a return value of type \CodeIn{String}. 
+For better readability mnemonic representation of the preceding tuple is \CodeIn{String<-Bar.foo(Integer, Integer);}
+
+
+
+\textbf{Method Invocation Predicates}: We define method predicate as a predicate E over method invocations.
+We reuse the notations proposed by Lo et al.~\cite{lo2009mining} $m \vdash \xi$ to denote that method invocation $m$ satisfies method Predicate $\xi$.
+In context of \tool, method predicates combines a method name and the enclosing type with potential constraints on the return types and parameter types. 
+In particular, the predicates are modeled after \textit{equality constraints predicates}, and are represented as \CodeIn{\$i=sym}, where \CodeIn{i} is a non-negative integer and \CodeIn{sym} is the primitive string value and defined as: a method invocation $m$ satisfies a predicates \CodeIn{\$i=sym} iff \CodeIn{m[i]=sym}. The simplest form of these predicates is of type \CodeIn{\$2 = sym} which refer to method invocations of name \CodeIn{sym}.
+
+\textbf{Temporal Operators}: Temporal formulae (temporal constraints) are constructed by combining method invocation predicates using temporal operators. Lo et al.~\cite{lo2009mining}, proposed the following temporal operators    
+
+\begin{enumerate}
+
+\item \textit{Forward Eventual Operator $\xi_1 \xrightarrow{*} \xi_2$}
+occurrence of $\xi_1$ must be eventually followed by occurrence of $\xi_2$
+
+\item \textit{Backward Eventual Operator $\xi_1 \xleftarrow{*} \xi_2$}
+occurrence of $\xi_1$ must be preceded by occurrence of $\xi_2$
+
+\item \textit{Forward Alternation Operator $\xi_1 \xrightarrow{a} \xi_2$}
+occurrence of $\xi_1$ must be eventually followed by occurrence of $\xi_2$ and $\xi_1$ cannot occur in between
+
+\item \textit{Backward Alternation Operator $\xi_1 \xleftarrow{a} \xi_2$}
+occurrence of $\xi_1$ must be preceded by occurrence of $\xi_2$ and $\xi_1$ cannot occur in between
+\end{enumerate}
+
+In addition to these operators we propose two additional operators:
+\begin{enumerate}
+\item Forward Prohibition Operator $\xi_1 \nrightarrow \xi_2$
+occurrence of $\xi_1$ cannot be followed by occurrence of $\xi_2$
+
+\item Backward Prohibition Operator $\xi_1 \nleftarrow \xi_2$
+occurrence of $\xi_1$ cannot be preceded by the occurrence of $\xi_2$
+\end{enumerate}
+
+The prohibition operators capture a different class of temporal constraints that cannot be expressed by the formulae constructed by previously proposed operators and their negations. For instance, the \textit{prohibition operators} on first glance seem to be negation of \textit{forward eventual operators} and \textit{backward eventual operators}. However, the negation of forward eventual operators is: not an invocation of e1 must be eventually followed by not an invocation of m2. In contrast, \textit{prohibition operators} either negates antecedent or consequent but not both.  
+
+\textbf{Quantification}: Quantification is used to introduce constraints involving parameter and return types of a method invocation. For instance, consider the constraint any method in an enclosing type \CodeIn{Obj} must not be invoked after method \CodeIn{foo} in the \CodeIn{Obj}.
+
+$\forall$ \CodeIn{m <m in Obj> !=<foo in Obj>}
+
+In summary, we extended the formalism for temporal rules previously proposed by Lo et al~\cite{lo2009mining} to express temporal constraints.
+We obtain different classes of temporal constraints by varying: 1) the temporal operators allowed, b) the method-invocation predicates allowed, and 3) the degree of quantification allowed.
