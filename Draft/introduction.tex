@@ -2,16 +2,30 @@
 \label{sec:introduction}
 
 
-Temporal constraints~\cite{ball2002s} of an Application Programming Interface (API) 
-are the allowed sequences of invocations of methods from the API. 
-These constraints govern the secure and robust operation of client software using the API.
-If these constraints are in a formal specification language,
-they can be used as inputs to formal analysis tools such 
-as model checker and runtime verifiers
-in detecting the violations of these temporal constraints as defects~\cite{lee2012towards}.
+
+The increasing reach of internet has fueled the growth of web
+Application Programming Interfaces (API). The ProgrammableWeb
+reports that the web APIs have doubled from Jan 2012 to Oct 2013\footnote{\url{http://www.programmableweb.com/api-research}}.
+These APIs are being combined in interesting ways by
+application developers creating third-party applications using
+these APIs to provide
+value added service. For instance, Netflix API leverages Facebook
+web API to assist users with finding movies that their friends are
+interested in.
+
+Web APIs, like traditional APIs have rules or constraints governing
+the use of the API that must be followed. One such type of
+constraints are temporal constraints [2], which are the allowed sequences
+of invocations of methods from the API. Non-compliance
+to such constraints can result in faulty applications that are unreliable
+to use and may even result in financial losses. Thus, formal
+analysis tools such as model checker and runtime verifiers are of
+high value in detecting the violations of the temporal constraints as
+defects~\cite{lee2012towards}.
+
 
 Typically, temporal constraints are described in natural language text of API documents.
-Such documents are provided to client-code developers through an online access, or are shipped with the API code.
+Such documents are provided to client-code developers through an online access, or are shipped with the API wrapper code.
 For a method under consideration, an API document may describe both the constraints on the method parameters
 as well as the temporal constraints in terms of other methods that must be invoked pre/post invoking that method.
 We observe that a non-trivial portion (roughly 12\%) of the sentences (constraint-describing sentences)
