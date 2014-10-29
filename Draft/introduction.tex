@@ -1,35 +1,36 @@
 \section{Introduction}
 \label{sec:introduction}
 
-The increasing reach of internet has fueled the growth of web
-Application Programming Interfaces (API). The ProgrammableWeb
-reports that the web APIs have doubled from Jan 2012 to Oct 2013\footnote{\url{http://www.programmableweb.com/api-research}}.
-These APIs are being combined in interesting ways by
-application developers creating third-party applications using
-these APIs to provide
-value added service. For instance, Netflix API leverages Facebook
-web API to assist users with finding movies that their friends are
-interested in.
+The increasing reach of internet has fueled the growth of web Application Programming Interfaces (API).
+The ProgrammableWeb reports that the web APIs have doubled from Jan 2012 to Oct 2013\footnote{\url{http://www.programmableweb.com/api-research}}.
+These APIs are being combined in interesting ways by application developers creating third-party applications using
+these APIs to provide value added service.
+For instance, many online stores leverage Paypal API to assist users with paying for the purchased commodities without actually
+providing financial information to the online store.
 
-Web APIs, like traditional APIs have rules or constraints governing
-the use of the API that must be followed. One such type of
-constraints are temporal constraints [2], which are the allowed sequences
-of invocations of methods from the API. Non-compliance
-to such constraints can result in faulty applications that are unreliable
-to use and may even result in financial losses. Thus, formal
-analysis tools such as model checker and runtime verifiers are of
-high value in detecting the violations of the temporal constraints as
-defects~\cite{lee2012towards}.
+Unlike most traditional API libraries that are in the format of locally stored binary files and are programming language specific,
+web API are designed to leverage the web server and web browser architecture and the implementation is programming language agnostic.
+However, Web APIs like traditional APIs have rules or constraints governing the proper  use of the API that must be followed.
+One such type of constraints are temporal constraints [2], which are the allowed sequences of invocations of methods from the API.
+Non-compliance to such constraints can result in faulty applications that are unreliable to use and may even result in financial losses.
 
+In traditional API, which are usually implemented in typed languages some temporal constraints are enforced by type system itself.
+For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates
+that (at least one) method ($m'$) be invoked whose return value is of type ($t$).
+Thus compliance of such constraints are easily enforced by compilers.
+In contrast to traditional API libraries, web APIs work on basic parameter data types such as \CodeIn{strings} and \CodeIn{numbers}.
+Therefore enforcing temporal constraints through type system is ineffective in web APIs.
+Additionally temporal constraints are not entirely restricted to type definitions.
 
-Typically, temporal constraints are described in natural language text of API documents.
+Formal analysis tools such as model checker and runtime verifiers can assist in detection of the violations of the temporal constraints in web API clients as defects~\cite{lee2012towards}.
+However, such tools typically accept formal representation of the temporal constraints for detecting violations.
+In contrast, temporal constraints are typically described in natural language text of API documents.
 Such documents are provided to client-code developers through an online access, or are shipped with the API wrapper code.
 For a method under consideration, an API document may describe both the constraints on the method parameters
 as well as the temporal constraints in terms of other methods that must be invoked pre/post invoking that method.
 We observe that a non-trivial portion (roughly 12\%) of the sentences (constraint-describing sentences)
 in \amazonAPI\ documentation describe temporal constraints.
-However, existing verification tools, which typically accept only formal constraints,
-cannot use the natural language constraints from API documents.
+
 
 Although natural language API description can be manually converted into formal constraints,
 manually writing formal constraints based on natural language text in API documents can be prohibitively time consuming and error prone~\cite{wu2013inferring,RubingerWEB10}. 
@@ -53,7 +54,7 @@ Second, after API documents are made amenable to existing NLP techniques, a meth
 Consider the description sentence ``You must initiate a multipart upload before you can upload any part.''
 In this sentence, phrases ``multipart upload'' and ``upload any part'' refer to individual methods in the API.
 Identifying these phrases as method-invocation instances requires domain dictionaries.
-Ad-hoc construction of such dictionaries is prohibitively time and resource intensive.
+Ad-hoc construction of such dictionaries is prohibitively resource intensive and error-prone.
 To address this challenge, we propose to build domain dictionaries systematically from API documents and generic English dictionaries.  
 
 In summary, our \tool\ approach leverages natural language description of API's to infer temporal constraints of method invocations.
@@ -67,7 +68,7 @@ This paper makes the following main contributions:
 	To the best of our knowledge, our approach is the first one to apply NLP for inferring temporal constraints from API documents.
 	\item A prototype implementation of our approach based on extending the Stanford Parser~\cite{Klein03}, which is a natural language parser to derive the grammatical structure of sentences.
 	An open source implementation of the prototype is publicly available on our project website\footnote{\url{https://sites.google.com/site/temporalspec}}, along with the experimental subjects and the results. 
-	\item An evaluation of our approach on commonly used package \CodeIn{java.io} from the JDK API and from \amazonAPI. 
+	\item An evaluation of our approach on \amazonAPI, \paypalAPI, and commonly used package \CodeIn{java.io} from the JDK API. 
 \end{itemize}
 
 
@@ -88,24 +89,24 @@ Finally, Section~\ref{sec:conclusion} concludes.
 %Apart from method specifications, Zhong et al.~\cite{zhong09SE} leverage machine learning and type information to infer constraints on resources based on phases of resource usage: creating, manipulating, and releasing. However, temporal constraints are not limited to resource usage. Furthermore, their approach fails to make the finer grained distinction on the ordering of the methods within a phase. For the description mentioned in previously, assuming that the method calls are associated with resource ``part'', both the methods referenced are logically associated with the creation phase of resource. Zhong et al.~\cite{zhong09SE} approach fails to make a distinction in ordering of such methods. In contrast our proposed approach leverages natural language processing to infer generic temporal constraints (not limited to resource related constraints) and also improves upon existing work for making finer grained distinction between ordering of methods within a phase of a resource. 
 
 %First, relying just on type information will result in an incomplete list of temporal constraints. 
-In traditional API, which are usually implemented in typed languages some temporal constraints are enforced by type system itself.
-Voilations are easily detected by the IDE's
-For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates
-that (at least one) method ($m'$) be invoked whose return value is of type ($t$).
-However, using type system to detect temporal constraints in context of web APIs will result
-in a lot of false positives as web APIs work only on basic types such as
-\CodeIn{strings} and \CodeIn{numbers}.
-Use of basic datatype by web-apis result in search space explosion.
-Furthermore, we observed that temporal constraints re not limited to the type definitions
- 
-Our proposed approach extends the existing approaches to address the challenge.
-
-However, temporal constraints are not limited by the type definitions
-(i.e, requirements on the type of input parameters),
-and are currently expressed mostly in natural language in API documents,
-as described in the example previously.
-We propose to address the issue by augmenting the type definitions based temporal constraints
-with the constraints inferred from the natural language text in API documents.
-Furthermore, such constraints although valuable but are already checked by any advanced 
-Integrated Development Environment(IDE) such as eclipse for a strongly typed language. 
+%In traditional API, which are usually implemented in typed languages some temporal constraints are enforced by type system itself.
+%Voilations are easily detected by the IDE's
+%For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates
+%that (at least one) method ($m'$) be invoked whose return value is of type ($t$).
+%However, using type system to detect temporal constraints in context of web APIs will result
+%in a lot of false positives as web APIs work only on basic types such as
+%\CodeIn{strings} and \CodeIn{numbers}.
+%Use of basic datatype by web-apis result in search space explosion.
+%Furthermore, we observed that temporal constraints re not limited to the type definitions
+% 
+%Our proposed approach extends the existing approaches to address the challenge.
+%
+%However, temporal constraints are not limited by the type definitions
+%(i.e, requirements on the type of input parameters),
+%and are currently expressed mostly in natural language in API documents,
+%as described in the example previously.
+%We propose to address the issue by augmenting the type definitions based temporal constraints
+%with the constraints inferred from the natural language text in API documents.
+%Furthermore, such constraints although valuable but are already checked by any advanced 
+%Integrated Development Environment(IDE) such as eclipse for a strongly typed language. 
 

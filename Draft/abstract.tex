@@ -1,10 +1,14 @@
 \begin{abstract}
 
-\textbf{Objective}: We propose \tool, an automated approach to infer
-temporal constraints from API documents.
+%\textbf{Objective}: We propose \tool, an automated approach to infer
+%temporal constraints from API documents.
 
-\textbf{Background}: Temporal constraints of an Application Programming
-Interface (API) are the allowed sequences of invocations of
+\textbf{Objective}: The goal of this work is to assist developers construct
+web Application Programming Interface (API) clients that comply with 
+temporal constraints of the API thorough the inference and formalization of these constraints found in natural language text in API documents.
+
+\textbf{Background}: Temporal constraints of an API
+are the allowed sequences of invocations of
 methods from the API. These constraints govern the secure and robust
 operation of client software using the API.
 
@@ -20,9 +24,9 @@ dictionaries systematically from API documents and generic English
 dictionaries.
 
 \textbf{Results}: To evaluate our approach, we apply \tool\ to infer temporal
-constraints from commonly used package \CodeIn{java.io} in the
-JDK API and from the \amazonAPI. Our results show
-that \tool\ effectively identifies constraint sentences (from over
+constraints from \amazonAPI, \paypalAPI and commonly used package \CodeIn{java.io} in the
+JDK API.
+Our results show that \tool\ effectively identifies constraint sentences (from over
 3900 API sentences) with the average precision, recall, and F-score
 of 65.0\%, 72.2\%, and 68.4\%, respectively. Furthermore, \tool\
 also achieves an accuracy of 70\% in inferring 63 temporal constraints
