@@ -22,46 +22,4 @@ Our results indicate that \tool\ is effective in identifying constraint sentence
 of 65.0\%, 72.2\%, and 68.4\%, respectively.
 Furthermore, \tool\ also achieves an accuracy of 70\% in inferring 63 formal temporal constraints from these sentences.
 
-%Our approach also includes a novel
-%technique of identifying method references (improvement over keyword-based
-%techniques) in the natural language text by building domain
-%dictionaries systematically from API documents and generic English
-%dictionaries.
-%
-%
-%Existing software engineering tools can leverage
-%the inferred formal temporal constraints to effectively assist in development
-%and verification activities.
-	
-%Temporal constraints of an Application Programming
-%Interface (API) are the allowed sequences of invocations
-%of methods from the API.
-%These constraints govern the secure and robust
-%operation of client software using the API.
-%Typically, these constraints are described in natural language text
-%of API documents and thus cannot be used by existing verification tools,
-%which typically accept only formal constraints.
-%Because manually writing temporal constraints based on
-%API documents can be prohibitively time consuming and error prone,
-%we propose \tool: a Natural Language Processing (NLP) based approach
-%to automatically infer temporal constraints.
-%In particular, our approach includes a novel technique to reduce the number of lexical tokens
-%as a way to make API documents amenable to existing NLP techniques
-%(which are typically designed to work on well-written news articles).
-%Our approach also includes a novel technique of identifying method references in
-%the natural language text by building domain dictionaries systematically
-%from API documents and generic English dictionaries.
-%To evaluate our approach, we apply \tool\ to infer temporal constraints from 
-%commonly used package \CodeIn{java.io} in the JDK API and from the \amazonAPI.
-%Our results show that \tool\ effectively identifies constraint sentences (from over 3900 API sentences) with the average precision, recall, and F-score of 65.0\%, 72.2\%, and 68.4\%, respectively.
-%Furthermore, \tool\ also achieves an accuracy of 70\% in inferring 63 temporal constraints from these sentences.
-
-% There are existing techniques that infer from API documents resource specifications 
-% (such as constraints based on phases: creating, manipulating, and releasing resources).
-% However, such techniques are limited to finding temporal specification of resources.
-% Furthermore, such techniques do not make a distinction between explicit ordering of methods
-% within each phases. 
-
-
-% where do you loose precision and recall.
 \end{abstract}
