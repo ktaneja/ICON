@@ -5,10 +5,10 @@ Natural language is well suited for human communication, but converting natural 
 However, research advances~\cite{Marneffe06LREC,Marneffe08COLING,Klein03,KleinNIPS03} have increased the accuracy of existing NLP techniques to annotate the grammatical structure of a sentence.
 These advances in NLP have inspired researchers/ practitioners~\cite{pandita12:inferring, pandita13:WHYPER, johnSlankasPASSAT13, XiaoFSE2012, thummalapentaICSE12} to adapt/apply NLP techniques to solve problems in SE domain.
 
-In particular, this work proposes novel techniques on top of previously proposed techniques~\cite{pandita12:inferring, pandita13:WHYPER} to demonstrate the effectiveness of applying NLP on API documents.
+%In particular, this work proposes novel techniques on top of previously proposed techniques~\cite{pandita12:inferring, pandita13:WHYPER} to demonstrate the effectiveness of applying NLP on API documents.
 We next briefly introduce the techniques used in this work that have been grouped into broad categories.
 We first introduce the core NLP techniques used in this work.
-We then introduce the SE specific NLP techniques proposed in previous work~\cite{pandita12:inferring,pandita13:WHYPER} that are used in this work.
+We then introduce the SE specific NLP techniques proposed in related work~\cite{pandita12:inferring,pandita13:WHYPER} that are used in this work.
 
 \subsection{Core NLP techniques}
 \label{sub:CoreNLPback}
@@ -32,7 +32,7 @@ We next present Software Engineering (SE) specific NLP techniques.
 \label{sub:SENLPback}
 
 \textbf{Programming keywords}~\cite{pandita12:inferring}. Accurate annotation of POS tags in a sentence is fundamental to effectiveness of any advanced NLP technique.
-However, as mentioned previously, POS tagging works satisfactorily on well written news articles which does not necessary entail that the tagging works satisfactorily on domain specific text as well.
+However POS tagging works satisfactorily on well-written news articles which does not necessary entail that the tagging works satisfactorily on domain-specific text as well.
 Thus, noun boosting is a necessary precursor to application of POS tagging on domain specific text.
 In particular, with respect to API documents certain words have a different semantic meaning, in contrast to general linguistics that causes incorrect annotation of POS tags.
 
@@ -47,7 +47,7 @@ The annotation assists the POS tagger to accurately annotate the POS tags of the
 
 \textbf{Lexical Token Reduction}~\cite{pandita13:WHYPER}.
 These are a group of generic preprocessing heuristics to further improve the accuracy of core NLP techniques.
-The accuracy of core NLP techniques is inversely proportional to the number of lexical tokens in a sentence.
+The accuracy of core NLP techniques is often inversely proportional to the number of lexical tokens in a sentence.
 Thus, the reduction in the number of lexical tokens greatly increases the accuracy of core NLP techniques. 
 In particular, following heuristics have been used in previous work to achieve the desired reduction of lexical tokens:
 
@@ -73,7 +73,7 @@ Typically, regular expressions provide a reasonable approximation for handling a
 \end{itemize}
 
 \textbf{Intermediate-Representation Generation}~\cite{pandita13:WHYPER}.
-This technique accepts the syntax-annotated sentences and builds a First-Order-Logic(FOL) representation of the sentence.
+This technique accepts the syntax-annotated sentences (grammatical and semantic) and builds a First-Order-Logic (FOL) representation of the sentence.
 Earlier researches have shown the adequacy using FOL for NLP related analysis tasks~\cite{Sinha2009,Sinha2010,pandita12:inferring}.
 In particular, WHYPER~\cite{pandita13:WHYPER} demonstrates the effectiveness of this technique, by constructing an intermediate representation generator based on shallow parsing~\cite{Branimir2000} techniques. 
 The shallow parser itself is implemented as a sequence of cascading finite state machines based on the function of Stanford-typed dependencies~\cite{Marneffe06LREC,Marneffe08COLING,Klein03,KleinNIPS03}.

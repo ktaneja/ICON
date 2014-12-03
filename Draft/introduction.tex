@@ -1,7 +1,7 @@
 \section{Introduction}
 \label{sec:introduction}
 
-The increasing reach of internet has fueled the growth of web Application Programming Interfaces (API).
+The increasing reach of the internet has fueled the growth of web Application Programming Interfaces (API).
 The ProgrammableWeb reports that the web APIs have doubled from Jan 2012 to Oct 2013\footnote{\url{http://www.programmableweb.com/api-research}}.
 These APIs are being combined in interesting ways by application developers creating third-party applications using
 these APIs to provide value added service.
@@ -9,18 +9,18 @@ For instance, many online stores leverage Paypal API to assist users with paying
 providing financial information to the online store.
 
 Unlike most traditional API libraries that are in the format of locally stored binary files and are programming language specific,
-web API are designed to leverage the web server and web browser architecture and the implementation is programming language agnostic.
+web APIs are designed to leverage the web server and web browser architecture and the implementation is programming language agnostic.
 However, Web APIs like traditional APIs have rules or constraints governing the proper  use of the API that must be followed.
 One such type of constraints are temporal constraints [2], which are the allowed sequences of invocations of methods from the API.
 Non-compliance to such constraints can result in faulty applications that are unreliable to use and may even result in financial losses.
 
-In traditional API, which are usually implemented in typed languages some temporal constraints are enforced by type system itself.
-For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates
+In traditional API, which are usually implemented in typed languages some temporal constraints are enforced by the type system itself.
+For instance, a method ($m$) accepting input parameter ($i$) of type ($t$) mandates
 that (at least one) method ($m'$) be invoked whose return value is of type ($t$).
 Thus compliance of such constraints are easily enforced by compilers.
 In contrast to traditional API libraries, web APIs work on basic parameter data types such as \CodeIn{strings} and \CodeIn{numbers}.
 Therefore enforcing temporal constraints through type system is ineffective in web APIs.
-Additionally temporal constraints are not entirely restricted to type definitions.
+Additionally, temporal constraints are not entirely restricted to type definitions.
 
 Formal analysis tools such as model checker and runtime verifiers can assist in detection of the violations of the temporal constraints in web API clients as defects~\cite{lee2012towards}.
 However, such tools typically accept formal representation of the temporal constraints for detecting violations.
@@ -34,23 +34,22 @@ in \amazonAPI\ documentation describe temporal constraints.
 
 Although natural language API description can be manually converted into formal constraints,
 manually writing formal constraints based on natural language text in API documents can be prohibitively time consuming and error prone~\cite{wu2013inferring,RubingerWEB10}. 
-For instance, Wu et al.~\cite{wu2013inferring} report that it took one person ten hours to browse the documentation of one method from a web service API, even before the person attempted to formalize the constraints on the method.
+For instance, Wu et al.~\cite{wu2013inferring} report that it took one person ten hours to browse the documentation of one method from a web API, even before the person attempted to formalize the constraints on the method.
 
 
 To reduce the manual effort, we propose \tool: a Natural Language Processing (NLP) based approach
 to automatically infer formal temporal constraints. 
-However, inferring temporal constraints from the natural language text is challenging. 
 In particular, our approach addresses two major challenges to automatically infer specifications
 from natural language text in API documents.
 
-First, existing NLP techniques are initially designed towards well-written news articles.
+First, existing NLP techniques are initially designed towards well-written generic news articles.
 In contrast, API documents are domain-specific documents and are often not well formed.
 Furthermore, we observe that generic NLP techniques face problems with lengthy sentences (with a number of lexical tokens).
 Consider the description sentence ``All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be delete.'' The length of the sentence may overwhelm an NLP parser, which then inaccurately extracts semantic relations between the words in the sentence.
 Our ICON approach includes a new technique called ``hybrid parsing'' to deal with the number of lexical tokens.
 Hybrid parsing automatically breaks lengthy sentences to smaller tractable sentences based on a function of parts-of-speech tags.   
 
-Second, after API documents are made amenable to existing NLP techniques, a method referenced in the natural language text must be identified in order to infer temporal constraints on the method but such method referencing is often implicit.
+Second, after API documents are made amenable to existing NLP techniques, a method referenced in the natural language text must be identified to infer temporal constraints on the method but such method referencing is often implicit.
 Consider the description sentence ``You must initiate a multipart upload before you can upload any part.''
 In this sentence, phrases ``multipart upload'' and ``upload any part'' refer to individual methods in the API.
 Identifying these phrases as method-invocation instances requires domain dictionaries.
@@ -64,7 +63,7 @@ This paper makes the following main contributions:
 %However, all of these approaches rely on the availability of the source code that use API methods under investigation. Furthermore, these approaches are limited by both the quantity as well as quality of data set (source code) available. To address the limitation we propose to extend the natural language infrastructure developed previously~\cite{pandita12:inferring,pandita2013whyper} to focus specifically on the temporal constraints.
 
 \begin{itemize}
-	\item An NLP-based approach that effectively infers temporal constraints of method invocations. 
+	\item An NLP-based approach that effectively infers formal temporal constraints of method invocations. 
 	To the best of our knowledge, our approach is the first one to apply NLP for inferring temporal constraints from API documents.
 	\item A prototype implementation of our approach based on extending the Stanford Parser~\cite{Klein03}, which is a natural language parser to derive the grammatical structure of sentences.
 	An open source implementation of the prototype is publicly available on our project website\footnote{\url{https://sites.google.com/site/temporalspec}}, along with the experimental subjects and the results. 
@@ -78,7 +77,7 @@ Section~\ref{sec:related} discusses related work.
 Section~\ref{sec:background} presents the  background on NLP techniques used in our approach.
 Section~\ref{sec:approach} presents our approach.
 Section~\ref{sec:evaluation} presents the evaluation of our approach.
-Section~\ref{sec:discussion} presents brief discussion and future work.
+Section~\ref{sec:discussion} presents brief discussion on the limitations and future work.
 Finally, Section~\ref{sec:conclusion} concludes.
 
 

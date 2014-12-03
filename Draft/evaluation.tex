@@ -18,11 +18,16 @@ We next present the evaluation we conducted to assess the effectiveness of \tool
 
 We used the API documents of the following two libraries as subjects for our evaluation. 
 \begin{itemize}
-	\item \amazonAPI\: provides a REST based web services interface that can be used to store and retrieve data on the web. Furthermore, \CodeIn{Amazon S3} also empowers a developer with rich set of API methods to access a highly scalable, reliable, secure, fast, inexpensive infrastructure. \CodeIn{Amazon S3} is reported to store more than 2 trillion objects as of April 2013 and gets over 1.1 million requests per second at peak time~\cite{amazons3stats}.
-
+	\item \amazonAPI\: provides a REST based web services interface to store and retrieve data on the web.
+	Furthermore, \CodeIn{Amazon S3} also empowers a developer with rich set of API methods to access a highly scalable, reliable, secure, fast, and inexpensive infrastructure. 
+	\CodeIn{Amazon S3} is reported to store more than 2 trillion objects as of April 2013 and gets over 1.1 million requests per second at peak time~\cite{amazons3stats}.
+	
+	\item \paypalAPI\: provides a REST based web service interface to facilitate online payments and money transfer.
+	\CodeIn{PayPal} reports to have handled \$56.6 billion(USD) worth of transactions (total value of transactions) in just the third quarter of 2014. 
+	
 	\item\CodeIn{java.io} : is one of a popular packages in \CodeIn{Java} programming language. The package provides APIs for system input and output through data streams, serialization and the file system, which are one of the fundamental functionalities provided by a programming language.
 \end{itemize}
-We chose \CodeIn{Amazon S3} and \CodeIn{java.io} APIs as our subjects because they are popular and contain decent documentation.
+We chose \CodeIn{Amazon S3}, \CodeIn(PayPal) and \CodeIn{java.io} APIs as our subjects because they are popular and contain decent documentation.
 
 \subsection{Evaluation Setup} 
 We first manually annotated the sentences in the API documents of the two APIs.
@@ -98,8 +103,9 @@ We next present our evaluation results.
 \headcol API & Mtds & Sen & Sen$_C$ & Sen$_{ICON}$ & TP & FP & FN & P(\%) & R(\%) & F$_S$(\%) & Spec$_{ICON}$ & Acc(\%)\\
 \midline 
 java.io & 662 & 2417 & 78 & 88 & 57 & 31 & 21 & 64.8 & 73.1 & 68.8 & 56 & 71.8\\ 
-\rowcol AMAZON S3 REST & 51 & 1492 & 12 & 12 & 8 & 4 & 4 & 66.7 & 66.7 & 66.7 & 7 & 58.3\\ 
-Total & 713 & 3909 & 90 & 100 & 65 & 35 & 25 & 65.0$^*$ & 72.2$^*$ & 68.4$^*$ & 63 & 70.0$^*$\\ 
+\rowcol \amazonAPI & 51 & 1492 & 12 & 12 & 8 & 4 & 4 & 66.7 & 66.7 & 66.7 & 7 & 58.3\\ 
+\paypalAPI & 33	&	151 &  20 &  &  &  &  & &  &  &  & \\ 
+\rowcol Total & 746 & 4060 & 90 & 100 & 65 & 35 & 25 & 65.0$^*$ & 72.2$^*$ & 68.4$^*$ & 63 & 70.0$^*$\\ 
 \bottomlinec
 %----------------- END TABLE DATA ------------------------ 
 \multicolumn{13}{p{6.5in}}{\small

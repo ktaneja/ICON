@@ -65,7 +65,7 @@
 % should be used if it is desired that the figures are to be displayed in
 % draft mode.
 %
-\documentclass[10pt, conference, compsocconf]{IEEEtran}
+\documentclass[conference]{IEEEtran}
 % Add the compsocconf option for Computer Society conferences.
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
@@ -347,7 +347,7 @@
 
 
 % correct bad hyphenation here
-\hyphenation{op-tical net-works semi-conduc-tor}
+%\hyphenation{op-tical net-works semi-conduc-tor}
 
 
 
@@ -364,18 +364,14 @@
 \input{macros}
 
 \newcommand{\tool}{{\sc ICON}}
-\newcommand{\amazon}{\CodeIn{Amazon S3 REST API} developer documentation}
-\newcommand{\amazonAPI}{\CodeIn{Amazon S3 REST API}}
+\newcommand{\amazon}{\CodeIn{Amazon S3 REST} API developer documentation}
+\newcommand{\amazonAPI}{\CodeIn{Amazon S3 REST} API}
+\newcommand{\paypalAPI}{\CodeIn{PayPal Payment REST} API}
 
-\clubpenalty = 10000
-\widowpenalty = 10000
-\displaywidowpenalty = 10000
 \begin{document}
 
 
-\title{
-\tool: \emph{I}nferring Temporal \emph{Con}straints from Natural Language API Descriptions
-}
+\title{{\ttlit ICON}: {\ttlit I}nferring Temporal {\ttlit Con}straints from Natural Language API Descriptions}
 %\subtitle{Subtitle Text, if any}
 
 % for over three affiliations, or if they all won't fit within the width

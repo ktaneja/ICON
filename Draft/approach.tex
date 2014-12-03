@@ -1,6 +1,5 @@
-\section{Approach Overview}
+\section{ICON Overview}
 \label{sec:approach}
-
 
 \begin{figure}
 	\centering
@@ -9,18 +8,20 @@
 	\label{fig:approachOverview}
 \end{figure}
 
-We next present our approach for inferring temporal constraints from the method descriptions in API Documents.
-Figure~\ref{fig:approachOverview} gives an overview of our approach.
-Our approach consists of five major components: a preprocessor, a text-analysis engine, a semantic graph generator, constraint extractor, and a type analyzer.
-
-The preprocessor accepts API documents and preprocesses the sentences in the method description,
-such as annotating sentence boundaries and reducing lexical tokens.
-The text-analysis engine accepts the pre-processed sentences and annotates them using an NLP parser.
-The text-analysis engine further transforms the annotated sentences into the first-order-logic (FOL) representation.
-The semantic graph generator accepts the API documents and generates the semantic graphs that are leveraged by constraint extractor component.
-The type analyzer component infers temporal constraints encoded in the type system of a language by analyzing the API methods parameter and return types.
-Finally, the constraint extractor leverages the semantic graphs to infer temporal constraints from the FOL representation of a sentence.
+We next present our approach for inferring temporal constraints
+from the method descriptions in API Documents.
+Figure~\ref{fig:approachOverview} gives an overview of \tool\ approach.
+\tool\ consists of five major components: a preprocessor, a text-analysis engine, a semantic graph generator, constraint extractor, and a type analyzer.
 We next describe each component in detail.
+
+%The preprocessor accepts API documents and preprocesses the sentences in the method description,
+%such as annotating sentence boundaries and reducing lexical tokens.
+%The text-analysis engine accepts the pre-processed sentences and annotates them using an NLP parser.
+%The text-analysis engine further transforms the annotated sentences into the first-order-logic (FOL) representation.
+%The semantic graph generator accepts the API documents and generates the semantic graphs that are leveraged by constraint extractor component.
+%The type analyzer component infers temporal constraints encoded in the type system of a language by analyzing the API methods parameter and return types.
+%Finally, the constraint extractor leverages the semantic graphs to infer temporal constraints from the FOL representation of a sentence.
+%We next describe each component in detail.
 
 
 \subsection{Preprocessor}
@@ -31,57 +32,57 @@ In particular, the preprocessor extracts the following fields from the method de
 1) \textit{Summary of the API method},
 2) \textit{Summary and type information of parameters of the API method}, 
 3) \textit{Summary and type information of return values of the method}, and
-4) \textit{Summary and type information of exceptions thrown by the methods}.
+4) \textit{Summary and type information of exceptions thrown (or errors returned) by the methods}.
 
 This step is required to extract the desired descriptive text from the API documents.
-In particular, different API documents may have different styles of presenting information to developers.
+Different API documents may have different styles of presenting information to developers.
 This difference in style may also include the difference in the level of detail presented to developers.
-Our approach thus relies on only basic fields that are trivially available for API methods across different presentation styles. 
+\tool\ thus relies on only basic fields that are generally available for API methods across different presentation styles. 
 
 After extracting desired information, the natural language text is further preprocessed to be analyzed by subsequent components.
 The preprocessing steps are required to increase the accuracy of core NLP techniques (described in Section~\ref{sub:CoreNLPback}) that are used in the subsequent phases of \tool\ approach.
-In particular, the preprocessor first employs the noun boosting followed by heuristics listed under lexical token reduction, as introduced in Section~\ref{sub:SENLPback}.
+The preprocessor first employs the heuristics listed under lexical token reduction, as introduced in Section~\ref{sub:SENLPback}.
 
-Although the previous techniques and heuristics significantly lower the number of lexical tokens in a sentence,
-some sentences may still contain a considerable number of lexical tokens to overwhelm the POS tagger.
-To address this issue, we propose a new heuristic (\textit{`Frequent Phrases Reduction'})
-to further reduce the number of lexical tokens in a sentence by annotating frequent phrases as a single lexical unit.
-
-In particular, we use n-gram~\cite{brown1992class} based approach to achieve this reduction. 
-In the fields of computational linguistics, an n-gram is a contiguous sequence of n words from a given text.
-In statistical NLP  and information theory, n-gram has been shown to be effective in computing the probability of occurrence of next word given a sequence of words.
-However, for our approach we use n-grams that always occur together in a given body of text.
-
-
-To achieve \textit{frequent phrases reduction}, we first calculate the most frequently occurring n-grams in the text body. 
-In particular, we are interested in the n-grams of length four or greater to achieve a reasonable reduction.
-We chose four as a threshold for n-grams because we observed that bigrams (size two) and trigrams (size three) frequently resulted in change of semantics
-of the sentence in comparison to n-grams of size four or grater.
-We then prune the list of n-grams based on a subsumption. 
-We consider an n-gram of length k ($n_k$) to subsume n-gram of length k-1 ($n_{k-1}$) iff $n_{k-1}$ is a substring of ($n_k$) and the frequency of occurrence of $n_{k-1}$ equals frequency of occurrence of $n_{k}$.
-Finally, we rank the list of n-grams based on the frequency of their occurrence in the text, and select top-k n-grams for reduction.
-For instance, \textit{Amazon Simple Storage Service}, \textit{an I/O Error Occurs}, and \textit{end of the stream} are the examples of such n-grams detected by our approach.
+%Although the previous techniques and heuristics significantly lower the number of lexical tokens in a sentence,
+%some sentences may still contain a considerable number of lexical tokens to overwhelm the POS tagger.
+%To address this issue, we propose a new heuristic (\textit{`Frequent Phrases Reduction'})
+%to further reduce the number of lexical tokens in a sentence by annotating frequent phrases as a single lexical unit.
+%
+%In particular, we use n-gram~\cite{brown1992class} based approach to achieve this reduction. 
+%In the fields of computational linguistics, an n-gram is a contiguous sequence of n words from a given text.
+%In statistical NLP  and information theory, n-gram has been shown to be effective in computing the probability of occurrence of next word given a sequence of words.
+%However, for \tool\ we use n-grams that always occur together in a given body of text.
+%
+%
+%To achieve \textit{frequent phrases reduction}, we first calculate the most frequently occurring n-grams in the text body. 
+%In particular, we are interested in the n-grams of length four or greater to achieve a reasonable reduction.
+%We chose four as a threshold for n-grams because we observed that bigrams (size two) and trigrams (size three) frequently resulted in change of semantics
+%of the sentence in comparison to n-grams of size four or grater.
+%We then prune the list of n-grams based on a subsumption. 
+%We consider an n-gram of length k ($n_k$) to subsume n-gram of length k-1 ($n_{k-1}$) iff $n_{k-1}$ is a substring of ($n_k$) and the frequency of occurrence of $n_{k-1}$ equals frequency of occurrence of $n_{k}$.
+%Finally, we rank the list of n-grams based on the frequency of their occurrence in the text, and select top-k n-grams for reduction.
+%For instance, \textit{Amazon Simple Storage Service}, \textit{an I/O Error Occurs}, and \textit{end of the stream} are the examples of such n-grams detected by \tool.
 
 
 %\textbf{Prototype Implementation.}
-Currently our prototype implementation works with online \amazon\ and JDK API. 
-However, almost all of the developer documents are provided online as structured webpages.
-Thus, current prototype implementation of preprocessor can be easily extended to extract the desired information from any API developer documents.    
-
-Additionally, in current implementation we have manually built the dictionaries for preprocessing using the glossary of terms collected from the websites pertaining to REST and Java API.
-We further leveraged the HTML style information in \amazon\ to look for words that were highlighted in code like format. We further leveraged WordNet to maintain a static lookup table of shorthand words to aid named entity handling and abbreviation handling. 
- 
-Finally, to achieve  n-gram reduction we used Apache Lucene~\cite{lucene}.
-Apache Lucene is a high-performance, full-featured text-search-engine library written entirely in Java,
-facilitating scalable cross-platform full-text search. 
+%Currently our prototype implementation works with online \amazon\ and JDK API. 
+%However, almost all of the developer documents are provided online as structured webpages.
+%Thus, current prototype implementation of preprocessor can be easily extended to extract the desired information from any API developer documents.    
+%
+%Additionally, in current implementation we have manually built the dictionaries for preprocessing using the glossary of terms collected from the websites pertaining to REST and Java API.
+%We further leveraged the HTML style information in \amazon\ to look for words that were highlighted in code like format. We further leveraged WordNet to maintain a static lookup table of shorthand words to aid named entity handling and abbreviation handling. 
+% 
+%Finally, to achieve  n-gram reduction we used Apache Lucene~\cite{lucene}.
+%Apache Lucene is a high-performance, full-featured text-search-engine library written entirely in Java,
+%facilitating scalable cross-platform full-text search. 
 
 \subsection{NLP Parser}
 
 
 The NLP parser accepts the pre-processed documents and annotates every sentence in each document using core NLP techniques described in Section~\ref{sub:CoreNLPback}.
-From an implementation perspective, we chose the Stanford parser~\cite{Manning:01}.
-However, this component can be implemented using any other existing NLP libraries or approaches.
-In particular, we annotate each sentence with POS tags, named-entity annotations and Stanford-typed dependencies.
+%From an implementation perspective, we chose the Stanford parser~\cite{Manning:01}.
+%However, this component can be implemented using any other existing NLP libraries or approaches.
+In particular, each sentence is annotated with: \textit{1)POS tags, 2)named-entity annotations, and 3)Stanford-typed dependencies.}
 For more details on these techniques and their application, please refer to ~\cite{Marneffe06LREC, Marneffe08COLING, pandita12:inferring, pandita13:WHYPER, thummalapentaICSE12}.
 
 \begin{figure}
@@ -91,19 +92,65 @@ For more details on these techniques and their application, please refer to ~\ci
 	\label{fig:standep}
 \end{figure}
 
-Next we use an example to illustrate the annotations added by the NLP Parser. Consider the sentence from the example section \textbf{\textit{`All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.''}}. Figure~\ref{fig:standep} shows the sentence annotated with Stanford-typed dependencies. The words in red are the names of dependencies connecting the actual words of the sentence (in black). Each word is followed by the Part-Of-Speech (POS) tag of the word (in green). For more details on Stanford-typed dependencies and POS tags, please refer to ~\cite{Marneffe06LREC,Marneffe08COLING}.
+Next we use an example to illustrate the annotations added by the NLP Parser. Consider the sentence from the example section \textbf{\textit{`All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.''}}. Figure~\ref{fig:standep} shows the sentence annotated by NLP parser. Each word (occurs first) is followed by the Part-Of-Speech (POS) tag of the word (in green), which is further followed by the name of Stanford dependency connecting the actual word of the sentence to its predecessor.
+%For more details on Stanford-typed dependencies and POS tags, please refer to ~\cite{Marneffe06LREC,Marneffe08COLING}.
+
+\subsection{Candidate Identifier}
+
+This component accepts the annotated sentence from the previous component,
+then using a trained model classifies whether a sentence describes a temporal constraint or not. We next describe the model construction.
+
+The goal of model construction is to use a small set of manually classified temporal constraint sentences of a representative API to construct a model to automatically classify the unlabeled sentences. Since \tool\ seeks to achieve a binary classification of the API sentences, we chose to train our model using na{\"i}ve Bayes classifier which is the simplest probabilistic classification methods  and is shown to be comparative other advanced classification methods given appropriate prepossessing~\cite{rennie2003tackling}. The model can be trained offline or else by the users of the approach if better accuracy is required for specific data.
+
+Feature selection is an important factor for the accuracy any classification method. Particularly, for na{\"i}ve Bayes classifier which assumes each feature independently contributes towards the final probability of classification. In the simplest form, each word occurring in a sentence is considered as a feature. However, such an approach may lead to overly specific models, and therefore \tool\ approach employs preprocessing for generic features. We next describe the features we chose for training our model along with the rationale for selecting such features.
+
+\begin{enumerate}
+
+	\item \textbf{Length of a Sentence}: The feature is the total number of words in  the sentence. The rationale is that shorter sentences (containing fewer words) are unlikely candidates for temporal constraint sentences. 
+
+	\item \textbf{Sentence Type}: The context of sentence, whether the sentence appears as method summary, parameter summary, return value summary or exception/error summary as captured by pre-processor phase. The rationale is that a majority of the temporal constraint sentences are either summary or exception sentences. 
+	
+	\item \textbf{Lemmatization}: The feature is the base form of a word. In linguistic lemmatization is the reduction of operational form of a word to its base form. For instance ``invoking'', ``invokes'', and ``invoked'' are all reduced to invoke. The rationale for reducing the words to base form is to reduce the size of the feature set that otherwise considers every word as an independent feature.  
+	
+	\item \textbf{Stopword Reduction}: In linguistics stop words are the frequently occurring words that can easily be ignored and are often considered noise, such as ``the'' , ``of'', ``to'' etc... The rationale for filtering the stop words is to reduce the size of feature set that otherwise considers such word as an independent feature but are often noise. Stop word list is further augmented by adding to them the words that occur exactly once in the training corpus to avoid over-fitting of the model to the training corpus.  
+	
+	\item \textbf{Stanford Dependencies}: We add to the feature set by identifying the presence of specific Stanford typed dependencies pertaining to the temporal aspects of the sentence semantics. In particular we identify the presence of ``\textit{advcl}'', ``\textit{aux}'', ``\textit{auxpass}'', ``\textit{vmod}'', and ``\textit{tmod}''. For instance, the annotated sentence in Figure~\ref{fig:standep} contains both ``\textit{aux}'' and ``\textit{auxpass}'' dependencies. These are both added to the feature set.
+	
+	\item \textbf{POS Tags}: We filter words whose part of speech tags are ``\textit{Noun}'', ``\textit{Determiner}'', ``\textit{Adjective}'', ``\textit{Cardinal Number}'', ``\textit{Foreign Word}'', ``\textit{Brackets}'', ``\textit{Coordinating Conjunction}'', and ``\textit{Personal Pronouns}''. The rationale for filtering based on POS tags is to remove the words that are unlikely to be specific to temporal constraints. For instance, presence or absence of determiners is unlikely to affect the outcome of classifier. We further, annotate the POS of word to further distinguish between the words used in different context.       
+		 
+\end{enumerate}     
+
+
+We use this feature set to train a classier to perform binary classification of temporal constraint sentence vs other sentences. The rationale of using ML based approach as opposed to a rule based approach is because: 1) rule-writing requires domain expertise, 2) rules-writing tends to quickly become ad hoc thus requires greater effort to generate generic rules, and 3) ML classifiers have shown to scale well with large volumes of data.
+
+ 
+%Constraint Extractor then classifies the sentence as a constraint 
+%sentence (containing temporal constraint) candidate based on following ordered set of rules:
+%
+%\begin{enumerate}
+%	\item The sentence is not from parameter summary or return variable summary.
+%	Typically such sentences describe pre-post conditions as opposed to temporal constraints \tool\ addresses.
+%	\item The sentences contains modal modifiers such as ``\textit{can, could, may, must, should}'' expressing necessity.
+%	Typically, presence of such modal modifier is a strong indicator of presence of constraints imposed by an API developer
+%	\item If the sentence does not contain modal modifiers described previously, sentence must contain temporal modifier relationship, identified by Stanford-typed dependency parser.
+%	Typically, presence of temporal modifier is an indicator of presence of temporal information.  
+%	\item If rules 2 and 3 don't apply then the sentences should be a conditional sentence, identified by the presence of keywords such as ``\textit{if}'' and ``\textit{whether}''.
+%\end{enumerate}
+
 
 \subsection{Text Analysis Engine}
 \label{sub:TAE}
-%
+
 %\begin{figure}
 %	\centering
-%	%	\includegraphics[scale=0.65]{taeRep.eps}
+%		\includegraphics[scale=0.65]{taeRep.eps}
 %	\caption{First-order logic representation of annotated sentence in Figure~\ref{fig:standep}}
 %	\label{fig:FOLRep}
 %\end{figure}
 
-The text analysis engine component accepts the annotated documents and creates an intermediate representation of each sentence.
+
+
+The text analysis engine component accepts the sentences identified as constraint sentences and creates an intermediate representation of each sentence.
 We define our representation as a tree structure that is essentially a FOL expression.
 Research literature provides evidence of the adequacy of using FOL for NLP related analysis tasks~\cite{Sinha2009,Sinha2010,pandita12:inferring, pandita13:WHYPER}.
 
@@ -119,8 +166,7 @@ In particular, the intermediate-representation technique is implemented as a fun
 
 
 However, we observed that such implementation is overwhelmed by complex sentences.
-This limitation mandates the use of additional novel technique of \textit{`Frequent Phrases Reduction'} in preprocessing phase.
-We further improve the accuracy of intermediate-representation generation by proposing a hybrid approach, i.e. taking into consideration both the POS tags as well as Stanford-typed dependencies.
+We improve the accuracy of intermediate-representation generation by proposing a hybrid approach, i.e. taking into consideration both the POS tags as well as Stanford-typed dependencies.
 The POS tags which annotate the syntactical structure of a sentence are used to further simplify the constituent elements in a sentence. 
 We then use the Stanford-typed dependencies that annotate the grammatical relationships between words to construct our FOL representation.
 Thus, the intermediate representation generator used in this work is a two phase process as opposed to previous work~\cite{pandita12:inferring, pandita13:WHYPER}. 
@@ -171,40 +217,60 @@ Thus our shallow parser breaks the sentence into two individual sentences.
 \end{center}
 \end{table*}
 
-\textbf{Stanford-typed Dependencies}: This phase is equivalent to the intermediate-representation technique described in Section~\ref{sub:SENLPback}.
+\textbf{Stanford-typed Dependencies}: This phase is equivalent to the intermediate-representation technique described in Section~\ref{sub:SENLPback}. Figure~\ref{fig:FOLTree} is the FOL representation of the sentence  \textit{``All objects in the bucket must be deleted before the bucket itself can be deleted''}. All the leaf nodes (entities) are represented as the bold words. For readability each node is appended with a number representing the in-order traversal index of the tree. 
+
+\begin{figure}
+	\begin{CodeOut}
+		\begin{alltt}
+			01:before[6]
+			02:|->must be deleted[5]
+			03:\hspace*{0.2in}|->All[1]
+			04:\hspace*{0.2in}|\hspace*{0.2in}|->in[3]
+			05:\hspace*{0.2in}|\hspace*{0.4in}|->\textbf{objects}[2]
+			06:\hspace*{0.2in}|\hspace*{0.4in}|->\textbf{bucket}[4]
+			07:\hspace*{0.2in}|->can be deleted[8]
+			08:\hspace*{0.4in}|->\textbf{bucket}[7]
+			09:\hspace*{0.4in}|->\textbf{itself}[9]
+		\end{alltt}
+	\end{CodeOut}
+	\caption{\label{fig:FOLTree} FOL representation of the sentence \textit{``All objects in the bucket must be deleted before the bucket itself can be deleted.''}}
+\end{figure}
 
 \subsection{Constraint Extractor}
 \label{sub:SE}
 
-This component accepts the FOL representation of the sentence from the previous component,
-then extracts the temporal constraints if present in a sentence.
-Constraint Extractor then classifies the sentence as a constraint 
-sentence (containing temporal constraint) candidate based on following ordered set of rules:
+Constraint Extractor is responsible for inferring temporal constraint from the classified constraint sentences.
+\tool\ uses the formalism proposed by Lo et al.~\cite{lo2009mining} (introduced in Section~\ref{sec:background})
+for formalizing the constraints. 
+\tool\ extends the operators by proposing two additional operators:
 
 \begin{enumerate}
-	\item The sentence is not from parameter summary or return variable summary.
-	Typically such sentences describe pre-post conditions as opposed to temporal constraints this approach addresses.
-	\item The sentences contains modal modifiers such as ``\textit{can, could, may, must, should}'' expressing necessity.
-	Typically, presence of such modal modifier is a strong indicator of presence of constraints imposed by an API developer
-	\item If the sentence does not contain modal modifiers described previously, sentence must contain temporal modifier relationship, identified by Stanford-typed dependency parser.
-	Typically, presence of temporal modifier is an indicator of presence of temporal information.  
-	\item If rules 2 and 3 don't apply then the sentences should be a conditional sentence, identified by the presence of keywords such as ``\textit{if}'' and ``\textit{whether}''.
-\end{enumerate} 
+	\item Forward Prohibition Operator ($\xi_1 \xrightarrow{-} \xi_2$):
+	occurrence of $\xi_1$ cannot be followed by occurrence of $\xi_2$
+	
+	\item Backward Prohibition Operator ($\xi_1 \xleftarrow{-} \xi_2$):
+	occurrence of $\xi_1$ cannot be preceded by the occurrence of $\xi_2$
+\end{enumerate}
 
-Once a candidate sentence is identified, this component selects an semantic graph.
-In particular, the semantic graph of the API class to which the candidate sentence belongs to selected.
-Since there is no concept of classes in REST API, semantic graphs of all resources described in the API are selected.
-A semantic graph constitutes the keyword representation of the classes and the corresponding applicable actions. 
-Figure~\ref{fig:knowledge} shows a graph for \CodeIn{Object} resource in \amazonAPI.
+The prohibition operators capture a different class of temporal constraints that cannot be
+expressed by the formulae constructed by previously proposed operators and their negations.
+For instance, the \textit{prohibition operators} seem to be negation of
+\textit{forward eventual operators} and \textit{backward eventual operators}.
+However, the negation of forward eventual operators is: not an invocation of $\xi_1$
+must be eventually followed by not an invocation of $\xi_2$. In contrast,
+\textit{prohibition operators} either negates antecedent or consequent but not both.
+In summary, we extended the formalism for temporal rules previously
+proposed by Lo et al.~\cite{lo2009mining} to express temporal constraints.
+
+\tool\ first identifies $\xi_1$ as the method whose description constraint sentence is part of.
+For instance the sentence in Figure~\ref{fig:standep} is part of Delete Bucket method description in \amazonAPI,
+$\xi_1$ is instantiated as Delete Bucket method.
+
+\tool\ next identifies $\xi_2$. Since, references to $\xi_2$ may not always be implicit we leverage the semantic graphs. A semantic graph is a representation of concepts of objects and the methods applicable on those objects. Figure~\ref{fig:knowledge} shows a graph for \CodeIn{Object} resource in \amazonAPI.
 The phrases in rounded rectangle are the actions applicable on \CodeIn{Object} resource.
 Section~\ref{sub:ACA} further describes how these graphs are generated.
-
- 
-Constraint extractor then uses the semantic graph to determine
-whether a candidate sentence is a constraint sentence and if so extract
-the action that should be performed prior to the method the sentence
-belongs to. Algorithm~\ref{alg:SenAnnotaator} describes this action extraction
-process.  
+\tool\ uses the Algorithm~\ref{alg:SenAnnotaator} to identify $\xi_2$.
+  
 
 \algsetup{indent=1em}
 \begin{algorithm}[t!]
@@ -235,36 +301,44 @@ process.
 \label{alg:SenAnnotaator}
 \end{algorithm} 
 
-Our algorithm systematically explores the FOL representation
-of the candidate sentence to determine if a sentence
-describes a temporal constraint. First, our algorithm
-attempts to locate the occurrence of class name or its synonym
+The algorithm systematically explores the FOL representation
+of the candidate sentence to identify $\xi_2$. First, the algorithm
+attempts to locate the occurrence of object name or its synonym
 in the leaf nodes of the FOL
 representation of the sentence (Line 3). The method
 findLeafContaining(r\_name\_list) explores the FOL representation
-to find a leaf node that contains either the class name
+to find a leaf node that contains either the object name
 or one of its synonyms.
-In particular, we use WordNet~\cite{wordnet} and Lemmatisation
-to deal with synonyms of a word in question to find appropriate
-matches. Once a leaf node is found, we systematically
+Once a leaf node is found, we systematically
 traverse the tree from the leaf node to the root,
 matching all parent predicates as well as immediate child
 predicates [Lines 5-16].
-
-Our algorithm matches each of the traversed predicate
-with the actions associated with the class defined in
-semantic graph. Similar to matching entities, we also
-employ WordNet and Lemmatisation to deal with
+Algorithm matches each of the traversed predicate
+with the actions associated with the object defined in
+semantic graph. 
+\tool\ further employs WordNet and Lemmatisation to deal with
 synonyms to find appropriate matches. If a match is
-found, then the matching action name is returned.
+found, then the matching action is returned as $\xi_2$.
+\tool\ does not consider self references, that is if $\xi_2 = \xi_1$, the identified method reference is discarded.
+In case of multiple matching actions \tool\ considers only the first match.
+For instance the sentence in Figure~\ref{fig:standep} algorithm identifies
+Delete Object method as $\xi_2$
+
+\tool\ next identifies the direction (forward or backward) of the relationship by examining the tense of $\xi_2$ reference in the sentence. Past tense is considered as backward and other tenses are considered as forward. For instance, the sentence in Figure~\ref{fig:standep} since ``deleted'' is in past tense and therefore operator is backward and the constraint is 
+Delete Object $\xleftarrow{*}$ Delete Method.
+
+The negation is identified by presence of negation verbs such as ``\textit{no}'', ``\textit{not}'', ``\textit{can't}'' ... etc. Another rule for negation operator is if the sentence is in exception/error description. 
+
+
 
 \subsection{Semantic-Graph Generator}
 \label{sub:ACA}
 
-A key way of identifying reference to a method in the API by our approach is the employment of a semantic graph of an API.
-In particular, we propose to initially infer such graphs from API documents.
-Manually creating a semantic graph is prohibitively time consuming and may be error prone.
-We thus employ a systematic methodology (proposed previously in ~\cite{pandita13:WHYPER}) to infer such semantic graphs from API documents that can potentially be automated.
+A key way of identifying reference to a method in the API by \tool\ is the employment of a semantic graph of an API.
+We propose to initially infer such graphs from API documents.
+Ad hoc creation of semantic graph is prohibitively time consuming and may be error prone.
+We thus employ a systematic methodology (proposed previously by Pandita et al. ~\cite{pandita13:WHYPER}) to infer semantic graphs from API documents.
+
 We first consider the name of the class for the API document in question.
 We then find the synonyms terms used refer to the class in question.
 The synonym terms are listed as by breaking down the camel-case notation in the class name.
@@ -277,13 +351,12 @@ This list is further augmented by listing the name of the parent classes and imp
 	\label{fig:knowledge}
 \end{figure} 
 
-
 We then systematically inspect the member methods to identify actions applicable to the objects represented by the class. From the name of a public method (describing a possible action on the object), we extract verb phrases. The verb phrases are used as the associated actions applicable on the object. In case of REST API we first identified the resources and then listed REST actions on those resources as applicable actions. Figure~\ref{fig:knowledge} shows the graph for \CodeIn{Object} resource in REST API. The phrases in rounded rectangle are the REST actions applicable on \CodeIn{Object} resource in \amazonAPI.
   
 
 \subsection{Type Analysis}
 
-As mentioned earlier that some temporal constraints are enforced by the type system in typed Languages.
+Some temporal constraints are enforced by the type system in typed Languages.
 For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates that (at least one) method ($m'$) be invoked whose return value is of type ($t$).
 To extend the temporal constraints inferred by the analyzing the natural language text, this component infers additional constraints that are encoded
 in the type system. Algorithm~\ref{alg:TypeAnalysis} lists the steps followed to infer type based temporal constraints.
@@ -295,7 +368,7 @@ Second, all methods in an API are added to an unconnected graph (Line 3-4).
 Then, for every public method in the input list, the algorithm checks the types
 of the input parameters and constructs and directed edge from all the methods whose return value
 have the same type to the method in question (Line 14- 20).
-The algorithm does not take into consideration the basic parameter types such as integer, string (Line 15).
+The algorithm does not take into consideration the basic parameter types such as \CodeIn{integer}, \CodeIn{string} (Line 15).
 Additionally, an edge is created from the constructors of a class to the non static members methods of a class (Line 8 -13).
 The resultant graph is then returned by the algorithm.
 
