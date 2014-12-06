@@ -96,30 +96,54 @@ We next present our evaluation results.
 \begin{table*}
 \begin{center}
 
-\caption{Evaluation Results}
+\caption{Evaluation Results (Identification)}
 
-\begin{tabular}{lcccccccccccc}
+\begin{tabular}{rlccccccccc}
 \topline
-\headcol API & Mtds & Sen & Sen$_C$ & Sen$_{ICON}$ & TP & FP & FN & P(\%) & R(\%) & F$_S$(\%) & Spec$_{ICON}$ & Acc(\%)\\
+\headcol S. No. & Trainer	& P$_{wrd}$	& R$_{wrd}$	& F$_{wrd}$	& P$_{ftr}$	& R$_{ftr}$	& F$_{ftr}$	& P$_{\Delta}$	& R$_{\Delta}$	& F$_{\Delta}$	\\
 \midline 
-java.io & 662 & 2417 & 78 & 88 & 57 & 31 & 21 & 64.8 & 73.1 & 68.8 & 56 & 71.8\\ 
-\rowcol \amazonAPI & 51 & 1492 & 12 & 12 & 8 & 4 & 4 & 66.7 & 66.7 & 66.7 & 7 & 58.3\\ 
-\paypalAPI & 33	&	151 &  20 &  &  &  &  & &  &  &  & \\ 
-\rowcol Total & 746 & 4060 & 90 & 100 & 65 & 35 & 25 & 65.0$^*$ & 72.2$^*$ & 68.4$^*$ & 63 & 70.0$^*$\\ 
+		 1 		& 				& 662 	& 2417 		& 78 		& 88 		& 57 		& 31 		& 21 			& 64.8 			& 73.1 			\\ 
+\rowcol  2		& \amazonAPI 	& 662 	& 2417 		& 78 		& 88 		& 57 		& 31 		& 21 			& 64.8 			& 73.1 			\\ 
+		 3		& \paypalAPI 	& 662 	& 2417 		& 78 		& 88 		& 57 		& 31 		& 21 			& 64.8 			& 73.1 			\\ 
+\rowcol 		& Average 		& 662 	& 2417 		& 78 		& 88 		& 57 		& 31 		& 21 			& 64.8 			& 73.1 			\\ 
 \bottomlinec
 %----------------- END TABLE DATA ------------------------ 
-\multicolumn{13}{p{6.5in}}{\small
-$^*$ Column average;
-Mtds: Total no. of Methods; Sen: Total no. of Sentences; Sen$_C$: Total no. of constraint Sentences;
-Sen$_{ICON}$: Total no. of constraint Sentences identified by \tool; 
-TP: Total no. of True Positives; FP: Total no. of False Positives; FN: Total no. of False Negatives;
-P: Precision; R: Recall; F$_S$: F-Score; Acc: Accuracy
+\multicolumn{11}{p{6.5in}}{\small
+All values are average over 10-fold cross validation;
+P: Precision; R: Recall; F: F-Score;
+$_{wrd}$: No features used for training;
+$_{ftr}$: features used for training;
+$_{\Delta}$: improvement factor ($_{ftr}$ - $_{wrd}$)} \\ 
+\end{tabular}
+\label{tab:results}
+\end{center}
+\end{table*}
+
+
+\begin{table}
+\begin{center}
+
+\caption{Evaluation Results (Inference)}
+
+\begin{tabular}{lccccc}
+\topline
+\headcol 	API 		& Mtds 	& Sen 	& Sen$_C$ 	& Spec$_{ICON}$ 	& Acc(\%)\\
+\midline 
+			java.io 	& 662 	& 2417 	& 78 		& 56 				& 71.8\\ 
+\rowcol 	Amazon S3 REST 	& 51 	& 1492 	& 12		& 7 				& 58.3\\ 
+			Paypal REST 	& 33	& 151 	& 20 		& 					& \\ 
+\rowcol 	Total 		& 746 	& 4060 	& 90		& 63 				& 70.0$^*$\\ 
+\bottomlinec
+%----------------- END TABLE DATA ------------------------ 
+\multicolumn{6}{p{3.25in}}{\small
+$^*$ Average;
+Mtds: Total no. of Methods; Sen: Total no. of Sentences; Sen$_C$: Total no. of constraint Sentences; Acc: Accuracy
 Spec$_{ICON}$: Total no. of temporal constraint correctly identified by \tool;
 } \\ 
 \end{tabular}
 \label{tab:results}
 \end{center}
-\end{table*}
+\end{table}
 
 
 \subsubsection{RQ1: Effectiveness in Identifying Constraint Sentences}
