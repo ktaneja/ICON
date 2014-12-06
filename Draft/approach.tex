@@ -11,7 +11,7 @@
 We next present our approach for inferring temporal constraints
 from the method descriptions in API Documents.
 Figure~\ref{fig:approachOverview} gives an overview of \tool\ approach.
-\tool\ consists of five major components: a preprocessor, a text-analysis engine, a semantic graph generator, constraint extractor, and a type analyzer.
+\tool\ consists of following major components: a preprocessor, a candidate identifier, a text-analysis engine, a semantic graph generator, constraint extractor, and a type analyzer.
 We next describe each component in detail.
 
 %The preprocessor accepts API documents and preprocesses the sentences in the method description,
@@ -237,35 +237,47 @@ Thus our shallow parser breaks the sentence into two individual sentences.
 \end{figure}
 
 \subsection{Constraint Extractor}
-\label{sub:SE}
+\label{sub:ConsExtract}
 
-Constraint Extractor is responsible for inferring temporal constraint from the classified constraint sentences.
-\tool\ uses the formalism proposed by Lo et al.~\cite{lo2009mining} (introduced in Section~\ref{sec:background})
-for formalizing the constraints. 
-\tool\ extends the operators by proposing two additional operators:
+Constraint Extractor is responsible for inferring temporal constraint from the classified constraint sentences. 
+
+Temporal constraints are expressed as temporal formulae involving: 1) \textit{Predicates} $\xi$ representing method calls and 2) \textit{Temporal operators}: backward ($\leftarrow$) \& forward ($\rightarrow$) and their negations $\xleftarrow{-}$ \& $\xrightarrow{-}$. We define following four constraints:
+
+%
+%
+%To express temporal constraints between two methods $\xi_1,\xi_2$, there two basic constatins 
+%
+%\tool\ uses the formalism proposed by Lo et al.~\cite{lo2009mining} (introduced in Section~\ref{sec:background})
+%for formalizing the constraints. 
+%\tool\ extends the operators by proposing two additional operators:
 
 \begin{enumerate}
-	\item Forward Prohibition Operator ($\xi_1 \xrightarrow{-} \xi_2$):
-	occurrence of $\xi_1$ cannot be followed by occurrence of $\xi_2$
-	
-	\item Backward Prohibition Operator ($\xi_1 \xleftarrow{-} \xi_2$):
-	occurrence of $\xi_1$ cannot be preceded by the occurrence of $\xi_2$
+	\item \textit{Forward Operator ($\xi_1 \rightarrow \xi_2$)}: method call $\xi_1$ must be succeeded by method call $\xi_2$. 
+	\item \textit{Backward Operator ($\xi_1 \leftarrow \xi_2$)}: method call $\xi_1$ must be preceded by method call $\xi_2$.
+	\item \textit{Negative Forward Operator ($\xi_1 \xrightarrow{-} \xi_2$)}: method call $\xi_1$ cannot be succeeded by method call $\xi_2$
+	\item \textit{Negative Backward Operator ($\xi_1 \xleftarrow{-} \xi_2$)}: method call $\xi_1$ cannot be preceded by the method call of $\xi_2$
 \end{enumerate}
 
-The prohibition operators capture a different class of temporal constraints that cannot be
-expressed by the formulae constructed by previously proposed operators and their negations.
-For instance, the \textit{prohibition operators} seem to be negation of
-\textit{forward eventual operators} and \textit{backward eventual operators}.
-However, the negation of forward eventual operators is: not an invocation of $\xi_1$
-must be eventually followed by not an invocation of $\xi_2$. In contrast,
-\textit{prohibition operators} either negates antecedent or consequent but not both.
-In summary, we extended the formalism for temporal rules previously
-proposed by Lo et al.~\cite{lo2009mining} to express temporal constraints.
+%The prohibition operators capture a different class of temporal constraints that cannot be
+%expressed by the formulae constructed by previously proposed operators and their negations.
+%For instance, the \textit{prohibition operators} seem to be negation of
+%\textit{forward eventual operators} and \textit{backward eventual operators}.
+%However, the negation of forward eventual operators is: not an invocation of $\xi_1$
+%must be eventually followed by not an invocation of $\xi_2$. In contrast,
+%\textit{prohibition operators} either negates antecedent or consequent but not both.
+%In summary, we extended the formalism for temporal rules previously
+%proposed by Lo et al.~\cite{lo2009mining} to express temporal constraints.
 
+We next show how \tool\ identifies the terms of the constraint formula:
+
+
+\textbf{$\xi_1$}:
 \tool\ first identifies $\xi_1$ as the method whose description constraint sentence is part of.
 For instance the sentence in Figure~\ref{fig:standep} is part of Delete Bucket method description in \amazonAPI,
 $\xi_1$ is instantiated as Delete Bucket method.
 
+
+\textbf{$\xi_2$}:
 \tool\ next identifies $\xi_2$. Since, references to $\xi_2$ may not always be implicit we leverage the semantic graphs. A semantic graph is a representation of concepts of objects and the methods applicable on those objects. Figure~\ref{fig:knowledge} shows a graph for \CodeIn{Object} resource in \amazonAPI.
 The phrases in rounded rectangle are the actions applicable on \CodeIn{Object} resource.
 Section~\ref{sub:ACA} further describes how these graphs are generated.
@@ -324,8 +336,9 @@ In case of multiple matching actions \tool\ considers only the first match.
 For instance the sentence in Figure~\ref{fig:standep} algorithm identifies
 Delete Object method as $\xi_2$
 
+\textbf{Temporal Operator}:
 \tool\ next identifies the direction (forward or backward) of the relationship by examining the tense of $\xi_2$ reference in the sentence. Past tense is considered as backward and other tenses are considered as forward. For instance, the sentence in Figure~\ref{fig:standep} since ``deleted'' is in past tense and therefore operator is backward and the constraint is 
-Delete Object $\xleftarrow{*}$ Delete Method.
+Delete Bucket $\leftarrow$ Delete Object.
 
 The negation is identified by presence of negation verbs such as ``\textit{no}'', ``\textit{not}'', ``\textit{can't}'' ... etc. Another rule for negation operator is if the sentence is in exception/error description. 
 

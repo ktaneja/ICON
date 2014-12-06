@@ -13,7 +13,7 @@
 %For instance, many online stores leverage Paypal API to assist users with paying for the purchased commodities without actually
 %providing financial information to the online store.
 
-Application Programming Interface (API) has evolved from traditional libraries that are in the format of locally stored binary files and are programming language specific,
+Application Programming Interfaces (APIs) have evolved from traditional libraries that are in the format of locally stored binary files and are programming language specific,
 to web APIs that are designed to leverage the web server and web browser architecture and the implementation is programming language agnostic.
 However, APIs (whether traditional or web-based) have some rules or constraints governing the proper use of the API that must be followed.
 One such type of constraints are temporal constraints [2], which are the allowed sequences of invocations of methods from the API.
@@ -47,11 +47,13 @@ For instance, Wu et al.~\cite{wu2013inferring} report that it took one person te
 
 To reduce the manual effort, we propose \tool: a Machine Learning (ML) and Natural Language Processing (NLP) based approach
 to automatically infer formal temporal constraints. 
-We propose to employ ML as a means to identify temporal constraint sentences from rest and then use NLP techniques to infer formal constraints from identified sentences. 
+We propose to first employ ML for identifying temporal constraint sentences and then use NLP techniques to infer formal constraints from the identified sentences. 
 Besides the generic challenges of applying NLP techniques on software related artifacts~\cite{pandita12:inferring},
 our approach addresses two major challenges to automatically infer specifications from natural language text in API documents 
 
-First, classifying temporal constraint sentences is difficult. A keyword-based filtering or rule-based approach for identifying constraint sentences is often unsatisfactory, because the method names (and synonyms) are part of the keywords themselves, thus resulting an exponential number of keywords. To, address this challenge, we propose to train a classification model based on generic semantic and syntactic features instead of the keywords-based features.    
+First, classifying temporal constraint sentences is difficult. A keyword-based filtering or rule-based approach for identifying constraint sentences is often unsatisfactory, because the method names (and synonyms) are part of the keywords themselves, thus resulting an large number of keywords.
+Furthermore, keywords often have confounding effects that inversely affects accuracy.
+To, address this challenge, we propose to train a classification model based on generic semantic and syntactic features instead of the keywords-based features.    
 
 Second, a method referenced in the natural language text must be identified to infer temporal constraints on the method but such method referencing is often implicit.
 Consider the description sentence ``You must initiate a multipart upload before you can upload any part.''
@@ -60,7 +62,7 @@ Identifying these phrases as method-invocation instances requires domain diction
 Ad-hoc construction of such dictionaries is prohibitively resource intensive and error-prone.
 To address this challenge, we propose to build domain dictionaries systematically from API documents and generic English dictionaries.
 
-In summary, our \tool\ approach leverages natural language description of API's to infer temporal constraints of method invocations.
+In summary, \tool\ approach leverages natural language description of API's to infer temporal constraints of method invocations.
 As our approach analyzes API documents in natural language, it can be reused independent of the programming language of an API library.
 Additionally, our approach complements existing mining-based approaches~\cite{buse2012synthesizing, thummalapenta07parseweb, Wang:2013:MSR, Zhong:2009:MMR} that partially address the problem by mining for common usage patterns among client code reusing the API.
 This paper makes the following main contributions:

@@ -17,15 +17,16 @@ However, recent studies~\cite{Polikarpova2009ISSTA,Flanagan2001:HAA} demonstrate
 contracts is the most effective approach for formally specifying the constraints on an API.
 
 Additionally, contracts are typically in the form of assertions on the state (member variables/ properties) of a program. In contrast, temporal constraints specify the ordering of method invocations and therefore are different.
-Furthermore, since \tool\ infers temporal constraint from API documents, we believe \tool\ can work in conjunction with existing approaches
+Furthermore, since \tool\ infers temporal constraint from API documents, we envision \tool\ to work in conjunction with existing approaches
 to infer a comprehensive set of program specifications.
  
 Furthermore, a different set of approaches exist that infer code-contract-like specifications (such as behavioral model, algebraic specifications, and exception specifications) either dynamically\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105} or statically~\cite{Flanagan2001:HAA,Buse:2008:ADI:1390630.1390664} from source code and binaries. In contrast, \tool\ infers contracts from the natural language text in API documents,
 thus complementing these existing approaches when the source code or binaries of the API library is not available.
 
 
-\textbf{NLP in SE}:
-NLP techniques are being increasingly applied in the SE domain. 
+\textbf{NLP in Software Engineering (SE)}:
+
+Research advances~\cite{Marneffe08COLING,KleinNIPS03} in the accuracy of existing NLP techniques have inspired researchers/ practitioners~\cite{pandita12:inferring, pandita13:WHYPER, johnSlankasPASSAT13, XiaoFSE2012, thummalapentaICSE12} to adapt/apply NLP techniques to solve problems in SE domain. 
 Tan et al.~\cite{TanSOSP07} were the first to apply ML and NLP on code comments to detect mismatches between the comments and the implementation.
 They rely on predefined rule templates targeted towards threading and lock related comments, and then apply ML-based approach to find comments following such rules.
 The constraints inferred by their approach are the restrictions imposed by the developer on the client code.

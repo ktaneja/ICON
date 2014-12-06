@@ -22,8 +22,8 @@ The inquisitor complains about an issue in the delete bucket functionality of th
 The \CodeIn{S3Fox} developers overlooked the constraints in \amazon, causing the issue.
 The API document pertaining to the  delete bucket functionality states that before deleting the bucket, the objects in the buckets must be deleted.
 \textit{``All objects (including all objects versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted''}.
-Although the issue was fixed, one of the forum responses contained a recommendation for the inquisitor to switch to another product.
-Customer dissatisfaction, such as the one was caused by this issue with the delete bucket functionality, can lead to a loss in revenue.
+Although the issue was fixed, one of the forum responses recommended the inquisitor to switch to another product.
+Customer dissatisfaction caused by such issues with the delete bucket functionality, can lead to a loss in revenue.
  
 The presented issue can be easily detected using formal analysis tools.
 For instance, a specification rule (temporal constraint) can be added to a static checker to verify
