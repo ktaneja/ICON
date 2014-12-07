@@ -6,16 +6,16 @@ are the allowed sequences of method invocations in the API.
 These constraints govern the secure and robust operation of client software using the API.
 However, in practice, most API do not have formal temporal constraints.
 In contrast, these constraints are typically described
-informally in natural language API documents and therefore are not amenable
+informally in natural language API documents, and therefore are not amenable
 to existing program analysis tools that require formal constraints.
 \textit{The goal of this work is to assist developers construct API clients that comply with 
 temporal constraints of the API through the inference and formalization of these constraints found in natural language text in API documents.}
-Since, API documents are often verbose manually writing formal temporal constraints can be prohibitively time consuming and error prone.
+Since, API documents are often verbose, manually writing formal temporal constraints can be prohibitively time consuming and error prone.
 To address this issue,
 we propose \tool, a Machine Learning (ML) and Natural Language Processing (NLP) based
-approach to identify and infer formal temporal constraints.
+approach for identifying and inferring formal temporal constraints.
 To evaluate our approach, we apply \tool\ to infer and formalize temporal
-constraints from \amazonAPI, \paypalAPI\ and commonly used package \CodeIn{java.io} in the
+constraints from \amazonAPI, \paypalAPI\ and \CodeIn{java.io} package in the
 JDK API.
 Our results indicate that \tool\ is effective in identifying constraint sentences (from over
 4000 human-annotated API sentences) with the average precision, recall, and F-score

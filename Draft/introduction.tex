@@ -15,7 +15,7 @@
 
 Application Programming Interfaces (APIs) have evolved from traditional libraries that are in the format of locally stored binary files and are programming language specific,
 to web APIs that are designed to leverage the web server and web browser architecture and the implementation is programming language agnostic.
-However, APIs (whether traditional or web-based) have some rules or constraints governing the proper use of the API that must be followed.
+However, APIs (whether traditional or web-based) have some constraints governing the proper use of the API that must be followed.
 One such type of constraints are temporal constraints [2], which are the allowed sequences of invocations of methods from the API.
 Non-compliance to such constraints will often result in faulty applications that are unreliable to use and may even result in financial losses.
 
@@ -28,9 +28,9 @@ Non-compliance to such constraints will often result in faulty applications that
 %Therefore enforcing temporal constraints through type system is ineffective in web APIs.
 %\textbf{TODO plug that temporal constraints go beyond type system}
 
-Formal analysis tools such as model checker and runtime verifiers can assist in detection of the violations of the temporal constraints in API clients as defects~\cite{lee2012towards}.
-However, such tools typically accept formal representation of the temporal constraints for detecting violations.
-In contrast, temporal constraints are typically described in natural language text of API documents.
+Formal analysis tools, such as model checker and runtime verifiers can assist in detection of the violations of the temporal constraints in API clients as defects~\cite{lee2012towards}.
+These tools typically accept formal representation of the temporal constraints for detecting violations.
+However, temporal constraints are typically described in natural language text of API documents.
 Such documents are provided to client-code developers through an online access, or are shipped with the API wrapper code.
 For a method under consideration, an API document may describe both the constraints on the method parameters
 as well as the temporal constraints in terms of other methods that must be invoked pre/post invoking that method.
@@ -46,12 +46,13 @@ For instance, Wu et al.~\cite{wu2013inferring} report that it took one person te
 
 
 To reduce the manual effort, we propose \tool: a Machine Learning (ML) and Natural Language Processing (NLP) based approach
-to automatically infer formal temporal constraints. 
-We propose to first employ ML for identifying temporal constraint sentences and then use NLP techniques to infer formal constraints from the identified sentences. 
+to automatically identify and infer formal temporal constraints. 
+We propose to first employ ML for identifying temporal constraint sentences and then use NLP techniques to infer formal temporal constraints from the identified sentences. 
+
 Besides the generic challenges of applying NLP techniques on software related artifacts~\cite{pandita12:inferring},
 our approach addresses two major challenges to automatically infer specifications from natural language text in API documents 
 
-First, classifying temporal constraint sentences is difficult. A keyword-based filtering or rule-based approach for identifying constraint sentences is often unsatisfactory, because the method names (and synonyms) are part of the keywords themselves, thus resulting an large number of keywords.
+First, identifying temporal constraint sentences is difficult. A keyword-based filtering or rule-based approach for identifying constraint sentences is often unsatisfactory, because the method names (and synonyms) are part of the keywords themselves, thus resulting in a large number of keywords.
 Furthermore, keywords often have confounding effects that inversely affects accuracy.
 To, address this challenge, we propose to train a classification model based on generic semantic and syntactic features instead of the keywords-based features.    
 
