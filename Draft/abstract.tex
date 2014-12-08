@@ -7,19 +7,19 @@ These constraints govern the secure and robust operation of client software usin
 However, in practice, most API do not have formal temporal constraints.
 In contrast, these constraints are typically described
 informally in natural language API documents, and therefore are not amenable
-to existing program analysis tools that require formal constraints.
+to existing tools for checking formal temporal constraints.
 \textit{The goal of this work is to assist developers construct API clients that comply with 
-temporal constraints of the API through the inference and formalization of these constraints found in natural language text in API documents.}
-Since, API documents are often verbose, manually writing formal temporal constraints can be prohibitively time consuming and error prone.
+temporal constraints of the API through the inference and formalization of these constraints found in natural language API documents.}
+Since API documents are often verbose, manually identifying and writing formal temporal constraints can be prohibitively time-consuming and error-prone.
 To address this issue,
-we propose \tool, a Machine Learning (ML) and Natural Language Processing (NLP) based
-approach for identifying and inferring formal temporal constraints.
+we propose \tool: an approach based on Machine Learning (ML) and Natural Language Processing (NLP) for identifying and inferring formal temporal constraints.
 To evaluate our approach, we apply \tool\ to infer and formalize temporal
-constraints from \amazonAPI, \paypalAPI\ and \CodeIn{java.io} package in the
+constraints from \amazonAPI, \paypalAPI\ and the \CodeIn{java.io} package in the
 JDK API.
-Our results indicate that \tool\ is effective in identifying constraint sentences (from over
+Our results indicate that \tool\ is effective in identifying temporal
+constraint sentences (from over
 4000 human-annotated API sentences) with the average precision, recall, and F-score
-of 77.0\%, 60.0\%, and 65.0\%, respectively.
-Furthermore, \tool\ also achieves an accuracy of 70\% in inferring 63 formal temporal constraints from these sentences.
+of 79.0\%, 60.0\%, and 65.0\%, respectively.
+Furthermore, our evaluation also demonstrate that \tool\ achieves an accuracy of 70\% in inferring and formalizing 77 temporal constraints from these temporal constraint sentences.
 
 \end{abstract}

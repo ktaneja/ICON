@@ -16,7 +16,7 @@ We next present the evaluation we conducted to assess the effectiveness of \tool
 \subsection{Subjects}
 \label{sub:subject}
 
-We used the API documents of the following two libraries as subjects for our evaluation. 
+We used the API documents of the following three libraries as subjects for our evaluation. 
 \begin{itemize}
 	\item \amazonAPI\: provides a REST based web services interface to store and retrieve data on the web.
 	Furthermore, \CodeIn{Amazon S3} also empowers a developer with rich set of API methods to access a highly scalable, reliable, secure, fast, and inexpensive infrastructure. 
@@ -25,9 +25,9 @@ We used the API documents of the following two libraries as subjects for our eva
 	\item \paypalAPI\: provides a REST based web service interface to facilitate online payments and money transfer.
 	\CodeIn{PayPal} reports to have handled \$56.6 billion(USD) worth of transactions (total value of transactions) in just the third quarter of 2014. 
 	
-	\item\CodeIn{java.io} : is one of a popular packages in \CodeIn{Java} programming language. The package provides APIs for system input and output through data streams, serialization and the file system, which are one of the fundamental functionalities provided by a programming language.
+	\item\CodeIn{java.io} : is one of a popular packages in \CodeIn{Java} programming language. The package provides APIs for system input and output through data streams, serialization and the file system, which are one of the fundamental functionalities provided by any programming language.
 \end{itemize}
-We chose \CodeIn{Amazon S3}, \CodeIn(PayPal) and \CodeIn{java.io} APIs as our subjects because they are popular and contain decent documentation.
+We chose \CodeIn{Amazon S3}, \CodeIn{PayPal payment}, and \CodeIn{java.io} APIs as our subjects because they are popular and contain decent documentation.
 
 \subsection{Evaluation Setup} 
 We first manually annotated the sentences in the API documents of the subject APIs.
@@ -37,11 +37,11 @@ We used \CodeIn{cohen kappa}~\cite{carletta1996assessing} score to statistically
 the inter-rater agreement.
 The \CodeIn{cohen kappa} score of the two authors was .66 (on a scale of 0 to 1), 
 which denotes a statically significant agreement~\cite{carletta1996assessing}. 
-Based on the discussions first author annotated the rest of the subject APIs. 
 After the authors classified all the sentences, they 
-discussed with each other to reach a consensus on the sentences they classified differently. 
+discussed with each other to reach a consensus on the sentences they classified differently.
 We use these classified sentences as the golden set for evaluating effectiveness of \tool.
 Table~\ref{tab:results} lists the subject statistics.
+Based on the discussions with regards to annotation of \CodeIn{java.io} API, first author annotated the rest of the subject APIs. 
 
 
 
@@ -76,16 +76,16 @@ $Recall$ = $\frac{TP}{TP + FN}$
 $F-Score$ = $\frac{2 X Precison X Recall}{Precision + Recall}$
 \end{center}
 
-We then use these measures to identify relative effectiveness of \tool by executing multiple classifiers on the annotated sentences.
+We then use these measures to identify relative effectiveness of \tool\ by executing multiple classifiers on the annotated sentences.
 We tested the classifiers using a stratified n-fold cross-validation approach,
-using 10 as the value n (10-fold) as recommended by Han et al.~\cite{han2006data}
+using 10 as the value n (10-fold) as recommended by Han et al.~\cite{han2006data}.
 The cross validation ensures that every sentence is used for training and testing,
 thus producing low bias and variance.
 In particular, we execute the classifiers in two different configurations.
-First we execute the classifiers using the words in the sentnces as features and measure \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-Score} as P$_{wrd}$, R$_{wrd}$, and F$_{wrd}$.
-We next execute the classifiers on the features proposed by \tool\ approach and measure \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-Score} as P$_{ftr}$, R$_{ftr}$, and F$_{ftr}$.
+First we executed the classifiers using the words in the sentences as features and measure \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-Score} as P$_{wrd}$, R$_{wrd}$, and F$_{wrd}$.
+We next executed the classifiers on the features proposed by \tool\ approach and measure \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-Score} as P$_{ftr}$, R$_{ftr}$, and F$_{ftr}$.
 We next calculate relative gain in \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-Score} as P$_{\Delta}$ (P$_{ftr}$- P$_{wrd}$), R$_{\Delta}$ (R$_{ftr}$ - R$_{wrd}$), and F$_{\Delta}$ (F$_{ftr}$ - F$_{wrd}$). 
-Higher values of P$_{\Delta}$, R$_{\Delta}$, and F$_{\Delta}$ are are indicative of effectiveness of the constraint statements inferred using \tool.
+Higher values of P$_{\Delta}$, R$_{\Delta}$, and F$_{\Delta}$ are indicative of effectiveness of the constraint statements inferred using the features proposed by \tool\ approach.
 
 
 To answer RQ2, we manually verified the temporal constraints inferred from constraint sentences by \tool.
@@ -116,13 +116,15 @@ We next present our evaluation results.
 \topline
 \headcol S. No. & Trainer	& P$_{wrd}$	& R$_{wrd}$	& F$_{wrd}$	& P$_{ftr}$	& R$_{ftr}$	& F$_{ftr}$	& P$_{\Delta}$	& R$_{\Delta}$	& F$_{\Delta}$	\\
 \midline 
-1	& AdaBoost	& 0.52	& 0.81	& 0.61	& 0.7	& 0.78	& 0.74	& 0.18	& -0.03	& 0.13	\\
-\rowcol2	& NaiveBayes	& 0.49	& 0.67	& 0.56	& 0.74	& 0.65	& 0.69	& 0.25	& -0.02	& 0.13	\\
-3	& Balanced Winnow	& 0.77	& 0.76	& 0.76	& 0.78	& 0.77	& 0.77	& 0.01	& 0.01	& 0.01	\\
-\rowcol4	& Decision Tree	& 0.82	& 0.58	& 0.66	& 0.92	& 0.41	& 0.56	& 0.1	& -0.17	& -0.1	\\
-5	& Winnow	& 0.19	& 0.41	& 0.15	& 0.8	& 0.51	& 0.59	& 0.61	& 0.1	& 0.44	\\
-\rowcol6	& MaxEnt	& 0.69	& 0.48	& 0.55	& 0.76	& 0.46	& 0.56	& 0.07	& -0.02	& 0.01	\\
-	& Total	& 0.59	& 0.62	& 0.55	& 0.77	& 0.6	& 0.65	& 0.19	& -0.02	& 0.1	\\
+			1	& AdaBoost			& 0.52	& 0.81	& 0.61	& 0.7	& 0.78	& 0.74	& 0.18	& -0.03	& 0.13	\\
+\rowcol		2	& NaiveBayes		& 0.49	& 0.67	& 0.56	& 0.74	& 0.65	& 0.69	& 0.25	& -0.02	& 0.13	\\
+			3	& Balanced Winnow	& 0.77	& 0.76	& 0.76	& 0.78	& 0.77	& 0.77	& 0.01	& 0.01	& 0.01	\\
+\rowcol		4	& Decision Tree		& 0.82	& 0.58	& 0.66	& 0.92	& 0.41	& 0.56	& 0.1	& -0.17	& -0.1	\\
+			5	& Winnow			& 0.19	& 0.41	& 0.15	& 0.8	& 0.51	& 0.59	& 0.61	& 0.1	& 0.44	\\
+\rowcol		6	& MaxEnt			& 0.69	& 0.48	& 0.55	& 0.76	& 0.46	& 0.56	& 0.07	& -0.02	& 0.01	\\
+			7	& c45				& 0.78	& 0.4	& 0.52	& 0.82	& 0.59	& 0.67	& 0.04	& 0.19	& 0.15	\\
+\midline
+			& Average			& 0.61	& 0.59	& 0.54	& 0.79	& 0.6	& 0.65	& 0.18	& 0.01	& 0.11	\\
 \bottomlinec
 %----------------- END TABLE DATA ------------------------ 
 \multicolumn{11}{p{5in}}{\small
@@ -143,12 +145,12 @@ $_{\Delta}$: improvement factor ($_{ftr}$ - $_{wrd}$)} \\
 
 \begin{tabular}{lccccc}
 \topline
-\headcol 	API 		& Mtds 	& Sen 	& Sen$_C$ 	& Spec$_{ICON}$ 	& Acc(\%)\\
+\headcol 	API 			& Mtds 	& Sen 	& Sen$_C$ 	& Spec$_{ICON}$ 	& Acc(\%)\\
 \midline 
-			java.io 	& 662 	& 2417 	& 78 		& 56 				& 71.8\\ 
+			java.io 		& 662 	& 2417 	& 78 		& 56 				& 71.8\\ 
 \rowcol 	Amazon S3 REST 	& 51 	& 1492 	& 12		& 7 				& 58.3\\ 
-			Paypal REST 	& 33	& 151 	& 20 		& 					& \\ 
-\rowcol 	Total 		& 746 	& 4060 	& 90		& 63 				& 70.0$^*$\\ 
+			Paypal REST 	& 33	& 151 	& 20 		& 14				& 70.0\\ 
+\rowcol 	Total 			& 746 	& 4060 	& 110		& 77 				& 70.0$^*$\\ 
 \bottomlinec
 %----------------- END TABLE DATA ------------------------ 
 \multicolumn{6}{p{3.25in}}{\small
@@ -166,17 +168,17 @@ Spec$_{ICON}$: Total no. of temporal constraint correctly identified by \tool;
 
 
 In this section, we quantify the effectiveness of \tool\ in identifying constraint sentences by answering RQ1.
-Table~\ref{tab:results} shows the effectiveness of \tool\ in inferring temporal constraints from the identified constraint sentences using various classifiers.
+Table~\ref{tab:resultsRQ1} shows the effectiveness of \tool\ in inferring temporal constraints from the identified constraint sentences using various classifiers.
 Column ``Trainer'' lists the names of the classifiers used to train the model for classifications in \tool.
 Columns P$_{wrd}$, R$_{wrd}$, and F$_{wrd}$ list the \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-score} of classifiers trained without the features proposed by \tool.
 Columns P$_{ftr}$, R$_{ftr}$, and F$_{ftr}$ list the \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-score} of classifiers trained with the features proposed by \tool.
-Finally, columns P$_{\Delta}$, R$_{\Delta}$, and F$_{\Delta}$ list the improvement factors in\CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-score} respectively.
+Finally, columns P$_{\Delta}$, R$_{\Delta}$, and F$_{\Delta}$ list the improvement factors in \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-score} respectively.
 
-For our evaluation we used following well known classifiers: AdaBoost (or adaptive boosting), Na{\"i}ve Bayes, Winnow, Balanced Winnow, Decision Tree, and Max Entropy. We used Na{\"i}ve Bayes as the weaker classifier with AdaBoost. We used \CodeIn{Mallet}~\cite{mallet} implementation of these classifiers for our experiments.
+For our evaluation we used following well known classifiers: AdaBoost (or adaptive boosting), Na{\"i}ve Bayes, Winnow, Balanced Winnow, Decision Tree, Max Entropy, and c45. We used Na{\"i}ve Bayes as the weaker classifier with AdaBoost. We used \CodeIn{Mallet}~\cite{mallet} implementation of these classifiers for our experiments.
 
-Our results show that, \tool\ effectively identifies constraint sentences with the average (across different classifiers) \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-score} of 77.0\%, 60.0\%, and 65.0\%, respectively.
+Our results show that, \tool\ effectively identifies constraint sentences with the average (across different classifiers) \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-score} of 79.0\%, 60.0\%, and 65.0\%, respectively.
 Balanced Winnow performed best, with an average \CodeIn{precisoin} and \CodeIn{recall} of 78\% and 77\% respectively. 
-Furthermore, our results also show the features proposed by \tool\ improves the precision of classification algorithms by an average of 19\%, without significant reduction in the recall (average 2\%). 
+Furthermore, our results also show the features proposed by \tool\ improves the precision of classification algorithms by an average of 18\%. There is also a slight increase in the recall (average 1\% gain). 
 
  
 
@@ -203,16 +205,7 @@ Furthermore, our results also show the features proposed by \tool\ improves the 
 %Although an easy fix, we refrained from including such modifications for reporting the results to stay true to our approach.
 %In the future, we plan to investigate techniques to construct better domain dictionaries for software API. 
 %
-%We next present an example to illustrate how \tool\ fails identify a constraint sentence (producing false negative).
-%False negatives are undesirable in the context of our problem domain
-%because they can mislead the users of \tool\ into believing that no other temporal constraint exists in the API documents.
-%Furthermore, an overwhelming number of false negatives works against the practicality of \tool.
-%For instance, consider the sentence ``\textit{This implementation of the PUT operation creates a copy of an object that is already stored in Amazon S3.}''
-%from  \CodeIn{PUT Object-Copy} method description in \amazonAPI.
-%The sentence describes the constraint that the object must already be stored (invocation of \CodeIn{PUT Object})
-%before calling the current method.
-%However, \tool cannot make the connection owing to the limitation of the semantic graphs that do not list ``already stored'' as a ``valid operation'' on object.  
-%In the future, we plan to investigate techniques to further improve knowledge graphs to infer such implicit constraints. 
+ 
 %
 %Another major source of false negatives (similar to reasons for false positives) is the incorrect parsing of sentences by the underlying NLP infrastructure.
 %For instance, consider the sentence ``\textit{If any in-memory buffering is being done by the application (for example, by a BufferedOutputStream object),
@@ -237,7 +230,19 @@ Our results show that, out of 90 manually identified constraint sentences, \tool
 
 We next present an example to illustrate how \tool\ incorrectly infers temporal constraints from a constraint sentence. Consider the sentence ``\textit{if the stream does not support seek, or if this input stream has been closed by invoking its close method, or an I/O error occurs.}'' from \CodeIn{skip} method of \CodeIn{java.io.FilterInputStream} class. Although \tool\ correctly infers that method \CodeIn{close} cannot be called before current method, \tool\ incorrectly associates the phrase ``support seek'' with method \CodeIn{markSupported} in the class. The faulty association happens due to incorrect parsing of the sentence by the underlying NLP infrastructure. Such issues will be alleviated as the underlying NLP infrastructure improves.   
 
-Another, major cause of failure for \tool\ in inferring temporal constraints from sentences is the failure to identify the sentence as a constraint sentences at the first place (false negatives). Overall, accuracy of \tool\ can be significantly improved by lowering the false negative rate in identifying the constraint sentences. 
+
+We next present an example to illustrate how \tool\ fails infer constraints from a constraint sentence.
+%False negatives are undesirable in the context of our problem domain
+%because they can mislead the users of \tool\ into believing that no other temporal constraint exists in the API documents.
+%Furthermore, an overwhelming number of false negatives works against the practicality of \tool.
+For instance, consider the sentence ``\textit{This implementation of the PUT operation creates a copy of an object that is already stored in Amazon S3.}''
+from  \CodeIn{PUT Object-Copy} method description in \amazonAPI.
+The sentence describes the constraint that the object must already be stored (invocation of \CodeIn{PUT Object})
+before calling the current method.
+However, \tool cannot make the connection owing to the limitation of the semantic graphs that do not list ``already stored'' as a ``valid operation'' on object.  
+In the future, we plan to investigate techniques to further improve knowledge graphs to infer such implicit constraints.
+
+%Another, major cause of failure for \tool\ in inferring temporal constraints from sentences is the failure to identify the sentence as a constraint sentences at the first place (false negatives). Overall, accuracy of \tool\ can be significantly improved by lowering the false negative rate in identifying the constraint sentences. 
 
 \subsubsection{RQ3: Comparison to Typed-Enforced Constraints}
 
@@ -260,14 +265,14 @@ Hence, the constraints detected by \tool\ are not trivial enough to be enforced 
 \subsection{Summary}
 \label{sub:summary}
 
-In summary, we demonstrate that \tool\ effectively identifies constraint sentences (from over 3900 API sentences) with the average precision, recall, and F-score of 65.0\%, 72.2\%, and 68.4\% respectively. Furthermore, we also show that \tool\ infers temporal constraints from the constraint sentences an average accuracy of 70\%. Furthermore, also provide discussion that a false positives rate and false negatives rate can be further improved by improving the underlying NLP infrastructure. Finally, we provide a comparison of the temporal constraints inferred from natural language description against the temporal constraints enforced by a type system. 
+In summary, we demonstrate that \tool\ effectively identifies constraint sentences (from over 3900 API sentences) with the average precision, recall, and F-score of 79.0\%, 60\%, and 65\% respectively. We also show that \tool\ infers temporal constraints from the constraint sentences an average accuracy of 70\%. Furthermore, also provide discussion on why \tool\ does not or incorrectly infers temporal constraints. Finally, we provide a comparison of the temporal constraints inferred from natural language description against the temporal constraints enforced by a type system. 
 
 
 \subsection{Threats to Validity}
 \label{sub:threats_to_validity}
-Threats to external validity primarily include the degree to which the subject documents used in our evaluation are representative of true practice. To minimize the threat, we used API documents of two different API's: JDK \CodeIn{java.io} and \amazon. On one hand, Java is a widely used programming language and \CodeIn{java.io} and is one of the main packages. In contrast, \amazon\ provides HTTP based access to online storage allowing developers the freedom to write clients applications in any programming language. Furthermore, the difference in the functionalities provided by the two API's also address the issue of over fitting our approach to a particular type of API. The threat can be further reduced by evaluating our approach on more subjects API's. 
+Threats to external validity primarily include the degree to which the subject documents used in our evaluation are representative of true practice. To minimize the threat, we used API documents of three different API's: JDK \CodeIn{java.io}, \amazonAPI, \paypalAPI. On one hand, Java is a widely used programming language and \CodeIn{java.io} and is one of the main packages. In contrast, \amazonAPI\ provides HTTP based access to online storage allowing developers the freedom to write clients applications in any programming language. Finally, \paypalAPI\ provides a REST support for online financial transactions. The difference in the functionalities provided by the three API's also address the issue of over-fitting our approach to a particular type of API. The threat can be further reduced by evaluating our approach on more subjects API's. 
 
-Threats to internal validity include the correctness of our prototype implementation in extracting temporal constraints and labeling a statement as a constraint statement. To reduce the threat, we manually inspected all the constraints inferred against the API method descriptions in our evaluation. Furthermore, we ensured that the results were individually verified and agreed upon by two authors, using the \CodeIn{cohen kappa}~\cite{carletta1996assessing} score to statistically measure the inter-rater agreement.
+Threats to internal validity include the correctness of our prototype implementation in extracting temporal constraints and labeling a statement as a constraint statement. To reduce the threat, we manually inspected all the constraints inferred against the API method descriptions in our evaluation. Furthermore, we ensured that the results were individually verified and agreed upon by two authors independently.
 
 
 
