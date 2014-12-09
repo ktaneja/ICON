@@ -40,14 +40,14 @@ Furthermore, the these approaches rely on specific templates for inferring const
 %In contrast, approach presented in this report is independent of such training set and thus can be easily extended to target respective problems addressed by them. Furthermore, the specifications inferred by their approach may ignore the explicit ordering information described in individual method descriptions as inferred by \tool\.
 
 
-Xiao et al.~\cite{XiaoFSE2012} and Slankas et al.~\cite{johnSlankasPASSAT13} use shallow parsing techniques to infer Access Control Policy (ACP) rules from natural language text in use cases. In contrast, \tool\ approach works with API documents.
+Xiao et al.~\cite{XiaoFSE2012} and Slankas et al.~\cite{johnSlankasPASSAT13} use shallow parsing techniques to infer Access Control Policy (ACP) rules from natural language text in use cases. In contrast, the \tool\ approach works with API documents.
 %The use of shallow parsing techniques works satisfactorily on natural language text in use cases, owing to relative well-formed structure of sentences in use case descriptions.
 %In contrast, often the sentences in API documents are not well-formed.
 %Additionally, their approaches do not deal with programming keywords or identifiers, which are often mixed with the method descriptions in API documents.
 Pandita et al.~\cite{pandita12:inferring} proposed an NLP-based approach on inferring parameter constraints from method descriptions in the API documents. \tool\ differs from their work as follows.
 \tool\ addresses the problem of inferring temporal constraint, which is not addressed by the previous approach. \tool\ significantly extends the infrastructure used by Pandita et al.~\cite{pandita12:inferring} in following dimensions.
 First, \tool\ relies on ML to identify the temporal constraint sentences. The lower frequency of occurrence of temporal constraint sentences in comparison to parameter constraint sentences, make them harder to detect.
-Second, \tool\ approach introduces hybrid shallow parsing that relies both on parts-of-speech tags as well as Stanford-typed dependencies to construct intermediate representation, while the previous approach relies only on parts-of-speech tags.
+Second, the \tool\ approach introduces hybrid shallow parsing that relies both on parts-of-speech tags as well as Stanford-typed dependencies to construct intermediate representation, while the previous approach relies only on parts-of-speech tags.
 Finally, the \tool\ approach leverages the concept of semantic graphs constructed from class and method names in API to automatically infer the implicit method references in a sentence. 
 
 

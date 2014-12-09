@@ -4,25 +4,26 @@
 \begin{figure}
 	\centering
 		\includegraphics[scale=0.45]{approach.eps}
-	\caption{Overview of \tool\ approach}
+	\caption{Overview of the \tool\ approach}
 	\label{fig:approachOverview}
 \end{figure}
 
 We next present our approach for inferring temporal constraints
 from the method descriptions in API Documents.
-Figure~\ref{fig:approachOverview} gives an overview of \tool\ approach.
+Figure~\ref{fig:approachOverview} gives an overview of the \tool\ approach.
 \tool\ consists of following six major components: a preprocessor, a candidate identifier, a text-analysis engine, a semantic graph generator, constraint extractor, and a type analyzer.
 Additionally, there is an optional model trainer component and external NLP parser component.
-We next describe each component in detail.
 
-%The preprocessor accepts API documents and preprocesses the sentences in the method description,
+
+First, the preprocessor accepts API documents and preprocesses the sentences in the method description.
 %such as annotating sentence boundaries and reducing lexical tokens.
-%The text-analysis engine accepts the pre-processed sentences and annotates them using an NLP parser.
-%The text-analysis engine further transforms the annotated sentences into the first-order-logic (FOL) representation.
-%The semantic graph generator accepts the API documents and generates the semantic graphs that are leveraged by constraint extractor component.
-%The type analyzer component infers temporal constraints encoded in the type system of a language by analyzing the API methods parameter and return types.
-%Finally, the constraint extractor leverages the semantic graphs to infer temporal constraints from the FOL representation of a sentence.
-%We next describe each component in detail.
+Next, an NLP parser annotates the syntax and semantics of preprocessed sentences.   
+The annotated sentences are accepted by candidate identifier component to classify temporal constraint sentences,
+using the model trained by the model trainer component.
+The text-analysis engine further transforms the identified constraint sentences into the first-order-logic (FOL) representation.
+Finally, the constraint extractor leverages the semantic graphs to infer temporal constraints from the FOL representation of a sentence.
+The type analyzer component infers temporal constraints encoded in the type system of a language by analyzing the API methods parameter and return types.
+We next describe each component in detail.
 
 
 \subsection{Preprocessor}
@@ -30,10 +31,10 @@ We next describe each component in detail.
 
 The preprocessor accepts the API documents and extracts method descriptions.
 In particular, the preprocessor extracts the following fields from the method descriptions: 
-1) \textit{Summary of the API method},
-2) \textit{Summary and type information of parameters of the API method}, 
-3) \textit{Summary and type information of return values of the method}, and
-4) \textit{Summary and type information of exceptions thrown (or errors returned) by the methods}.
+1) Summary of the API method,
+2) Summary and type information of parameters of the API method, 
+3) Summary and type information of return values of the method, and
+4) Summary and type information of exceptions thrown (or errors returned) by the methods.
 
 This step is required to extract the desired descriptive text from the API documents.
 Different API documents may have different styles of presenting information to developers.
@@ -41,7 +42,7 @@ This difference in style may also include the difference in the level of the det
 \tool\ relies only on basic fields that are generally available for API methods across different presentation styles. 
 
 After extracting desired information, the natural language text is further preprocessed to be analyzed by subsequent components.
-The preprocessing steps are required to increase the accuracy of core NLP techniques (described in Section~\ref{sub:CoreNLPback}) that are used in the subsequent phases of \tool\ approach.
+The preprocessing steps are required to increase the accuracy of core NLP techniques (described in Section~\ref{sub:CoreNLPback}) that are used in the subsequent phases of the \tool\ approach.
 The preprocessor first employs the heuristics listed under lexical token reduction, as introduced in Section~\ref{sub:SENLPback}.
 
 %Although the previous techniques and heuristics significantly lower the number of lexical tokens in a sentence,
@@ -80,11 +81,10 @@ The preprocessor first employs the heuristics listed under lexical token reducti
 \subsection{NLP Parser}
 
 
-The NLP parser accepts the pre-processed documents and annotates every sentence in each document using core NLP techniques described in Section~\ref{sub:CoreNLPback}.
+The NLP parser accepts the pre-processed documents and annotates every sentence in each document using core NLP techniques~\cite{Marneffe06LREC, Marneffe08COLING, pandita12:inferring, pandita13:WHYPER, thummalapentaICSE12} described in Section~\ref{sub:CoreNLPback}.
 %From an implementation perspective, we chose the Stanford parser~\cite{Manning:01}.
 %However, this component can be implemented using any other existing NLP libraries or approaches.
-In particular, each sentence is annotated with: \textit{1) POS tags, 2) named-entity annotations, and 3) Stanford-typed dependencies.}
-For more details on these techniques and their application, please to ~\cite{Marneffe06LREC, Marneffe08COLING, pandita12:inferring, pandita13:WHYPER, thummalapentaICSE12}. 
+In particular, each sentence is annotated with: \textit{1) POS tags, 2) named-entity annotations, and 3) Stanford-typed dependencies.} 
 
 
 \begin{figure}
@@ -100,16 +100,16 @@ From an implementation perspective, this component can be implemented using any 
 \subsection{Candidate Identifier}
 
 This component accepts the annotated sentence from the previous component,
-then using a trained model classifies whether a sentence describes a temporal constraint or not. We next describe the model construction.
+then using a trained ML model classifies whether a sentence describes a temporal constraint or not. We next describe the model construction.
 
-The goal of model construction is to use a small set of manually classified temporal constraint sentences of a representative API to construct a model to automatically classify the unlabeled sentences. 
-From an implementation perspective, we can use any of the standard off-the-shelf classifiers to train the model, since \tool\ seeks to achieve only a binary classification of the API sentences.
+The goal of model construction is to use a small set of manually classified temporal constraint sentences of a representative API classify the unlabeled sentences as being temporal constraints or not.
+From an implementation perspective, we can use any of the standard off-the-shelf classifiers to train the ML model, since \tool\ seeks to achieve only a binary classification of the API sentences.
 For instance, model can be trained using na{\"i}ve Bayes classifier which is the simplest probabilistic classification methods and is shown to be comparative to other advanced classification methods given appropriate prepossessing~\cite{rennie2003tackling}.
-The model can be trained offline or else by the users of the approach if better accuracy is desired for domain-specific data.
+The ML model can be trained offline or else by the users of the approach if better accuracy is desired for domain-specific data.
 
 Feature selection is an important factor for the accuracy any classification method.
 %For instance, na{\"i}ve Bayes classifier assumes each feature independently contributes towards the final probability of classification.
-In the simplest form, each word occurring in a sentence is considered as a feature. However, such an approach may lead to overly specific models, and therefore \tool\ approach employs preprocessing for generic features. We next describe the features we chose for training our model along with the rationale for selecting such features.
+In the simplest form, each word occurring in a sentence is considered as a feature. However, such an approach may lead to overly specific ML models, and therefore the \tool\ approach extracts generic features from sentences. We next describe the features we chose for training our ML model along with the rationale for selecting such features.
 
 \begin{enumerate}
 
@@ -123,12 +123,14 @@ In the simplest form, each word occurring in a sentence is considered as a featu
 	
 	\item \textbf{Stanford Dependencies}: We add to the feature set by identifying the presence of specific Stanford typed dependencies pertaining to the temporal aspects of the sentence semantics. In particular, we identify the presence of ``\textit{advcl}'', ``\textit{aux}'', ``\textit{auxpass}'', ``\textit{vmod}'', and ``\textit{tmod}''. For instance, the annotated sentence in Figure~\ref{fig:standep} contains both ``\textit{aux}'' and ``\textit{auxpass}'' dependencies. These are both added to the feature set.
 	
-	\item \textbf{POS Tags}: We filter words whose part of speech tags are ``\textit{Noun}'', ``\textit{Determiner}'', ``\textit{Adjective}'', ``\textit{Cardinal Number}'', ``\textit{Foreign Word}'', ``\textit{Brackets}'', ``\textit{Coordinating Conjunction}'', and ``\textit{Personal Pronouns}''. The rationale for filtering based on POS tags is to remove the words that are unlikely to be specific to temporal constraints. For instance, presence or absence of determiners is unlikely to affect the outcome of classifier. We further, annotate the POS of word to further distinguish between the words used in different context.       
+	\item \textbf{POS Tags}: We filter words whose part of speech tags are ``\textit{Noun}'', ``\textit{Determiner}'', ``\textit{Adjective}'', ``\textit{Cardinal Number}'', ``\textit{Foreign Word}'', ``\textit{Brackets}'', ``\textit{Coordinating Conjunction}'', and ``\textit{Personal Pronouns}''. The rationale for filtering based on POS tags is to remove the words that are unlikely to be specific to temporal constraints. For instance, presence or absence of determiners is unlikely to affect the outcome of classifier. We further, annotate the POS of word to further distinguish between the words used in different context.
+	
+	\item \textbf{Sentence Structure}: The feature is the ordered sequence of chunking tags~\cite{Klein03,KleinNIPS03} in a sentence. Chunking seeks to divide a sentence into a constituent set of words (or phrases) that logically belong together (such as a Noun Phrase and Verb Phrase). Thus chunking captures the structure of a sentence. Rationale for selecting ordered sequence of chunking tags is to incorporate structure of a sentence as a feature.        
 		 
 \end{enumerate}     
 
 
-We use this feature set to train a classier to perform binary classification of temporal constraint sentence vs other sentences. The rationale of using ML based approach as opposed to a rule based approach is because: 1) rule-writing requires domain expertise, 2) rules-writing tends to quickly become ad hoc thus requires greater effort to generate generic rules, and 3) ML classifiers have shown to scale well with large volumes of data.
+We use the described feature set to train a classier to perform binary classification of temporal constraint sentence vs other sentences. The rationale of using ML based approach as opposed to a rule based approach is because: 1) rule-writing requires domain expertise; 2) rules-writing tends to quickly become ad hoc thus requires greater effort to generate generic rules; and 3) ML classifiers have shown to scale well with large volumes of data.
 
  
 %Constraint Extractor then classifies the sentence as a constraint 
@@ -158,6 +160,7 @@ We use this feature set to train a classier to perform binary classification of 
 
 
 The text analysis engine component accepts the sentences identified as constraint sentences and creates an intermediate representation of each sentence.
+This intermediate representation is leveraged by subsequent component to infer formal constraints.
 We define our representation as a tree structure that is essentially a FOL expression.
 Research literature provides evidence of the adequacy of using FOL for NLP related analysis tasks~\cite{Sinha2009,Sinha2010,pandita12:inferring, pandita13:WHYPER}.
 
@@ -188,7 +191,8 @@ For instance, consider the sentence which are then accurately annotated by the u
 \end{center}
 
 The Stanford parser finds it difficult to annotate accurately the Stanford-typed dependencies of the sentence because of presence of different clauses acting on different subject-object pairs.
-As shown in figure~\ref{fig:standep} the word including is annotated with Stanford-typed dependencies ``dep'' that is a catch all dependency. A catch all dependency is selected by a parser when no other appropriate dependency can be selected. We thus break down the sentence into two smaller tractable sentences:
+As shown in Figure~\ref{fig:standep} the word including is annotated with Stanford-typed dependencies ``dep'' that is a catch all dependency. A catch all dependency is selected by a parser when no other appropriate dependency can be selected.
+The \tool\ approach thus automatically break down the sentence into two smaller tractable sentences:
 
 \begin{center}
 \scriptsize \textit{``All objects in the bucket must be deleted before the bucket itself can be deleted.}''
@@ -200,7 +204,7 @@ As shown in figure~\ref{fig:standep} the word including is annotated with Stanfo
 Table~\ref{tab:semanticTemplates} lists the semantic templates used in this phase.
 Column ``Template'' describes conditions where the template is applicable and Column ``Summary'' describes the action taken by \tool\ when the template is applicable.
 %All of these semantic templates are publicly available on our project website\footnote{\url{https://sites.google.com/site/temporalspec}}.
-With respect to the previous example the template 3 \textit{( A noun phrase followed by another noun/pronoun/verb phrase in brackets)} is applicable.
+With respect to the previous example the template 3 \textit{(A noun phrase followed by another noun/pronoun/verb phrase in brackets)} is applicable.
 Thus our shallow parser breaks the sentence into two individual sentences.
 	 
 \begin{table*}
@@ -224,7 +228,7 @@ Thus our shallow parser breaks the sentence into two individual sentences.
 \end{center}
 \end{table*}
 
-\textbf{Stanford-typed Dependencies}: After complex sentences (whenever applicable) have been broken to simple sentnces, this phase generates an intermediate (FOL) representation of the sentences. This phase is equivalent to the intermediate-representation technique described in Section~\ref{sub:SENLPback}. Figure~\ref{fig:FOLTree} is the FOL representation of the sentence  \textit{``All objects in the bucket must be deleted before the bucket itself can be deleted''}. All the leaf nodes (entities) are represented as the bold words. For readability each node is appended with a number representing the in-order traversal index of the tree. 
+\textbf{Stanford-typed Dependencies}: After complex sentences (whenever applicable) have been broken to simple sentences, this phase generates an intermediate (FOL) representation of the sentences. This phase is equivalent to the intermediate-representation technique described in Section~\ref{sub:SENLPback}. Figure~\ref{fig:FOLTree} is the FOL representation of the sentence  \textit{``All objects in the bucket must be deleted before the bucket itself can be deleted''}. All the leaf nodes (entities) are represented as the bold words. For readability each node is appended with a number representing the in-order traversal index of the tree. 
 
 \begin{figure}
 	\begin{CodeOut}

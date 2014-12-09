@@ -25,14 +25,13 @@ We used the API documents of the following three libraries as subjects for our e
 	\item \paypalAPI\: provides a REST based web service interface to facilitate online payments and money transfer.
 	\CodeIn{PayPal} reports to have handled \$56.6 billion(USD) worth of transactions (total value of transactions) in just the third quarter of 2014. 
 	
-	\item\CodeIn{java.io} : is one of a popular packages in \CodeIn{Java} programming language. The package provides APIs for system input and output through data streams, serialization and the file system, which are one of the fundamental functionalities provided by any programming language.
+	\item\CodeIn{java.io} : is one of the widely used packages in \CodeIn{Java} programming language. The package provides APIs for system input and output through data streams, serialization and the file system, which are one of the fundamental functionalities provided by any programming language.
 \end{itemize}
-We chose \CodeIn{Amazon S3}, \CodeIn{PayPal payment}, and \CodeIn{java.io} APIs as our subjects because they are popular and contain decent documentation.
+We chose \CodeIn{Amazon S3}, \CodeIn{PayPal payment}, and \CodeIn{java.io} APIs as our subjects because they are widely used and contain relevant documentation.
 
 \subsection{Evaluation Setup} 
 We first manually annotated the sentences in the API documents of the subject APIs.
-First two authors manually labeled each sentence in the Java API documentation as sentence containing 
-temporal constraints or not.
+The first two authors manually labeled each sentence (2417 total) in the Java API documentation as being a temporal constraint sentence or not.
 We used \CodeIn{cohen kappa}~\cite{carletta1996assessing} score to statistically measure
 the inter-rater agreement.
 The \CodeIn{cohen kappa} score of the two authors was .66 (on a scale of 0 to 1), 
@@ -83,14 +82,14 @@ The cross validation ensures that every sentence is used for training and testin
 thus producing low bias and variance.
 In particular, we execute the classifiers in two different configurations.
 First we executed the classifiers using the words in the sentences as features and measure \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-Score} as P$_{wrd}$, R$_{wrd}$, and F$_{wrd}$.
-We next executed the classifiers on the features proposed by \tool\ approach and measure \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-Score} as P$_{ftr}$, R$_{ftr}$, and F$_{ftr}$.
+We next executed the classifiers on the features proposed by the \tool\ approach and measure \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-Score} as P$_{ftr}$, R$_{ftr}$, and F$_{ftr}$.
 We next calculate relative gain in \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-Score} as P$_{\Delta}$ (P$_{ftr}$- P$_{wrd}$), R$_{\Delta}$ (R$_{ftr}$ - R$_{wrd}$), and F$_{\Delta}$ (F$_{ftr}$ - F$_{wrd}$). 
-Higher values of P$_{\Delta}$, R$_{\Delta}$, and F$_{\Delta}$ are indicative of effectiveness of the constraint statements inferred using the features proposed by \tool\ approach.
+Higher values of P$_{\Delta}$, R$_{\Delta}$, and F$_{\Delta}$ are indicative of effectiveness of the constraint statements inferred using the features proposed by the \tool\ approach.
 
 
 To answer RQ2, we manually verified the temporal constraints inferred from constraint sentences by \tool.
 However, we excluded the type-enforced temporal constraints inferred using Algorithm~\ref{alg:TypeAnalysis}, described in Section~\ref{sec:approach}.
-We excluded the type-enforced constraints because they are correct by construction and are by default enforced by modern IDE's such as eclipse. 
+We excluded the type-enforced constraints because they are correct by construction and are by default enforced by modern IDE's such as the Eclipse. 
 We then measure $accuracy$ of \tool\ as the ratio of the total number of temporal constraints that
 are correctly inferred by \tool\ to the total number of constraint sentences. Two authors
 independently verified the correctness of the temporal constraints inferred by \tool.
