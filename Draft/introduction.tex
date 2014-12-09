@@ -3,12 +3,12 @@
 
 Application Programming Interfaces (APIs) facilitates software reuse
 by providing standardized mechanism to access API components.
-However, APIs have some constraints governing the proper use of the API that must be followed.
+However, an API has some constraints governing the proper use of the API that must be followed.
 One such type of constraints are temporal constraints [2], which are the allowed sequences of invocations of methods from the API.
-Non-compliance to such constraints will often result in faulty applications that are unreliable to use and may even result in financial losses.
+Non-compliance to such constraints will often result in faulty applications that are unreliable to use. % and may even result in financial losses.
 
-Formal analysis tools, such as model checker and runtime verifiers 
-can assist in detection of the violations of the temporal constraints
+Formal analysis tools, such as model checkers and runtime verifiers 
+can assist in detecting violations of the temporal constraints
 in API clients as defects~\cite{lee2012towards}.
 These tools typically accept formal representation of the temporal constraints for detecting violations.
 However, temporal constraints are typically described in natural language text of API documents.
@@ -18,7 +18,7 @@ as well as the temporal constraints in terms of other methods that must be invok
 %We observe that a non-trivial portion (roughly 12\%) of the sentences (constraint-describing sentences)
 %in \amazonAPI\ documentation describe temporal constraints.
 
-Although natural language API description can be manually converted into formal constraints,
+Although natural language API descriptions can be manually converted to formal constraints,
 manually identifying and writing formal constraints based on natural language text in API documents can be prohibitively time-consuming and error-prone~\cite{wu2013inferring,RubingerWEB10}. 
 %For instance, Wu et al.~\cite{wu2013inferring} report that it took one person ten hours to browse the documentation of one method from a web API, even before the person attempted to formalize the constraints on the method. 
 For instance, the PDF version of the documentation for \amazonAPI\footnote{{\small \url{http://awsdocs.s3.amazonaws.com/S3/latest/s3-api.pdf}}} spans 278 pages describing 51 methods.
@@ -30,35 +30,34 @@ A naive approach to identify the constraint sentences is to perform keyword-base
 However, the effectiveness of such approach is limited by the quality of the keywords used.
 Furthermore, sentences involving temporal constraints often the time may not have uniquely identifiable keywords.
 
-For instance, consider the sentences from \paypalAPI:
-1) ``\textit{Use this call to complete a payment.}'' from \CodeIn{execute payment} method.
-2) ``\textit{Use this call to refund a completed payment.}'' from \CodeIn{refund sale} method.
-Sentence 1 is a descriptive statement about complete payment method.
-In contrast, Sentence 1 indicates the temporal constraint that a payment must be completed before the refund call is initiated.
+For instance, consider the sentences from the \paypalAPI:
+1) ``\textit{Use this call to complete a payment.}'' from the \CodeIn{execute payment} method.
+2) ``\textit{Use this call to refund a completed payment.}'' from the \CodeIn{refund sale} method.
+Sentence 1 is a descriptive statement about the \CodeIn{execute payment} method.
+In contrast, Sentence 2 indicates the temporal constraint that a payment must be completed before the refund call is initiated.
 Since these sentences are not significantly different in terms of words, a simple keyword-based search will fail to distinguish between the two. 
 Another problem with keyword-based search is that the method names (and synonyms) are part of the keywords themselves, thus resulting in a large number of keywords to be searched.
 The large number of keywords further negatively affects accuracy.
 
-Even after a sentence has been identified as a constraint sentence, an approach has to infer the references to the method in the sentences, which may often not be implicit. Consider Sentence 2 in preceding paragraph. The phrase \textit{``completed payment''} refers to the \CodeIn{execute payment} method in the API.
-
+Even after a sentence has been identified as a constraint sentence, an approach has to infer the references to the method in the sentences, which often may not be explicit. Consider Sentence 2 in the preceding paragraph. The phrase \textit{``completed payment''} refers to the \CodeIn{execute payment} method in the API.
 
 To address these issues, we propose \tool: an approach based on Machine Learning (ML) and Natural Language Processing (NLP)
 for identifying and inferring formal temporal constraints.
 We propose to first employ ML for identifying temporal constraint sentences and then use NLP techniques to infer formal temporal constraints from the identified sentences. 
 
-A ML based approach for identifying the temporal constraint sentences addresses the limitations of keyword-based search by automatically learning patterns of temporal constraint sentences.
+An ML based approach for identifying the temporal constraint sentences addresses the limitations of keyword-based search by automatically learning patterns of temporal constraint sentences.
 Furthermore, we propose to use a combination of words, syntax (parts of speech) of a sentence, and semantics (relationship between words) of a sentence as the features for learning patterns.
 This combination allows \tool\ to make a finer grained distinction between the example sentences described earlier.
 Furthermore, to identify the phrases as implicit method-invocation references, we propose to leverage domain dictionaries that are systematically created from API documents and generic English dictionaries.
 
-In summary, the \tool\ approach leverages natural language description of API's to infer temporal constraints of method invocations.
+In summary, the \tool\ approach leverages natural language description of an API to infer temporal constraints of method invocations.
 As our approach analyzes API documents in natural language, it can be reused independent of the programming language of an API library.
 Additionally, our approach complements existing mining-based approaches~\cite{buse2012synthesizing, thummalapenta07parseweb, Wang:2013:MSR, Zhong:2009:MMR} that partially address the problem by mining for common usage patterns among client code reusing the API.
 Our results indicate that \tool\ is effective in identifying temporal
 constraint sentences (from over
 4000 human-annotated API sentences) with the average precision, recall, and F-score
 of 79.0\%, 60.0\%, and 65.0\%, respectively.
-Furthermore, our evaluation also demonstrate that \tool\ achieves an accuracy of 70\% in inferring 77 formal temporal constraints from these sentences.
+Furthermore, our evaluation also demonstrates that \tool\ achieves an accuracy of 70\% in inferring 77 formal temporal constraints from these sentences.
 This paper makes the following main contributions:
 
 
@@ -67,7 +66,7 @@ This paper makes the following main contributions:
 	%To the best of our knowledge, our approach is the first one to apply NLP for inferring temporal constraints from API documents.
 	\item A prototype implementation of our approach based on extending the Stanford Parser~\cite{Klein03}, which is a natural language parser to derive the grammatical structure of sentences.
 	An open source implementation of the prototype is publicly available on our project website\footnote{\url{https://sites.google.com/site/temporalspec}}, along with the experimental subjects and the results. 
-	\item An evaluation of our approach on \amazonAPI, \paypalAPI, and commonly used package \CodeIn{java.io} from the JDK API. 
+	\item An evaluation of our approach on the \amazonAPI, the \paypalAPI, and the commonly used package \CodeIn{java.io} from the JDK API. 
 \end{itemize}
 
 

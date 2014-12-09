@@ -4,7 +4,7 @@
 Temporal constraints of an Application Programming Interface (API)
 are the allowed sequences of method invocations in the API.
 These constraints govern the secure and robust operation of client software using the API.
-However, in practice, most API do not have formal temporal constraints.
+However, in practice, most APIs do not come with formal temporal constraints.
 In contrast, these constraints are typically described
 informally in natural language API documents, and therefore are not amenable
 to existing tools for checking formal temporal constraints.
@@ -14,12 +14,12 @@ Since API documents are often verbose, manually identifying and writing formal t
 To address this issue,
 we propose \tool: an approach based on Machine Learning (ML) and Natural Language Processing (NLP) for identifying and inferring formal temporal constraints.
 To evaluate our approach, we apply \tool\ to infer and formalize temporal
-constraints from \amazonAPI, \paypalAPI\ and the \CodeIn{java.io} package in the
+constraints from the \amazonAPI, the \paypalAPI\, and the \CodeIn{java.io} package in the
 JDK API.
 Our results indicate that \tool\ is effective in identifying temporal
 constraint sentences (from over
 4000 human-annotated API sentences) with the average precision, recall, and F-score
 of 79.0\%, 60.0\%, and 65.0\%, respectively.
-Furthermore, our evaluation also demonstrate that \tool\ achieves an accuracy of 70\% in inferring and formalizing 77 temporal constraints from these temporal constraint sentences.
+Furthermore, our evaluation also demonstrates that \tool\ achieves an accuracy of 70\% in inferring and formalizing 77 temporal constraints from these temporal constraint sentences.
 
 \end{abstract}
