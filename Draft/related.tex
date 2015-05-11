@@ -1,26 +1,19 @@
 \section{Related work}
 \label{sec:related}
 
-%Our proposed approach touches a few research areas such as software verification, NLP in Software Engineering (SE), and document augmentation.
-%We next discuss the relevant work pertinent to our proposed approach in these areas.
-
-%\subsection{Code Contracts - Formal Specifications}
-% Define temporal constraints distinction
-
 \textbf{Formal Specification}:
-Contracts are a well-known mechanism for formally specifying functional behavior of the program. 
-Contracts specify the program behavior in terms of conditions that must hold before/after and/or during the execution of a method.
+Contracts formally specify the program behavior in terms of conditions that must hold before/after and/or during the execution of a method.
 A significant amount of work has been done in automated inference of contracts.
 Existing approaches use program analysis~\cite{csallner08dysy,NimmerE02:ISSTA,Tillmann:2006:DLM:2105385.2105433}
 to automatically infer contracts.
-However, recent studies~\cite{Polikarpova2009ISSTA,Flanagan2001:HAA} demonstrate that a combination of developer-written and automatically extracted
+However, studies~\cite{Polikarpova2009ISSTA,Flanagan2001:HAA} demonstrate that a combination of developer-written and automatically extracted
 contracts is the most effective approach for formally specifying the constraints on an API.
 
 Additionally, contracts are typically in the form of assertions on the state (member variables/ properties) of a program. In contrast, temporal constraints specify the ordering of method invocations, therefore are different.
 Furthermore, since \tool\ infers temporal constraints from API documents, we envision \tool\ to work in conjunction with existing approaches
 to infer a comprehensive formal specification.
  
-A different set of approaches exist that infer code-contract-like specifications (such as behavioral model, algebraic specifications, and exception specifications) either dynamically\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105} or statically~\cite{Flanagan2001:HAA,Buse:2008:ADI:1390630.1390664} from source code and binaries. In contrast, \tool\ infers contracts from the natural language text in API documents,
+Another set of approaches infer code-contract-like specifications (such as behavioral model, algebraic specifications, and exception specifications) either dynamically\cite{Henkel07discoveringdocumentation,Ghezzi:2009:SIB:1555001.1555057,Henkel:2008:DDA:1363102.1363105} or statically~\cite{Flanagan2001:HAA,Buse:2008:ADI:1390630.1390664} from source code and binaries. In contrast, \tool\ infers specifications from the natural language text in API documents,
 thus complementing existing approaches when the source code or binaries of the API library is not available.
 
 
@@ -37,13 +30,8 @@ Specifically, their approach infers resource constraints following the template 
 However, temporal constraints are often not be limited to such template. 
 Furthermore, the these approaches rely on specific templates for inferring constraints. In contrast, \tool\ works independent of such templates for identifying constraints.
 
-%In contrast, approach presented in this report is independent of such training set and thus can be easily extended to target respective problems addressed by them. Furthermore, the specifications inferred by their approach may ignore the explicit ordering information described in individual method descriptions as inferred by \tool\.
-
 
 Xiao et al.~\cite{XiaoFSE2012} and Slankas et al.~\cite{johnSlankasPASSAT13} use shallow parsing techniques to infer Access Control Policy (ACP) rules from natural language text in use cases. In contrast, the \tool\ approach works with API documents.
-%The use of shallow parsing techniques works satisfactorily on natural language text in use cases, owing to relative well-formed structure of sentences in use case descriptions.
-%In contrast, often the sentences in API documents are not well-formed.
-%Additionally, their approaches do not deal with programming keywords or identifiers, which are often mixed with the method descriptions in API documents.
 Pandita et al.~\cite{pandita12:inferring} proposed an NLP-based approach on inferring parameter constraints from method descriptions in the API documents. \tool\ differs from their work as follows.
 \tool\ addresses the problem of inferring temporal constraint, which is not addressed by the previous approach. \tool\ significantly extends the infrastructure used by Pandita et al.~\cite{pandita12:inferring} in following dimensions.
 First, \tool\ relies on ML to identify the temporal constraint sentences. The lower frequency of occurrence of temporal constraint sentences in comparison to parameter constraint sentences, make them harder to detect.
@@ -60,6 +48,4 @@ These directives are highlighted whenever they are displayed in the Eclipse envi
 Lee et al.~\cite{lee2012towards} improved upon their work by providing a formalism to the directives proposed by Dekel et al.~\cite{Dekel2009},
 thus allowing tool-based verification.
 However, a developer has to manually annotate such directives.
-In contrast, \tool\ both identifies the sentences pertaining to temporal constraints and infers the temporal constraints automatically. 
-
-In next section, we briefly introduce the NLP techniques used by \tool.
+In contrast, \tool\ both identifies the sentences pertaining to temporal constraints and infers the temporal constraints automatically.
