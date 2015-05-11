@@ -72,7 +72,7 @@ $Precision$ = $\frac{TP}{TP + FP}$
 
 $Recall$ = $\frac{TP}{TP + FN}$
 
-$F-Score$ = $\frac{2 X Precison X Recall}{Precision + Recall}$
+$F-Score$ = $\frac{2 X Precision X Recall}{Precision + Recall}$
 \end{center}
 
 We then use these measures to identify relative effectiveness of \tool\ by executing multiple classifiers on the annotated sentences.
@@ -220,7 +220,7 @@ Furthermore, our results also show the features proposed by \tool\ improves the 
 \subsubsection{RQ2: Accuracy in Inferring Temporal Constraints}
 
 In this section, we evaluate the effectiveness of \tool\ in inferring temporal constraints from the identified constraint sentences from API documents.Table~\ref{tab:results} shows the effectiveness of \tool\ in inferring temporal constraints from the identified constraint sentences.
-Column ``Trainer'' lists the names of the subject API. 
+Column ``API'' lists the names of the subject API. 
 Columns ``Mtds'' and ``Sen'' list the number of methods and sentences in each subject API's.
 Column ``Sen$_C$'' lists the number of manually identified constraint sentences.
 Column ``Spec$_{ICON}$'' lists the number of sentences with correctly inferred temporal constraints by \tool. 
@@ -269,7 +269,7 @@ In summary, we demonstrate that \tool\ effectively identifies constraint sentenc
 
 \subsection{Threats to Validity}
 \label{sub:threats_to_validity}
-Threats to external validity primarily include the degree to which the subject documents used in our evaluation are representative of true practice. To minimize the threat, we used API documents of three different API's: JDK \CodeIn{java.io}, \amazonAPI, \paypalAPI. On one hand, Java is a widely used programming language and \CodeIn{java.io} and is one of the main packages. In contrast, \amazonAPI\ provides HTTP based access to online storage allowing developers the freedom to write clients applications in any programming language. Finally, \paypalAPI\ provides a REST support for online financial transactions. The difference in the functionalities provided by the three API's also address the issue of over-fitting our approach to a particular type of API. The threat can be further reduced by evaluating our approach on more subjects API's. 
+Threats to external validity primarily include the degree to which the subject documents used in our evaluation are representative of true practice. To minimize the threat, we used API documents of three different API's: JDK \CodeIn{java.io}, \amazonAPI, \paypalAPI. On one hand, Java is a widely used programming language and \CodeIn{java.io} is one of the main packages. In contrast, \amazonAPI\ provides HTTP based access to online storage allowing developers the freedom to write clients applications in any programming language. Finally, \paypalAPI\ provides a REST support for online financial transactions. The difference in the functionalities provided by the three API's also address the issue of over-fitting our approach to a particular type of API. The threat can be further reduced by evaluating our approach on more subjects API's. 
 
 Threats to internal validity include the correctness of our prototype implementation in extracting temporal constraints and labeling a statement as a constraint statement. To reduce the threat, we manually inspected all the constraints inferred against the API method descriptions in our evaluation. Furthermore, we ensured that the results were individually verified and agreed upon by two authors independently.
 

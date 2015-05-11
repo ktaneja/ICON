@@ -104,7 +104,7 @@ then using a trained ML model classifies whether a sentence describes a temporal
 
 The goal of model construction is to use a small set of manually classified temporal constraint sentences of a representative API classify the unlabeled sentences as being temporal constraints or not.
 From an implementation perspective, we can use any of the standard off-the-shelf classifiers to train the ML model, since \tool\ seeks to achieve only a binary classification of the API sentences.
-For instance, model can be trained using na{\"i}ve Bayes classifier which is the simplest probabilistic classification methods and is shown to be comparative to other advanced classification methods given appropriate prepossessing~\cite{rennie2003tackling}.
+For instance, model can be trained using na{\"i}ve Bayes classifier which is the simplest probabilistic classification methods and is shown to be comparative to other advanced classification methods given appropriate preprocessing~\cite{rennie2003tackling}.
 The ML model can be trained offline or else by the users of the approach if better accuracy is desired for domain-specific data.
 
 Feature selection is an important factor for the accuracy any classification method.
