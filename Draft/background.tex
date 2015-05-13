@@ -43,20 +43,20 @@ The annotation directs the POS tagger to correctly annotate the POS tags of the 
 {\small $\bullet$} \textbf{Lexical Token Reduction}~\cite{pandita13:WHYPER}:
 The accuracy of core NLP techniques is often inversely proportional to the number of lexical tokens in a sentence.
 Thus, reduction in the number of lexical tokens greatly improves the accuracy of core NLP techniques. 
-In particular, following heuristics have been used in related work~\cite{pandita12:inferring,pandita13:WHYPER} to achieve the desired reduction of lexical tokens:
+In particular, following heuristics have been used in our previous work~\cite{pandita12:inferring,pandita13:WHYPER} to achieve the desired reduction of lexical tokens:
 %These are a collection of generic preprocessing heuristics to further improve the accuracy of core NLP techniques.
 
 %\item \textit{Period Handling}: Besides marking the end of a sentence in generic English, the character period (`.') has other legal usages as well, such as decimal representation (periods between numbers).
 %Although legal, such usage hinder detection of sentence boundaries, thus causing core NLP techniques to return incorrect or imprecise results.
 %The text is pre-processed by annotating these usages for accurate detection of sentence boundaries.
-\vspace*{-1.5ex}
+
 \begin{itemize}
 
 \item \textit{Named Entity Handling}: Sometimes a sequence of words correspond to the name of entities that have a specific meaning collectively.
 For instance, consider the phrases \textit{``Amazon S3'', ``Amazon simple storage service''}, which are the names of the service.
-Further resolution of such phrases using grammatical syntax may not bring forth any semantic value.
-Also these phrases contribute to length of a sentence that in turn negatively affects the accuracy of core NLP techniques.
-This heuristic annotates the phrase representing the name of the entities as a single lexical token.
+Further resolution of such phrases using grammatical syntax is redundant for inference needs.
+This heuristic annotates the phrase representing the name of an entity as a single lexical token,
+to improve accuracy of core NLP techniques.
 	
 \item \textit{Abbreviation Handling}: Natural-language sentences often consist of abbreviations interleaved with text.
 This interleaving may result in POS tagger to incorrectly parse a sentence.
