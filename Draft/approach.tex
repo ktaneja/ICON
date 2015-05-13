@@ -89,7 +89,7 @@ In particular, each sentence is annotated with: \textit{1) POS tags, 2) named-en
 
 \begin{figure}
 	\centering
-		\includegraphics[scale=0.3]{StanfordAnnotated.eps}
+		\includegraphics[scale=0.25]{StanfordAnnotated.eps}
 	\caption{Sentence annotated with Stanford dependencies}
 	\label{fig:standep}
 \end{figure}
@@ -104,33 +104,30 @@ then using a trained ML model classifies whether a sentence describes a temporal
 
 The goal of model construction is to use a small set of manually classified temporal constraint sentences of a representative API classify the unlabeled sentences as being temporal constraints or not.
 From an implementation perspective, we can use any of the standard off-the-shelf classifiers to train the ML model, since \tool\ seeks to achieve only a binary classification of the API sentences.
-For instance, model can be trained using na{\"i}ve Bayes classifier which is the simplest probabilistic classification methods and is shown to be comparative to other advanced classification methods given appropriate preprocessing~\cite{rennie2003tackling}.
+%For instance, model can be trained using na{\"i}ve Bayes classifier which is the simplest probabilistic classification methods and is shown to be comparative to other advanced classification methods given appropriate preprocessing~\cite{rennie2003tackling}.
 The ML model can be trained offline or else by the users of the approach if better accuracy is desired for domain-specific data.
 
 Feature selection is an important factor for the accuracy any classification method.
 %For instance, na{\"i}ve Bayes classifier assumes each feature independently contributes towards the final probability of classification.
 In the simplest form, each word occurring in a sentence is considered as a feature. However, such an approach may lead to overly specific ML models, and therefore the \tool\ approach extracts generic features from sentences. We next describe the features we chose for training our ML model along with the rationale for selecting such features.
 
-\begin{enumerate}
 
-	\item \textbf{Length of a Sentence}: The feature is the total number of words in  the sentence. The rationale is that shorter sentences (containing fewer words) are unlikely candidates for temporal constraint sentences. 
+1) \textbf{Length of a Sentence}: The feature is the total number of words in  the sentence. The rationale is that shorter sentences (containing fewer words) are unlikely candidates for temporal constraint sentences. 
 
-	\item \textbf{Sentence Type}: The context of sentence, whether the sentence appears as method summary, parameter summary, return value summary, or exception/error summary as captured by pre-processor phase. The rationale is that a majority of the temporal constraint sentences are either summary or exception sentences. 
+2) \textbf{Sentence Type}: The context of sentence, whether the sentence appears as method summary, parameter summary, return value summary, or exception/error summary as captured by pre-processor phase. The rationale is that a majority of the temporal constraint sentences are either summary or exception sentences. 
 	
-	\item \textbf{Lemmatization}: The feature is the base form of a word. In linguistic, lemmatization is the reduction of operational form of a word to its base form. For instance, ``invoking'', ``invokes'', and ``invoked'' are all reduced to invoke. The rationale for reducing the words to base form is to reduce the size of the feature set that otherwise considers every word as an independent feature.  
+3) \textbf{Lemmatization}: The feature is the base form of a word. In linguistic, lemmatization is the reduction of operational form of a word to its base form. For instance, ``invoking'', ``invokes'', and ``invoked'' are all reduced to invoke. The rationale for reducing the words to base form is to reduce the size of the feature set that otherwise considers every word form as an independent feature.  
 	
-	\item \textbf{Stopword Reduction}: In linguistics, stopwords are the frequently occurring words that can be ignored and are often considered noise, such as ``the'' , ``of'', ``to'' etc... The rationale for filtering the stopwords is to reduce the size of feature set that otherwise considers such words (despite being noise) as an independent features. Stopword list is further augmented by adding to them the words that occur exactly once in the training corpus to avoid over-fitting of the model to the training corpus.  
+4) \textbf{Stopword Reduction}: In linguistics, stopwords are the frequently occurring words that can be ignored and are often considered noise, such as ``the'' , ``of'', ``to'' etc... The rationale for filtering the stopwords is to reduce the size of feature set that otherwise considers such words (despite being noise) as an independent features. Stopword list is further augmented by adding to them the words that occur exactly once in the training corpus to avoid over-fitting of the model to the training corpus.  
 	
-	\item \textbf{Stanford Dependencies}: We add to the feature set by identifying the presence of specific Stanford typed dependencies pertaining to the temporal aspects of the sentence semantics. In particular, we identify the presence of ``\textit{advcl}'', ``\textit{aux}'', ``\textit{auxpass}'', ``\textit{vmod}'', and ``\textit{tmod}''. For instance, the annotated sentence in Figure~\ref{fig:standep} contains both ``\textit{aux}'' and ``\textit{auxpass}'' dependencies. These are both added to the feature set.
+5) \textbf{Stanford Dependencies}: We add to the feature set by identifying the presence of specific Stanford typed dependencies pertaining to the temporal aspects of the sentence semantics. In particular, we identify the presence of ``\textit{advcl}'', ``\textit{aux}'', ``\textit{auxpass}'', ``\textit{vmod}'', and ``\textit{tmod}''. For instance, the annotated sentence in Figure~\ref{fig:standep} contains both ``\textit{aux}'' and ``\textit{auxpass}'' dependencies. These are both added to the feature set.
 	
-	\item \textbf{POS Tags}: We filter words whose part of speech tags are ``\textit{Noun}'', ``\textit{Determiner}'', ``\textit{Adjective}'', ``\textit{Cardinal Number}'', ``\textit{Foreign Word}'', ``\textit{Brackets}'', ``\textit{Coordinating Conjunction}'', and ``\textit{Personal Pronouns}''. The rationale for filtering based on POS tags is to remove the words that are unlikely to be specific to temporal constraints. For instance, presence or absence of determiners is unlikely to affect the outcome of classifier. We further, annotate the POS of word to further distinguish between the words used in different context.
+6) \textbf{POS Tags}: We filter words whose part of speech tags are ``\textit{Noun}'', ``\textit{Determiner}'', ``\textit{Adjective}'', ``\textit{Cardinal Number}'', ``\textit{Foreign Word}'', ``\textit{Brackets}'', ``\textit{Coordinating Conjunction}'', and ``\textit{Personal Pronouns}''. The rationale for filtering based on POS tags is to remove the words that are unlikely to be specific to temporal constraints. For instance, presence or absence of determiners is unlikely to affect the outcome of classifier. We further, annotate the POS of word to further distinguish between the words used in different context.
 	
-	\item \textbf{Sentence Structure}: The feature is the ordered sequence of chunking tags~\cite{Klein03,KleinNIPS03} in a sentence. Chunking seeks to divide a sentence into a constituent set of words (or phrases) that logically belong together (such as a Noun Phrase and Verb Phrase). Thus chunking captures the structure of a sentence. Rationale for selecting ordered sequence of chunking tags is to incorporate structure of a sentence as a feature.        
-		 
-\end{enumerate}     
+7) \textbf{Sentence Structure}: The feature is the ordered sequence of chunking tags~\cite{Klein03,KleinNIPS03} in a sentence. Chunking seeks to divide a sentence into a constituent set of words (or phrases) that logically belong together (such as a Noun Phrase and Verb Phrase). Thus chunking captures the structure of a sentence. Rationale for selecting ordered sequence of chunking tags is to incorporate structure of a sentence as a feature.        
+    
 
-
-We use the described feature set to train a classier to perform binary classification of temporal constraint sentence vs other sentences. The rationale of using ML based approach as opposed to a rule based approach is because: 1) rule-writing requires domain expertise; 2) rules-writing tends to quickly become ad hoc thus requires greater effort to generate generic rules; and 3) ML classifiers have shown to scale well with large volumes of data.
+We use the described feature set to train a classifier to perform binary classification of sentence as either temporal constraint describing or not. The rationale of using ML based approach as opposed to a rule based approach is because: 1) rule-writing requires domain expertise; 2) rules-writing tends to quickly become ad hoc thus requires greater effort to generate generic rules to avoid over-fitting; and 3) ML classifiers have shown to scale well with large volumes of data.
 
  
 %Constraint Extractor then classifies the sentence as a constraint 
@@ -161,7 +158,7 @@ We use the described feature set to train a classier to perform binary classific
 
 The text analysis engine component accepts the sentences identified as constraint sentences and creates an intermediate representation of each sentence.
 This intermediate representation is leveraged by subsequent component to infer formal constraints.
-We define our representation as a tree structure that is essentially a FOL expression.
+We define our representation as a tree structure that is mimics a FOL expression.
 Research literature provides evidence of the adequacy of using FOL for NLP related analysis tasks~\cite{Sinha2009,Sinha2010,pandita12:inferring, pandita13:WHYPER}.
 
 In our representation, every node in the tree except for the leaf nodes is a predicate node. 
@@ -171,15 +168,14 @@ The first or the only child of a predicate node is the governing entity and the 
 Together the governing entity, predicate and the dependent entity node form a tuple.  
 
 
-As described in Section~\ref{sub:SENLPback} the intermediate representation generation technique is based on the principle of shallow parsing~\cite{Branimir2000}. 
-In particular, the intermediate-representation technique is implemented as a function of Stanford-typed dependencies~\cite{Marneffe06LREC,Marneffe08COLING,KleinNIPS03}, to leverage the semantic information encoded in Stanford-typed dependencies.
+As described in Section~\ref{sub:SENLPback} the intermediate representation generation technique is implemented as a function of Stanford-typed dependencies~\cite{Marneffe06LREC,Marneffe08COLING,KleinNIPS03}, to leverage the semantic information encoded in Stanford-typed dependencies.
 
 
 However, we observed that such implementation is overwhelmed by complex sentences.
 We improve the accuracy of intermediate-representation generation by proposing a hybrid approach, i.e. taking into consideration both the POS tags as well as Stanford-typed dependencies.
 The POS tags which annotate the syntactical structure of a sentence are used to further simplify the constituent elements in a sentence. 
-We then use the Stanford-typed dependencies that annotate the grammatical relationships between words to construct our FOL representation.
-Thus, the intermediate representation generator used in this work is a two phase process as opposed to previous work~\cite{pandita12:inferring, pandita13:WHYPER}. 
+We then use the Stanford-typed dependencies that annotate the grammatical relationships between words to construct our FOL like representation.
+Thus, the intermediate representation generator used in this work is a two phase process as opposed to single phase in previous work~\cite{pandita12:inferring, pandita13:WHYPER}. 
 We next describe these two phases:
 
 \textbf{POS Tags}: We first parse a sentence based on the function of POS tags. 
@@ -250,9 +246,7 @@ Thus our shallow parser breaks the sentence into two individual sentences.
 \subsection{Constraint Extractor}
 \label{sub:ConsExtract}
 
-Constraint Extractor is responsible for inferring temporal constraint from the classified constraint sentences. 
-
-Temporal constraints are expressed as temporal formulae involving: 1) \textit{Predicates} $\xi$ representing method calls and 2) \textit{Temporal operators}: backward ($\leftarrow$) \& forward ($\rightarrow$) and their negations $\xleftarrow{-}$ \& $\xrightarrow{-}$. We define following four constraints:
+Constraint Extractor is responsible for inferring temporal constraint from the classified constraint sentences. Temporal constraints are expressed as temporal formulae involving: a) \textit{Predicates} $\xi$ representing method calls and b) \textit{Temporal operators}: backward ($\leftarrow$) \& forward ($\rightarrow$) and their negations $\xleftarrow{-}$ \& $\xrightarrow{-}$. We define following four constraints:
 
 %
 %
@@ -262,12 +256,14 @@ Temporal constraints are expressed as temporal formulae involving: 1) \textit{Pr
 %for formalizing the constraints. 
 %\tool\ extends the operators by proposing two additional operators:
 
-\begin{enumerate}
-	\item \textit{Forward Operator ($\xi_1 \rightarrow \xi_2$)}: method call $\xi_1$ must be succeeded by method call $\xi_2$. 
-	\item \textit{Backward Operator ($\xi_1 \leftarrow \xi_2$)}: method call $\xi_1$ must be preceded by method call $\xi_2$.
-	\item \textit{Negative Forward Operator ($\xi_1 \xrightarrow{-} \xi_2$)}: method call $\xi_1$ cannot be succeeded by method call $\xi_2$
-	\item \textit{Negative Backward Operator ($\xi_1 \xleftarrow{-} \xi_2$)}: method call $\xi_1$ cannot be preceded by the method call of $\xi_2$
-\end{enumerate}
+
+1) \textit{Forward Operator ($\xi_1 \rightarrow \xi_2$)}: method call $\xi_1$ must be succeeded by method call $\xi_2$. 
+
+2) \textit{Backward Operator ($\xi_1 \leftarrow \xi_2$)}: method call $\xi_1$ must be preceded by method call $\xi_2$.
+
+3) \textit{Negative Forward Operator ($\xi_1 \xrightarrow{-} \xi_2$)}: method call $\xi_1$ cannot be succeeded by method call $\xi_2$
+
+4) \textit{Negative Backward Operator ($\xi_1 \xleftarrow{-} \xi_2$)}: method call $\xi_1$ cannot be preceded by the method call of $\xi_2$
 
 %The prohibition operators capture a different class of temporal constraints that cannot be
 %expressed by the formulae constructed by previously proposed operators and their negations.
@@ -292,51 +288,48 @@ $\xi_1$ is instantiated as Delete Bucket method.
 \tool\ next identifies $\xi_2$. Since, references to $\xi_2$ may not always be implicit we leverage the semantic graphs. A semantic graph is a representation of concepts of objects and the methods applicable on those objects. Figure~\ref{fig:knowledge} shows a graph for \CodeIn{Object} resource in \amazonAPI.
 The phrases in rounded rectangle are the actions applicable on \CodeIn{Object} resource.
 Section~\ref{sub:ACA} further describes how these graphs are generated.
-\tool\ uses the Algorithm~\ref{alg:SenAnnotaator} to identify $\xi_2$.
+%\tool\ uses the Algorithm~\ref{alg:SenAnnotaator} to identify $\xi_2$.
   
 
-\algsetup{indent=1em}
-\begin{algorithm}[t!]
-\begin{algorithmic}[1]
-\begin{scriptsize}
-\REQUIRE K\_Graph $g$, FOL\_rep $rep$ 
-\ENSURE String $action$
-\STATE $String\ action\ =\ \phi$
-\STATE $List\ r\_name\_list\ =\ g.resource\_Names$
-\STATE $FOL\_rep\ r'\ =\ rep.findLeafContaining(r\_nam\_list)$
-\STATE $List\ actionList\ =\ g.actionList$
-\WHILE{$(r'.hasParent)$}
-	\IF{$actionList.contains(r'.parent.predicate)$}
-		\STATE $action\ =\ actionList.matching(r'.parent.predicate)$
-		\STATE $break$
-	\ELSE
-		\IF{$actionList.contains(r'.leftSibling.predicate)$}
-			\STATE $action\ =\ actionList.matching(r'.leftSibling.predicate)$
-			\STATE $break$
-		\ENDIF
-	\ENDIF
-	\STATE $r'\ =\ r'.parent$
-\ENDWHILE
-\RETURN $action$
-\end{scriptsize}
-\end{algorithmic}
-\caption{Action\_Extractor}
-\label{alg:SenAnnotaator}
-\end{algorithm} 
+%\algsetup{indent=1em}
+%\begin{algorithm}[t!]
+%\begin{algorithmic}[1]
+%\begin{scriptsize}
+%\REQUIRE K\_Graph $g$, FOL\_rep $rep$ 
+%\ENSURE String $action$
+%\STATE $String\ action\ =\ \phi$
+%\STATE $List\ r\_name\_list\ =\ g.resource\_Names$
+%\STATE $FOL\_rep\ r'\ =\ rep.findLeafContaining(r\_nam\_list)$
+%\STATE $List\ actionList\ =\ g.actionList$
+%\WHILE{$(r'.hasParent)$}
+%	\IF{$actionList.contains(r'.parent.predicate)$}
+%		\STATE $action\ =\ actionList.matching(r'.parent.predicate)$
+%		\STATE $break$
+%	\ELSE
+%		\IF{$actionList.contains(r'.leftSibling.predicate)$}
+%			\STATE $action\ =\ actionList.matching(r'.leftSibling.predicate)$
+%			\STATE $break$
+%		\ENDIF
+%	\ENDIF
+%	\STATE $r'\ =\ r'.parent$
+%\ENDWHILE
+%\RETURN $action$
+%\end{scriptsize}
+%\end{algorithmic}
+%\caption{Action\_Extractor}
+%\label{alg:SenAnnotaator}
+%\end{algorithm} 
 
-The algorithm systematically explores the FOL representation
-of the candidate sentence to identify $\xi_2$. First, the algorithm
+\tool\ systematically explores the intermediate representation
+of the candidate sentence to identify $\xi_2$. First, this component
 attempts to locate the occurrence of object name or its synonym
-in the leaf nodes of the FOL
-representation of the sentence (Line 3). The method
-findLeafContaining(r\_name\_list) explores the FOL representation
-to find a leaf node that contains either the object name
-or one of its synonyms.
-Once a leaf node is found, we systematically
-traverse the tree from the leaf node to the root,
+in the leaf nodes (entity) of the intermediate
+representation of the sentence.
+Once a leaf node is found, this component systematically
+traverses the tree from the leaf node to the root,
 matching all parent predicates as well as immediate child
-predicates [Lines 5-16].
-Algorithm matches each of the traversed predicate
+predicates.
+This component matches each of the traversed predicate
 with the actions associated with the object defined in
 semantic graph. 
 \tool\ further employs WordNet and Lemmatisation to deal with
