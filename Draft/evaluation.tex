@@ -176,7 +176,7 @@ Finally, columns P$_{\Delta}$, R$_{\Delta}$, and F$_{\Delta}$ list the improveme
 For our evaluation we used following well known classifiers: AdaBoost (or adaptive boosting), Na{\"i}ve Bayes, Winnow, Balanced Winnow, Decision Tree, Max Entropy, and c45. We used Na{\"i}ve Bayes as the weaker classifier with AdaBoost. We used \CodeIn{Mallet}~\cite{mallet} implementation of these classifiers for our experiments.
 
 Our results show that, \tool\ effectively identifies constraint sentences with the average (across different classifiers) \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-score} of 79.0\%, 60.0\%, and 65.0\%, respectively.
-Balanced Winnow performed best, with an average \CodeIn{precisoin} and \CodeIn{recall} of 78\% and 77\% respectively. 
+Balanced Winnow performed best, with an average \CodeIn{precision} and \CodeIn{recall} of 78\% and 77\% respectively. 
 Furthermore, our results also show the features proposed by \tool\ improves the precision of classification algorithms by an average of 18\%. There is also a slight increase in the recall (average 1\% gain). 
 
  
@@ -269,7 +269,7 @@ In summary, we demonstrate that \tool\ effectively identifies constraint sentenc
 
 \subsection{Threats to Validity}
 \label{sub:threats_to_validity}
-Threats to external validity primarily include the degree to which the subject documents used in our evaluation are representative of true practice. To minimize the threat, we used API documents of three different API's: JDK \CodeIn{java.io}, \amazonAPI, \paypalAPI. On one hand, Java is a widely used programming language and \CodeIn{java.io} is one of the main packages. In contrast, \amazonAPI\ provides HTTP based access to online storage allowing developers the freedom to write clients applications in any programming language. Finally, \paypalAPI\ provides a REST support for online financial transactions. The difference in the functionalities provided by the three API's also address the issue of over-fitting our approach to a particular type of API. The threat can be further reduced by evaluating our approach on more subjects API's. 
+Threats to external validity primarily include the degree to which the subject documents used in our evaluation are representative of true practice. To minimize the threat, we used API documents of three different APIs: JDK \CodeIn{java.io}, \amazonAPI, \paypalAPI. On one hand, Java is a widely used programming language and \CodeIn{java.io} is one of the main packages. In contrast, \amazonAPI\ provides HTTP based access to online storage allowing developers the freedom to write clients applications in any programming language. Finally, \paypalAPI\ provides a REST support for online financial transactions. The difference in the functionality provided by the three APIs also address the issue of over-fitting our approach to a particular type of API. The threat can be further reduced by evaluating our approach on more subjects APIs. 
 
 Threats to internal validity include the correctness of our prototype implementation in extracting temporal constraints and labeling a statement as a constraint statement. To reduce the threat, we manually inspected all the constraints inferred against the API method descriptions in our evaluation. Furthermore, we ensured that the results were individually verified and agreed upon by two authors independently.
 

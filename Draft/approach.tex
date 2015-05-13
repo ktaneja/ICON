@@ -354,81 +354,74 @@ The negation is identified by presence of negation verbs such as ``\textit{no}''
 A key way of identifying reference to a method in the API by \tool\ is the employment of a semantic graph of an API.
 We propose to initially infer such graphs from API documents.
 Ad hoc creation of semantic graph is prohibitively time consuming and may be error prone.
-We thus employ a systematic methodology (proposed by Pandita et al. ~\cite{pandita13:WHYPER}) to infer semantic graphs from API documents.
+We thus employ a systematic methodology (proposed previously in Whyper ~\cite{pandita13:WHYPER}) to infer semantic graphs from API documents.
 
 We first consider the name of the class for the API document in question.
 We then find the synonyms terms used refer to the class in question.
-The synonym terms are listed as by breaking down the camel-case notation in the class name.
-This list is further augmented by listing the name of the parent classes and implemented interfaces if any. 
+The synonym terms are listed as by splitting the camel-case notation in the class name.
+This list is further augmented with the name of the parent classes and implemented interfaces if any. We then systematically inspect the member methods to identify actions applicable to the objects represented by the class. From the name of a public method (describing a possible action on the object), we extract verb phrases. The verb phrases are used as the associated actions applicable on the object. In case of REST API we first identified the resources and then listed REST actions on those resources as applicable actions. Figure~\ref{fig:knowledge} shows the graph for \CodeIn{Object} resource in REST API. The phrases in rounded rectangle are the REST actions applicable on \CodeIn{Object} resource in \amazonAPI.
 
 \begin{figure}
 	\centering
-		\includegraphics[scale=0.4]{KnowledgeGraph.eps}
+	\includegraphics[scale=0.3]{KnowledgeGraph.eps}
 	\caption{Semantic Graph for the \CodeIn{Object} related operations in Amazon S3 REST API}
 	\label{fig:knowledge}
-\end{figure} 
-
-We then systematically inspect the member methods to identify actions applicable to the objects represented by the class. From the name of a public method (describing a possible action on the object), we extract verb phrases. The verb phrases are used as the associated actions applicable on the object. In case of REST API we first identified the resources and then listed REST actions on those resources as applicable actions. Figure~\ref{fig:knowledge} shows the graph for \CodeIn{Object} resource in REST API. The phrases in rounded rectangle are the REST actions applicable on \CodeIn{Object} resource in \amazonAPI.
-  
+\end{figure}
 
 \subsection{Type Analysis}
 
 Some temporal constraints are enforced by the type system in typed Languages.
 For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates that (at least one) method ($m'$) be invoked whose return value is of type ($t$).
 To extend the temporal constraints inferred by the analyzing the natural language text, this component infers additional constraints that are encoded
-in the type system. Algorithm~\ref{alg:TypeAnalysis} lists the steps followed to infer type based temporal constraints.
+in the type system. %Algorithm~\ref{alg:TypeAnalysis} lists the steps followed to infer type based temporal constraints.
 
-The algorithm accepts the list of methods as an input produces a graph with
-the nodes representing methods in an API and the directed edges representing temporal constraints.
-First, an index is created based on the return types of the method (Line 2).
-Second, all methods in an API are added to an unconnected graph (Line 3-4).
-Then, for every public method in the input list, the algorithm checks the types
-of the input parameters and constructs and directed edge from all the methods whose return value
-have the same type to the method in question (Line 14- 20).
-The algorithm does not take into consideration the basic parameter types such as \CodeIn{integer}, \CodeIn{string} (Line 15).
-Additionally, an edge is created from the constructors of a class to the non static members methods of a class (Line 8 -13).
-The resultant graph is then returned by the algorithm.
-
-
-The temporal constraints based on the type information can be extracted by querying the graph. 
+%The algorithm accepts the list of methods as an input produces a graph with
+%the nodes representing methods in an API and the directed edges representing temporal constraints.
+First, an index list ($L_{mtd}$) of the public methods in an API is created based on the return types of the method.
+Next, all public methods in the API are added as nodes ($m_1,m_2...m_k$) in an unconnected graph ($G$).
+Next, for every method ($m$) in $L_{mtd}$, we identify the types
+of the input parameters ($t_1,t_2...t_k$).
+We then add a directed edge from all the methods in ($G$), where the return type of the method matches any of the types in ($t_1,t_2...t_k$). 
+Additionally, an edge is created from the object creation methods (constructors) of a class to the non-static members methods of a class, because a member methods are invoked after objects creation. 
+The temporal constraints based on the type information is extracted by querying $G$. 
 The incoming edges to a node denoting a method represents the set of pre-requisite methods.
 The temporal constraint being, at least one of the pre-requisite methods must be invoked before invoking the method in question.
 
 
-\begin{algorithm}[t!]
-\begin{algorithmic}[1]
-\begin{scriptsize}
-\REQUIRE List $methodList$ 
-\ENSURE Graph $seq\_Graph$
-\STATE $Graph\ seq\_Graph\ =\ \phi$
-\STATE $Map\ idx\ = createIdx(methodList)$
-
-\FORALL{$Method\ mtd\ in\ methodList$} 
-	\STATE $seq\_Graph.addVertex(mtd)$
-\ENDFOR
-
-\FORALL{$Method\ mtd\ in\ methodList$} 
-	\IF{$mtd.isPublic()$}
-		\IF{$!mtd.isStatic()$}
-			\STATE $List\ preList\ =\ idx.query(mtd.declaringType)$
-			\FORALL{$Method\ mtd'\ in\ preList$}
-				\STATE $seq\_Graph.addEdge(mtd',mtd)$
-			\ENDFOR
-		\ENDIF
-		\FORALL{$Parameter\ param\ in\ mtd.getParameters()$}
-			\IF{$!isBasicType(param.Type)$}
-				\STATE $List\ preList\ =\ idx.query(paramType)$
-				\FORALL{$Method\ mtd'\ in\ preList$}
-					\STATE $seq\_Graph.addEdge(mtd',mtd)$
-				\ENDFOR				
-			\ENDIF
-		\ENDFOR
-	\ENDIF
-\ENDFOR
-\RETURN $seq\_Graph$
-\end{scriptsize}
-\end{algorithmic}
-\caption{Type\_Sequence\_Builder}
-\label{alg:TypeAnalysis}
-\end{algorithm} 
+%\begin{algorithm}[t!]
+%\begin{algorithmic}[1]
+%\begin{scriptsize}
+%\REQUIRE List $methodList$ 
+%\ENSURE Graph $seq\_Graph$
+%\STATE $Graph\ seq\_Graph\ =\ \phi$
+%\STATE $Map\ idx\ = createIdx(methodList)$
+%
+%\FORALL{$Method\ mtd\ in\ methodList$} 
+%	\STATE $seq\_Graph.addVertex(mtd)$
+%\ENDFOR
+%
+%\FORALL{$Method\ mtd\ in\ methodList$} 
+%	\IF{$mtd.isPublic()$}
+%		\IF{$!mtd.isStatic()$}
+%			\STATE $List\ preList\ =\ idx.query(mtd.declaringType)$
+%			\FORALL{$Method\ mtd'\ in\ preList$}
+%				\STATE $seq\_Graph.addEdge(mtd',mtd)$
+%			\ENDFOR
+%		\ENDIF
+%		\FORALL{$Parameter\ param\ in\ mtd.getParameters()$}
+%			\IF{$!isBasicType(param.Type)$}
+%				\STATE $List\ preList\ =\ idx.query(paramType)$
+%				\FORALL{$Method\ mtd'\ in\ preList$}
+%					\STATE $seq\_Graph.addEdge(mtd',mtd)$
+%				\ENDFOR				
+%			\ENDIF
+%		\ENDFOR
+%	\ENDIF
+%\ENDFOR
+%\RETURN $seq\_Graph$
+%\end{scriptsize}
+%\end{algorithmic}
+%\caption{Type\_Sequence\_Builder}
+%\label{alg:TypeAnalysis}
+%\end{algorithm} 
 
