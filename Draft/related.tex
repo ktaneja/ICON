@@ -1,7 +1,7 @@
 \section{Related work}
 \label{sec:related}
 
-\textbf{Formal Specification}:
+{\small $\bullet$} \textbf{Formal Specification}:
 Contracts formally specify the program behavior in terms of conditions that must hold before/after and/or during the execution of a method.
 A significant amount of work has been done in automated inference of contracts.
 Existing approaches use program analysis~\cite{csallner08dysy,NimmerE02:ISSTA,Tillmann:2006:DLM:2105385.2105433}
@@ -20,8 +20,7 @@ In contrast, \tool\ infers specifications from the natural language text in API 
 thus complementing existing approaches when the source code or binaries of the API library is not available.
 
 
-\textbf{NLP in Software Engineering (SE)}:
-
+{\small $\bullet$} \textbf{NLP in Software Engineering (SE)}:
 Research advances~\cite{Marneffe08COLING,KleinNIPS03} in the accuracy of existing NLP techniques have inspired researchers and practitioners~\cite{pandita12:inferring, pandita13:WHYPER, johnSlankasPASSAT13, XiaoFSE2012, thummalapentaICSE12} to adapt and(/or) apply NLP techniques to solve problems in SE domain. 
 Tan et al.~\cite{TanSOSP07} were the first to apply ML and NLP on code comments to detect mismatches between the comments and the implementation.
 They rely on predefined rule templates targeted towards threading and lock related comments, and then apply ML-based approach to find comments following such rules.
@@ -35,16 +34,16 @@ Furthermore, the these approaches rely on specific templates for inferring const
 
 
 Xiao et al.~\cite{XiaoFSE2012} and Slankas et al.~\cite{johnSlankasPASSAT13} use shallow parsing techniques to infer Access Control Policy (ACP) rules from natural language text in use cases. In contrast, the \tool\ approach works with API documents.
-Pandita et al.~\cite{pandita12:inferring} proposed an NLP-based approach on inferring parameter constraints from method descriptions in the API documents. \tool\ differs from their work as follows.
-\tool\ addresses the problem of inferring temporal constraint, which is not addressed by the previous approach. \tool\ significantly extends the infrastructure used by Pandita et al.~\cite{pandita12:inferring} in following dimensions.
+Our previous work~\cite{pandita12:inferring} proposed an NLP-based approach on inferring parameter constraints from method descriptions in the API documents. \tool\ differs from previous work as follows.
+\tool\ addresses the problem of inferring temporal constraint, which is not addressed by the previous approach. \tool\ significantly extends the infrastructure in following dimensions.
 First, \tool\ relies on ML to identify the temporal constraint sentences. The lower frequency of occurrence of temporal constraint sentences in comparison to parameter constraint sentences, make them harder to detect.
 Second, the \tool\ approach introduces hybrid shallow parsing that relies both on parts-of-speech tags as well as Stanford-typed dependencies to construct intermediate representation, while the previous approach relies only on parts-of-speech tags.
 Finally, the \tool\ approach leverages the concept of semantic graphs constructed from class and method names in API to automatically infer the implicit method references in a sentence. 
 
 
-\textbf{Augmented Documentation}:
+{\small $\bullet$} \textbf{Augmented Documentation}:
 Dekel and Herbsleb~\cite{Dekel2009}, were the first to create a tool namely eMoose,
-an Eclipse~\footnote{\url{http://www.eclipse.org/}} based plug-in that allowed developers to create directives
+an Eclipse IDE based plug-in that allowed developers to create directives
 (way of marking the specification sentences) in the default API documentation.
 These directives are highlighted whenever they are displayed in the Eclipse environment.
 Lee et al.~\cite{lee2012towards} improved upon their work by providing a formalism to the directives proposed by Dekel et al.~\cite{Dekel2009},

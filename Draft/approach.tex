@@ -178,7 +178,7 @@ We then use the Stanford-typed dependencies that annotate the grammatical relati
 Thus, the intermediate representation generator used in this work is a two phase process as opposed to single phase in previous work~\cite{pandita12:inferring, pandita13:WHYPER}. 
 We next describe these two phases:
 
-\textbf{POS Tags}: We first parse a sentence based on the function of POS tags. 
+{\small $\bullet$} \textbf{POS Tags}: We first parse a sentence based on the function of POS tags. 
 In particular, we use semantic templates to logically break a sentences into smaller constituent sentences. 
 For instance, consider the sentence which are then accurately annotated by the underlying NLP Parser:
 
@@ -186,7 +186,7 @@ For instance, consider the sentence which are then accurately annotated by the u
 \scriptsize``All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.''. \normalsize
 \end{center}
 
-The Stanford parser finds it difficult to annotate accurately the Stanford-typed dependencies of the sentence because of presence of different clauses acting on different subject-object pairs.
+The Stanford parser faces difficulty to annotate accurately the Stanford-typed dependencies of the sentence because of presence of various clauses acting on various subject-object pairs.
 As shown in Figure~\ref{fig:standep} the word including is annotated with Stanford-typed dependencies ``dep'' that is a catch all dependency. A catch all dependency is selected by a parser when no other appropriate dependency can be selected.
 The \tool\ approach thus automatically break down the sentence into two smaller tractable sentences:
 
@@ -224,7 +224,7 @@ Thus our shallow parser breaks the sentence into two individual sentences.
 \end{center}
 \end{table*}
 
-\textbf{Stanford-typed Dependencies}: After complex sentences (whenever applicable) have been broken to simple sentences, this phase generates an intermediate (FOL) representation of the sentences. This phase is equivalent to the intermediate-representation technique described in Section~\ref{sub:SENLPback}. Figure~\ref{fig:FOLTree} is the FOL representation of the sentence  \textit{``All objects in the bucket must be deleted before the bucket itself can be deleted''}. All the leaf nodes (entities) are represented as the bold words. For readability each node is appended with a number representing the in-order traversal index of the tree. 
+{\small $\bullet$} \textbf{Stanford-typed Dependencies}: After complex sentences (whenever applicable) have been broken to simple sentences, this phase generates an intermediate (FOL) representation of the sentences. This phase is equivalent to the intermediate-representation technique described in Section~\ref{sub:SENLPback}. Figure~\ref{fig:FOLTree} is the FOL representation of the sentence  \textit{``All objects in the bucket must be deleted before the bucket itself can be deleted''}. All the leaf nodes (entities) are represented as the bold words. For readability each node is appended with a number representing the in-order traversal index of the tree. 
 
 \begin{figure}
 	\begin{CodeOut}
