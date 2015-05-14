@@ -32,7 +32,7 @@ We chose \CodeIn{Amazon S3}, \CodeIn{PayPal payment}, and \CodeIn{java.io} APIs 
 \subsection{Evaluation Setup} 
 We first manually annotated the sentences in the API documents of the subject APIs.
 The first two authors manually labeled each sentence (2417 total) in the Java API documentation as being a temporal constraint sentence or not.
-We used \CodeIn{cohen kappa}~\cite{carletta1996assessing} score to statistically measure
+We used cohen kappa~\cite{carletta1996assessing} score to statistically measure
 the inter-rater agreement.
 The \CodeIn{cohen kappa} score of the two authors was .66 (on a scale of 0 to 1), 
 which denotes a statically significant agreement~\cite{carletta1996assessing}. 
@@ -88,7 +88,7 @@ Higher values of P$_{\Delta}$, R$_{\Delta}$, and F$_{\Delta}$ are indicative of 
 
 
 To answer RQ2, we manually verified the temporal constraints inferred from constraint sentences by \tool.
-However, we excluded the type-enforced temporal constraints inferred using Algorithm~\ref{alg:TypeAnalysis}, described in Section~\ref{sec:approach}.
+However, we excluded the type-enforced temporal constraints described in Section~\ref{sub:typeAnalysis}.
 We excluded the type-enforced constraints because they are correct by construction and are by default enforced by modern IDE's such as the Eclipse. 
 We then measure $accuracy$ of \tool\ as the ratio of the total number of temporal constraints that
 are correctly inferred by \tool\ to the total number of constraint sentences. Two authors
@@ -100,11 +100,9 @@ Higher value of \CodeIn{accuracy} is indicative of effectiveness of \tool\ in in
 
 To answer RQ3, we counted the overlap in the temporal constraints inferred by \tool\ 
 from the natural language text in API documents to the type-enforced temporal constraints
-inferred using Algorithm~\ref{alg:TypeAnalysis}, described in Section~\ref{sec:approach}.
+inferred using the method in Section~\ref{sub:typeAnalysis}.We next present our evaluation results.
 
 \subsection{Results}
-
-We next present our evaluation results.
 
 \begin{table*}
 \begin{center}
@@ -175,7 +173,7 @@ Finally, columns P$_{\Delta}$, R$_{\Delta}$, and F$_{\Delta}$ list the improveme
 
 For our evaluation we used following well known classifiers: AdaBoost (or adaptive boosting), Na{\"i}ve Bayes, Winnow, Balanced Winnow, Decision Tree, Max Entropy, and c45. We used Na{\"i}ve Bayes as the weaker classifier with AdaBoost. We used \CodeIn{Mallet}~\cite{mallet} implementation of these classifiers for our experiments.
 
-Our results show that, \tool\ effectively identifies constraint sentences with the average (across different classifiers) \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-score} of 79.0\%, 60.0\%, and 65.0\%, respectively.
+Our results show that \tool\ effectively identifies constraint sentences with the average (across different classifiers) \CodeIn{precision}, \CodeIn{recall}, and \CodeIn{F-score} of 79.0\%, 60.0\%, and 65.0\%, respectively.
 Balanced Winnow performed best, with an average \CodeIn{precision} and \CodeIn{recall} of 78\% and 77\% respectively. 
 Furthermore, our results also show the features proposed by \tool\ improves the precision of classification algorithms by an average of 18\%. There is also a slight increase in the recall (average 1\% gain). 
 
@@ -219,7 +217,8 @@ Furthermore, our results also show the features proposed by \tool\ improves the 
 
 \subsubsection{RQ2: Accuracy in Inferring Temporal Constraints}
 
-In this section, we evaluate the effectiveness of \tool\ in inferring temporal constraints from the identified constraint sentences from API documents.Table~\ref{tab:results} shows the effectiveness of \tool\ in inferring temporal constraints from the identified constraint sentences.
+%In this section, we evaluate the effectiveness of \tool\ in inferring temporal constraints from the identified constraint sentences from API documents.
+Table~\ref{tab:results} shows the effectiveness of \tool\ in inferring temporal constraints from the identified constraint sentences.
 Column ``API'' lists the names of the subject API. 
 Columns ``Mtds'' and ``Sen'' list the number of methods and sentences in each subject API's.
 Column ``Sen$_C$'' lists the number of manually identified constraint sentences.
@@ -238,7 +237,7 @@ For instance, consider the sentence ``\textit{This implementation of the PUT ope
 from  \CodeIn{PUT Object-Copy} method description in \amazonAPI.
 The sentence describes the constraint that the object must already be stored (invocation of \CodeIn{PUT Object})
 before calling the current method.
-However, \tool cannot make the connection owing to the limitation of the semantic graphs that do not list ``already stored'' as a ``valid operation'' on object.  
+However, \tool\ cannot make the connection due to the limitation of the semantic graphs that do not list ``already stored'' as a ``valid operation'' on object.  
 In the future, we plan to investigate techniques to further improve knowledge graphs to infer such implicit constraints.
 
 %Another, major cause of failure for \tool\ in inferring temporal constraints from sentences is the failure to identify the sentence as a constraint sentences at the first place (false negatives). Overall, accuracy of \tool\ can be significantly improved by lowering the false negative rate in identifying the constraint sentences. 
@@ -254,7 +253,7 @@ if the constraint is implicit in the \CodeIn{CRUD} semantic followed by REST ope
 \CodeIn{CRUD} stands for resource manipulation semantic sequence create, retrieve, update, and delete.
 In particular, we consider a constraint as a type-enforced constraint, if the constraint mandates a DELETE, GET, or PUT operation on a resource to be invoked after a POST operation on the same resource. 
 
-To address this question, we manually inspect each of the constraints reported by ICON and classify it as a type-enforced constraint or a non type-enforced constraint. 
+To address this question, we manually inspected each of the constraints reported by ICON and classify it as a type-enforced constraint or a non type-enforced constraint. 
 We observed that none of the constraints inferred by our \tool\ from natural language text were classified as a type-enforced constraint.
 Hence, the constraints detected by \tool\ are not trivial enough to be enforced by a type system.
 
@@ -264,7 +263,7 @@ Hence, the constraints detected by \tool\ are not trivial enough to be enforced 
 \subsection{Summary}
 \label{sub:summary}
 
-In summary, we demonstrate that \tool\ effectively identifies constraint sentences (from over 4000 API sentences) with the average precision, recall, and F-score of 79.0\%, 60\%, and 65\% respectively. We also show that \tool\ infers temporal constraints from the constraint sentences an average accuracy of 70\%. Furthermore, also provide discussion on why \tool\ does not or incorrectly infers temporal constraints. Finally, we provide a comparison of the temporal constraints inferred from natural language description against the temporal constraints enforced by a type system. 
+In summary, we demonstrate that \tool\ effectively identifies constraint sentences (from over 4000 API sentences) with the average precision, recall, and F-score of 79.0\%, 60\%, and 65\% respectively [RQ1]. We also show that \tool\ infers temporal constraints from the constraint sentences an average accuracy of 70\% [RQ2]. Furthermore, also provide discussion on why \tool\ does not or incorrectly infers temporal constraints. Finally, we provide a comparison of the temporal constraints inferred from natural language description against the temporal constraints enforced by a type system [RQ3]. 
 
 
 \subsection{Threats to Validity}

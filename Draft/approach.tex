@@ -11,13 +11,13 @@
 We next present our approach for inferring temporal constraints
 from the method descriptions in API Documents.
 Figure~\ref{fig:approachOverview} gives an overview of the \tool\ approach.
-\tool\ consists of following six major components: a preprocessor, a candidate identifier, a text-analysis engine, a semantic graph generator, constraint extractor, and a type analyzer.
+\tool\ consists of six major components: a preprocessor, a candidate identifier, a text-analysis engine, a semantic graph generator, constraint extractor, and a type analyzer.
 Additionally, there is an optional model trainer component and external NLP parser component.
 
 
 First, the preprocessor accepts API documents and preprocesses the sentences in the method description.
 %such as annotating sentence boundaries and reducing lexical tokens.
-Next, an NLP parser annotates the syntax and semantics of preprocessed sentences.   
+Next, an NLP parser annotates the syntax and semantics of preprocessed sentences.
 The annotated sentences are accepted by candidate identifier component to classify temporal constraint sentences,
 using the model trained by the model trainer component.
 The text-analysis engine further transforms the identified constraint sentences into the first-order-logic (FOL) representation.
@@ -52,7 +52,7 @@ The preprocessor first employs the heuristics listed under lexical token reducti
 %
 %In particular, we use n-gram~\cite{brown1992class} based approach to achieve this reduction. 
 %In the fields of computational linguistics, an n-gram is a contiguous sequence of n words from a given text.
-%In statistical NLP  and information theory, n-gram has been shown to be effective in computing the probability of occurrence of next word given a sequence of words.
+%In statistical NLP and information theory, n-gram has been shown to be effective in computing the probability of occurrence of next word given a sequence of words.
 %However, for \tool\ we use n-grams that always occur together in a given body of text.
 %
 %
@@ -69,12 +69,12 @@ The preprocessor first employs the heuristics listed under lexical token reducti
 %\textbf{Prototype Implementation.}
 %Currently our prototype implementation works with online \amazon\ and JDK API. 
 %However, almost all of the developer documents are provided online as structured webpages.
-%Thus, current prototype implementation of preprocessor can be easily extended to extract the desired information from any API developer documents.    
+%Thus, current prototype implementation of preprocessor can be easily extended to extract the desired information from any API developer documents.  
 %
 %Additionally, in current implementation we have manually built the dictionaries for preprocessing using the glossary of terms collected from the websites pertaining to REST and Java API.
 %We further leveraged the HTML style information in \amazon\ to look for words that were highlighted in code like format. We further leveraged WordNet to maintain a static lookup table of shorthand words to aid named entity handling and abbreviation handling. 
 % 
-%Finally, to achieve  n-gram reduction we used Apache Lucene~\cite{lucene}.
+%Finally, to achieve n-gram reduction we used Apache Lucene~\cite{lucene}.
 %Apache Lucene is a high-performance, full-featured text-search-engine library written entirely in Java,
 %facilitating scalable cross-platform full-text search. 
 
@@ -100,7 +100,7 @@ From an implementation perspective, this component can be implemented using any 
 \subsection{Candidate Identifier}
 
 This component accepts the annotated sentence from the previous component,
-then using a trained ML model classifies whether a sentence describes a temporal constraint or not. We next describe the model construction.
+then using a trained ML model classifies whether each sentence as a temporal constraint sentence or not. We next describe the model construction.
 
 The goal of model construction is to use a small set of manually classified temporal constraint sentences of a representative API classify the unlabeled sentences as being temporal constraints or not.
 From an implementation perspective, we can use any of the standard off-the-shelf classifiers to train the ML model, since \tool\ seeks to achieve only a binary classification of the API sentences.
@@ -112,20 +112,20 @@ Feature selection is an important factor for the accuracy any classification met
 In the simplest form, each word occurring in a sentence is considered as a feature. However, such an approach may lead to overly specific ML models, and therefore the \tool\ approach extracts generic features from sentences. We next describe the features we chose for training our ML model along with the rationale for selecting such features.
 
 
-1) \textbf{Length of a Sentence}: The feature is the total number of words in  the sentence. The rationale is that shorter sentences (containing fewer words) are unlikely candidates for temporal constraint sentences. 
+1) \textbf{Length of a Sentence}: The feature is the total number of words in the sentence. The rationale is that shorter sentences (containing fewer words) are unlikely candidates for temporal constraint sentences. 
 
 2) \textbf{Sentence Type}: The context of sentence, whether the sentence appears as method summary, parameter summary, return value summary, or exception/error summary as captured by pre-processor phase. The rationale is that a majority of the temporal constraint sentences are either summary or exception sentences. 
 	
-3) \textbf{Lemmatization}: The feature is the base form of a word. In linguistic, lemmatization is the reduction of operational form of a word to its base form. For instance, ``invoking'', ``invokes'', and ``invoked'' are all reduced to invoke. The rationale for reducing the words to base form is to reduce the size of the feature set that otherwise considers every word form as an independent feature.  
+3) \textbf{Lemmatization}: The features are the lemma of a words occurring in the sentences. In linguistic, lemmatization is the reduction of operational form of a word to its base form. For instance, ``invoking'', ``invokes'', and ``invoked'' are all reduced to invoke. The rationale for reducing the words to base form is to reduce the size of the feature set that otherwise considers every word form as an independent feature. 
 	
-4) \textbf{Stopword Reduction}: In linguistics, stopwords are the frequently occurring words that can be ignored and are often considered noise, such as ``the'' , ``of'', ``to'' etc... The rationale for filtering the stopwords is to reduce the size of feature set that otherwise considers such words (despite being noise) as an independent features. Stopword list is further augmented by adding to them the words that occur exactly once in the training corpus to avoid over-fitting of the model to the training corpus.  
+4) \textbf{Stopword Reduction}: In linguistics, stopwords are the frequently occurring words that can be ignored and are often considered noise, such as ``the'' , ``of'', ``to'' etc... The rationale for filtering the stopwords is to reduce the size of feature set that otherwise considers such words (despite being noise) as an independent features. Stopword list is further augmented by adding to them the words that occur exactly once in the training corpus to avoid over-fitting of the model to the training corpus. 
 	
-5) \textbf{Stanford Dependencies}: We add to the feature set by identifying the presence of specific Stanford typed dependencies pertaining to the temporal aspects of the sentence semantics. In particular, we identify the presence of ``\textit{advcl}'', ``\textit{aux}'', ``\textit{auxpass}'', ``\textit{vmod}'', and ``\textit{tmod}''. For instance, the annotated sentence in Figure~\ref{fig:standep} contains both ``\textit{aux}'' and ``\textit{auxpass}'' dependencies. These are both added to the feature set.
+5) \textbf{Stanford Dependencies}: We add to the feature set by identifying the presence of specific Stanford-typed dependencies pertaining to the temporal aspects of the sentence semantics. In particular, we identify the presence of ``\textit{advcl}'', ``\textit{aux}'', ``\textit{auxpass}'', ``\textit{vmod}'', and ``\textit{tmod}''. For instance, the annotated sentence in Figure~\ref{fig:standep} contains both ``\textit{aux}'' and ``\textit{auxpass}'' dependencies. These are both added to the feature set.
 	
 6) \textbf{POS Tags}: We filter words whose part of speech tags are ``\textit{Noun}'', ``\textit{Determiner}'', ``\textit{Adjective}'', ``\textit{Cardinal Number}'', ``\textit{Foreign Word}'', ``\textit{Brackets}'', ``\textit{Coordinating Conjunction}'', and ``\textit{Personal Pronouns}''. The rationale for filtering based on POS tags is to remove the words that are unlikely to be specific to temporal constraints. For instance, presence or absence of determiners is unlikely to affect the outcome of classifier. We further, annotate the POS of word to further distinguish between the words used in different context.
 	
-7) \textbf{Sentence Structure}: The feature is the ordered sequence of chunking tags~\cite{Klein03,KleinNIPS03} in a sentence. Chunking seeks to divide a sentence into a constituent set of words (or phrases) that logically belong together (such as a Noun Phrase and Verb Phrase). Thus chunking captures the structure of a sentence. Rationale for selecting ordered sequence of chunking tags is to incorporate structure of a sentence as a feature.        
-    
+7) \textbf{Sentence Structure}: The feature is the ordered sequence of chunking tags~\cite{Klein03,KleinNIPS03} in a sentence. Chunking seeks to divide a sentence into a constituent set of words (or phrases) that logically belong together (such as a Noun Phrase and Verb Phrase). Thus chunking captures the structure of a sentence. Rationale for selecting ordered sequence of chunking tags is to incorporate structure of a sentence as a feature.  
+ 
 
 We use the described feature set to train a classifier to perform binary classification of sentence as either temporal constraint describing or not. The rationale of using ML based approach as opposed to a rule based approach is because: 1) rule-writing requires domain expertise; 2) rules-writing tends to quickly become ad hoc thus requires greater effort to generate generic rules to avoid over-fitting; and 3) ML classifiers have shown to scale well with large volumes of data.
 
@@ -139,7 +139,7 @@ We use the described feature set to train a classifier to perform binary classif
 %	\item The sentences contains modal modifiers such as ``\textit{can, could, may, must, should}'' expressing necessity.
 %	Typically, presence of such modal modifier is a strong indicator of presence of constraints imposed by an API developer
 %	\item If the sentence does not contain modal modifiers described previously, sentence must contain temporal modifier relationship, identified by Stanford-typed dependency parser.
-%	Typically, presence of temporal modifier is an indicator of presence of temporal information.  
+%	Typically, presence of temporal modifier is an indicator of presence of temporal information. 
 %	\item If rules 2 and 3 don't apply then the sentences should be a conditional sentence, identified by the presence of keywords such as ``\textit{if}'' and ``\textit{whether}''.
 %\end{enumerate}
 
@@ -165,7 +165,7 @@ In our representation, every node in the tree except for the leaf nodes is a pre
 The leaf nodes represent the entities.
 The children of the predicate nodes are the participating entities in the relationship represented by the predicate.
 The first or the only child of a predicate node is the governing entity and the second child is the dependent entity.
-Together the governing entity, predicate and the dependent entity node form a tuple.  
+Together the governing entity, predicate and the dependent entity node form a tuple. 
 
 
 As described in Section~\ref{sub:SENLPback} the intermediate representation generation technique is implemented as a function of Stanford-typed dependencies~\cite{Marneffe06LREC,Marneffe08COLING,KleinNIPS03}, to leverage the semantic information encoded in Stanford-typed dependencies.
@@ -214,7 +214,7 @@ Thus our shallow parser breaks the sentence into two individual sentences.
     
     		1. 		& Two sentences joined by a conjunction & Sentence is broken down into two individual sentences with the conjunction term serving as the connector between two. \\
 \rowcol    	2. 		& Two sentences joined by a ``,''& Sentence is broken down to individual independent sentences \\
-    		3.		& A noun phrase followed by another noun/pronoun/verb phrase in brackets & Two individual sentences are formed. The first sentence is  the same as the parent sentence sans the noun/pronoun.verb phrase in bracket. The second sentence constitutes of the noun phrase followed by  noun/pronoun/verb phrase without the brackets.\\
+    		3.		& A noun phrase followed by another noun/pronoun/verb phrase in brackets & Two individual sentences are formed. The first sentence is the same as the parent sentence sans the noun/pronoun.verb phrase in bracket. The second sentence constitutes of the noun phrase followed by noun/pronoun/verb phrase without the brackets.\\
 \rowcol    	4.		& A noun phrase by a conditional phrase in brackets & Two individual sentences are formed. The first sentence is the same as the parent sentence sans the conditional phrase in bracket. The second sentence constitutes of noun phrases followed by conditional in the bracket.\\ 
     		5.		& A conditional phrase followed by a sentence & Two dependent sentences are formed. The first sentence constitutes the conditional phrase. The second sentence constitutes rest of the sentence.\\
 \rowcol    	6.		& A sentence in which the parent verb phrase is over two child verb phrases joined by a conjunction & Two dependent sentences are formed where the dependency is the conjunction. The first sentence is formulated by removing conjunction and second child verb phrase. The second sentence is formulated by removing conjunction and first child verb phrase. \\ 
@@ -224,7 +224,7 @@ Thus our shallow parser breaks the sentence into two individual sentences.
 \end{center}
 \end{table*}
 
-{\small $\bullet$} \textbf{Stanford-typed Dependencies}: After complex sentences (whenever applicable) have been broken to simple sentences, this phase generates an intermediate (FOL) representation of the sentences. This phase is equivalent to the intermediate-representation technique described in Section~\ref{sub:SENLPback}. Figure~\ref{fig:FOLTree} is the FOL representation of the sentence  \textit{``All objects in the bucket must be deleted before the bucket itself can be deleted''}. All the leaf nodes (entities) are represented as the bold words. For readability each node is appended with a number representing the in-order traversal index of the tree. 
+{\small $\bullet$} \textbf{Stanford-typed Dependencies}: After complex sentences (whenever applicable) have been broken to simple sentences, this phase generates an intermediate (FOL) representation of the sentences. This phase is equivalent to the intermediate-representation technique described in Section~\ref{sub:SENLPback}. Figure~\ref{fig:FOLTree} is the FOL representation of the sentence \textit{``All objects in the bucket must be deleted before the bucket itself can be deleted''}. All the leaf nodes (entities) are represented as the bold words. For readability each node is appended with a number representing the in-order traversal index of the tree. 
 
 \begin{figure}
 	\begin{CodeOut}
@@ -246,7 +246,11 @@ Thus our shallow parser breaks the sentence into two individual sentences.
 \subsection{Constraint Extractor}
 \label{sub:ConsExtract}
 
-Constraint Extractor is responsible for inferring temporal constraint from the classified constraint sentences. Temporal constraints are expressed as temporal formulae involving: a) \textit{Predicates} $\xi$ representing method calls and b) \textit{Temporal operators}: backward ($\leftarrow$) \& forward ($\rightarrow$) and their negations $\xleftarrow{-}$ \& $\xrightarrow{-}$. We define following four constraints:
+Constraint Extractor is responsible for inferring temporal constraint from the classified constraint sentences.
+Temporal constraints are expressed as temporal formulae involving: 
+a) \textit{Predicates} $\xi$ representing method calls and 
+b) \textit{Temporal operators}: backward ($\leftarrow$) \& forward ($\rightarrow$) and their negations $\xleftarrow{-}$ \& $\xrightarrow{-}$.
+We define the following four constraints:
 
 %
 %
@@ -279,17 +283,18 @@ We next show how \tool\ identifies the terms of the constraint formula:
 
 
 \textbf{$\xi_1$}:
-\tool\ first identifies $\xi_1$ as the method whose description constraint sentence is part of.
+\tool\ first identifies $\xi_1$ as the method whose description the constraint sentence is part of.
 For instance the sentence in Figure~\ref{fig:standep} is part of Delete Bucket method description in \amazonAPI,
 $\xi_1$ is instantiated as Delete Bucket method.
 
 
 \textbf{$\xi_2$}:
-\tool\ next identifies $\xi_2$. Since, references to $\xi_2$ may not always be implicit we leverage the semantic graphs. A semantic graph is a representation of concepts of objects and the methods applicable on those objects. Figure~\ref{fig:knowledge} shows a graph for \CodeIn{Object} resource in \amazonAPI.
+\tool\ next identifies $\xi_2$. Since, references to $\xi_2$ may not always be implicit we leverage the semantic graphs. 
+A semantic graph is a representation of objects and the methods applicable on those objects.
+Figure~\ref{fig:knowledge} shows a graph for \CodeIn{Object} resource in \amazonAPI.
 The phrases in rounded rectangle are the actions applicable on \CodeIn{Object} resource.
 Section~\ref{sub:ACA} further describes how these graphs are generated.
 %\tool\ uses the Algorithm~\ref{alg:SenAnnotaator} to identify $\xi_2$.
-  
 
 %\algsetup{indent=1em}
 %\begin{algorithm}[t!]
@@ -341,10 +346,13 @@ For instance the sentence in Figure~\ref{fig:standep} algorithm identifies
 Delete Object method as $\xi_2$
 
 \textbf{Temporal Operator}:
-\tool\ next identifies the direction (forward or backward) of the relationship by examining the tense of $\xi_2$ reference in the sentence. Past tense is considered as backward and other tenses are considered as forward. For instance, the sentence in Figure~\ref{fig:standep} since ``deleted'' is in past tense and therefore operator is backward and the constraint is 
+\tool\ next identifies the direction (forward or backward) of the relationship by examining the tense of $\xi_2$ reference in the sentence.
+Past tense is considered as backward and other tenses are considered as forward.
+For instance, the sentence in Figure~\ref{fig:standep} since ``deleted'' is in past tense and therefore operator is backward and the constraint is 
 Delete Bucket $\leftarrow$ Delete Object.
 
-The negation is identified by presence of negation verbs such as ``\textit{no}'', ``\textit{not}'', ``\textit{can't}'' ... etc. Another rule for negation operator is if the sentence is in exception/error description. 
+The negation is identified by presence of the negation verbs such as ``\textit{no}'', ``\textit{not}'', ``\textit{can't}'' ... etc.
+Another rule for negation operator is if the sentence is in exception/error description. 
 
 
 
@@ -369,9 +377,10 @@ This list is further augmented with the name of the parent classes and implement
 \end{figure}
 
 \subsection{Type Analysis}
+\label{sub:typeAnalysis}
 
 Some temporal constraints are enforced by the type system in typed Languages.
-For instances a method ($m$) accepting input parameter ($i$) of type ($t$) mandates that (at least one) method ($m'$) be invoked whose return value is of type ($t$).
+For instance, a method ($m$) accepting input parameter ($i$) of type ($t$) mandates that (at least one) method ($m'$) be invoked whose return value is of type ($t$).
 To extend the temporal constraints inferred by the analyzing the natural language text, this component infers additional constraints that are encoded
 in the type system. %Algorithm~\ref{alg:TypeAnalysis} lists the steps followed to infer type based temporal constraints.
 

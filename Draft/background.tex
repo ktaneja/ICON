@@ -1,21 +1,21 @@
 \section{Background}
 \label{sec:background}
 
-We next briefly introduce the techniques used in this work that have been grouped into two broad categories.
-We first introduce the core NLP techniques used in this work.
-We then introduce the SE specific NLP techniques proposed in related work~\cite{pandita12:inferring,pandita13:WHYPER} that are leveraged in this work.
+We next briefly introduce the NLP techniques used in this work that have been grouped into two broad categories.
+We first introduce the core NLP techniques.
+We then introduce the SE specific NLP techniques proposed in related work~\cite{pandita12:inferring,pandita13:WHYPER}.
 
 \subsection{Core NLP techniques}
 \label{sub:CoreNLPback}
 
-%Recently, a lot of exciting work has been carried out in the area of Natural Language Processing (NLP), with existing NLP techniques proving to be fairly accurate in highlighting grammatical structure of a natural language sentence. However, existing NLP techniques are still in the processing phase and not in understanding phase.  We briefly introduce the NLP techniques used in this work.
+%Recently, a lot of exciting work has been carried out in the area of Natural Language Processing (NLP), with existing NLP techniques proving to be fairly accurate in highlighting grammatical structure of a natural language sentence. However, existing NLP techniques are still in the processing phase and not in understanding phase. We briefly introduce the NLP techniques used in this work.
 
 
 {\small $\bullet$} \textbf{Parts Of Speech (POS) tagging}~\cite{Klein03,KleinNIPS03}: Also known as \textit{`word tagging'} and \textit{`grammatical tagging'}, these techniques aim to identify the part of speech (such as noun, verbs, etc.), a particular word in a sentence belongs to.
 
 {\small $\bullet$} \textbf{Phrase and Clause Parsing}: Also known as chunking, this technique divides a sentence into a constituent set of words (or phrases) that logically belong together (such as a Noun Phrase and Verb Phrase). Chunking further enhances the syntax of a sentence in addition to POS tagging.
 
-{\small $\bullet$} \textbf{Typed Dependencies}~\cite{Marneffe06LREC,Marneffe08COLING}: The Stanford typed dependencies representation  is designed to provide a simple description of grammatical relationships directed towards non-linguistics experts to perform NLP related tasks. The representation provides a hierarchical structure for the dependencies with precise definitions of what each dependency represents, thus facilitating machine based manipulation of natural language text.
+{\small $\bullet$} \textbf{Typed Dependencies}~\cite{Marneffe06LREC,Marneffe08COLING}: The Stanford typed dependencies representation is designed to provide a simple description of grammatical relationships directed towards non-linguistics experts to perform NLP related tasks. The representation provides a hierarchical structure for the dependencies with precise definitions of what each dependency represents, thus facilitating machine-based manipulation of natural language text.
 
 %\textbf{Named Entity Recognition}~\cite{Finkel05ACL}. Also known as \textit{`entity identification'} and \textit{`entity extraction'}, these techniques are a subtask of information extraction that aims to classify words in a sentence into predefined categories such as names, quantities, expression of times, etc. These techniques help in associating predefined semantic meaning to a word or a group of words (phrase), thus facilitating semantic processing of named entities. 
 
@@ -35,7 +35,7 @@ The online Oxford dictionary %\footnote{\url{http://oxforddictionaries.com/us/de
 has eight different definition of word \CodeIn{POST}, and none of them describes \CodeIn{POST} as an HTTP method\footnote{In HTTP vocabulary \CodeIn{POST} means: \textit{``Creates a new entry in the collection.
 The new entry's URI is assigned automatically and is usually returned by the operation''}}
 supported by REST API.
-Thus existing POS tagging techniques fail to accurately annotate the POS tags of the sentences involving word \CodeIn{POST}.  
+Thus existing POS tagging techniques fail to accurately annotate the POS tags of the sentences involving word \CodeIn{POST}. 
 
 Noun boosting identifies such words from the sentences based on a domain-specific dictionaries, and annotates them appropriately.
 The annotation directs the POS tagger to correctly annotate the POS tags of the domain specific words thus increasing accuracy of subsequent NLP techniques such as chunking and typed dependency annotation.
@@ -63,7 +63,7 @@ This interleaving may result in POS tagger to incorrectly parse a sentence.
 This heuristic finds such instances and annotates them as a single lexical unit.
 For example, text followed by abbreviations such as \textit{``Access Control Lists (ACL)''} is treated as single lexical unit.
 Detecting such abbreviations is achieved by using the common structure of abbreviations and encoding such structures into regular expressions.
-Typically, regular expressions provide a reasonable approximation for handling abbreviations.  
+Typically, regular expressions provide a reasonable approximation for handling abbreviations. 
 
 \end{itemize}
 
