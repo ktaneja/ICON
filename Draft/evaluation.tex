@@ -4,7 +4,7 @@
 We next present the evaluation we conducted to assess the effectiveness of \tool. In our evaluation, we address three main research questions:
 
 \begin{itemize}
-	\item\textbf{RQ1}: What are the precision and recall of \tool\ in identifying temporal constraints from sentences written in natural language?
+	\item\textbf{RQ1}: What are the precision and recall of \tool\ in identifying natural language sentences describing temporal constraints?
 	Answer to this question quantifies the effectiveness of \tool\ in identifying constraint sentences.
 	\item\textbf{RQ2}: What is the accuracy of \tool\ in inferring temporal constraints from constraint sentences in the API documents?
 	Answer to this question quantifies the effectiveness of \tool\ in inferring temporal constraints from constraint sentences. 
@@ -255,7 +255,7 @@ if the constraint is implicit in the \CodeIn{CRUD} semantic followed by REST ope
 In particular, we consider a constraint as a type-enforced constraint, if the constraint mandates a DELETE, GET, or PUT operation on a resource to be invoked after a POST operation on the same resource. 
 
 To address this question, we manually inspected each of the constraints reported by ICON and classify it as a type-enforced constraint or a non type-enforced constraint. 
-We observed that none of the constraints inferred by our \tool\ from natural language text were classified as a type-enforced constraint.
+We observed that none of the constraints inferred by \tool\ from natural language text were classified as a type-enforced constraint.
 Hence, the constraints detected by \tool\ are not trivial enough to be enforced by a type system.
 
 
