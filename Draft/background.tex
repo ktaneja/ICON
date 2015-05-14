@@ -32,10 +32,10 @@ In particular, with respect to API documents certain words have a different sema
 
 For instance, consider the word \CodeIn{POST}. 
 The online Oxford dictionary %\footnote{\url{http://oxforddictionaries.com/us/definition/american_english/post?q=POST}}
-has eight different definition of word \CodeIn{POST}, and none of them describes \CodeIn{POST} as an HTTP method\footnote{In HTTP vocabulary \CodeIn{POST} means: \textit{``Creates a new entry in the collection.
+has eight generic definition of word \CodeIn{POST}, and none of them describes \CodeIn{POST} as an HTTP method\footnote{In HTTP vocabulary \CodeIn{POST} means: \textit{``Creates a new entry in the collection.
 The new entry's URI is assigned automatically and is usually returned by the operation''}}
 supported by REST API.
-Thus existing POS tagging techniques fail to accurately annotate the POS tags of the sentences involving word \CodeIn{POST}. 
+Existing POS tagging techniques that are trained on generic documents fail to accurately annotate the POS tags of the sentences involving word \CodeIn{POST}. 
 
 Noun boosting identifies such words from the sentences based on a domain-specific dictionaries, and annotates them appropriately.
 The annotation directs the POS tagger to correctly annotate the POS tags of the domain specific words thus increasing accuracy of subsequent NLP techniques such as chunking and typed dependency annotation.

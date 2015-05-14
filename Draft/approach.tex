@@ -4,8 +4,10 @@
 \begin{figure}
 	\centering
 		\includegraphics[scale=0.45]{approach.eps}
+	\vspace*{-2ex}
 	\caption{Overview of the \tool\ approach}
 	\label{fig:approachOverview}
+	\vspace*{-4ex}
 \end{figure}
 
 We next present our approach for inferring temporal constraints
@@ -90,8 +92,10 @@ In particular, each sentence is annotated with: \textit{1) POS tags, 2) named-en
 \begin{figure}
 	\centering
 		\includegraphics[scale=0.25]{StanfordAnnotated.eps}
+	\vspace*{-2.5ex}
 	\caption{Sentence annotated with Stanford dependencies}
 	\label{fig:standep}
+	\vspace*{-3ex}	
 \end{figure}
 
 Next we use an example to illustrate the annotations added by the NLP Parser. Consider the sentence from the example section \textbf{\textit{`All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.''}}. Figure~\ref{fig:standep} shows the sentence annotated by NLP parser. Each word (occurs first) is followed by the Part-Of-Speech (POS) tag of the word (in green), which is further followed by the name of Stanford dependency connecting the actual word of the sentence to its predecessor.
@@ -114,7 +118,7 @@ In the simplest form, each word occurring in a sentence is considered as a featu
 
 1) \textbf{Length of a Sentence}: The feature is the total number of words in the sentence. The rationale is that shorter sentences (containing fewer words) are unlikely candidates for temporal constraint sentences. 
 
-2) \textbf{Sentence Type}: The context of sentence, whether the sentence appears as method summary, parameter summary, return value summary, or exception/error summary as captured by pre-processor phase. The rationale is that a majority of the temporal constraint sentences are either summary or exception sentences. 
+2) \textbf{Sentence Type}: The context of sentence, whether the sentence appears as under method, parameter, return value, or exception/error summary as captured by pre-processor phase. The rationale is that a majority of the temporal constraint sentences are either method or exception summary sentences. 
 	
 3) \textbf{Lemmatization}: The features are the lemma of a words occurring in the sentences. In linguistic, lemmatization is the reduction of operational form of a word to its base form. For instance, ``invoking'', ``invokes'', and ``invoked'' are all reduced to invoke. The rationale for reducing the words to base form is to reduce the size of the feature set that otherwise considers every word form as an independent feature. 
 	
@@ -168,9 +172,7 @@ The first or the only child of a predicate node is the governing entity and the 
 Together the governing entity, predicate and the dependent entity node form a tuple. 
 
 
-As described in Section~\ref{sub:SENLPback} the intermediate representation generation technique is implemented as a function of Stanford-typed dependencies~\cite{Marneffe06LREC,Marneffe08COLING,KleinNIPS03}, to leverage the semantic information encoded in Stanford-typed dependencies.
-
-
+Section~\ref{sub:SENLPback} the intermediate representation generation technique implemented as a function of Stanford-typed dependencies~\cite{Marneffe06LREC,Marneffe08COLING,KleinNIPS03}, to leverage the semantic information encoded in Stanford-typed dependencies.
 However, we observed that such implementation is overwhelmed by complex sentences.
 We improve the accuracy of intermediate-representation generation by proposing a hybrid approach, i.e. taking into consideration both the POS tags as well as Stanford-typed dependencies.
 The POS tags which annotate the syntactical structure of a sentence are used to further simplify the constituent elements in a sentence. 
@@ -178,8 +180,7 @@ We then use the Stanford-typed dependencies that annotate the grammatical relati
 Thus, the intermediate representation generator used in this work is a two phase process as opposed to single phase in previous work~\cite{pandita12:inferring, pandita13:WHYPER}. 
 We next describe these two phases:
 
-{\small $\bullet$} \textbf{POS Tags}: We first parse a sentence based on the function of POS tags. 
-In particular, we use semantic templates to logically break a sentences into smaller constituent sentences. 
+{\small $\bullet$} \textbf{POS Tags}: We first split a sentence into smaller constituent sentences based on the function of POS tags. 
 For instance, consider the sentence which are then accurately annotated by the underlying NLP Parser:
 
 \begin{center}
@@ -187,8 +188,8 @@ For instance, consider the sentence which are then accurately annotated by the u
 \end{center}
 
 The Stanford parser faces difficulty to annotate accurately the Stanford-typed dependencies of the sentence because of presence of various clauses acting on various subject-object pairs.
-As shown in Figure~\ref{fig:standep} the word including is annotated with Stanford-typed dependencies ``dep'' that is a catch all dependency. A catch all dependency is selected by a parser when no other appropriate dependency can be selected.
-The \tool\ approach thus automatically break down the sentence into two smaller tractable sentences:
+As shown in Figure~\ref{fig:standep} the word ``including'' is annotated with Stanford-typed dependencies ``dep'' that is a catch all dependency. A catch all dependency is selected by a parser when no other appropriate dependency can be selected.
+The \tool\ approach thus automatically break down the sentence into two smaller tractable sentences, which are accurately annotated:
 
 \begin{center}
 \scriptsize \textit{``All objects in the bucket must be deleted before the bucket itself can be deleted.}''
@@ -205,8 +206,10 @@ Thus our shallow parser breaks the sentence into two individual sentences.
 	 
 \begin{table*}
 \begin{center}
-
+\vspace*{-3ex}
 \caption{Semantic Templates}
+\vspace*{-1ex}
+
     \begin{tabular}{  l  p{5cm} p{10cm} }
     \topline
     \headcol  \textbf{S No.} 	& \textbf{Template} & \textbf{Summary} \\
@@ -221,6 +224,7 @@ Thus our shallow parser breaks the sentence into two individual sentences.
 \bottomlinec
     \end{tabular}
 	\label{tab:semanticTemplates}
+	\vspace*{-4ex}
 \end{center}
 \end{table*}
 
@@ -229,18 +233,21 @@ Thus our shallow parser breaks the sentence into two individual sentences.
 \begin{figure}
 	\begin{CodeOut}
 		\begin{alltt}
-			01:before[6]
-			02:|->must be deleted[5]
-			03:\hspace*{0.2in}|->All[1]
-			04:\hspace*{0.2in}|\hspace*{0.2in}|->in[3]
-			05:\hspace*{0.2in}|\hspace*{0.4in}|->\textbf{objects}[2]
-			06:\hspace*{0.2in}|\hspace*{0.4in}|->\textbf{bucket}[4]
-			07:\hspace*{0.2in}|->can be deleted[8]
-			08:\hspace*{0.4in}|->\textbf{bucket}[7]
-			09:\hspace*{0.4in}|->\textbf{itself}[9]
+			\hspace*{0.8in}01:before[6]
+			\hspace*{0.8in}02:|->must be deleted[5]
+			\hspace*{0.8in}03:\hspace*{0.2in}|->All[1]
+			\hspace*{0.8in}04:\hspace*{0.2in}|\hspace*{0.2in}|->in[3]
+			\hspace*{0.8in}05:\hspace*{0.2in}|\hspace*{0.4in}|->\textbf{objects}[2]
+			\hspace*{0.8in}06:\hspace*{0.2in}|\hspace*{0.4in}|->\textbf{bucket}[4]
+			\hspace*{0.8in}07:\hspace*{0.2in}|->can be deleted[8]
+			\hspace*{0.8in}08:\hspace*{0.4in}|->\textbf{bucket}[7]
+			\hspace*{0.8in}09:\hspace*{0.4in}|->\textbf{itself}[9]
 		\end{alltt}
 	\end{CodeOut}
-	\caption{\label{fig:FOLTree} FOL representation of the sentence \textit{``All objects in the bucket must be deleted before the bucket itself can be deleted.''}}
+	\vspace*{-3ex}
+	\caption{\label{fig:FOLTree} FOL-like representation of the sentence \textit{``All objects in the bucket must be deleted before the bucket itself can be deleted.''}}
+	\vspace*{-3ex}
+	
 \end{figure}
 
 \subsection{Constraint Extractor}
@@ -260,15 +267,15 @@ We define the following four constraints:
 %for formalizing the constraints. 
 %\tool\ extends the operators by proposing two additional operators:
 
+\begin{enumerate}
+\item \textit{Forward Operator ($\xi_1 \rightarrow \xi_2$)}: method call $\xi_1$ must be succeeded by method call $\xi_2$. 
 
-1) \textit{Forward Operator ($\xi_1 \rightarrow \xi_2$)}: method call $\xi_1$ must be succeeded by method call $\xi_2$. 
+\item \textit{Backward Operator ($\xi_1 \leftarrow \xi_2$)}: method call $\xi_1$ must be preceded by method call $\xi_2$.
 
-2) \textit{Backward Operator ($\xi_1 \leftarrow \xi_2$)}: method call $\xi_1$ must be preceded by method call $\xi_2$.
+\item \textit{Negative Forward Operator ($\xi_1 \xrightarrow{-} \xi_2$)}: method call $\xi_1$ cannot be succeeded by method call $\xi_2$
 
-3) \textit{Negative Forward Operator ($\xi_1 \xrightarrow{-} \xi_2$)}: method call $\xi_1$ cannot be succeeded by method call $\xi_2$
-
-4) \textit{Negative Backward Operator ($\xi_1 \xleftarrow{-} \xi_2$)}: method call $\xi_1$ cannot be preceded by the method call of $\xi_2$
-
+\item \textit{Negative Backward Operator ($\xi_1 \xleftarrow{-} \xi_2$)}: method call $\xi_1$ cannot be preceded by the method call of $\xi_2$
+\end{enumerate}
 %The prohibition operators capture a different class of temporal constraints that cannot be
 %expressed by the formulae constructed by previously proposed operators and their negations.
 %For instance, the \textit{prohibition operators} seem to be negation of
@@ -279,7 +286,7 @@ We define the following four constraints:
 %In summary, we extended the formalism for temporal rules previously
 %proposed by Lo et al.~\cite{lo2009mining} to express temporal constraints.
 
-We next show how \tool\ identifies the terms of the constraint formula:
+We next describe how \tool\ identifies the terms of the constraint formula:
 
 
 \textbf{$\xi_1$}:
@@ -350,8 +357,7 @@ Delete Object method as $\xi_2$
 Past tense is considered as backward and other tenses are considered as forward.
 For instance, the sentence in Figure~\ref{fig:standep} since ``deleted'' is in past tense and therefore operator is backward and the constraint is 
 Delete Bucket $\leftarrow$ Delete Object.
-
-The negation is identified by presence of the negation verbs such as ``\textit{no}'', ``\textit{not}'', ``\textit{can't}'' ... etc.
+Negation is identified by presence of the negation verbs such as ``\textit{no}'', ``\textit{not}'', ``\textit{can't}'' ... etc.
 Another rule for negation operator is if the sentence is in exception/error description. 
 
 
@@ -372,8 +378,10 @@ This list is further augmented with the name of the parent classes and implement
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.3]{KnowledgeGraph.eps}
-	\caption{Semantic Graph for the \CodeIn{Object} related operations in Amazon S3 REST API}
+	\vspace*{-2.5ex}
+	\caption{Semantic Graph for the \CodeIn{Object} method in Amazon S3 REST API}
 	\label{fig:knowledge}
+	\vspace*{-3ex}
 \end{figure}
 
 \subsection{Type Analysis}

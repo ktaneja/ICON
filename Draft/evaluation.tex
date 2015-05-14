@@ -106,9 +106,9 @@ inferred using the method in Section~\ref{sub:typeAnalysis}.We next present our 
 
 \begin{table*}
 \begin{center}
-
+\vspace*{-3ex}
 \caption{Evaluation Results (Identification)}
-
+\vspace*{-1ex}
 \begin{tabular}{rlccccccccc}
 \topline
 \headcol S. No. & Trainer	& P$_{wrd}$	& R$_{wrd}$	& F$_{wrd}$	& P$_{ftr}$	& R$_{ftr}$	& F$_{ftr}$	& P$_{\Delta}$	& R$_{\Delta}$	& F$_{\Delta}$	\\
@@ -132,14 +132,14 @@ $_{ftr}$: features used for training;
 $_{\Delta}$: improvement factor ($_{ftr}$ - $_{wrd}$)} \\ 
 \end{tabular}
 \label{tab:resultsRQ1}
+\vspace*{-5ex}
 \end{center}
 \end{table*}
 
 \begin{table}
 \begin{center}
-
 \caption{Evaluation Results (Inference)}
-
+\vspace*{-1ex}
 \begin{tabular}{lccccc}
 \topline
 \headcol 	API 			& Mtds 	& Sen 	& Sen$_C$ 	& Spec$_{ICON}$ 	& Acc(\%)\\
@@ -157,6 +157,7 @@ Spec$_{ICON}$: Total no. of temporal constraints correctly identified by \tool;
 } \\ 
 \end{tabular}
 \label{tab:results}
+\vspace*{-5ex}
 \end{center}
 \end{table}
 
@@ -244,7 +245,7 @@ In the future, we plan to investigate techniques to further improve knowledge gr
 
 \subsubsection{RQ3: Comparison to Typed-Enforced Constraints}
 
-In this section, we compared the temporal constraints inferred from the natural language API descriptions to those enforced by the type-system (referred to as type-enforced constraint).
+In this section, we compare the temporal constraints inferred from the natural language API descriptions to those enforced by the type-system (referred to as type-enforced constraint).
 The constraints that are enforced by the type-system can be enforced by IDEs.
 Hence, for such types of constraints, we do not require sophisticated techniques like ICON. 
 For \CodeIn{java.io}, we define a type-enforced constraint as a constraint that mandates a method $M$ accepting input parameter $I$ of type $T$ to be invoked after (at least one) a method $M'$ whose return value is of type $T$. 
